@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "measure_speed_FC33.h"
 #include "stm32l1xx_hal.h"
+#include "VL53L0X.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -75,7 +76,7 @@ static void MX_TIM6_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+double distance = 0;
 /* USER CODE END 0 */
 
 /**
@@ -126,6 +127,19 @@ int main(void)
 
   MeasureSpeedFC33_Init(6.5f, 1000, 1); //Диаметр колеса в см, период TIM5, кол-во прерываний за одно вращение
 
+  // --- Инициализация VL53L0X ---
+  statInfo_t_VL53L0X distanceStr;
+
+  // Инициализация датчика (используем адрес по умолчанию, hi2c1)
+  initVL53L0X(1, &hi2c1);
+
+  // Настройка параметров измерения (точность, тайминги)
+  setSignalRateLimit(50);
+  setVcselPulsePeriod(VcselPeriodPreRange, 10);
+  setVcselPulsePeriod(VcselPeriodFinalRange, 14);
+  setMeasurementTimingBudget(300 * 1000UL);
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -133,6 +147,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    // Чтение дистанции в миллиметрах
+	  // uint16_t distance_mm = readRangeSingleMillimeters(&distanceStr);
+	  // distance = (double)distance_mm /10 - 3.5;
+    // ПРИМЕЧАНИЕ:
+    // Чтобы увидеть значение, добавьте переменную 'distance' в "Live Watch"
+    // в режиме отладки.
 
   	//  	 Для FC-33
   	//     uint32_t pulses = MeasureSpeedFC33_GetRPM();
