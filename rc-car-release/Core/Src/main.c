@@ -22,8 +22,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "measure_speed_FC33.h"
-#include "stm32l1xx_hal.h"
 #include "VL53L0X.h"
+/* vbolbat includes */
+#include "logger.h"
+#include "esc.h"
+#include "mpu6050.h"
+#include "converters.h"
+/* system includes */
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,15 +53,27 @@ I2C_HandleTypeDef hi2c2;
 
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
-TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim4; /* used by vbolbat for esc control */
 TIM_HandleTypeDef htim5;
-TIM_HandleTypeDef htim6;
+TIM_HandleTypeDef htim6; /* used by vbolbat for esc && mpu6050 data update */
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-
+//TIM_HandleTypeDef htim_esc_interrupt;
+esc_t esc_struct;
+MPU6050_t mpu6050_struct;
+// --- Инициализация VL53L0X ---		
+statInfo_t_VL53L0X distanceStr;
+uint8_t speed_calibration_buffer[2]; //Глобальная переменная для передачи скорости в колбек таймера esc
+extern uint8_t  log_buf[LOGGING_BUF_SIZE];
+extern uint32_t log_pointer;
+//Временные переменные пока не настроена передача по BLUETOOTH
+uint8_t usart1_tx_buff[UART_TXBUF_SIZE] = {0};
+uint8_t usart1_rx_buff[UART_RXBUF_SIZE] = {0};
+uint8_t current_pwm = 0;
+uint8_t current_direction = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,11 +83,11 @@ static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART1_UART_Init(void);
-static void MX_USART2_UART_Init(void);
+//static void MX_USART2_UART_Init(void);
 static void MX_TIM4_Init(void);
 static void TIM5_Init(uint32_t timer_period_ms);
 static void MX_TIM2_Init(void);
-static void MX_TIM6_Init(void);
+static void MX_TIM6_Init(void); /* used by vbolbat for esc && mpu6050 data update */
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -110,25 +128,19 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_I2C2_Init();
-  MX_TIM3_Init();
   MX_USART1_UART_Init();
-  MX_USART2_UART_Init();
+  //MX_USART2_UART_Init();
+  MX_TIM3_Init();
   MX_TIM4_Init();
   TIM5_Init(1000); // Параметр - период таймера в мс. Для датчика FC33
   MX_TIM2_Init();
   MX_TIM6_Init();
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+
   HAL_TIM_Base_Start_IT(&htim5);
-  HAL_TIM_Base_Start_IT(&htim6);
   __HAL_RCC_SYSCFG_CLK_ENABLE();
   /* USER CODE BEGIN 2 */
 
   MeasureSpeedFC33_Init(6.5f, 1000, 1); //Диаметр колеса в см, период TIM5, кол-во прерываний за одно вращение
-
-  // --- Инициализация VL53L0X ---
-  statInfo_t_VL53L0X distanceStr;
 
   // Инициализация датчика (используем адрес по умолчанию, hi2c1)
   initVL53L0X(1, &hi2c1);
@@ -139,24 +151,42 @@ int main(void)
   setVcselPulsePeriod(VcselPeriodFinalRange, 14);
   setMeasurementTimingBudget(300 * 1000UL);
 
+  //PWM init
+  //esc_init(&esc_struct);
+  //MPU6050 init
+  MPU6050_Init(&hi2c2);
 
+  /* Вызывать после всех инициализаций: */
+  if (HAL_TIM_Base_Start_IT(&htim6) != HAL_OK)
+  {
+	  /* used by vbolbat for esc && mpu6050 data update */
+	  Error_Handler();
+  }
+  /* Неблокирующий старт юарта на прием */
+  if (HAL_UART_Receive_IT(&huart1, usart1_rx_buff, UART_RXBUF_SIZE) != HAL_OK)
+  {
+        Error_Handler();
+  }
+  //DO NOT USE REVERSE UNTIL CUSTOM DELAY FIX
   /* USER CODE END 2 */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, 1);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, 1);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
-    // Чтение дистанции в миллиметрах
-	  // uint16_t distance_mm = readRangeSingleMillimeters(&distanceStr);
-	  // distance = (double)distance_mm /10 - 3.5;
-    // ПРИМЕЧАНИЕ:
-    // Чтобы увидеть значение, добавьте переменную 'distance' в "Live Watch"
-    // в режиме отладки.
 
-  	//  	 Для FC-33
-  	//     uint32_t pulses = MeasureSpeedFC33_GetRPM();
-  	//     float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
+    // Чтение дистанции в миллиметрах					
+	    // uint16_t distance_mm = readRangeSingleMillimeters(&distanceStr);		
+	    // distance = (double)distance_mm /10 - 3.5;		
+	    // ПРИМЕЧАНИЕ:		
+	    // Чтобы увидеть значение, добавьте переменную 'distance' в "Live Watch"		
+	    // в режиме отладки.		
+	    //       Для FC-33		
+	    //     uint32_t pulses = MeasureSpeedFC33_GetRPM();		
+	    //     float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
+    /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
@@ -184,7 +214,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL8;
-  RCC_OscInitStruct.PLL.PLLDIV = RCC_PLL_DIV2;
+  RCC_OscInitStruct.PLL.PLLDIV = RCC_PLL_DIV3;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -221,7 +251,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.ClockSpeed = 400000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -255,7 +285,7 @@ static void MX_I2C2_Init(void)
 
   /* USER CODE END I2C2_Init 1 */
   hi2c2.Instance = I2C2;
-  hi2c2.Init.ClockSpeed = 100000;
+  hi2c2.Init.ClockSpeed = 400000;
   hi2c2.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c2.Init.OwnAddress1 = 0;
   hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -396,11 +426,13 @@ static void MX_TIM3_Init(void)
   * @param None
   * @retval None
   */
+
 static void MX_TIM4_Init(void)
 {
 
   /* USER CODE BEGIN TIM4_Init 0 */
-
+/* Needs 490 Hz -> T = 2040 mcs	   */
+/* used by vbolbat for esc control */
   /* USER CODE END TIM4_Init 0 */
 
   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
@@ -411,9 +443,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 31;
+  htim4.Init.Prescaler = 15; //16MHz / 16 = 1MHz
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 19999;
+  htim4.Init.Period = 2040; //1MHz / 2040 = 490 Hz
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
@@ -436,7 +468,7 @@ static void MX_TIM4_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1000;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -504,7 +536,7 @@ static void MX_TIM6_Init(void)
 {
 
   /* USER CODE BEGIN TIM6_Init 0 */
-
+  /* used by vbolbat for esc && mpu6050 data update */
   /* USER CODE END TIM6_Init 0 */
 
   TIM_MasterConfigTypeDef sMasterConfig = {0};
@@ -571,16 +603,11 @@ static void MX_USART1_UART_Init(void)
   * @param None
   * @retval None
   */
+/*
 static void MX_USART2_UART_Init(void)
 {
 
-  /* USER CODE BEGIN USART2_Init 0 */
 
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
   huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
@@ -593,11 +620,9 @@ static void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN USART2_Init 2 */
 
-  /* USER CODE END USART2_Init 2 */
 
-}
+} */
 
 /**
   * @brief GPIO Initialization Function
@@ -673,7 +698,25 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
+#ifdef __DEBUG__
+	printf("Error_Handler called!\n");
+#endif
   __disable_irq();
+#ifdef __LOGGING__
+	save_log(ERROR_HANDLER_);
+#endif
+  //Останавливаем машинку.
+  esc_struct.pwm_percent = 0;
+  esc_update_pwm(&esc_struct);
+  //упаковали uint32_t в uint8_t;
+  uint8_t  plog_pointer[4] = {(log_pointer>>24)&0xFF,(log_pointer>>16)&0xFF,(log_pointer>>8)&0xFF,(log_pointer>>0)&0xFF};
+  uint8_t  macro_size = LOGGING_BUF_SIZE;
+  uint8_t* psize = &macro_size;
+  HAL_UART_Transmit(&huart1, log_buf, LOGGING_BUF_SIZE, HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart1, plog_pointer, 1, HAL_MAX_DELAY);
+#warning "Возможно стоит выделить больше места под LOGGING_BUF_SIZE??"
+#warning "+ Тут вопросы к протоколу..."
+  HAL_UART_Transmit(&huart1, psize, 1, HAL_MAX_DELAY);
   while (1)
   {
   }

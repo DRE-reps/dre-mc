@@ -1,0 +1,2 @@
+../Core/Src/converters.c:13:7:float2str	48	static
+../Core/Src/converters.c:75:9:uint_to_str	40	static

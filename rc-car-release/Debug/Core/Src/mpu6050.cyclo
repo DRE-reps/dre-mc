@@ -1,0 +1,7 @@
+../Core/Src/mpu6050.c:40:7:MPU6050_get_acceleration	1
+../Core/Src/mpu6050.c:49:9:MPU6050_Init	2
+../Core/Src/mpu6050.c:85:6:MPU6050_Read_Accel	1
+../Core/Src/mpu6050.c:107:6:MPU6050_Read_Gyro	1
+../Core/Src/mpu6050.c:129:6:MPU6050_Read_Temp	1
+../Core/Src/mpu6050.c:142:6:MPU6050_Read_All	7
+../Core/Src/mpu6050.c:199:8:Kalman_getAngle	1

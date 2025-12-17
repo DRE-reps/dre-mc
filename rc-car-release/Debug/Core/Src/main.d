@@ -27,7 +27,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
- ../Core/Inc/measure_speed_FC33.h ../Core/Inc/VL53L0X.h
+ ../Core/Inc/debug.h ../Core/Inc/measure_speed_FC33.h \
+ ../Core/Inc/VL53L0X.h ../Core/Inc/logger.h ../Core/Inc/esc.h \
+ ../Core/Inc/mpu6050.h ../Core/Inc/main.h ../Core/Inc/converters.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:
 ../Core/Inc/stm32l1xx_hal_conf.h:
@@ -57,5 +59,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h:
+../Core/Inc/debug.h:
 ../Core/Inc/measure_speed_FC33.h:
 ../Core/Inc/VL53L0X.h:
+../Core/Inc/logger.h:
+../Core/Inc/esc.h:
+../Core/Inc/mpu6050.h:
+../Core/Inc/main.h:
+../Core/Inc/converters.h:

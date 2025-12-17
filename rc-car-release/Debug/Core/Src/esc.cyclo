@@ -1,0 +1,4 @@
+../Core/Src/esc.c:23:6:esc_init	1
+../Core/Src/esc.c:37:6:calibrate_esc	1
+../Core/Src/esc.c:66:6:esc_update_pwm	6
+../Core/Src/esc.c:153:13:CustomDelay20ms	2

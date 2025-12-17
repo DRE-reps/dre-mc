@@ -7,9 +7,7 @@
 //#include "stm32f1xx_hal.h" // Change it for your requirements.
 #include "string.h"
 #include "VL53L0X.h"
-#ifdef __LOGGING__
 #include "logger.h"
-#endif
 
 //---------------------------------------------------------
 // Local variables within this file (private)
@@ -21,14 +19,10 @@ uint16_t g_timeoutStartMs;
 uint8_t g_stopVariable; // read by init and used when starting measurement; is StopVariable field of VL53L0X_DevData_t structure in API
 uint32_t g_measTimBudUs;
 
-#define INIT_LOG 0x00
-#define SET_CONFIDENCE 0x01
-#define VLX_PULSE_PERIOD 0x02
-#define VLX_TIME_BETWEEN_MEAS 0x03
-#define VLX_READ_DATA 0x04
 #define I2C_TIMEOUT 100 // I2C timeout in ms
 #define I2C_READ 1
 #define I2C_WRITE 0
+
 I2C_HandleTypeDef VL53L0X_I2C_Handler; // I2C handler
 uint8_t msgBuffer[4];
 HAL_StatusTypeDef i2cStat;
