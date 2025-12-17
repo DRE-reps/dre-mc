@@ -22,8 +22,14 @@ extern uint32_t log_pointer;
 /*temp var's*/
 extern uint8_t current_pwm;
 extern uint8_t current_direction;
-/* VL51LOX */
-extern statInfo_t_VL53L0X distanceStr;
+
+/* VL51LOX (Dual Sensor Setup) */
+// Теперь ссылаемся на объекты, объявленные в main.c
+extern VL53L0X_Dev_t sensor1;
+extern VL53L0X_Dev_t sensor2;
+extern statInfo_t_VL53L0X distanceStr1;
+extern statInfo_t_VL53L0X distanceStr2;
+
 /*
  * CALLBACK ВЫЗЫВАЕТСЯ ТОЛЬКО ПО ЗАПОЛНЕНИЮ БУФФЕРА
  */
@@ -125,10 +131,37 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *usart)
 	}
 	else if (strncmp((const char*)usart1_rx_buff, "SEERAN", UART_RXBUF_SIZE) == 0)
 	{
-		//дальномер
-		uint16_t distance_mm = readRangeSingleMillimeters(&distanceStr);
-		float distance = (float)distance_mm /10 - 3.5;
-		set_buffer(usart1_tx_buff,float2str(distance,4),NULL,NULL,7,0,0);
+		// Чтение дальномеров
+		uint16_t dist1_raw_mm = readRangeSingleMillimeters(&sensor1, &distanceStr1);
+		uint16_t dist2_raw_mm = readRangeSingleMillimeters(&sensor2, &distanceStr2);
+
+		// Конвертация (исправлена логика с 3.5 - теперь для двух)
+		float distance1 = (float)dist1_raw_mm / 10.0f - 3.5f;
+		float distance2 = (float)dist2_raw_mm / 10.0f - 3.5f;
+
+		// Если датчики вернули ошибку (65535 или 8190/8191 обычно), можно обработать это.
+		// Здесь просто выводим как есть.
+
+		// Формируем строку вида "XX.XXXX YY.YYYY"
+		// Функция set_buffer принимает 3 строки.
+		// Используем временный буфер для склейки, если set_buffer не переписать.
+		// Но float2str возвращает указатель на статический буфер внутри себя?
+		// ОБЫЧНО float2str НЕ реентерабельна!
+		// Нужно проверить реализацию float2str. Если она использует static char buf[],
+		// то второй вызов перезапишет первый до вызова set_buffer.
+		// Предположим худшее и скопируем строки.
+
+		char d1_str[16];
+		char d2_str[16];
+
+		char* ptr1 = float2str(distance1, 4);
+		strncpy(d1_str, ptr1, 15);
+
+		char* ptr2 = float2str(distance2, 4);
+		strncpy(d2_str, ptr2, 15);
+
+		// Разделитель - пробел
+		set_buffer(usart1_tx_buff, d1_str, " ", d2_str, strlen(d1_str), 1, strlen(d2_str));
 	}
 	else
 	{
@@ -221,4 +254,3 @@ static void set_buffer(uint8_t* buff, const char* string1, const char* string2, 
 		buff[i] = *(string3 + i - size1 - size2);
 	}
 }
-

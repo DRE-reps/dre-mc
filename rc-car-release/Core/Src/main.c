@@ -39,7 +39,17 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+// Определяем пины управления питанием (XSHUT) датчиков
+// Предполагаем, что они подключены к PB1 и PB2, которые у вас уже инициализированы
+#define XSHUT_SENSOR1_PORT GPIOB
+#define XSHUT_SENSOR1_PIN  GPIO_PIN_1
 
+#define XSHUT_SENSOR2_PORT GPIOB
+#define XSHUT_SENSOR2_PIN  GPIO_PIN_2
+
+// Адреса датчиков (7-битные, сдвинутые библиотекой, или как принимает ваша либа)
+// Стандартный адрес 0x29. Второй переназначим на 0x30.
+#define SENSOR1_NEW_ADDR 0x30
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -65,7 +75,12 @@ UART_HandleTypeDef huart2;
 esc_t esc_struct;
 MPU6050_t mpu6050_struct;
 // --- Инициализация VL53L0X ---		
-statInfo_t_VL53L0X distanceStr;
+VL53L0X_Dev_t sensor1;
+VL53L0X_Dev_t sensor2;
+
+statInfo_t_VL53L0X distanceStr1;
+statInfo_t_VL53L0X distanceStr2;
+
 uint8_t speed_calibration_buffer[2]; //Глобальная переменная для передачи скорости в колбек таймера esc
 extern uint8_t  log_buf[LOGGING_BUF_SIZE];
 extern uint32_t log_pointer;
@@ -94,7 +109,8 @@ static void MX_TIM6_Init(void); /* used by vbolbat for esc && mpu6050 data updat
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-double distance = 0;
+uint16_t dist1_mm = 0;
+uint16_t dist2_mm = 0;
 /* USER CODE END 0 */
 
 /**
@@ -142,14 +158,46 @@ int main(void)
 
   MeasureSpeedFC33_Init(6.5f, 1000, 1); //Диаметр колеса в см, период TIM5, кол-во прерываний за одно вращение
 
-  // Инициализация датчика (используем адрес по умолчанию, hi2c1)
-  initVL53L0X(1, &hi2c1);
+  // --- ЛОГИКА ИНИЦИАЛИЗАЦИИ ДВУХ ДАТЧИКОВ ---
 
-  // Настройка параметров измерения (точность, тайминги)
-  setSignalRateLimit(50);
-  setVcselPulsePeriod(VcselPeriodPreRange, 10);
-  setVcselPulsePeriod(VcselPeriodFinalRange, 14);
-  setMeasurementTimingBudget(300 * 1000UL);
+  // 1. Сбрасываем оба датчика (ставим XSHUT в Low)
+  HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_RESET);
+  HAL_Delay(20);
+
+  // 2. Включаем ПЕРВЫЙ датчик
+  HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_SET);
+  HAL_Delay(20); // Ждем загрузки
+
+  // 3. Инициализируем первый датчик (он сейчас на адресе по умолчанию 0x29)
+  // ВАЖНО: Функции initVL53L0X теперь нужно передавать указатель на структуру (&sensor1)
+  if(initVL53L0X(&sensor1, 1, &hi2c1)) {
+      // 4. МЕНЯЕМ АДРЕС первого датчика
+      setAddress_VL53L0X(&sensor1, SENSOR1_NEW_ADDR);
+  } else {
+      // Ошибка инициализации датчика 1
+  }
+
+  // 5. Включаем ВТОРОЙ датчик (он проснется с адресом по умолчанию 0x29)
+   HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_SET);
+   HAL_Delay(20);
+
+   // 6. Инициализируем второй датчик (адрес менять не надо, оставим 0x29)
+   if(!initVL53L0X(&sensor2, 1, &hi2c1)) {
+       // Ошибка инициализации датчика 2
+   }
+
+   // Настройка параметров для обоих датчиков
+   setSignalRateLimit(&sensor1, 0.25); // Обратите внимание на аргумент &sensor1
+   setVcselPulsePeriod(&sensor1, VcselPeriodPreRange, 10);
+   setVcselPulsePeriod(&sensor1, VcselPeriodFinalRange, 14);
+   setMeasurementTimingBudget(&sensor1, 30000); // 30ms для скорости
+
+   setSignalRateLimit(&sensor2, 0.25);
+   setVcselPulsePeriod(&sensor2, VcselPeriodPreRange, 10);
+   setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
+   setMeasurementTimingBudget(&sensor2, 30000);
+
 
   //PWM init
   //esc_init(&esc_struct);
@@ -178,11 +226,20 @@ int main(void)
   {
 
     // Чтение дистанции в миллиметрах					
-	    // uint16_t distance_mm = readRangeSingleMillimeters(&distanceStr);		
-	    // distance = (double)distance_mm /10 - 3.5;		
-	    // ПРИМЕЧАНИЕ:		
-	    // Чтобы увидеть значение, добавьте переменную 'distance' в "Live Watch"		
-	    // в режиме отладки.		
+	//      // Чтение первого датчика
+	//      dist1_mm = readRangeSingleMillimeters(&sensor1, &distanceStr1);
+	//
+	//      // Чтение второго датчика (если используете Single Shot режим, они будут измерять последовательно)
+	//      // Для ускорения можно использовать Continuous режим, но это сложнее в настройке.
+	//      dist2_mm = readRangeSingleMillimeters(&sensor2, &distanceStr2);
+	//
+	//      // Проверка на таймаут или ошибки
+	//      if (sensor1.did_timeout) {
+	//          // Обработка ошибки датчика 1
+	//      }
+	//      if (sensor2.did_timeout) {
+	//           // Обработка ошибки датчика 2
+	//      }
 	    //       Для FC-33		
 	    //     uint32_t pulses = MeasureSpeedFC33_GetRPM();		
 	    //     float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
