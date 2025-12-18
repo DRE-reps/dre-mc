@@ -1,0 +1,15 @@
+#include "main.h"
+
+#ifdef __LOGGING__
+#include "logger.h"
+#endif
+#define SteeringServoInit 0xfe
+#define SteeringServoSetAngle 0xff
+
+//Функция инициализации
+void SteeringServo_Init();
+
+//Функция установки угла поворота колёс. 90 градусов - положение без поворота(0 градусов),
+//меньше 90 градусов - поворот влево, больше 90 градусов - поворот вправо.
+//В функции поставлено ограничение на поворот в пределах [70, 110], т.е. максимум 20 градусов влево и 20 вправо
+void SteeringServo_SetAngle(uint16_t angle);

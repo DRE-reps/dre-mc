@@ -152,6 +152,9 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM6_Init();
 
+  SteeringServo_Init(); // Инициализация для сервопривода рулевого управления
+  SteeringServo_SetAngle(90); // Выставление угла поворота колёс нейтральное положение (0 градусов)
+
   HAL_TIM_Base_Start_IT(&htim5);
   __HAL_RCC_SYSCFG_CLK_ENABLE();
   /* USER CODE BEGIN 2 */
@@ -405,7 +408,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1000;
+  sConfigOC.Pulse = 1410;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
