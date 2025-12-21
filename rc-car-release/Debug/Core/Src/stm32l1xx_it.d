@@ -27,7 +27,7 @@ Core/Src/stm32l1xx_it.o: ../Core/Src/stm32l1xx_it.c ../Core/Inc/main.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
- ../Core/Inc/debug.h ../Core/Inc/stm32l1xx_it.h ../Core/Inc/esc.h
+ ../Core/Inc/stm32l1xx_it.h ../Core/Inc/esc.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:
 ../Core/Inc/stm32l1xx_hal_conf.h:
@@ -57,6 +57,5 @@ Core/Src/stm32l1xx_it.o: ../Core/Src/stm32l1xx_it.c ../Core/Inc/main.h \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h:
-../Core/Inc/debug.h:
 ../Core/Inc/stm32l1xx_it.h:
 ../Core/Inc/esc.h:

@@ -1,0 +1,2 @@
+../Core/Src/steering_servo.c:10:6:SteeringServo_Init	24	static
+../Core/Src/steering_servo.c:26:6:SteeringServo_SetAngle	24	static

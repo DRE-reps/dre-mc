@@ -8,9 +8,9 @@
 #define MAX_PWM    2000//mcs machine goes forward
 
 extern TIM_HandleTypeDef htim4;
+extern void Error_Handler(void);
 /*private funcs*/
 static void CustomDelay20ms(void);
-extern void Error_Handler(void);
 
 /*
  * Алгоритм работы:
@@ -75,21 +75,6 @@ void esc_update_pwm(esc_t* pesc_t)
 	static unsigned int temp_var = 0;
 	if (pesc_t->direction) //forward
 	{
-		//if (pesc_t->current_speed < 0.5)
-		//{
-		////плавный старт
-		//	if (pesc_t->pwm_percent > 5)
-		//	{
-		//		temp_var = MIDDLE_PWM + 10; //коррекция будет проведена на основе эксперимента
-		//	}
-		//	else
-		//	{
-		//		temp_var = MIDDLE_PWM;
-		//	}
-		//}
-		//else
-		//{
-		//обычное ускорение
 			if (pesc_t->pwm_percent > 0)
 			{
 				temp_var = MIDDLE_PWM + pesc_t->pwm_percent * 5;
@@ -103,21 +88,7 @@ void esc_update_pwm(esc_t* pesc_t)
 	}
 	else                   //backward
 	{
-		//if (pesc_t->current_speed < 0.5)
-		//{
-		////плавный старт
-		//	if (pesc_t->pwm_percent > 5)
-		//	{
-		//		temp_var = MIDDLE_PWM - 10; //коррекция будет проведена на основе эксперимента
-		//	}
-		//	else
-		//	{
-		//		temp_var = MIDDLE_PWM;
-		//	}
-		//}
-		//else
-		//{
-		//обычное ускорение
+
 			if (pesc_t->pwm_percent > 0)
 			{
 				if (temp_var == MIDDLE_PWM)
@@ -125,12 +96,8 @@ void esc_update_pwm(esc_t* pesc_t)
 					//необходимо сделать кратковременное переключение для "выбора" заднего хода
 				{
 					__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,MIN_PWM);
-				//	HAL_Delay(20); Использует прерывание более низкого приоритета.
-					#warning "Может ли здесь возникнуть прерывание... И мы получим полный обратный ход"
-					#warning "working only for 16MHz"
 					CustomDelay20ms(); //холостой цикл
 					__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,MIDDLE_PWM);
-					#warning "working only for 16MHz"
 					CustomDelay20ms();
 					//HAL_Delay(20);
 				}
@@ -149,11 +116,11 @@ void esc_update_pwm(esc_t* pesc_t)
 #endif
 }
 
-#warning "working only for 16MHz"
+//Custom 32 MHz delay
 static void CustomDelay20ms(void)
 {
 	volatile uint32_t var = 0;
-	for (;var < 320000/10; var++)
+	for (;var < 320000*2/10; var++)
 	{
 		;
 	}

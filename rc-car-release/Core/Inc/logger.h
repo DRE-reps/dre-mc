@@ -1,9 +1,9 @@
 #pragma once
 typedef unsigned char uint8_t;
+#include "main.h"
 //глобальные переменные в logger.c
 void save_log(uint8_t status);
 
-#define __LOGGING__
 #ifdef __LOGGING__
 #define LOGGING_BUF_SIZE 128U
 #define GET_KALMAN_SPEED 0x00

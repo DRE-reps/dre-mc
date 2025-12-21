@@ -1,4 +1,4 @@
 ../Core/Src/esc.c:23:6:esc_init	16	static
 ../Core/Src/esc.c:37:6:calibrate_esc	8	static
 ../Core/Src/esc.c:66:6:esc_update_pwm	16	static
-../Core/Src/esc.c:153:13:CustomDelay20ms	16	static
+../Core/Src/esc.c:120:13:CustomDelay20ms	16	static

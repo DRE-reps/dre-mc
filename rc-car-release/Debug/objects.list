@@ -6,6 +6,7 @@
 "./Core/Src/main.o"
 "./Core/Src/measure_speed_FC33.o"
 "./Core/Src/mpu6050.o"
+"./Core/Src/steering_servo.o"
 "./Core/Src/stm32l1xx_hal_msp.o"
 "./Core/Src/stm32l1xx_it.o"
 "./Core/Src/syscalls.o"

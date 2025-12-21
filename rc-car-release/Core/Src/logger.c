@@ -14,3 +14,8 @@ void save_log(uint8_t status)
 	*(log_buf + log_pointer) = status;
 	log_pointer++;
 }
+
+void send_log(void)
+{
+	/*EMPTY now*/
+}

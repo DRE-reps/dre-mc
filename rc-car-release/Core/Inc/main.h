@@ -61,15 +61,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-#define UART_TXBUF_SIZE 10U
-#define UART_RXBUF_SIZE 6U
 //коды возврата UART
-#define UART_COMMAND_ERR 69   //ASCII code of E
-#define UART_COMMAND_OK  79   //ASCII code of O
-#define __DEBUG__
+//#define __DEBUG__
 #ifdef __DEBUG__
 #include "debug.h" //make printf works :O
 #endif
+#define __LOGGING__
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

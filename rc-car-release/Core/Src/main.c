@@ -23,11 +23,13 @@
 /* USER CODE BEGIN Includes */
 #include "measure_speed_FC33.h"
 #include "VL53L0X.h"
+#include "steering_servo.h"
 /* vbolbat includes */
 #include "logger.h"
 #include "esc.h"
 #include "mpu6050.h"
 #include "converters.h"
+#include "usart1_callbacks.h"
 /* system includes */
 #include "string.h"
 /* USER CODE END Includes */
@@ -84,9 +86,8 @@ statInfo_t_VL53L0X distanceStr2;
 uint8_t speed_calibration_buffer[2]; //Глобальная переменная для передачи скорости в колбек таймера esc
 extern uint8_t  log_buf[LOGGING_BUF_SIZE];
 extern uint32_t log_pointer;
-//Временные переменные пока не настроена передача по BLUETOOTH
-uint8_t usart1_tx_buff[UART_TXBUF_SIZE] = {0};
-uint8_t usart1_rx_buff[UART_RXBUF_SIZE] = {0};
+extern uint8_t rx_byte; /*for usart1 */
+extern Command_State_t cmd_state;
 uint8_t current_pwm = 0;
 uint8_t current_direction = 1;
 /* USER CODE END PV */
@@ -151,7 +152,8 @@ int main(void)
   TIM5_Init(1000); // Параметр - период таймера в мс. Для датчика FC33
   MX_TIM2_Init();
   MX_TIM6_Init();
-
+//#define TEST
+#ifndef TEST
   SteeringServo_Init(); // Инициализация для сервопривода рулевого управления
   SteeringServo_SetAngle(90); // Выставление угла поворота колёс нейтральное положение (0 градусов)
 
@@ -201,11 +203,12 @@ int main(void)
    setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
    setMeasurementTimingBudget(&sensor2, 30000);
 
+   //MPU6050 init
+   MPU6050_Init(&hi2c2);
+#endif
+  //ESC init
+  esc_init(&esc_struct);
 
-  //PWM init
-  //esc_init(&esc_struct);
-  //MPU6050 init
-  MPU6050_Init(&hi2c2);
 
   /* Вызывать после всех инициализаций: */
   if (HAL_TIM_Base_Start_IT(&htim6) != HAL_OK)
@@ -214,7 +217,7 @@ int main(void)
 	  Error_Handler();
   }
   /* Неблокирующий старт юарта на прием */
-  if (HAL_UART_Receive_IT(&huart1, usart1_rx_buff, UART_RXBUF_SIZE) != HAL_OK)
+  if (HAL_UART_Receive_IT(&huart1, &rx_byte, 1) != HAL_OK)
   {
         Error_Handler();
   }
@@ -227,6 +230,33 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /* vbolbat: обработка флагов с парсера */
+      if (cmd_state.set_angle_flag) {
+          // Servo_SetAngle(cmd_state.wheel_angle);
+          cmd_state.set_angle_flag = 0;
+      }
+      if (cmd_state.set_pwm_flag) {
+          esc_struct.pwm_percent = cmd_state.esc_pwm;
+          //esc_update_pwm(&esc_struct);
+          cmd_state.set_pwm_flag = 0;
+      }
+      if (cmd_state.set_direction_flag) {
+          esc_struct.direction = cmd_state.direction;
+          //должна быть введена защита от переключения "на полной скорости"?
+          //esc_update_pwm(&esc_struct);
+          cmd_state.set_direction_flag = 0;
+      }
+      if (cmd_state.get_telemetry_flag) {
+          Send_Telemetry();
+          cmd_state.get_telemetry_flag = 0;
+      }
+      if (cmd_state.read_log_flag) {
+          // Send_Log(); // Нужно создать эту функцию
+          cmd_state.read_log_flag = 0;
+      }
+      if (cmd_state.start_autopark_flag) {
+          // Логика автопарковки
+      }
 
     // Чтение дистанции в миллиметрах					
 	//      // Чтение первого датчика
@@ -503,7 +533,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 15; //16MHz / 16 = 1MHz
+  htim4.Init.Prescaler = 31; //32MHz / 32 = 1MHz
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 2040; //1MHz / 2040 = 490 Hz
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -769,16 +799,17 @@ void Error_Handler(void)
   esc_struct.pwm_percent = 0;
   esc_update_pwm(&esc_struct);
   //упаковали uint32_t в uint8_t;
-  uint8_t  plog_pointer[4] = {(log_pointer>>24)&0xFF,(log_pointer>>16)&0xFF,(log_pointer>>8)&0xFF,(log_pointer>>0)&0xFF};
-  uint8_t  macro_size = LOGGING_BUF_SIZE;
-  uint8_t* psize = &macro_size;
-  HAL_UART_Transmit(&huart1, log_buf, LOGGING_BUF_SIZE, HAL_MAX_DELAY);
-  HAL_UART_Transmit(&huart1, plog_pointer, 1, HAL_MAX_DELAY);
+  //uint8_t  plog_pointer[4] = {(log_pointer>>24)&0xFF,(log_pointer>>16)&0xFF,(log_pointer>>8)&0xFF,(log_pointer>>0)&0xFF};
+  //uint8_t  macro_size = LOGGING_BUF_SIZE;
+  //uint8_t* psize = &macro_size;
+  //HAL_UART_Transmit(&huart1, log_buf, LOGGING_BUF_SIZE, HAL_MAX_DELAY);
+  //HAL_UART_Transmit(&huart1, plog_pointer, 1, HAL_MAX_DELAY);
 #warning "Возможно стоит выделить больше места под LOGGING_BUF_SIZE??"
 #warning "+ Тут вопросы к протоколу..."
-  HAL_UART_Transmit(&huart1, psize, 1, HAL_MAX_DELAY);
+  //HAL_UART_Transmit(&huart1, psize, 1, HAL_MAX_DELAY);
   while (1)
   {
+#warning "Вставить логику отправки логов по запросу с блокирующим приемом и отправкой (без прерываний)"
   }
   /* USER CODE END Error_Handler_Debug */
 }
