@@ -236,14 +236,12 @@ int main(void)
           cmd_state.set_angle_flag = 0;
       }
       if (cmd_state.set_pwm_flag) {
-          esc_struct.pwm_percent = cmd_state.esc_pwm;
-          //esc_update_pwm(&esc_struct);
+          speed_calibration_buffer[0] = cmd_state.esc_pwm;
           cmd_state.set_pwm_flag = 0;
       }
       if (cmd_state.set_direction_flag) {
-          esc_struct.direction = cmd_state.direction;
           //должна быть введена защита от переключения "на полной скорости"?
-          //esc_update_pwm(&esc_struct);
+          speed_calibration_buffer[1] = cmd_state.direction;
           cmd_state.set_direction_flag = 0;
       }
       if (cmd_state.get_telemetry_flag) {

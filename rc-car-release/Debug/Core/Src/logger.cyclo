@@ -1,1 +1,2 @@
 ../Core/Src/logger.c:7:6:save_log	2
+../Core/Src/logger.c:18:6:send_log	1

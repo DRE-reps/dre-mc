@@ -1,4 +1,5 @@
-../Core/Src/usart1_callbacks.c:40:6:HAL_UART_RxCpltCallback	18
-../Core/Src/usart1_callbacks.c:193:6:HAL_UART_TxCpltCallback	2
-../Core/Src/usart1_callbacks.c:208:6:HAL_UART_ErrorCallback	3
-../Core/Src/usart1_callbacks.c:226:13:set_buffer	6
+../Core/Src/usart1_callbacks.c:18:6:HAL_UART_RxCpltCallback	15
+../Core/Src/usart1_callbacks.c:76:6:HAL_UART_TxCpltCallback	2
+../Core/Src/usart1_callbacks.c:91:6:HAL_UART_ErrorCallback	3
+../Core/Src/usart1_callbacks.c:108:6:Send_Telemetry	1
+../Core/Src/usart1_callbacks.c:127:16:Compute_CRC8	4
