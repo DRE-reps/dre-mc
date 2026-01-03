@@ -61,7 +61,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-//коды возврата UART
+//#define __DISABLE_AUTOBREAK__ //deactivates tim6 callback logic
+
 //#define __DEBUG__
 #ifdef __DEBUG__
 #include "debug.h" //make printf works :O

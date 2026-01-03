@@ -4,11 +4,14 @@
 #include "logger.h"
 #include "usart1_callbacks.h"
 
-static uint8_t Compute_CRC8(uint8_t *data, uint16_t length);
 Command_State_t cmd_state = {0}; /* flags struct */
+/* vars */
+uint8_t sync_count = 0;
 /* extern vars */
 extern esc_t esc_struct;
 extern UART_HandleTypeDef huart1;
+extern uint8_t speed_calibration_buffer[2];
+extern logged_errors logged_errors_obj;
 /* private vars */
 uint8_t rx_byte; // Принимаем по одному байту
 static uint8_t packet[256]; // Буфер для сборки пакета
@@ -22,49 +25,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     	save_log(HAL_UART_RXCPLTCALLBACK_);
 	#endif
 
-        packet[packet_idx++] = rx_byte;
-
-        if (packet_idx == 1 && packet[0] != 0xAC) packet_idx = 0;
-        else if (packet_idx == 2 && packet[1] != 0x53) packet_idx = 0;
-        else if (packet_idx >= 3) {
-            uint8_t len = packet[2];
-            if (packet_idx == (len + 3)) {
-                // Проверка CRC8
-                if (Compute_CRC8(&packet[2], len) == packet[packet_idx - 1]) {
-
-                    uint8_t cmd_code = packet[5]; // Позиция CODE
-                    uint8_t payload  = packet[6]; // Первый байт DATA
-
-                    switch (cmd_code) {
-						case 0x02: // CODE: Установка угла
-							// Приводим payload к знаковому типу, чтобы 0xFF воспринималось как -1
-							cmd_state.wheel_angle = (int8_t)packet[6];
-							cmd_state.set_angle_flag = 1;
-							break;
-                        case 0x03: // PWM
-                            cmd_state.esc_pwm = payload;
-                            cmd_state.set_pwm_flag = 1;
-                            break;
-                        case 0x01: // Направление
-                            cmd_state.direction = payload;
-                            cmd_state.set_direction_flag = 1;
-                            break;
-                        case 0x15: // Запрос телеметрии
-                            cmd_state.get_telemetry_flag = 1;
-                            break;
-                        case 0x20: // Прочитать лог
-                            cmd_state.read_log_flag = 1;
-                            break;
-                        case 0x30: // Автопарковка
-                            cmd_state.start_autopark_flag = (packet[6] > 0); // 1 если байт > 0
-                            break;
-                        default:
-                        	break;
-                    }
-                }
-                packet_idx = 0;
-            }
-        }
+    	parse_uart_message();
         // USART1 завершил прием данных
     	#ifdef __DEBUG__
         	printf("RX END\n");
@@ -97,7 +58,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *usart) {
         printf("UART_ERROR!!\r\n");
 #endif
         //В случае ошибки прием возобновляется.
-#warning "Необходимо какое нибудь исключение для этого случая. Юзер должен знать об этом."
+        logged_errors_obj.HAL_UART_ErrorCallback_errors++;
     	if (HAL_UART_Receive_IT(usart, &rx_byte, 1) != HAL_OK)
     	{
     		Error_Handler();
@@ -116,7 +77,7 @@ void Send_Telemetry(void) {
     tx_pck[6] = (uint8_t)esc_struct.current_speed;
     tx_pck[7] = (uint8_t)esc_struct.pwm_percent; // Временно вместо RPM
 
-    // Считаем CRC от 5 байт (начиная с LEN)
+    // Считаем CRC от 6 байт (начиная с LEN)
     uint8_t crc = Compute_CRC8(&tx_pck[2], 6); // LEN + данные
 
     HAL_UART_Transmit(&huart1, tx_pck, 8, 10);
@@ -124,7 +85,7 @@ void Send_Telemetry(void) {
 }
 
 
-static uint8_t Compute_CRC8(uint8_t *data, uint16_t length)
+uint8_t Compute_CRC8(uint8_t *data, uint16_t length)
 {
     uint8_t crc = 0x00;
     for (uint16_t i = 0; i < length; i++) {
@@ -140,6 +101,89 @@ static uint8_t Compute_CRC8(uint8_t *data, uint16_t length)
     return crc;
 }
 
+void process_parser_flags(void)
+{
+//vbolbat: no logging needed, func uses in while(1) cycle...
+    if (cmd_state.set_angle_flag) {
+        // Servo_SetAngle(cmd_state.wheel_angle);
+        cmd_state.set_angle_flag = 0;
+    }
+    if (cmd_state.set_pwm_flag) {
+        speed_calibration_buffer[0] = cmd_state.esc_pwm;
+        cmd_state.set_pwm_flag = 0;
+    }
+    if (cmd_state.set_direction_flag) {
+        //должна быть введена защита от переключения "на полной скорости"?
+        speed_calibration_buffer[1] = cmd_state.direction;
+        cmd_state.set_direction_flag = 0;
+    }
+    if (cmd_state.get_telemetry_flag) {
+        Send_Telemetry();
+        sync_count = 0;
+        cmd_state.get_telemetry_flag = 0;
+    }
+    if (cmd_state.read_log_flag) {
+        send_log();
+        cmd_state.read_log_flag = 0;
+    }
+    if (cmd_state.read_errors_stat_flag) {
+        // Ex Логика автопарковки (Denied)
+    	//cmd_state.start_autopark_flag = 0;
+    	// Логика чтения статистики не критических ошибок.
+    	logger_send_errors_stat(); //not working
+    	cmd_state.read_errors_stat_flag = 0;
+    }
+}
 
+void parse_uart_message(void)
+{
+#ifdef __LOGGING__
+	save_log(PARSE_UART__);
+#endif
 
+    packet[packet_idx++] = rx_byte;
+
+    if (packet_idx == 1 && packet[0] != 0xAC) packet_idx = 0;
+    else if (packet_idx == 2 && packet[1] != 0x53) packet_idx = 0;
+    else if (packet_idx >= 3) {
+        uint8_t len = packet[2];
+        if (packet_idx == (len + 3)) {
+            // Проверка CRC8
+            if (Compute_CRC8(&packet[2], len) == packet[packet_idx - 1]) {
+
+                uint8_t cmd_code = packet[5]; // Позиция CODE
+                uint8_t payload  = packet[6]; // Первый байт DATA
+
+                switch (cmd_code) {
+					case 0x02: // CODE: Установка угла
+						// Приводим payload к знаковому типу, чтобы 0xFF воспринималось как -1
+						cmd_state.wheel_angle = (int8_t)packet[6];
+						cmd_state.set_angle_flag = 1;
+						break;
+                    case 0x03: // PWM
+                        cmd_state.esc_pwm = payload;
+                        cmd_state.set_pwm_flag = 1;
+                        break;
+                    case 0x01: // Направление
+                        cmd_state.direction = payload;
+                        cmd_state.set_direction_flag = 1;
+                        break;
+                    case 0x15: // Запрос телеметрии
+                        cmd_state.get_telemetry_flag = 1;
+                        break;
+                    case 0x20: // Прочитать лог
+                        cmd_state.read_log_flag = 1;
+                        break;
+                    case 0x30: // Ex Автопарковка -> Send errors stat
+                        //cmd_state.start_autopark_flag = (packet[6] > 0); // 1 если байт > 0
+                    	cmd_state.read_errors_stat_flag = 1;
+                        break;
+                    default:
+                    	break;
+                }
+            }
+            packet_idx = 0;
+        }
+    }
+}
 

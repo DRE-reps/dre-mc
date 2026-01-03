@@ -47,7 +47,6 @@
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
-extern float get_kalman_speed();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -61,8 +60,9 @@ extern TIM_HandleTypeDef htim6;
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
-extern esc_t esc_struct;
+extern esc_t   esc_struct;
 extern uint8_t speed_calibration_buffer[2];
+extern uint8_t sync_count;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -251,18 +251,34 @@ void USART2_IRQHandler(void)
 void TIM6_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM6_IRQn 0 */
-	//вся эта шляпа с таймером нужна для обнуления параметров, если команд давно не поступало.
-	  //необходимо подстроить период таймера для непрерывности движения в штатном случае...
-	  //обновляем значения
+	  //vbolbat:
+	  //При отсутствии запроса телеметрии в течении 0.8 сек:
+	  //выключаем PWM
+	  //Каллбек вызывается раз в 0.2 сек
+	  //Обновляем значения
+#ifndef __DISABLE_AUTOBREAK__
+	if (sync_count >= 3) /* checks on 4th call */
+	{
+		/* The connection is lost */
+		//Возврат к дефолтным значениям
+		sync_count = 3; /*Исключаем переполнение*/
+		speed_calibration_buffer[0] = 0;
+		speed_calibration_buffer[1] = 1;
+	}
+	else
+	{
+		esc_struct.pwm_percent = speed_calibration_buffer[0];
+		esc_struct.direction = speed_calibration_buffer[1];
+	}
+	  /*применяем измененные значения*/
+	  esc_update_pwm(&esc_struct);
+	  sync_count++;
+#else
+	  /* Всегда обновлять значения */
 	  esc_struct.pwm_percent = speed_calibration_buffer[0];
 	  esc_struct.direction = speed_calibration_buffer[1];
 	  esc_update_pwm(&esc_struct);
-	  //Возврат к дефолтным значениям
-	  //требуется уточнение...
-	  //speed_calibration_buffer[0] = 0;
-	  //speed_calibration_buffer[1] = 1;
-	  //в случае, когда новых команд не поступило, значения speed_calibration_buffer не будут обновлены -> машинка остановится.
-	  //esc_struct.current_speed = get_kalman_speed();
+#endif
   /* USER CODE END TIM6_IRQn 0 */
   HAL_TIM_IRQHandler(&htim6);
   /* USER CODE BEGIN TIM6_IRQn 1 */

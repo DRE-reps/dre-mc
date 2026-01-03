@@ -99,7 +99,6 @@ void esc_update_pwm(esc_t* pesc_t)
 					CustomDelay20ms(); //холостой цикл
 					__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,MIDDLE_PWM);
 					CustomDelay20ms();
-					//HAL_Delay(20);
 				}
 				temp_var = MIDDLE_PWM - (pesc_t->pwm_percent * 5);
 			}
@@ -119,6 +118,9 @@ void esc_update_pwm(esc_t* pesc_t)
 //Custom 32 MHz delay
 static void CustomDelay20ms(void)
 {
+#ifdef __LOGGING__
+	save_log(CUSTOM_DELAY_20MS);
+#endif
 	volatile uint32_t var = 0;
 	for (;var < 320000*2/10; var++)
 	{

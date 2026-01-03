@@ -1,11 +1,20 @@
 #pragma once
 typedef unsigned char uint8_t;
 #include "main.h"
-//глобальные переменные в logger.c
+//vars
+/* update logger_init() && logger_send_errors_stat() func when touching this */
+typedef struct
+{
+	uint32_t HAL_UART_ErrorCallback_errors;
+} logged_errors;
+//funcs
 void save_log(uint8_t status);
+void send_log(void);
+void logger_init(void);
+void logger_send_errors_stat(void);
 
 #ifdef __LOGGING__
-#define LOGGING_BUF_SIZE 128U
+#define LOGGING_BUF_SIZE 128U //vbolbat: keep it less then 200 for safety cause of send_log() realization
 #define GET_KALMAN_SPEED 0x00
 #define SET_BUFFER 0x01
 #define FLOAT2STR 0x02
@@ -27,6 +36,8 @@ void save_log(uint8_t status);
 #define VLX_READ_DATA 0x11
 //Alexander-Chv measure_speed_FC33.c macro:
 
-
+//vbolbat again:
+#define PARSE_UART__      0x12
+#define CUSTOM_DELAY_20MS 0x13
 
 #endif

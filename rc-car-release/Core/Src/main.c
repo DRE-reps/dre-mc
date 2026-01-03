@@ -86,8 +86,8 @@ statInfo_t_VL53L0X distanceStr2;
 uint8_t speed_calibration_buffer[2]; //Глобальная переменная для передачи скорости в колбек таймера esc
 extern uint8_t  log_buf[LOGGING_BUF_SIZE];
 extern uint32_t log_pointer;
-extern uint8_t rx_byte; /*for usart1 */
-extern Command_State_t cmd_state;
+extern uint8_t rx_byte; /* for usart1 */
+extern Command_State_t cmd_state; /* uart parser flags */
 uint8_t current_pwm = 0;
 uint8_t current_direction = 1;
 /* USER CODE END PV */
@@ -203,25 +203,26 @@ int main(void)
    setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
    setMeasurementTimingBudget(&sensor2, 30000);
 
-   //MPU6050 init
+   //vbolbat: MPU6050 init
    MPU6050_Init(&hi2c2);
 #endif
-  //ESC init
+  //vbolbat: ESC init
   esc_init(&esc_struct);
 
+  //vbolbat: init the logger
+  logger_init();
 
-  /* Вызывать после всех инициализаций: */
+  /* vbolbat: Вызывать после всех инициализаций: */
   if (HAL_TIM_Base_Start_IT(&htim6) != HAL_OK)
   {
 	  /* used by vbolbat for esc && mpu6050 data update */
 	  Error_Handler();
   }
-  /* Неблокирующий старт юарта на прием */
+  /* vbolbat: Неблокирующий старт юарта на прием */
   if (HAL_UART_Receive_IT(&huart1, &rx_byte, 1) != HAL_OK)
   {
         Error_Handler();
   }
-  //DO NOT USE REVERSE UNTIL CUSTOM DELAY FIX
   /* USER CODE END 2 */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, 1);
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, 1);
@@ -230,31 +231,28 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /*STM EMULATE?*/
 	  /* vbolbat: обработка флагов с парсера */
-      if (cmd_state.set_angle_flag) {
-          // Servo_SetAngle(cmd_state.wheel_angle);
-          cmd_state.set_angle_flag = 0;
-      }
-      if (cmd_state.set_pwm_flag) {
-          speed_calibration_buffer[0] = cmd_state.esc_pwm;
-          cmd_state.set_pwm_flag = 0;
-      }
-      if (cmd_state.set_direction_flag) {
-          //должна быть введена защита от переключения "на полной скорости"?
-          speed_calibration_buffer[1] = cmd_state.direction;
-          cmd_state.set_direction_flag = 0;
-      }
-      if (cmd_state.get_telemetry_flag) {
-          Send_Telemetry();
-          cmd_state.get_telemetry_flag = 0;
-      }
-      if (cmd_state.read_log_flag) {
-          // Send_Log(); // Нужно создать эту функцию
-          cmd_state.read_log_flag = 0;
-      }
-      if (cmd_state.start_autopark_flag) {
-          // Логика автопарковки
-      }
+	  process_parser_flags();
+	  /* vbolbat: за sync с управляющим устройством считаю
+	   * запрос телеметрии. В случае отстутствия синхронизации в течении
+	   * 0.8 секунды машинка сбрасывает скорость. См калбек TIM6.
+	   * Функционал в отладочных целях возможно отключить объявив макрос
+	   * __DISABLE_AUTOBREAK__ в main.h. За расчет sync-ов отвечает переменная
+	   * sync_count, объявленная в uart1_callback */
+
+	  /* INTEGRATION TEST LOG
+	   * ESC           x
+	   * PARSER        x
+	   * ERROR HANDLER x
+	   * SERVO         x
+	   * RANGE SENSORS x
+	   * LOGGER        x
+	   * TIM6ithandler x
+	   * MPU (NEED STATIC FILTER) x
+	   * REVIEV TIMER PERIOD      x
+	   * REVIEV UART1 BAUD        x
+	   */
 
     // Чтение дистанции в миллиметрах					
 	//      // Чтение первого датчика
@@ -625,6 +623,7 @@ static void MX_TIM6_Init(void)
 
   /* USER CODE BEGIN TIM6_Init 0 */
   /* used by vbolbat for esc && mpu6050 data update */
+  /* updates 5 times per sec */
   /* USER CODE END TIM6_Init 0 */
 
   TIM_MasterConfigTypeDef sMasterConfig = {0};
@@ -635,7 +634,7 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 31999;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 999;
+  htim6.Init.Period = 199;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -786,7 +785,13 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-#ifdef __DEBUG__
+  /*
+   * vbolbat: Ошибки, игнорируемые Error_Handler должны использовать
+   * структуру logged_errors (logger.h) для отслеживания их количества.
+   * Список:
+   * 1) HAL_UART_ErrorCallback()
+   */
+	#ifdef __DEBUG__
 	printf("Error_Handler called!\n");
 #endif
   __disable_irq();
@@ -796,18 +801,21 @@ void Error_Handler(void)
   //Останавливаем машинку.
   esc_struct.pwm_percent = 0;
   esc_update_pwm(&esc_struct);
-  //упаковали uint32_t в uint8_t;
-  //uint8_t  plog_pointer[4] = {(log_pointer>>24)&0xFF,(log_pointer>>16)&0xFF,(log_pointer>>8)&0xFF,(log_pointer>>0)&0xFF};
-  //uint8_t  macro_size = LOGGING_BUF_SIZE;
-  //uint8_t* psize = &macro_size;
-  //HAL_UART_Transmit(&huart1, log_buf, LOGGING_BUF_SIZE, HAL_MAX_DELAY);
-  //HAL_UART_Transmit(&huart1, plog_pointer, 1, HAL_MAX_DELAY);
-#warning "Возможно стоит выделить больше места под LOGGING_BUF_SIZE??"
-#warning "+ Тут вопросы к протоколу..."
-  //HAL_UART_Transmit(&huart1, psize, 1, HAL_MAX_DELAY);
   while (1)
   {
-#warning "Вставить логику отправки логов по запросу с блокирующим приемом и отправкой (без прерываний)"
+	  //vbolbat: можно запросить состояние машинки. Управление невозможно
+	  //Блокирующее ожидание приема команды
+	  HAL_UART_Receive(&huart1, &rx_byte, 1, HAL_MAX_DELAY);
+	  parse_uart_message();
+	  //vbolbat: ограниченная версия парсера
+	  if (cmd_state.get_telemetry_flag) {
+		  Send_Telemetry();
+	      cmd_state.get_telemetry_flag = 0;
+	  }
+	  if (cmd_state.read_log_flag) {
+		  send_log();
+	      cmd_state.read_log_flag = 0;
+	  }
   }
   /* USER CODE END Error_Handler_Debug */
 }
