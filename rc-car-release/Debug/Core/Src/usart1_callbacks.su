@@ -1,7 +1,7 @@
-../Core/Src/usart1_callbacks.c:21:6:HAL_UART_RxCpltCallback	16	static
-../Core/Src/usart1_callbacks.c:37:6:HAL_UART_TxCpltCallback	16	static
-../Core/Src/usart1_callbacks.c:52:6:HAL_UART_ErrorCallback	16	static
-../Core/Src/usart1_callbacks.c:69:6:Send_Telemetry	24	static
-../Core/Src/usart1_callbacks.c:88:9:Compute_CRC8	24	static
-../Core/Src/usart1_callbacks.c:104:6:process_parser_flags	8	static
-../Core/Src/usart1_callbacks.c:138:6:parse_uart_message	16	static
+../Core/Src/usart1_callbacks.c:32:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/usart1_callbacks.c:48:6:HAL_UART_TxCpltCallback	16	static
+../Core/Src/usart1_callbacks.c:63:6:HAL_UART_ErrorCallback	16	static
+../Core/Src/usart1_callbacks.c:80:6:Send_Telemetry	120	static
+../Core/Src/usart1_callbacks.c:148:9:Compute_CRC8	24	static
+../Core/Src/usart1_callbacks.c:164:6:process_parser_flags	8	static
+../Core/Src/usart1_callbacks.c:195:6:parse_uart_message	16	static

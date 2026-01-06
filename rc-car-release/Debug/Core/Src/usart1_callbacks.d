@@ -27,8 +27,10 @@ Core/Src/usart1_callbacks.o: ../Core/Src/usart1_callbacks.c \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
- ../Core/Inc/esc.h ../Core/Inc/logger.h ../Core/Inc/main.h \
- ../Core/Inc/usart1_callbacks.h
+ ../Core/Inc/VL53L0X.h ../Core/Inc/steering_servo.h ../Core/Inc/main.h \
+ ../Core/Inc/logger.h ../Core/Inc/measure_speed_FC33.h \
+ ../Core/Inc/usart1_callbacks.h ../Core/Inc/esc.h \
+ ../Core/Inc/converters.h ../Core/Inc/mpu6050.h
 ../Core/Inc/main.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:
 ../Core/Inc/stm32l1xx_hal_conf.h:
@@ -58,7 +60,12 @@ Core/Src/usart1_callbacks.o: ../Core/Src/usart1_callbacks.c \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h:
-../Core/Inc/esc.h:
-../Core/Inc/logger.h:
+../Core/Inc/VL53L0X.h:
+../Core/Inc/steering_servo.h:
 ../Core/Inc/main.h:
+../Core/Inc/logger.h:
+../Core/Inc/measure_speed_FC33.h:
 ../Core/Inc/usart1_callbacks.h:
+../Core/Inc/esc.h:
+../Core/Inc/converters.h:
+../Core/Inc/mpu6050.h:

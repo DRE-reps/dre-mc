@@ -35,7 +35,8 @@ void logger_send_errors_stat(void);
 #define VLX_TIME_BETWEEN_MEAS 0x10
 #define VLX_READ_DATA 0x11
 //Alexander-Chv measure_speed_FC33.c macro:
-
+#define SteeringServoInit 0xfe
+#define SteeringServoSetAngle 0xff
 //vbolbat again:
 #define PARSE_UART__      0x12
 #define CUSTOM_DELAY_20MS 0x13

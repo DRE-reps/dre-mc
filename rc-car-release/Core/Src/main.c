@@ -231,7 +231,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  /*STM EMULATE?*/
 	  /* vbolbat: обработка флагов с парсера */
 	  process_parser_flags();
 	  /* vbolbat: за sync с управляющим устройством считаю

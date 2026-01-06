@@ -3,8 +3,6 @@
 #ifdef __LOGGING__
 #include "logger.h"
 #endif
-#define SteeringServoInit 0xfe
-#define SteeringServoSetAngle 0xff
 
 //Функция инициализации
 void SteeringServo_Init();

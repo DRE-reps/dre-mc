@@ -1,8 +1,14 @@
 #include "main.h"
-#include "esc.h"
+#include "VL53L0X.h"
+#include "steering_servo.h"
+#include "measure_speed_FC33.h"
 /* vbolbat includes */
 #include "logger.h"
 #include "usart1_callbacks.h"
+#include "esc.h"
+#include "converters.h"
+#include <string.h>
+#include "mpu6050.h"
 
 Command_State_t cmd_state = {0}; /* flags struct */
 /* vars */
@@ -12,6 +18,11 @@ extern esc_t esc_struct;
 extern UART_HandleTypeDef huart1;
 extern uint8_t speed_calibration_buffer[2];
 extern logged_errors logged_errors_obj;
+extern MPU6050_t mpu6050_struct;
+extern VL53L0X_Dev_t sensor1;
+extern VL53L0X_Dev_t sensor2;
+extern statInfo_t_VL53L0X distanceStr1;
+extern statInfo_t_VL53L0X distanceStr2;
 /* private vars */
 uint8_t rx_byte; // Принимаем по одному байту
 static uint8_t packet[256]; // Буфер для сборки пакета
@@ -67,6 +78,40 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *usart) {
 }
 
 void Send_Telemetry(void) {
+    uint16_t FC33_RPM = (uint16_t)MeasureSpeedFC33_GetRPM();
+    //packing uint16_t to uint8_t
+    uint8_t FC33_RPM_send[2] = {(FC33_RPM >> 8)& 0xFF, (FC33_RPM & 0xFF)};
+    //distance part
+    uint16_t dist1_mm = readRangeSingleMillimeters(&sensor1, &distanceStr1);
+    //packing uint16_t to uint8_t
+    uint8_t dist1_mm_send[2] = {(dist1_mm >> 8)& 0xFF, (dist1_mm & 0xFF)};
+	uint16_t dist2_mm = readRangeSingleMillimeters(&sensor2, &distanceStr2);
+	//packing uint16_t to uint8_t
+	uint8_t dist2_mm_send[2] = {(dist2_mm >> 8)& 0xFF, (dist2_mm & 0xFF)};
+    float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
+    float AX_mpu6050 = MPU6050_get_acceleration(&hi2c2,&mpu6050_struct); /* module of AX */
+    //float to char for transfering, string contains \0!
+    char* speed_khm_str = float2str(speed_kmh ,4);
+    int sizeof_speed_khm_str = sizeof(speed_khm_str);
+    char buf1 [20];
+    if (sizeof_speed_khm_str >= 20)
+    {
+    	sizeof_speed_khm_str = 20;
+    }
+    /* dest source size */
+    memcpy(buf1,speed_khm_str,sizeof_speed_khm_str);
+	buf1[19] = '\0';
+    char* AX_mpu6050_str = float2str(AX_mpu6050,4);
+    int sizeof_AX_mpu6050_str = sizeof(AX_mpu6050_str);
+    char buf2 [20];
+    if (sizeof_AX_mpu6050_str >= 20)
+    {
+    	sizeof_AX_mpu6050_str = 20;
+    }
+    /* dest source size */
+    memcpy(buf2,AX_mpu6050_str,sizeof_AX_mpu6050_str);
+	buf2[19] = '\0';
+	//packet part
     uint8_t tx_pck[8];
     tx_pck[0] = 0xAC;
     tx_pck[1] = 0x53;
@@ -74,14 +119,29 @@ void Send_Telemetry(void) {
     tx_pck[3] = 0x00; // SQN
     tx_pck[4] = 0x01; // ADDR
     tx_pck[5] = 0x15; // CODE
-    tx_pck[6] = (uint8_t)esc_struct.current_speed;
-    tx_pck[7] = (uint8_t)esc_struct.pwm_percent; // Временно вместо RPM
-
-    // Считаем CRC от 6 байт (начиная с LEN)
-    uint8_t crc = Compute_CRC8(&tx_pck[2], 6); // LEN + данные
-
-    HAL_UART_Transmit(&huart1, tx_pck, 8, 10);
-    HAL_UART_Transmit(&huart1, &crc, 1, 10); // Отправляем CRC 9-м байтом
+    tx_pck[6] = FC33_RPM_send[0];  //MSB
+    tx_pck[7] = FC33_RPM_send[1];  //LSB
+    tx_pck[8] = dist1_mm_send[0];  //MSB
+    tx_pck[9] = dist1_mm_send[1];  //LSB
+    tx_pck[10] = dist2_mm_send[0]; //MSB
+    tx_pck[11] = dist2_mm_send[1]; //LSB
+    int var = 12;
+    for(int i = 0; i < sizeof_speed_khm_str; i++)
+    {
+    	tx_pck[var + i] = buf1[i];
+    }
+    var += sizeof_speed_khm_str;
+    for(int i = 0; i < sizeof_AX_mpu6050_str; i++)
+    {
+    	tx_pck[var + i] = buf2[i];
+    }
+    var += sizeof_AX_mpu6050_str; /* общее колво байтов */
+    // Считаем CRC (LEN включительно + SQN,ADDR и тд)
+    uint8_t crc = Compute_CRC8(&tx_pck[2], var - 2 /* общее колво байтов - 0xAC 0x53 */);
+    /*send PACK*/
+    HAL_UART_Transmit(&huart1, tx_pck, var, HAL_MAX_DELAY);
+    /*send CRC*/
+    HAL_UART_Transmit(&huart1, &crc, 1, HAL_MAX_DELAY);
 }
 
 
@@ -103,9 +163,9 @@ uint8_t Compute_CRC8(uint8_t *data, uint16_t length)
 
 void process_parser_flags(void)
 {
-//vbolbat: no logging needed, func uses in while(1) cycle...
+//vbolbat: no logging needed, func used in while(1) cycle...
     if (cmd_state.set_angle_flag) {
-        // Servo_SetAngle(cmd_state.wheel_angle);
+    	SteeringServo_SetAngle((uint16_t)cmd_state.set_angle_flag);
         cmd_state.set_angle_flag = 0;
     }
     if (cmd_state.set_pwm_flag) {
@@ -113,13 +173,12 @@ void process_parser_flags(void)
         cmd_state.set_pwm_flag = 0;
     }
     if (cmd_state.set_direction_flag) {
-        //должна быть введена защита от переключения "на полной скорости"?
         speed_calibration_buffer[1] = cmd_state.direction;
         cmd_state.set_direction_flag = 0;
     }
     if (cmd_state.get_telemetry_flag) {
         Send_Telemetry();
-        sync_count = 0;
+        sync_count = 0; /* var to control communication between car and phone */
         cmd_state.get_telemetry_flag = 0;
     }
     if (cmd_state.read_log_flag) {
@@ -127,9 +186,7 @@ void process_parser_flags(void)
         cmd_state.read_log_flag = 0;
     }
     if (cmd_state.read_errors_stat_flag) {
-        // Ex Логика автопарковки (Denied)
-    	//cmd_state.start_autopark_flag = 0;
-    	// Логика чтения статистики не критических ошибок.
+        //Не планирую использовать. Отменено.
     	logger_send_errors_stat(); //not working
     	cmd_state.read_errors_stat_flag = 0;
     }
@@ -174,8 +231,7 @@ void parse_uart_message(void)
                     case 0x20: // Прочитать лог
                         cmd_state.read_log_flag = 1;
                         break;
-                    case 0x30: // Ex Автопарковка -> Send errors stat
-                        //cmd_state.start_autopark_flag = (packet[6] > 0); // 1 если байт > 0
+                    case 0x30: // Отменено
                     	cmd_state.read_errors_stat_flag = 1;
                         break;
                     default:
