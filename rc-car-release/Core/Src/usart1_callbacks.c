@@ -112,7 +112,7 @@ void Send_Telemetry(void) {
     memcpy(buf2,AX_mpu6050_str,sizeof_AX_mpu6050_str);
 	buf2[19] = '\0';
 	//packet part
-    uint8_t tx_pck[8];
+    uint8_t tx_pck[256];
     tx_pck[0] = 0xAC;
     tx_pck[1] = 0x53;
     tx_pck[2] = 0x05; // LEN: SQN(1) + ADDR(1) + CODE(1) + DATA(2) = 5
