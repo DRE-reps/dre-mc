@@ -115,7 +115,7 @@ void Send_Telemetry(void) {
     uint8_t tx_pck[256];
     tx_pck[0] = 0xAC;
     tx_pck[1] = 0x53;
-    tx_pck[2] = 0x05; // LEN: SQN(1) + ADDR(1) + CODE(1) + DATA(2) = 5
+    tx_pck[2] = 10 + sizeof_speed_khm_str + sizeof_AX_mpu6050_str; // LEN: 10 + sizeof_speed_khm_str + sizeof_AX_mpu6050_str
     tx_pck[3] = 0x00; // SQN
     tx_pck[4] = 0x01; // ADDR
     tx_pck[5] = 0x15; // CODE

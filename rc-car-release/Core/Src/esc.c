@@ -86,7 +86,7 @@ void esc_update_pwm(esc_t* pesc_t)
 		//}
 		__HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,temp_var);
 	}
-	else                   //backward
+	else //backward
 	{
 
 			if (pesc_t->pwm_percent > 0)

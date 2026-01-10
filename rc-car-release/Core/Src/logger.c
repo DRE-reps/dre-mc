@@ -1,5 +1,6 @@
 #include "logger.h"
 #include "main.h"
+#include "usart1_callbacks.h"
 
 uint8_t  log_buf[LOGGING_BUF_SIZE]; //хранилище логов
 uint32_t log_pointer = 0;           //необходим для однозначного определения хронологического порядка записей
@@ -18,7 +19,6 @@ void save_log(uint8_t status)
 	log_pointer++;
 }
 
-#warning "What is sqn, addr & code in return message?? FIX CODE field???"
 void send_log(void)
 {
 	uint8_t temp_log_buf[LOGGING_BUF_SIZE]; //Мы восстановим хронологический порядок событй в буфере:
@@ -40,7 +40,7 @@ void send_log(void)
     tx_pck[2] = 3 + LOGGING_BUF_SIZE; // LEN compute: SQN,ADDR,CODE + LOGGING BUF SIZE
     tx_pck[3] = 0x00; // SQN  ??
     tx_pck[4] = 0x01; // ADDR ??
-    tx_pck[5] = 0x15; // CODE ??
+    tx_pck[5] = 0x20; // CODE ??
     /*LOGGER BUF*/
     for (int i = 0; i < LOGGING_BUF_SIZE; i++)
     {
@@ -48,11 +48,9 @@ void send_log(void)
     }
     /*COMPUTE CRC*/
     // Считаем CRC от  байт (начиная с LEN)
-#warning "Есть ли ограничение на количество байт в crc? А ограничения на длину пакета?"
     uint8_t crc = Compute_CRC8(&tx_pck[2],
     		4 /*LEN + SQN + ADDR + CODE*/
 			+ LOGGING_BUF_SIZE /**/);
-#warning "На что влияет таймаут в данном случае?"
     HAL_UART_Transmit(&huart1, tx_pck,
     		6 + LOGGING_BUF_SIZE,
 			HAL_MAX_DELAY); // Отправляем лог

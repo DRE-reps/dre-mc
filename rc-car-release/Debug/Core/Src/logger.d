@@ -27,7 +27,7 @@ Core/Src/logger.o: ../Core/Src/logger.c ../Core/Inc/logger.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
- ../Core/Inc/main.h
+ ../Core/Inc/main.h ../Core/Inc/usart1_callbacks.h
 ../Core/Inc/logger.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:
@@ -59,3 +59,4 @@ Core/Src/logger.o: ../Core/Src/logger.c ../Core/Inc/logger.h \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h:
 ../Core/Inc/main.h:
+../Core/Inc/usart1_callbacks.h:

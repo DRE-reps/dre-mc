@@ -257,7 +257,7 @@ void TIM6_IRQHandler(void)
 	  //Каллбек вызывается раз в 0.2 сек
 	  //Обновляем значения
 #ifndef __DISABLE_AUTOBREAK__
-	if (sync_count >= 3) /* checks on 4th call */
+	if (sync_count >= 4) /* checks on 5th call */
 	{
 		/* The connection is lost */
 		//Возврат к дефолтным значениям
