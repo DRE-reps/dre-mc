@@ -1,0 +1,5 @@
+<map id="USART2_IRQHandler" name="USART2_IRQHandler">
+<area shape="rect" id="Node000001" title="This function handles USART2 global interrupt." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000002" href="$group__UART__Exported__Functions__Group2.html#gaad01472c507ceee3c5f2274c775ff3bf" title=" " alt="" coords="208,5,379,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,15,194,15,194,21,160,21"/>
+</map>

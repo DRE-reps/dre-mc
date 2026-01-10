@@ -1,0 +1,9 @@
+<map id="parse_uart_message" name="parse_uart_message">
+<area shape="rect" id="Node000001" title=" " alt="" coords="481,31,639,56"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="280,5,391,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,36,391,27,391,22,468,30"/>
+<area shape="rect" id="Node000004" href="$group__UART__Exported__Functions__Group2.html#gae494a9643f29b87d6d81e5264e60e57b" title=" " alt="" coords="237,55,433,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,56,434,60,433,54,467,51"/>
+<area shape="rect" id="Node000003" href="$group__UART__Exported__Functions__Group2.html#ga0e0456ea96d55db31de947fb3e954f18" title=" " alt="" coords="5,5,189,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="266,21,189,21,189,15,266,15"/>
+</map>

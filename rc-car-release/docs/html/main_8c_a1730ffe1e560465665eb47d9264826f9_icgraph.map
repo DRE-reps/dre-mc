@@ -1,0 +1,10 @@
+<map id="Error_Handler" name="Error_Handler">
+<area shape="rect" id="Node000001" title="This function is executed in case of error occurrence." alt="" coords="340,56,451,81"/>
+<area shape="rect" id="Node000002" href="$group__UART__Exported__Functions__Group2.html#ga0e0456ea96d55db31de947fb3e954f18" title=" " alt="" coords="108,5,292,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="332,55,249,33,250,28,333,50"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,81,60,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="326,76,60,95,60,89,326,71"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="123,107,277,132"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="333,87,250,109,249,104,332,82"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="109,108,60,101,61,95,109,103"/>
+</map>

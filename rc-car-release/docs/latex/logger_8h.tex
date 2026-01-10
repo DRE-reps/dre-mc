@@ -1,0 +1,306 @@
+\doxysection{Core/\+Inc/logger.h File Reference}
+\hypertarget{logger_8h}{}\label{logger_8h}\index{Core/Inc/logger.h@{Core/Inc/logger.h}}
+{\ttfamily \#include "{}main.\+h"{}}\newline
+Include dependency graph for logger.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlogged__errors}{logged\+\_\+errors}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{logger_8h_af5a529c60284c738c2c294cc6f828166}{LOGGING\+\_\+\+BUF\+\_\+\+SIZE}}~128U
+\item 
+\#define \mbox{\hyperlink{logger_8h_adbb838e8df8cf864445d66369d77723e}{GET\+\_\+\+KALMAN\+\_\+\+SPEED}}~0x00
+\item 
+\#define \mbox{\hyperlink{logger_8h_ad771cdf36787b2132d1d815a3c07718c}{SET\+\_\+\+BUFFER}}~0x01
+\item 
+\#define \mbox{\hyperlink{logger_8h_adfaccfcc9ecb65346c53d088f6898c3f}{FLOAT2\+STR}}~0x02
+\item 
+\#define \mbox{\hyperlink{logger_8h_a5a42bd7b2436ed4c1b2deac90036b55d}{HAL\+\_\+\+UART\+\_\+\+RXCPLTCALLBACK\+\_\+}}~0x03
+\item 
+\#define \mbox{\hyperlink{logger_8h_aa22597d3e6ab233694b2133daf11c7b4}{HAL\+\_\+\+UART\+\_\+\+TXCPLTCALLBACK\+\_\+}}~0x04
+\item 
+\#define \mbox{\hyperlink{logger_8h_a666fbcc30f321e20070f65d705ee53b6}{HAL\+\_\+\+UART\+\_\+\+ERRORCALLBACK\+\_\+}}~0x05
+\item 
+\#define \mbox{\hyperlink{logger_8h_a25d5eb3970e7c352a2c5482e174fc4c5}{ESC\+\_\+\+INIT}}~0x06
+\item 
+\#define \mbox{\hyperlink{logger_8h_af3b8e20e8ff9bed000581cb2cfeeb61f}{CALIBRATE\+\_\+\+ESC}}~0x07
+\item 
+\#define \mbox{\hyperlink{logger_8h_abe0b2771f9520e5a27931e1f19cdbd4e}{ESC\+\_\+\+UPDATE\+\_\+\+PWM}}~0x08
+\item 
+\#define \mbox{\hyperlink{logger_8h_a900a759bdc938a60e5cc7e4f4b5cecfd}{MPU6050\+\_\+\+GET\+\_\+\+ACCELERATION}}~0x09
+\item 
+\#define \mbox{\hyperlink{logger_8h_a1cf3c6105259d53d2fde46987cf1332c}{MPU6050\+\_\+\+INIT}}~0x0A
+\item 
+\#define \mbox{\hyperlink{logger_8h_a11162973be522c7649913a8a68afe332}{MPU6050\+\_\+\+READ\+\_\+\+ALL}}~0x0B
+\item 
+\#define \mbox{\hyperlink{logger_8h_a54a8a13d29c91fc44236e3d6af53da5b}{ERROR\+\_\+\+HANDLER\+\_\+}}~0x0C
+\item 
+\#define \mbox{\hyperlink{logger_8h_a101dc0d79205bb71e71b20ce8cf9a5ab}{INIT\+\_\+\+LOG}}~0x0D
+\item 
+\#define \mbox{\hyperlink{logger_8h_a098a5e304ce840aca5954890a8596e36}{SET\+\_\+\+CONFIDENCE}}~0x0E
+\item 
+\#define \mbox{\hyperlink{logger_8h_afc2cc52e02b3cc1242d684a672902a0b}{VLX\+\_\+\+PULSE\+\_\+\+PERIOD}}~0x0F
+\item 
+\#define \mbox{\hyperlink{logger_8h_a2ae7eae5a33f4f5f5586db8cb19c618c}{VLX\+\_\+\+TIME\+\_\+\+BETWEEN\+\_\+\+MEAS}}~0x10
+\item 
+\#define \mbox{\hyperlink{logger_8h_a06905409b177a0cafdf99a30d1a008ee}{VLX\+\_\+\+READ\+\_\+\+DATA}}~0x11
+\item 
+\#define \mbox{\hyperlink{logger_8h_a4c97e7addaad48a1da24a6fc13a541c9}{Steering\+Servo\+Init}}~0xfe
+\item 
+\#define \mbox{\hyperlink{logger_8h_a7c98d4fd7aba73e867677c02ba3a5b7b}{Steering\+Servo\+Set\+Angle}}~0xff
+\item 
+\#define \mbox{\hyperlink{logger_8h_a53e8f80b222a57e952acf33bd970cdc2}{PARSE\+\_\+\+UART\+\_\+\+\_\+}}~0x12
+\item 
+\#define \mbox{\hyperlink{logger_8h_a5de01d18ca2ec04255e15e6293b6bd6a}{CUSTOM\+\_\+\+DELAY\+\_\+20\+MS}}~0x13
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{logger_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logger_8h_a3278730f835b7230a0de447ea4afd3f0}{save\+\_\+log}} (\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} status)
+\item 
+void \mbox{\hyperlink{logger_8h_a56e187f87ce6f62d868702d19601848b}{send\+\_\+log}} (void)
+\item 
+void \mbox{\hyperlink{logger_8h_a7f0a1ef369c8017a21abc0f68371b64e}{logger\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{logger_8h_a6b0ab6ea376e6170c62b3f0e794e68e3}{logger\+\_\+send\+\_\+errors\+\_\+stat}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{logger_8h_af3b8e20e8ff9bed000581cb2cfeeb61f}\label{logger_8h_af3b8e20e8ff9bed000581cb2cfeeb61f} 
+\index{logger.h@{logger.h}!CALIBRATE\_ESC@{CALIBRATE\_ESC}}
+\index{CALIBRATE\_ESC@{CALIBRATE\_ESC}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{CALIBRATE\_ESC}{CALIBRATE\_ESC}}
+{\footnotesize\ttfamily \#define CALIBRATE\+\_\+\+ESC~0x07}
+
+\Hypertarget{logger_8h_a5de01d18ca2ec04255e15e6293b6bd6a}\label{logger_8h_a5de01d18ca2ec04255e15e6293b6bd6a} 
+\index{logger.h@{logger.h}!CUSTOM\_DELAY\_20MS@{CUSTOM\_DELAY\_20MS}}
+\index{CUSTOM\_DELAY\_20MS@{CUSTOM\_DELAY\_20MS}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{CUSTOM\_DELAY\_20MS}{CUSTOM\_DELAY\_20MS}}
+{\footnotesize\ttfamily \#define CUSTOM\+\_\+\+DELAY\+\_\+20\+MS~0x13}
+
+\Hypertarget{logger_8h_a54a8a13d29c91fc44236e3d6af53da5b}\label{logger_8h_a54a8a13d29c91fc44236e3d6af53da5b} 
+\index{logger.h@{logger.h}!ERROR\_HANDLER\_@{ERROR\_HANDLER\_}}
+\index{ERROR\_HANDLER\_@{ERROR\_HANDLER\_}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{ERROR\_HANDLER\_}{ERROR\_HANDLER\_}}
+{\footnotesize\ttfamily \#define ERROR\+\_\+\+HANDLER\+\_\+~0x0C}
+
+\Hypertarget{logger_8h_a25d5eb3970e7c352a2c5482e174fc4c5}\label{logger_8h_a25d5eb3970e7c352a2c5482e174fc4c5} 
+\index{logger.h@{logger.h}!ESC\_INIT@{ESC\_INIT}}
+\index{ESC\_INIT@{ESC\_INIT}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{ESC\_INIT}{ESC\_INIT}}
+{\footnotesize\ttfamily \#define ESC\+\_\+\+INIT~0x06}
+
+\Hypertarget{logger_8h_abe0b2771f9520e5a27931e1f19cdbd4e}\label{logger_8h_abe0b2771f9520e5a27931e1f19cdbd4e} 
+\index{logger.h@{logger.h}!ESC\_UPDATE\_PWM@{ESC\_UPDATE\_PWM}}
+\index{ESC\_UPDATE\_PWM@{ESC\_UPDATE\_PWM}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{ESC\_UPDATE\_PWM}{ESC\_UPDATE\_PWM}}
+{\footnotesize\ttfamily \#define ESC\+\_\+\+UPDATE\+\_\+\+PWM~0x08}
+
+\Hypertarget{logger_8h_adfaccfcc9ecb65346c53d088f6898c3f}\label{logger_8h_adfaccfcc9ecb65346c53d088f6898c3f} 
+\index{logger.h@{logger.h}!FLOAT2STR@{FLOAT2STR}}
+\index{FLOAT2STR@{FLOAT2STR}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{FLOAT2STR}{FLOAT2STR}}
+{\footnotesize\ttfamily \#define FLOAT2\+STR~0x02}
+
+\Hypertarget{logger_8h_adbb838e8df8cf864445d66369d77723e}\label{logger_8h_adbb838e8df8cf864445d66369d77723e} 
+\index{logger.h@{logger.h}!GET\_KALMAN\_SPEED@{GET\_KALMAN\_SPEED}}
+\index{GET\_KALMAN\_SPEED@{GET\_KALMAN\_SPEED}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{GET\_KALMAN\_SPEED}{GET\_KALMAN\_SPEED}}
+{\footnotesize\ttfamily \#define GET\+\_\+\+KALMAN\+\_\+\+SPEED~0x00}
+
+\Hypertarget{logger_8h_a666fbcc30f321e20070f65d705ee53b6}\label{logger_8h_a666fbcc30f321e20070f65d705ee53b6} 
+\index{logger.h@{logger.h}!HAL\_UART\_ERRORCALLBACK\_@{HAL\_UART\_ERRORCALLBACK\_}}
+\index{HAL\_UART\_ERRORCALLBACK\_@{HAL\_UART\_ERRORCALLBACK\_}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_ERRORCALLBACK\_}{HAL\_UART\_ERRORCALLBACK\_}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+UART\+\_\+\+ERRORCALLBACK\+\_\+~0x05}
+
+\Hypertarget{logger_8h_a5a42bd7b2436ed4c1b2deac90036b55d}\label{logger_8h_a5a42bd7b2436ed4c1b2deac90036b55d} 
+\index{logger.h@{logger.h}!HAL\_UART\_RXCPLTCALLBACK\_@{HAL\_UART\_RXCPLTCALLBACK\_}}
+\index{HAL\_UART\_RXCPLTCALLBACK\_@{HAL\_UART\_RXCPLTCALLBACK\_}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_RXCPLTCALLBACK\_}{HAL\_UART\_RXCPLTCALLBACK\_}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+UART\+\_\+\+RXCPLTCALLBACK\+\_\+~0x03}
+
+\Hypertarget{logger_8h_aa22597d3e6ab233694b2133daf11c7b4}\label{logger_8h_aa22597d3e6ab233694b2133daf11c7b4} 
+\index{logger.h@{logger.h}!HAL\_UART\_TXCPLTCALLBACK\_@{HAL\_UART\_TXCPLTCALLBACK\_}}
+\index{HAL\_UART\_TXCPLTCALLBACK\_@{HAL\_UART\_TXCPLTCALLBACK\_}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_UART\_TXCPLTCALLBACK\_}{HAL\_UART\_TXCPLTCALLBACK\_}}
+{\footnotesize\ttfamily \#define HAL\+\_\+\+UART\+\_\+\+TXCPLTCALLBACK\+\_\+~0x04}
+
+\Hypertarget{logger_8h_a101dc0d79205bb71e71b20ce8cf9a5ab}\label{logger_8h_a101dc0d79205bb71e71b20ce8cf9a5ab} 
+\index{logger.h@{logger.h}!INIT\_LOG@{INIT\_LOG}}
+\index{INIT\_LOG@{INIT\_LOG}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{INIT\_LOG}{INIT\_LOG}}
+{\footnotesize\ttfamily \#define INIT\+\_\+\+LOG~0x0D}
+
+\Hypertarget{logger_8h_af5a529c60284c738c2c294cc6f828166}\label{logger_8h_af5a529c60284c738c2c294cc6f828166} 
+\index{logger.h@{logger.h}!LOGGING\_BUF\_SIZE@{LOGGING\_BUF\_SIZE}}
+\index{LOGGING\_BUF\_SIZE@{LOGGING\_BUF\_SIZE}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{LOGGING\_BUF\_SIZE}{LOGGING\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define LOGGING\+\_\+\+BUF\+\_\+\+SIZE~128U}
+
+\Hypertarget{logger_8h_a900a759bdc938a60e5cc7e4f4b5cecfd}\label{logger_8h_a900a759bdc938a60e5cc7e4f4b5cecfd} 
+\index{logger.h@{logger.h}!MPU6050\_GET\_ACCELERATION@{MPU6050\_GET\_ACCELERATION}}
+\index{MPU6050\_GET\_ACCELERATION@{MPU6050\_GET\_ACCELERATION}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_GET\_ACCELERATION}{MPU6050\_GET\_ACCELERATION}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+GET\+\_\+\+ACCELERATION~0x09}
+
+\Hypertarget{logger_8h_a1cf3c6105259d53d2fde46987cf1332c}\label{logger_8h_a1cf3c6105259d53d2fde46987cf1332c} 
+\index{logger.h@{logger.h}!MPU6050\_INIT@{MPU6050\_INIT}}
+\index{MPU6050\_INIT@{MPU6050\_INIT}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_INIT}{MPU6050\_INIT}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+INIT~0x0A}
+
+\Hypertarget{logger_8h_a11162973be522c7649913a8a68afe332}\label{logger_8h_a11162973be522c7649913a8a68afe332} 
+\index{logger.h@{logger.h}!MPU6050\_READ\_ALL@{MPU6050\_READ\_ALL}}
+\index{MPU6050\_READ\_ALL@{MPU6050\_READ\_ALL}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_READ\_ALL}{MPU6050\_READ\_ALL}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+READ\+\_\+\+ALL~0x0B}
+
+\Hypertarget{logger_8h_a53e8f80b222a57e952acf33bd970cdc2}\label{logger_8h_a53e8f80b222a57e952acf33bd970cdc2} 
+\index{logger.h@{logger.h}!PARSE\_UART\_\_@{PARSE\_UART\_\_}}
+\index{PARSE\_UART\_\_@{PARSE\_UART\_\_}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{PARSE\_UART\_\_}{PARSE\_UART\_\_}}
+{\footnotesize\ttfamily \#define PARSE\+\_\+\+UART\+\_\+\+\_\+~0x12}
+
+\Hypertarget{logger_8h_ad771cdf36787b2132d1d815a3c07718c}\label{logger_8h_ad771cdf36787b2132d1d815a3c07718c} 
+\index{logger.h@{logger.h}!SET\_BUFFER@{SET\_BUFFER}}
+\index{SET\_BUFFER@{SET\_BUFFER}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{SET\_BUFFER}{SET\_BUFFER}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+BUFFER~0x01}
+
+\Hypertarget{logger_8h_a098a5e304ce840aca5954890a8596e36}\label{logger_8h_a098a5e304ce840aca5954890a8596e36} 
+\index{logger.h@{logger.h}!SET\_CONFIDENCE@{SET\_CONFIDENCE}}
+\index{SET\_CONFIDENCE@{SET\_CONFIDENCE}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{SET\_CONFIDENCE}{SET\_CONFIDENCE}}
+{\footnotesize\ttfamily \#define SET\+\_\+\+CONFIDENCE~0x0E}
+
+\Hypertarget{logger_8h_a4c97e7addaad48a1da24a6fc13a541c9}\label{logger_8h_a4c97e7addaad48a1da24a6fc13a541c9} 
+\index{logger.h@{logger.h}!SteeringServoInit@{SteeringServoInit}}
+\index{SteeringServoInit@{SteeringServoInit}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{SteeringServoInit}{SteeringServoInit}}
+{\footnotesize\ttfamily \#define Steering\+Servo\+Init~0xfe}
+
+\Hypertarget{logger_8h_a7c98d4fd7aba73e867677c02ba3a5b7b}\label{logger_8h_a7c98d4fd7aba73e867677c02ba3a5b7b} 
+\index{logger.h@{logger.h}!SteeringServoSetAngle@{SteeringServoSetAngle}}
+\index{SteeringServoSetAngle@{SteeringServoSetAngle}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{SteeringServoSetAngle}{SteeringServoSetAngle}}
+{\footnotesize\ttfamily \#define Steering\+Servo\+Set\+Angle~0xff}
+
+\Hypertarget{logger_8h_afc2cc52e02b3cc1242d684a672902a0b}\label{logger_8h_afc2cc52e02b3cc1242d684a672902a0b} 
+\index{logger.h@{logger.h}!VLX\_PULSE\_PERIOD@{VLX\_PULSE\_PERIOD}}
+\index{VLX\_PULSE\_PERIOD@{VLX\_PULSE\_PERIOD}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{VLX\_PULSE\_PERIOD}{VLX\_PULSE\_PERIOD}}
+{\footnotesize\ttfamily \#define VLX\+\_\+\+PULSE\+\_\+\+PERIOD~0x0F}
+
+\Hypertarget{logger_8h_a06905409b177a0cafdf99a30d1a008ee}\label{logger_8h_a06905409b177a0cafdf99a30d1a008ee} 
+\index{logger.h@{logger.h}!VLX\_READ\_DATA@{VLX\_READ\_DATA}}
+\index{VLX\_READ\_DATA@{VLX\_READ\_DATA}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{VLX\_READ\_DATA}{VLX\_READ\_DATA}}
+{\footnotesize\ttfamily \#define VLX\+\_\+\+READ\+\_\+\+DATA~0x11}
+
+\Hypertarget{logger_8h_a2ae7eae5a33f4f5f5586db8cb19c618c}\label{logger_8h_a2ae7eae5a33f4f5f5586db8cb19c618c} 
+\index{logger.h@{logger.h}!VLX\_TIME\_BETWEEN\_MEAS@{VLX\_TIME\_BETWEEN\_MEAS}}
+\index{VLX\_TIME\_BETWEEN\_MEAS@{VLX\_TIME\_BETWEEN\_MEAS}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{VLX\_TIME\_BETWEEN\_MEAS}{VLX\_TIME\_BETWEEN\_MEAS}}
+{\footnotesize\ttfamily \#define VLX\+\_\+\+TIME\+\_\+\+BETWEEN\+\_\+\+MEAS~0x10}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{logger_8h_aba7bc1797add20fe3efdf37ced1182c5}\label{logger_8h_aba7bc1797add20fe3efdf37ced1182c5} 
+\index{logger.h@{logger.h}!uint8\_t@{uint8\_t}}
+\index{uint8\_t@{uint8\_t}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{uint8\_t}{uint8\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{logger_8h_a7f0a1ef369c8017a21abc0f68371b64e}\label{logger_8h_a7f0a1ef369c8017a21abc0f68371b64e} 
+\index{logger.h@{logger.h}!logger\_init@{logger\_init}}
+\index{logger\_init@{logger\_init}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{logger\_init()}{logger\_init()}}
+{\footnotesize\ttfamily void logger\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{logger_8h_a7f0a1ef369c8017a21abc0f68371b64e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8h_a6b0ab6ea376e6170c62b3f0e794e68e3}\label{logger_8h_a6b0ab6ea376e6170c62b3f0e794e68e3} 
+\index{logger.h@{logger.h}!logger\_send\_errors\_stat@{logger\_send\_errors\_stat}}
+\index{logger\_send\_errors\_stat@{logger\_send\_errors\_stat}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{logger\_send\_errors\_stat()}{logger\_send\_errors\_stat()}}
+{\footnotesize\ttfamily void logger\+\_\+send\+\_\+errors\+\_\+stat (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h_a6b0ab6ea376e6170c62b3f0e794e68e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8h_a3278730f835b7230a0de447ea4afd3f0}\label{logger_8h_a3278730f835b7230a0de447ea4afd3f0} 
+\index{logger.h@{logger.h}!save\_log@{save\_log}}
+\index{save\_log@{save\_log}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{save\_log()}{save\_log()}}
+{\footnotesize\ttfamily void save\+\_\+log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{status }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h_a3278730f835b7230a0de447ea4afd3f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8h_a56e187f87ce6f62d868702d19601848b}\label{logger_8h_a56e187f87ce6f62d868702d19601848b} 
+\index{logger.h@{logger.h}!send\_log@{send\_log}}
+\index{send\_log@{send\_log}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{send\_log()}{send\_log()}}
+{\footnotesize\ttfamily void send\+\_\+log (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{logger_8h_a56e187f87ce6f62d868702d19601848b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h_a56e187f87ce6f62d868702d19601848b_icgraph}
+\end{center}
+\end{figure}

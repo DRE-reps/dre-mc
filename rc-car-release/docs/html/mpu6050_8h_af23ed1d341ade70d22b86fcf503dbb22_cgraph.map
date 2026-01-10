@@ -1,0 +1,9 @@
+<map id="MPU6050_get_acceleration" name="MPU6050_get_acceleration">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,204,56"/>
+<area shape="rect" id="Node000002" href="$mpu6050_8c.html#a5476709bd12c603fc74bae86f72db0d5" title=" " alt="" coords="252,5,419,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,30,238,26,239,31,204,35"/>
+<area shape="rect" id="Node000004" href="$logger_8c.html#a3278730f835b7230a0de447ea4afd3f0" title=" " alt="" coords="295,55,375,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,51,282,59,281,64,204,56"/>
+<area shape="rect" id="Node000003" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="467,5,623,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,15,453,15,453,21,419,21"/>
+</map>

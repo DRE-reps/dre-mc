@@ -1,0 +1,133 @@
+\doxysection{stm32l1xx\+\_\+hal\+\_\+flash.\+h}
+\hypertarget{stm32l1xx__hal__flash_8h_source}{}\label{stm32l1xx__hal__flash_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_flash.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_flash.h}}
+\mbox{\hyperlink{stm32l1xx__hal__flash_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_HAL\_FLASH\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_HAL\_FLASH\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00023\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal__def_8h}{stm32l1xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00028\ \ \ \ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ FLASH\_TIMEOUT\_VALUE\ \ \ \ \ \ (50000U)\ }\textcolor{comment}{/*\ 50\ s\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_TYPEPROGRAM(\_VALUE\_)\ \ \ ((\_VALUE\_)\ ==\ FLASH\_TYPEPROGRAM\_WORD)}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ IS\_FLASH\_LATENCY(\_\_LATENCY\_\_)\ (((\_\_LATENCY\_\_)\ ==\ FLASH\_LATENCY\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LATENCY\_\_)\ ==\ FLASH\_LATENCY\_1))}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{group__FLASH__Exported__Types_gga2b0268387bc11bcab76be9ce7c43eaafa8d1dcf61f621d71484d13ac02f651b3d}{FLASH\_PROC\_NONE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0U,\ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{group__FLASH__Exported__Types_gga2b0268387bc11bcab76be9ce7c43eaafa60f5b29ffaa88e477958199c079f945f}{FLASH\_PROC\_PAGEERASE}}\ \ \ \ \ \ \ \ \ =\ 1U,}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{group__FLASH__Exported__Types_gga2b0268387bc11bcab76be9ce7c43eaafad4f5d611b11f7ac9577d34df07dc94ea}{FLASH\_PROC\_PROGRAM}}\ \ \ \ \ \ \ \ \ \ \ =\ 2U,}
+\DoxyCodeLine{00071\ \}\ \mbox{\hyperlink{group__FLASH__Exported__Types_ga2b0268387bc11bcab76be9ce7c43eaaf}{FLASH\_ProcedureTypeDef}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \_\_IO\ \mbox{\hyperlink{group__FLASH__Exported__Types_ga2b0268387bc11bcab76be9ce7c43eaaf}{FLASH\_ProcedureTypeDef}}\ \mbox{\hyperlink{structFLASH__ProcessTypeDef_adcc5fdaba7d53dffdab0510a4dd7d179}{ProcedureOnGoing}};\ }
+\DoxyCodeLine{00080\ \ \ \_\_IO\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFLASH__ProcessTypeDef_a0f55783c6dde84a998593cce2e08280b}{NbPagesToErase}};\ \ \ }
+\DoxyCodeLine{00082\ \ \ \_\_IO\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFLASH__ProcessTypeDef_a680a9b907eb67c762b16ef7051cd8942}{Address}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \_\_IO\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFLASH__ProcessTypeDef_a36232ab2e05c69dc3a6804685a3b0e8c}{Page}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\_LockTypeDef}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFLASH__ProcessTypeDef_ab5892cd1aacb0c0304b40f57023061e2}{Lock}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \_\_IO\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structFLASH__ProcessTypeDef_a8a6cc581b8b180090429d0a3c0ca0172}{ErrorCode}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \}\ \mbox{\hyperlink{structFLASH__ProcessTypeDef}{FLASH\_ProcessTypeDef}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_NONE\ \ \ \ \ \ 0x00U\ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_PGA\ \ \ \ \ \ \ 0x01U\ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_WRP\ \ \ \ \ \ \ 0x02U\ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_OPTV\ \ \ \ \ \ 0x04U\ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_SIZE\ \ \ \ \ \ 0x08U\ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_RD\ \ \ \ \ \ \ \ 0x10U\ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_OPTVUSR\ \ \ 0x20U\ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ HAL\_FLASH\_ERROR\_OPERATION\ 0x40U\ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#if\ defined\ (FLASH\_CUT1)\ ||\ defined\ (FLASH\_CUT2)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ FLASH\_SIZE\_RAW\ \ \ \ (uint32\_t)(*((uint32\_t\ *)FLASHSIZE\_BASE)\&0xFFU)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*FLASH\_CUT3\ ||\ FLASH\_CUT4\ ||\ FLASH\_CUT5\ ||\ FLASH\_CUT6*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ FLASH\_SIZE\_RAW\ \ \ \ (uint32\_t)(*((uint32\_t\ *)FLASHSIZE\_BASE)\&0xFFFFU)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ FLASH\_SIZE\ \ \ \ \ \ \ \ (((FLASH\_SIZE\_RAW)\ ==\ 0\ ?\ 384\ :\ ((FLASH\_SIZE\_RAW)\ ==\ 1\ ?\ 256\ :\ (FLASH\_SIZE\_RAW)))\ *\ 1024)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ FLASH\_PAGE\_SIZE\ \ \ \ \ \ \ \ \ \ \ (256U)\ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ FLASH\_TYPEPROGRAM\_WORD\ \ \ \ \ \ \ (0x02U)\ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_0\ \ \ \ \ \ \ \ \ \ \ \ (0x00000000U)\ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ FLASH\_LATENCY\_1\ \ \ \ \ \ \ \ \ \ \ \ FLASH\_ACR\_LATENCY\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ FLASH\_IT\_EOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_PECR\_EOPIE\ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ FLASH\_IT\_ERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_PECR\_ERRIE\ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_BSY\ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_SR\_BSY\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_EOP\ \ \ \ \ \ \ \ \ \ \ \ \ FLASH\_SR\_EOP\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_ENDHV\ \ \ \ \ \ \ \ \ \ \ FLASH\_SR\_ENDHV\ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_READY\ \ \ \ \ \ \ \ \ \ \ FLASH\_SR\_READY\ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_WRPERR\ \ \ \ \ \ \ \ \ \ FLASH\_SR\_WRPERR\ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_PGAERR\ \ \ \ \ \ \ \ \ \ FLASH\_SR\_PGAERR\ \ \ \ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_SIZERR\ \ \ \ \ \ \ \ \ \ FLASH\_SR\_SIZERR\ \ \ \ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_OPTVERR\ \ \ \ \ \ \ \ \ FLASH\_SR\_OPTVERR\ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{comment}{/*\ Cat2\ \&\ Cat3*/}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#if\ defined(FLASH\_SR\_RDERR)}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_RDERR\ \ \ \ \ \ \ \ \ \ \ FLASH\_SR\_RDERR\ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FLASH\_SR\_RDERR\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00179\ \textcolor{comment}{/*\ Cat3,\ Cat4\ \&\ Cat5*/}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#if\ defined(FLASH\_SR\_OPTVERRUSR)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ FLASH\_FLAG\_OPTVERRUSR\ \ \ \ \ \ FLASH\_SR\_OPTVERRUSR\ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FLASH\_SR\_OPTVERRUSR\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ FLASH\_PDKEY1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x04152637U)\ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ FLASH\_PDKEY2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFAFBFCFDU)\ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ FLASH\_PEKEY1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x89ABCDEFU)\ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ FLASH\_PEKEY2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x02030405U)\ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ FLASH\_PRGKEY1\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x8C9DAEBFU)\ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ FLASH\_PRGKEY2\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x13141516U)\ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ FLASH\_OPTKEY1\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFBEAD9C8U)\ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ FLASH\_OPTKEY2\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x24252627U)\ }}
+\DoxyCodeLine{00215\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ \_\_HAL\_FLASH\_ENABLE\_IT(\_\_INTERRUPT\_\_)\ \ SET\_BIT((FLASH-\/>PECR),\ (\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ \_\_HAL\_FLASH\_DISABLE\_IT(\_\_INTERRUPT\_\_)\ \ CLEAR\_BIT((FLASH-\/>PECR),\ (uint32\_t)(\_\_INTERRUPT\_\_))}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ \_\_HAL\_FLASH\_GET\_FLAG(\_\_FLAG\_\_)\ \ \ (((FLASH-\/>SR)\ \&\ (\_\_FLAG\_\_))\ ==\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ \_\_HAL\_FLASH\_CLEAR\_FLAG(\_\_FLAG\_\_)\ \ \ ((FLASH-\/>SR)\ =\ (\_\_FLAG\_\_))}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00333\ \textcolor{comment}{/*\ Include\ FLASH\ HAL\ Extended\ module\ */}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal__flash__ex_8h}{stm32l1xx\_hal\_flash\_ex.h}}"{}}\ \ }
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal__flash__ramfunc_8h}{stm32l1xx\_hal\_flash\_ramfunc.h}}"{}}\ \ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00345\ \textcolor{comment}{/*\ IO\ operation\ functions\ *****************************************************/}}
+\DoxyCodeLine{00346\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group1_ga4aa4e0a86ccecf020b6689bd791e03fc}{HAL\_FLASH\_Program}}(uint32\_t\ TypeProgram,\ uint32\_t\ Address,\ uint32\_t\ Data);}
+\DoxyCodeLine{00347\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group1_ga1b0857b038c206c1ffcedc79525e389d}{HAL\_FLASH\_Program\_IT}}(uint32\_t\ TypeProgram,\ uint32\_t\ Address,\ uint32\_t\ Data);}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \textcolor{comment}{/*\ FLASH\ IRQ\ handler\ function\ */}}
+\DoxyCodeLine{00350\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group1_ga083f13f6a000dfcb80c7a27853eba528}{HAL\_FLASH\_IRQHandler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00351\ \textcolor{comment}{/*\ Callbacks\ in\ non\ blocking\ modes\ */}\ }
+\DoxyCodeLine{00352\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group1_ga71a7e85ede66fae4eadaf8854f81b5c8}{HAL\_FLASH\_EndOfOperationCallback}}(uint32\_t\ ReturnValue);}
+\DoxyCodeLine{00353\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group1_ga237e17bd9b1d257bd8e2880227b8484e}{HAL\_FLASH\_OperationErrorCallback}}(uint32\_t\ ReturnValue);}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00362\ \textcolor{comment}{/*\ Peripheral\ Control\ functions\ ***********************************************/}}
+\DoxyCodeLine{00363\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group2_ga23d4ff42a8873bac585c92ce4f633747}{HAL\_FLASH\_Unlock}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00364\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group2_gae07eeca0b0aa9d5047f8df88d82f4bcd}{HAL\_FLASH\_Lock}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00365\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group2_ga6e8f380b7a938592f0b6f05d0ebf69c3}{HAL\_FLASH\_OB\_Unlock}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00366\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group2_ga3ff599bd7eba88f7a169a537ccbf3e3f}{HAL\_FLASH\_OB\_Lock}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00367\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group2_ga046c539c76aaae3d487d59193f74c9db}{HAL\_FLASH\_OB\_Launch}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00376\ \textcolor{comment}{/*\ Peripheral\ State\ and\ Error\ functions\ ***************************************/}}
+\DoxyCodeLine{00377\ uint32\_t\ \mbox{\hyperlink{group__FLASH__Exported__Functions__Group3_ga20e71ba6b2a09cd5b9f0bd369f842de3}{HAL\_FLASH\_GetError}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00387\ \textcolor{comment}{/*\ Private\ function\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00391\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \ \ \ \ \ \mbox{\hyperlink{group__FLASH__Private__Functions_gaf89afc110a32ac9dcf0d06b89ffd9224}{FLASH\_WaitForLastOperation}}(uint32\_t\ Timeout);}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00406\ \}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_HAL\_FLASH\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ }
+
+\end{DoxyCode}

@@ -1,0 +1,15 @@
+<map id="MPU6050_Read_Accel" name="MPU6050_Read_Accel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="865,31,1032,56"/>
+<area shape="rect" id="Node000002" href="$mpu6050_8c.html#af23ed1d341ade70d22b86fcf503dbb22" title=" " alt="" coords="619,31,817,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="851,46,817,46,817,41,851,41"/>
+<area shape="rect" id="Node000003" href="$usart1__callbacks_8c.html#a1837314769db44a6256a00ffcb007f84" title=" " alt="" coords="444,31,571,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="604,46,571,46,571,41,604,41"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="261,5,372,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="430,36,372,28,373,23,431,31"/>
+<area shape="rect" id="Node000006" href="$usart1__callbacks_8c.html#a1e3a5d437575d683b8ca7bc8942599c3" title=" " alt="" coords="237,55,396,80"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="431,56,396,60,396,55,430,50"/>
+<area shape="rect" id="Node000005" href="$group__UART__Exported__Functions__Group2.html#ga0e0456ea96d55db31de947fb3e954f18" title=" " alt="" coords="5,5,189,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="248,21,190,21,190,15,248,15"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="70,55,125,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="224,70,125,70,125,65,224,65"/>
+</map>

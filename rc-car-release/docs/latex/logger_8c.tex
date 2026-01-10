@@ -1,0 +1,129 @@
+\doxysection{Core/\+Src/logger.c File Reference}
+\hypertarget{logger_8c}{}\label{logger_8c}\index{Core/Src/logger.c@{Core/Src/logger.c}}
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}usart1\+\_\+callbacks.\+h"{}}\newline
+Include dependency graph for logger.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logger_8c_a3278730f835b7230a0de447ea4afd3f0}{save\+\_\+log}} (\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} status)
+\item 
+void \mbox{\hyperlink{logger_8c_a56e187f87ce6f62d868702d19601848b}{send\+\_\+log}} (void)
+\item 
+void \mbox{\hyperlink{logger_8c_a7f0a1ef369c8017a21abc0f68371b64e}{logger\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{logger_8c_a6b0ab6ea376e6170c62b3f0e794e68e3}{logger\+\_\+send\+\_\+errors\+\_\+stat}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{logger_8c_aad25ef11ffd5686e11c4565bfa518d21}{log\+\_\+buf}} \mbox{[}\mbox{\hyperlink{logger_8h_af5a529c60284c738c2c294cc6f828166}{LOGGING\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{logger_8c_a004ab24a13c867300a15efc338250c00}{log\+\_\+pointer}} = 0
+\item 
+\mbox{\hyperlink{structlogged__errors}{logged\+\_\+errors}} \mbox{\hyperlink{logger_8c_a12c93060633f33d076c680cbea6fb495}{logged\+\_\+errors\+\_\+obj}}
+\item 
+\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{logger_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{logger_8c_a7f0a1ef369c8017a21abc0f68371b64e}\label{logger_8c_a7f0a1ef369c8017a21abc0f68371b64e} 
+\index{logger.c@{logger.c}!logger\_init@{logger\_init}}
+\index{logger\_init@{logger\_init}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{logger\_init()}{logger\_init()}}
+{\footnotesize\ttfamily void logger\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{logger_8c_a7f0a1ef369c8017a21abc0f68371b64e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8c_a6b0ab6ea376e6170c62b3f0e794e68e3}\label{logger_8c_a6b0ab6ea376e6170c62b3f0e794e68e3} 
+\index{logger.c@{logger.c}!logger\_send\_errors\_stat@{logger\_send\_errors\_stat}}
+\index{logger\_send\_errors\_stat@{logger\_send\_errors\_stat}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{logger\_send\_errors\_stat()}{logger\_send\_errors\_stat()}}
+{\footnotesize\ttfamily void logger\+\_\+send\+\_\+errors\+\_\+stat (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c_a6b0ab6ea376e6170c62b3f0e794e68e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8c_a3278730f835b7230a0de447ea4afd3f0}\label{logger_8c_a3278730f835b7230a0de447ea4afd3f0} 
+\index{logger.c@{logger.c}!save\_log@{save\_log}}
+\index{save\_log@{save\_log}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{save\_log()}{save\_log()}}
+{\footnotesize\ttfamily void save\+\_\+log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{status }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c_a3278730f835b7230a0de447ea4afd3f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8c_a56e187f87ce6f62d868702d19601848b}\label{logger_8c_a56e187f87ce6f62d868702d19601848b} 
+\index{logger.c@{logger.c}!send\_log@{send\_log}}
+\index{send\_log@{send\_log}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{send\_log()}{send\_log()}}
+{\footnotesize\ttfamily void send\+\_\+log (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{logger_8c_a56e187f87ce6f62d868702d19601848b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c_a56e187f87ce6f62d868702d19601848b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{logger_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{logger_8c_a2cf715bef37f7e8ef385a30974a5f0d5} 
+\index{logger.c@{logger.c}!huart1@{huart1}}
+\index{huart1@{huart1}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} huart1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{logger_8c_aad25ef11ffd5686e11c4565bfa518d21}\label{logger_8c_aad25ef11ffd5686e11c4565bfa518d21} 
+\index{logger.c@{logger.c}!log\_buf@{log\_buf}}
+\index{log\_buf@{log\_buf}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{log\_buf}{log\_buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} log\+\_\+buf\mbox{[}\mbox{\hyperlink{logger_8h_af5a529c60284c738c2c294cc6f828166}{LOGGING\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}}
+
+\Hypertarget{logger_8c_a004ab24a13c867300a15efc338250c00}\label{logger_8c_a004ab24a13c867300a15efc338250c00} 
+\index{logger.c@{logger.c}!log\_pointer@{log\_pointer}}
+\index{log\_pointer@{log\_pointer}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{log\_pointer}{log\_pointer}}
+{\footnotesize\ttfamily uint32\+\_\+t log\+\_\+pointer = 0}
+
+\Hypertarget{logger_8c_a12c93060633f33d076c680cbea6fb495}\label{logger_8c_a12c93060633f33d076c680cbea6fb495} 
+\index{logger.c@{logger.c}!logged\_errors\_obj@{logged\_errors\_obj}}
+\index{logged\_errors\_obj@{logged\_errors\_obj}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{logged\_errors\_obj}{logged\_errors\_obj}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlogged__errors}{logged\+\_\+errors}} logged\+\_\+errors\+\_\+obj}
+

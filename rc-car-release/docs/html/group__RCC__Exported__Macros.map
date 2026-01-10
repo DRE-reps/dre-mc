@@ -1,0 +1,27 @@
+<map id="RCC Exported Macros" name="RCC Exported Macros">
+<area shape="rect" id="Node000002" href="$group__RCC.html" title=" " alt="" coords="5,729,55,754"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="103,729,265,754"/>
+<area shape="rect" id="Node000023" href="$group__RCCEx__MCOx__Clock__Config.html" title=" " alt="" coords="322,5,519,45"/>
+<area shape="rect" id="Node000013" href="$group__RCC__AHB__Clock__Sleep__Enable__Disable__Status.html" title="Get the enable or disable status of the AHB peripheral clock during Low Power (Sleep) mode." alt="" coords="339,70,502,125"/>
+<area shape="rect" id="Node000010" href="$group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status.html" title="Get the enable or disable status of the AHB peripheral clock." alt="" coords="337,149,505,189"/>
+<area shape="rect" id="Node000004" href="$group__RCC__APB1__Clock__Enable__Disable.html" title="Enable or disable the Low Speed APB (APB1) peripheral clock." alt="" coords="322,214,519,239"/>
+<area shape="rect" id="Node000014" href="$group__RCC__APB1__Clock__Sleep__Enable__Disable__Status.html" title="Get the enable or disable status of the APB1 peripheral clock during Low Power (Sleep) mode." alt="" coords="337,263,504,318"/>
+<area shape="rect" id="Node000007" href="$group__RCC__APB1__Force__Release__Reset.html" title="Force or release APB1 peripheral reset." alt="" coords="345,343,496,383"/>
+<area shape="rect" id="Node000011" href="$group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status.html" title="Get the enable or disable status of the APB1 peripheral clock." alt="" coords="337,407,505,447"/>
+<area shape="rect" id="Node000005" href="$group__RCC__APB2__Clock__Enable__Disable.html" title="Enable or disable the High Speed APB (APB2) peripheral clock." alt="" coords="322,471,519,497"/>
+<area shape="rect" id="Node000015" href="$group__RCC__APB2__Clock__Sleep__Enable__Disable__Status.html" title="Get the enable or disable status of the APB2 peripheral clock during Low Power (Sleep) mode." alt="" coords="337,521,504,575"/>
+<area shape="rect" id="Node000008" href="$group__RCC__APB2__Force__Release__Reset.html" title="Force or release APB1 peripheral reset." alt="" coords="345,600,496,640"/>
+<area shape="rect" id="Node000012" href="$group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status.html" title="Get the enable or disable status of the APB2 peripheral clock." alt="" coords="337,664,505,704"/>
+<area shape="rect" id="Node000025" href="$group__RCC__Flags__Interrupts__Management.html" title="macros to manage the specified RCC Flags and interrupts." alt="" coords="313,729,528,754"/>
+<area shape="rect" id="Node000022" href="$group__RCC__Get__Clock__source.html" title=" " alt="" coords="355,778,487,803"/>
+<area shape="rect" id="Node000018" href="$group__RCC__HSE__Configuration.html" title=" " alt="" coords="351,827,490,853"/>
+<area shape="rect" id="Node000016" href="$group__RCC__HSI__Configuration.html" title=" " alt="" coords="353,877,488,902"/>
+<area shape="rect" id="Node000019" href="$group__RCC__LSE__Configuration.html" title=" " alt="" coords="353,926,489,951"/>
+<area shape="rect" id="Node000017" href="$group__RCC__LSI__Configuration.html" title=" " alt="" coords="355,975,487,1001"/>
+<area shape="rect" id="Node000020" href="$group__RCC__MSI__Configuration.html" title=" " alt="" coords="352,1025,489,1050"/>
+<area shape="rect" id="Node000021" href="$group__RCC__PLL__Configuration.html" title=" " alt="" coords="353,1074,488,1099"/>
+<area shape="rect" id="Node000003" href="$group__RCC__Peripheral__Clock__Enable__Disable.html" title="Enable or disable the AHB1 peripheral clock." alt="" coords="333,1124,509,1164"/>
+<area shape="rect" id="Node000006" href="$group__RCC__Peripheral__Clock__Force__Release.html" title="Force or release AHB peripheral reset." alt="" coords="341,1188,500,1228"/>
+<area shape="rect" id="Node000009" href="$group__RCC__Peripheral__Clock__Sleep__Enable__Disable.html" title=" " alt="" coords="339,1252,502,1292"/>
+<area shape="rect" id="Node000024" href="$group__RCC__RTC__Clock__Configuration.html" title=" " alt="" coords="317,1317,525,1342"/>
+</map>

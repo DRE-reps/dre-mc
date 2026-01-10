@@ -1,0 +1,222 @@
+\doxysection{Core/\+Src/usart1\+\_\+callbacks.c File Reference}
+\hypertarget{usart1__callbacks_8c}{}\label{usart1__callbacks_8c}\index{Core/Src/usart1\_callbacks.c@{Core/Src/usart1\_callbacks.c}}
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}VL53\+L0\+X.\+h"{}}\newline
+{\ttfamily \#include "{}steering\+\_\+servo.\+h"{}}\newline
+{\ttfamily \#include "{}measure\+\_\+speed\+\_\+\+FC33.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}usart1\+\_\+callbacks.\+h"{}}\newline
+{\ttfamily \#include "{}esc.\+h"{}}\newline
+{\ttfamily \#include "{}converters.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}mpu6050.\+h"{}}\newline
+Include dependency graph for usart1\+\_\+callbacks.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__UART__Exported__Functions__Group2_gae494a9643f29b87d6d81e5264e60e57b}{HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}huart)
+\item 
+void \mbox{\hyperlink{group__UART__Exported__Functions__Group2_gabcdf9b59049eccbc87d54042f9235b1a}{HAL\+\_\+\+UART\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}usart)
+\item 
+void \mbox{\hyperlink{group__UART__Exported__Functions__Group2_ga0e0456ea96d55db31de947fb3e954f18}{HAL\+\_\+\+UART\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}usart)
+\item 
+void \mbox{\hyperlink{usart1__callbacks_8c_a1837314769db44a6256a00ffcb007f84}{Send\+\_\+\+Telemetry}} (void)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_affbfb036f60ddbae3a766279f885dff9}{Compute\+\_\+\+CRC8}} (\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t length)
+\item 
+void \mbox{\hyperlink{usart1__callbacks_8c_a1e3a5d437575d683b8ca7bc8942599c3}{process\+\_\+parser\+\_\+flags}} (void)
+\item 
+void \mbox{\hyperlink{usart1__callbacks_8c_a65f548b440445cf147d626e2e26ddb73}{parse\+\_\+uart\+\_\+message}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structCommand__State__t}{Command\+\_\+\+State\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_aee7728920d2aa0b757c4c9bf33a15d8c}{cmd\+\_\+state}} = \{0\}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_a43f5a50bc14912b001d64cc97abb3006}{sync\+\_\+count}} = 0
+\item 
+\mbox{\hyperlink{structesc__t}{esc\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_afe33c9d339fbeda78369dcfb0e327afa}{esc\+\_\+struct}}
+\item 
+\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{usart1__callbacks_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_a6afc9e2bbd3564dc37350fbdab1acf6d}{speed\+\_\+calibration\+\_\+buffer}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{structlogged__errors}{logged\+\_\+errors}} \mbox{\hyperlink{usart1__callbacks_8c_a12c93060633f33d076c680cbea6fb495}{logged\+\_\+errors\+\_\+obj}}
+\item 
+\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_aef6f776a64f67760312115d5362c5104}{mpu6050\+\_\+struct}}
+\item 
+\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_a85756813df9a1d07d38993d353892b1d}{sensor1}}
+\item 
+\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_ad5016f61865e19881526de01a61ad1dd}{sensor2}}
+\item 
+\mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \mbox{\hyperlink{usart1__callbacks_8c_a286fefae78c30daba457f2531577d362}{distance\+Str1}}
+\item 
+\mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \mbox{\hyperlink{usart1__callbacks_8c_ae8e4fce27f62bf40d775bfb949b33f52}{distance\+Str2}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8c_abecb9f7f424287335a67817a45e061a0}{rx\+\_\+byte}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{usart1__callbacks_8c_affbfb036f60ddbae3a766279f885dff9}\label{usart1__callbacks_8c_affbfb036f60ddbae3a766279f885dff9} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!Compute\_CRC8@{Compute\_CRC8}}
+\index{Compute\_CRC8@{Compute\_CRC8}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{Compute\_CRC8()}{Compute\_CRC8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Compute\+\_\+\+CRC8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8c_affbfb036f60ddbae3a766279f885dff9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart1__callbacks_8c_a65f548b440445cf147d626e2e26ddb73}\label{usart1__callbacks_8c_a65f548b440445cf147d626e2e26ddb73} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!parse\_uart\_message@{parse\_uart\_message}}
+\index{parse\_uart\_message@{parse\_uart\_message}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{parse\_uart\_message()}{parse\_uart\_message()}}
+{\footnotesize\ttfamily void parse\+\_\+uart\+\_\+message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{usart1__callbacks_8c_a65f548b440445cf147d626e2e26ddb73_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8c_a65f548b440445cf147d626e2e26ddb73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart1__callbacks_8c_a1e3a5d437575d683b8ca7bc8942599c3}\label{usart1__callbacks_8c_a1e3a5d437575d683b8ca7bc8942599c3} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!process\_parser\_flags@{process\_parser\_flags}}
+\index{process\_parser\_flags@{process\_parser\_flags}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{process\_parser\_flags()}{process\_parser\_flags()}}
+{\footnotesize\ttfamily void process\+\_\+parser\+\_\+flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8c_a1e3a5d437575d683b8ca7bc8942599c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{usart1__callbacks_8c_a1e3a5d437575d683b8ca7bc8942599c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart1__callbacks_8c_a1837314769db44a6256a00ffcb007f84}\label{usart1__callbacks_8c_a1837314769db44a6256a00ffcb007f84} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!Send\_Telemetry@{Send\_Telemetry}}
+\index{Send\_Telemetry@{Send\_Telemetry}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Telemetry()}{Send\_Telemetry()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Telemetry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8c_a1837314769db44a6256a00ffcb007f84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8c_a1837314769db44a6256a00ffcb007f84_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{usart1__callbacks_8c_aee7728920d2aa0b757c4c9bf33a15d8c}\label{usart1__callbacks_8c_aee7728920d2aa0b757c4c9bf33a15d8c} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!cmd\_state@{cmd\_state}}
+\index{cmd\_state@{cmd\_state}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{cmd\_state}{cmd\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCommand__State__t}{Command\+\_\+\+State\+\_\+t}} cmd\+\_\+state = \{0\}}
+
+\Hypertarget{usart1__callbacks_8c_a286fefae78c30daba457f2531577d362}\label{usart1__callbacks_8c_a286fefae78c30daba457f2531577d362} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!distanceStr1@{distanceStr1}}
+\index{distanceStr1@{distanceStr1}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{distanceStr1}{distanceStr1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} distance\+Str1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_ae8e4fce27f62bf40d775bfb949b33f52}\label{usart1__callbacks_8c_ae8e4fce27f62bf40d775bfb949b33f52} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!distanceStr2@{distanceStr2}}
+\index{distanceStr2@{distanceStr2}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{distanceStr2}{distanceStr2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} distance\+Str2\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_afe33c9d339fbeda78369dcfb0e327afa}\label{usart1__callbacks_8c_afe33c9d339fbeda78369dcfb0e327afa} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!esc\_struct@{esc\_struct}}
+\index{esc\_struct@{esc\_struct}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{esc\_struct}{esc\_struct}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structesc__t}{esc\+\_\+t}} esc\+\_\+struct\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{usart1__callbacks_8c_a2cf715bef37f7e8ef385a30974a5f0d5} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!huart1@{huart1}}
+\index{huart1@{huart1}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} huart1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_a12c93060633f33d076c680cbea6fb495}\label{usart1__callbacks_8c_a12c93060633f33d076c680cbea6fb495} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!logged\_errors\_obj@{logged\_errors\_obj}}
+\index{logged\_errors\_obj@{logged\_errors\_obj}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{logged\_errors\_obj}{logged\_errors\_obj}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlogged__errors}{logged\+\_\+errors}} logged\+\_\+errors\+\_\+obj\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_aef6f776a64f67760312115d5362c5104}\label{usart1__callbacks_8c_aef6f776a64f67760312115d5362c5104} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!mpu6050\_struct@{mpu6050\_struct}}
+\index{mpu6050\_struct@{mpu6050\_struct}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{mpu6050\_struct}{mpu6050\_struct}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} mpu6050\+\_\+struct\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_abecb9f7f424287335a67817a45e061a0}\label{usart1__callbacks_8c_abecb9f7f424287335a67817a45e061a0} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!rx\_byte@{rx\_byte}}
+\index{rx\_byte@{rx\_byte}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{rx\_byte}{rx\_byte}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} rx\+\_\+byte}
+
+\Hypertarget{usart1__callbacks_8c_a85756813df9a1d07d38993d353892b1d}\label{usart1__callbacks_8c_a85756813df9a1d07d38993d353892b1d} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!sensor1@{sensor1}}
+\index{sensor1@{sensor1}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{sensor1}{sensor1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} sensor1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_ad5016f61865e19881526de01a61ad1dd}\label{usart1__callbacks_8c_ad5016f61865e19881526de01a61ad1dd} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!sensor2@{sensor2}}
+\index{sensor2@{sensor2}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{sensor2}{sensor2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} sensor2\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_a6afc9e2bbd3564dc37350fbdab1acf6d}\label{usart1__callbacks_8c_a6afc9e2bbd3564dc37350fbdab1acf6d} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!speed\_calibration\_buffer@{speed\_calibration\_buffer}}
+\index{speed\_calibration\_buffer@{speed\_calibration\_buffer}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{speed\_calibration\_buffer}{speed\_calibration\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} speed\+\_\+calibration\+\_\+buffer\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{usart1__callbacks_8c_a43f5a50bc14912b001d64cc97abb3006}\label{usart1__callbacks_8c_a43f5a50bc14912b001d64cc97abb3006} 
+\index{usart1\_callbacks.c@{usart1\_callbacks.c}!sync\_count@{sync\_count}}
+\index{sync\_count@{sync\_count}!usart1\_callbacks.c@{usart1\_callbacks.c}}
+\doxysubsubsection{\texorpdfstring{sync\_count}{sync\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} sync\+\_\+count = 0}
+

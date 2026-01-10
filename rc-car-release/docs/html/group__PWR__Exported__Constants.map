@@ -1,0 +1,14 @@
+<map id="PWR Exported Constants" name="PWR Exported Constants">
+<area shape="rect" id="Node000002" href="$group__PWR.html" title=" " alt="" coords="5,262,57,287"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="105,262,288,287"/>
+<area shape="rect" id="Node000004" href="$group__PWR__CR__register__alias.html" title=" " alt="" coords="345,5,511,45"/>
+<area shape="rect" id="Node000005" href="$group__PWR__CSR__register__alias.html" title=" " alt="" coords="341,69,515,109"/>
+<area shape="rect" id="Node000012" href="$group__PWR__Flag.html" title=" " alt="" coords="386,134,470,159"/>
+<area shape="rect" id="Node000007" href="$group__PWR__PVD__Mode.html" title=" " alt="" coords="367,183,489,209"/>
+<area shape="rect" id="Node000006" href="$group__PWR__PVD__detection__level.html" title=" " alt="" coords="336,233,520,258"/>
+<area shape="rect" id="Node000011" href="$group__PWR__Regulator__Voltage__Scale.html" title=" " alt="" coords="342,283,514,323"/>
+<area shape="rect" id="Node000008" href="$group__PWR__Regulator__state__in__SLEEP__STOP__mode.html" title=" " alt="" coords="348,347,508,387"/>
+<area shape="rect" id="Node000009" href="$group__PWR__SLEEP__mode__entry.html" title=" " alt="" coords="341,411,515,437"/>
+<area shape="rect" id="Node000010" href="$group__PWR__STOP__mode__entry.html" title=" " alt="" coords="343,461,513,486"/>
+<area shape="rect" id="Node000003" href="$group__PWR__register__alias__address.html" title=" " alt="" coords="355,511,501,551"/>
+</map>

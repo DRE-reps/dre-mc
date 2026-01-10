@@ -1,0 +1,14 @@
+<map id="I2C Exported Constants" name="I2C Exported Constants">
+<area shape="rect" id="Node000002" href="$group__I2C.html" title=" " alt="" coords="5,244,48,269"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="96,244,271,269"/>
+<area shape="rect" id="Node000012" href="$group__I2C__Flag__definition.html" title=" " alt="" coords="368,5,508,31"/>
+<area shape="rect" id="Node000011" href="$group__I2C__Interrupt__configuration__definition.html" title="I2C Interrupt definition Elements values convention: 0xXXXXXXXX." alt="" coords="342,55,534,95"/>
+<area shape="rect" id="Node000008" href="$group__I2C__Memory__Address__Size.html" title=" " alt="" coords="344,120,532,145"/>
+<area shape="rect" id="Node000009" href="$group__I2C__XferDirection__definition.html" title=" " alt="" coords="339,169,537,195"/>
+<area shape="rect" id="Node000010" href="$group__I2C__XferOptions__definition.html" title=" " alt="" coords="343,219,533,244"/>
+<area shape="rect" id="Node000004" href="$group__I2C__addressing__mode.html" title=" " alt="" coords="359,268,517,293"/>
+<area shape="rect" id="Node000005" href="$group__I2C__dual__addressing__mode.html" title=" " alt="" coords="343,317,533,343"/>
+<area shape="rect" id="Node000003" href="$group__I2C__duty__cycle__in__fast__mode.html" title=" " alt="" coords="338,367,538,392"/>
+<area shape="rect" id="Node000006" href="$group__I2C__general__call__addressing__mode.html" title=" " alt="" coords="319,416,557,441"/>
+<area shape="rect" id="Node000007" href="$group__I2C__nostretch__mode.html" title=" " alt="" coords="363,465,513,491"/>
+</map>

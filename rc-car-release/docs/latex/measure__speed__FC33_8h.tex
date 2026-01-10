@@ -1,0 +1,113 @@
+\doxysection{Core/\+Inc/measure\+\_\+speed\+\_\+\+FC33.h File Reference}
+\hypertarget{measure__speed__FC33_8h}{}\label{measure__speed__FC33_8h}\index{Core/Inc/measure\_speed\_FC33.h@{Core/Inc/measure\_speed\_FC33.h}}
+{\ttfamily \#include "{}stm32l1xx\+\_\+hal.\+h"{}}\newline
+Include dependency graph for measure\+\_\+speed\+\_\+\+FC33.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measure__speed__FC33_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measure__speed__FC33_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{measure__speed__FC33_8h_a80212d9134efbb35f87cb50b4dcea938}{Measure\+Speed\+FC33\+\_\+\+Init}} (float wheel\+\_\+diameter\+\_\+сm\+\_\+i, uint32\+\_\+t timer\+\_\+period\+\_\+i, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} pulses\+\_\+per\+\_\+revolution)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{measure__speed__FC33_8h_a02034a0a01bf55caaf9ee51ac7a213b4}{Measure\+Speed\+FC33\+\_\+\+Get\+RPM}} ()
+\item 
+float \mbox{\hyperlink{measure__speed__FC33_8h_a7c39f9c01888c0093b82aa641dcc1c40}{Measure\+Speed\+FC33\+\_\+\+Get\+Speed\+Kmh}} ()
+\item 
+void \mbox{\hyperlink{measure__speed__FC33_8h_a70b6b18b9174e3e5b336afddde218df1}{Measure\+Speed\+FC33\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} ()
+\item 
+void \mbox{\hyperlink{measure__speed__FC33_8h_a6dbcb284dc761efef2c98e30199c6a52}{Measure\+Speed\+FC33\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{measure__speed__FC33_8h_a02034a0a01bf55caaf9ee51ac7a213b4}\label{measure__speed__FC33_8h_a02034a0a01bf55caaf9ee51ac7a213b4} 
+\index{measure\_speed\_FC33.h@{measure\_speed\_FC33.h}!MeasureSpeedFC33\_GetRPM@{MeasureSpeedFC33\_GetRPM}}
+\index{MeasureSpeedFC33\_GetRPM@{MeasureSpeedFC33\_GetRPM}!measure\_speed\_FC33.h@{measure\_speed\_FC33.h}}
+\doxysubsubsection{\texorpdfstring{MeasureSpeedFC33\_GetRPM()}{MeasureSpeedFC33\_GetRPM()}}
+{\footnotesize\ttfamily uint32\+\_\+t Measure\+Speed\+FC33\+\_\+\+Get\+RPM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measure__speed__FC33_8h_a02034a0a01bf55caaf9ee51ac7a213b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{measure__speed__FC33_8h_a7c39f9c01888c0093b82aa641dcc1c40}\label{measure__speed__FC33_8h_a7c39f9c01888c0093b82aa641dcc1c40} 
+\index{measure\_speed\_FC33.h@{measure\_speed\_FC33.h}!MeasureSpeedFC33\_GetSpeedKmh@{MeasureSpeedFC33\_GetSpeedKmh}}
+\index{MeasureSpeedFC33\_GetSpeedKmh@{MeasureSpeedFC33\_GetSpeedKmh}!measure\_speed\_FC33.h@{measure\_speed\_FC33.h}}
+\doxysubsubsection{\texorpdfstring{MeasureSpeedFC33\_GetSpeedKmh()}{MeasureSpeedFC33\_GetSpeedKmh()}}
+{\footnotesize\ttfamily float Measure\+Speed\+FC33\+\_\+\+Get\+Speed\+Kmh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measure__speed__FC33_8h_a7c39f9c01888c0093b82aa641dcc1c40_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{measure__speed__FC33_8h_a70b6b18b9174e3e5b336afddde218df1}\label{measure__speed__FC33_8h_a70b6b18b9174e3e5b336afddde218df1} 
+\index{measure\_speed\_FC33.h@{measure\_speed\_FC33.h}!MeasureSpeedFC33\_GPIO\_EXTI\_Callback@{MeasureSpeedFC33\_GPIO\_EXTI\_Callback}}
+\index{MeasureSpeedFC33\_GPIO\_EXTI\_Callback@{MeasureSpeedFC33\_GPIO\_EXTI\_Callback}!measure\_speed\_FC33.h@{measure\_speed\_FC33.h}}
+\doxysubsubsection{\texorpdfstring{MeasureSpeedFC33\_GPIO\_EXTI\_Callback()}{MeasureSpeedFC33\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void Measure\+Speed\+FC33\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{measure__speed__FC33_8h_a70b6b18b9174e3e5b336afddde218df1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measure__speed__FC33_8h_a70b6b18b9174e3e5b336afddde218df1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{measure__speed__FC33_8h_a80212d9134efbb35f87cb50b4dcea938}\label{measure__speed__FC33_8h_a80212d9134efbb35f87cb50b4dcea938} 
+\index{measure\_speed\_FC33.h@{measure\_speed\_FC33.h}!MeasureSpeedFC33\_Init@{MeasureSpeedFC33\_Init}}
+\index{MeasureSpeedFC33\_Init@{MeasureSpeedFC33\_Init}!measure\_speed\_FC33.h@{measure\_speed\_FC33.h}}
+\doxysubsubsection{\texorpdfstring{MeasureSpeedFC33\_Init()}{MeasureSpeedFC33\_Init()}}
+{\footnotesize\ttfamily void Measure\+Speed\+FC33\+\_\+\+Init (\begin{DoxyParamCaption}\item[{float}]{wheel\+\_\+diameter\+\_\+сm\+\_\+i,  }\item[{uint32\+\_\+t}]{timer\+\_\+period\+\_\+i,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{pulses\+\_\+per\+\_\+revolution }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{measure__speed__FC33_8h_a80212d9134efbb35f87cb50b4dcea938_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{measure__speed__FC33_8h_a6dbcb284dc761efef2c98e30199c6a52}\label{measure__speed__FC33_8h_a6dbcb284dc761efef2c98e30199c6a52} 
+\index{measure\_speed\_FC33.h@{measure\_speed\_FC33.h}!MeasureSpeedFC33\_TIM\_PeriodElapsedCallback@{MeasureSpeedFC33\_TIM\_PeriodElapsedCallback}}
+\index{MeasureSpeedFC33\_TIM\_PeriodElapsedCallback@{MeasureSpeedFC33\_TIM\_PeriodElapsedCallback}!measure\_speed\_FC33.h@{measure\_speed\_FC33.h}}
+\doxysubsubsection{\texorpdfstring{MeasureSpeedFC33\_TIM\_PeriodElapsedCallback()}{MeasureSpeedFC33\_TIM\_PeriodElapsedCallback()}}
+{\footnotesize\ttfamily void Measure\+Speed\+FC33\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{measure__speed__FC33_8h_a6dbcb284dc761efef2c98e30199c6a52_icgraph}
+\end{center}
+\end{figure}

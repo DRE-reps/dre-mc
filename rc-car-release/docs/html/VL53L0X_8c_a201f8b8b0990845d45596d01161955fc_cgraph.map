@@ -1,0 +1,18 @@
+<map id="getMeasurementTimingBudget" name="getMeasurementTimingBudget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,44,229,69"/>
+<area shape="rect" id="Node000002" href="$VL53L0X_8c.html#a479565c118c7119558e649f74204ed32" title=" " alt="" coords="282,5,469,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,41,276,30,277,35,203,47"/>
+<area shape="rect" id="Node000005" href="$VL53L0X_8c.html#a483b2d37eb9c9d668eef122a41b3ae96" title=" " alt="" coords="277,68,473,93"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="230,64,264,68,264,73,229,70"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a6030029639c34876b2bb5b1dc6eaaba6" title=" " alt="" coords="741,68,817,93"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="470,28,676,59,728,69,727,74,676,65,469,33"/>
+<area shape="rect" id="Node000004" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="883,93,1039,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="818,83,870,91,869,96,817,89"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="474,78,728,78,728,83,474,83"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html#a729beb08b6052761420f8b2ba9b965a2" title=" " alt="" coords="521,93,676,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="474,89,508,93,507,98,473,94"/>
+<area shape="rect" id="Node000007" href="$VL53L0X_8c.html#ad073f96b52d96014dade2560dd2fa931" title=" " alt="" coords="724,117,835,143"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="405,91,458,112,522,129,565,134,598,133,676,129,710,128,710,134,676,134,598,138,564,139,521,134,457,117,403,96"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="676,93,727,85,728,90,676,98"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="834,120,869,115,869,121,835,125"/>
+</map>

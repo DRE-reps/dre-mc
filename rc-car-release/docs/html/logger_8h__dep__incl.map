@@ -1,0 +1,23 @@
+<map id="Core/Inc/logger.h" name="Core/Inc/logger.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="511,5,642,31"/>
+<area shape="rect" id="Node000002" href="$steering__servo_8h.html" title=" " alt="" coords="154,79,341,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="511,36,301,81,300,76,510,31"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title=": Main program body" alt="" coords="5,152,129,177"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="498,26,302,44,208,60,171,70,143,81,121,97,102,116,76,153,72,150,98,113,118,93,141,76,169,65,207,55,301,39,497,21"/>
+<area shape="rect" id="Node000005" href="$usart1__callbacks_8c.html" title=" " alt="" coords="365,152,565,177"/>
+<area shape="poly" id="edge11_Node000001_Node000005" title=" " alt="" coords="499,29,472,36,447,46,424,61,406,80,401,89,401,98,411,117,428,135,447,150,444,154,425,139,406,121,396,99,396,88,401,77,421,57,444,41,471,31,497,23"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html" title=" " alt="" coords="415,79,562,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="554,41,505,81,501,76,550,37"/>
+<area shape="rect" id="Node000007" href="$converters_8c.html" title=" " alt="" coords="586,79,746,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="603,37,653,76,650,81,600,41"/>
+<area shape="rect" id="Node000008" href="$esc_8c.html" title=" " alt="" coords="771,79,884,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="631,32,787,76,786,81,629,37"/>
+<area shape="rect" id="Node000009" href="$logger_8c.html" title=" " alt="" coords="909,79,1039,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="654,30,910,76,909,81,654,36"/>
+<area shape="rect" id="Node000010" href="$mpu6050_8c.html" title=" " alt="" coords="1063,79,1215,104"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="656,26,1052,76,1063,78,1063,83,1051,81,655,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="207,111,98,154,96,149,205,106"/>
+<area shape="rect" id="Node000004" href="$steering__servo_8c.html" title=" " alt="" coords="154,152,341,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,118,250,152,245,152,245,118"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="296,106,430,149,429,154,294,111"/>
+</map>

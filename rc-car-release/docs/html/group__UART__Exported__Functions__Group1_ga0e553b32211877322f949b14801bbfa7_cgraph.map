@@ -1,0 +1,9 @@
+<map id="HAL_UART_MspInit" name="HAL_UART_MspInit">
+<area shape="rect" id="Node000001" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,55,151,80"/>
+<area shape="rect" id="Node000002" href="$group__GPIO__Exported__Functions__Group1.html#ga41bda93b6dd639e4905fdb1454eff98e" title=" " alt="" coords="223,5,337,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,52,213,31,215,37,131,57"/>
+<area shape="rect" id="Node000003" href="$group__CORTEX__Exported__Functions__Group1.html#gaaad4492c1b25e006d69948a15790352a" title=" " alt="" coords="199,55,361,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,65,186,65,186,70,151,70"/>
+<area shape="rect" id="Node000004" href="$group__CORTEX__Exported__Functions__Group1.html#ga8581a82025a4780efd00876a66e3e91b" title=" " alt="" coords="199,104,361,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,77,215,98,213,103,130,83"/>
+</map>

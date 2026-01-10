@@ -1,0 +1,20 @@
+<map id="STM32L1xx_HAL_Driver" name="STM32L1xx_HAL_Driver">
+<area shape="rect" id="Node000006" href="$group__CORTEX.html" title=" " alt="" coords="263,5,337,31"/>
+<area shape="rect" id="Node000007" href="$group__DMA.html" title=" " alt="" coords="273,55,327,80"/>
+<area shape="rect" id="Node000002" href="$group__EXTI.html" title="EXTI HAL module driver." alt="" coords="275,104,325,129"/>
+<area shape="rect" id="Node000008" href="$group__FLASH.html" title=" " alt="" coords="267,153,333,179"/>
+<area shape="rect" id="Node000009" href="$group__FLASHEx.html" title=" " alt="" coords="259,203,341,228"/>
+<area shape="rect" id="Node000010" href="$group__FLASH__RAMFUNC.html" title=" " alt="" coords="231,252,369,277"/>
+<area shape="rect" id="Node000003" href="$group__GPIO.html" title="GPIO HAL module driver." alt="" coords="273,301,327,327"/>
+<area shape="rect" id="Node000004" href="$group__GPIOEx.html" title=" " alt="" coords="265,351,335,376"/>
+<area shape="rect" id="Node000005" href="$group__HAL.html" title=" " alt="" coords="276,400,324,425"/>
+<area shape="rect" id="Node000011" href="$group__I2C.html" title=" " alt="" coords="279,449,321,475"/>
+<area shape="rect" id="Node000012" href="$group__PWR.html" title=" " alt="" coords="274,499,326,524"/>
+<area shape="rect" id="Node000013" href="$group__PWREx.html" title=" " alt="" coords="266,548,334,573"/>
+<area shape="rect" id="Node000014" href="$group__RCC.html" title=" " alt="" coords="275,597,325,623"/>
+<area shape="rect" id="Node000015" href="$group__RCCEx.html" title=" " alt="" coords="267,647,333,672"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,400,183,425"/>
+<area shape="rect" id="Node000016" href="$group__TIM.html" title=" " alt="" coords="277,696,323,721"/>
+<area shape="rect" id="Node000017" href="$group__TIMEx.html" title=" " alt="" coords="269,745,331,771"/>
+<area shape="rect" id="Node000018" href="$group__UART.html" title=" " alt="" coords="271,795,329,820"/>
+</map>

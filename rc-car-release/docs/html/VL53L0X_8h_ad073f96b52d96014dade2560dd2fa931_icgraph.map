@@ -1,0 +1,36 @@
+<map id="readReg16Bit" name="readReg16Bit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1257,133,1368,159"/>
+<area shape="rect" id="Node000002" href="$VL53L0X_8c.html#a483b2d37eb9c9d668eef122a41b3ae96" title=" " alt="" coords="721,57,917,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1279,129,1245,112,1209,98,1134,82,1057,73,917,69,918,63,1057,68,1134,77,1210,93,1248,107,1281,124"/>
+<area shape="rect" id="Node000008" href="$VL53L0X_8c.html#a3ef22d648f18b92ff8eceb17875be32f" title=" " alt="" coords="1017,108,1163,133"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="1243,141,1163,132,1164,126,1244,136"/>
+<area shape="rect" id="Node000009" href="$VL53L0X_8c.html#a4115dd2d5811402bad03557855e86071" title=" " alt="" coords="971,157,1209,183"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="1244,156,1208,160,1207,155,1243,151"/>
+<area shape="rect" id="Node000015" href="$VL53L0X_8c.html#a22a6527fa0e645ead3dd61ed33e2958a" title=" " alt="" coords="1027,207,1153,232"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="1278,168,1210,198,1153,212,1152,207,1208,193,1276,163"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a201f8b8b0990845d45596d01161955fc" title=" " alt="" coords="444,7,668,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="739,57,622,35,623,29,740,52"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html#ae6f31dda28a4c5766247d586b59bf24a" title=" " alt="" coords="445,56,667,81"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="708,72,667,72,668,67,708,67"/>
+<area shape="rect" id="Node000007" href="$VL53L0X_8c.html#a8b8437b301634dbba8588e6c269b6258" title=" " alt="" coords="240,107,393,132"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="728,87,668,95,522,109,394,118,393,113,522,104,668,90,728,82"/>
+<area shape="rect" id="Node000004" href="$VL53L0X_8c.html#a7e445bff76f1b43a528e6be773aa3cd3" title=" " alt="" coords="267,5,366,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="431,21,367,21,367,16,431,16"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="70,81,125,107"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="267,38,126,87,124,82,265,33"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="481,56,366,31,367,26,482,50"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="431,78,125,95,125,90,430,73"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="482,87,378,109,377,104,481,82"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="226,112,124,100,125,94,227,106"/>
+<area shape="rect" id="Node000010" href="$VL53L0X_8c.html#a8eda71f2217bcd6ee690e2262984914b" title=" " alt="" coords="716,157,923,183"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="957,173,923,173,923,167,957,167"/>
+<area shape="rect" id="Node000011" href="$usart1__callbacks_8c.html#a1837314769db44a6256a00ffcb007f84" title=" " alt="" coords="493,157,619,183"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="702,173,619,173,619,167,702,167"/>
+<area shape="rect" id="Node000012" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="261,205,372,231"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="480,188,373,210,372,204,478,183"/>
+<area shape="rect" id="Node000014" href="$usart1__callbacks_8c.html#a1e3a5d437575d683b8ca7bc8942599c3" title=" " alt="" coords="237,156,396,181"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="479,172,396,172,396,166,479,167"/>
+<area shape="rect" id="Node000013" href="$group__UART__Exported__Functions__Group2.html#ga0e0456ea96d55db31de947fb3e954f18" title=" " alt="" coords="5,205,189,231"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="248,221,190,221,190,215,248,215"/>
+<area shape="poly" id="edge18_Node000014_Node000005" title=" " alt="" coords="259,154,236,147,124,107,126,102,238,142,260,149"/>
+</map>

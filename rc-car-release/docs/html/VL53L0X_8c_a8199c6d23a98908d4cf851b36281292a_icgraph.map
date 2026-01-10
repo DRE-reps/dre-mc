@@ -1,0 +1,10 @@
+<map id="performSingleRefCalibration" name="performSingleRefCalibration">
+<area shape="rect" id="Node000001" title=" " alt="" coords="309,31,516,56"/>
+<area shape="rect" id="Node000002" href="$VL53L0X_8c.html#a7e445bff76f1b43a528e6be773aa3cd3" title=" " alt="" coords="135,5,234,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,33,234,26,235,21,296,28"/>
+<area shape="rect" id="Node000004" href="$VL53L0X_8c.html#a8b8437b301634dbba8588e6c269b6258" title=" " alt="" coords="108,55,261,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="296,58,262,62,261,57,295,53"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,31,61,42,60,36,122,26"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="94,56,60,50,61,45,95,50"/>
+</map>

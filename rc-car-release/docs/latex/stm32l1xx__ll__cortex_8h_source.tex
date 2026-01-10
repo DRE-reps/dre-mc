@@ -1,0 +1,263 @@
+\doxysection{stm32l1xx\+\_\+ll\+\_\+cortex.\+h}
+\hypertarget{stm32l1xx__ll__cortex_8h_source}{}\label{stm32l1xx__ll__cortex_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_cortex.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_cortex.h}}
+\mbox{\hyperlink{stm32l1xx__ll__cortex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_LL\_CORTEX\_H}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_LL\_CORTEX\_H}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}stm32l1xx.h"{}}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/*\ Private\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00054\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{/*\ Private\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00061\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ LL\_SYSTICK\_CLKSOURCE\_HCLK\_DIV8\ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ LL\_SYSTICK\_CLKSOURCE\_HCLK\ \ \ \ \ \ \ \ \ \ SysTick\_CTRL\_CLKSOURCE\_Msk\ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ LL\_HANDLER\_FAULT\_USG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SCB\_SHCSR\_USGFAULTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ LL\_HANDLER\_FAULT\_BUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SCB\_SHCSR\_BUSFAULTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ LL\_HANDLER\_FAULT\_MEM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SCB\_SHCSR\_MEMFAULTENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#if\ \_\_MPU\_PRESENT}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ LL\_MPU\_CTRL\_HFNMI\_PRIVDEF\_NONE\ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ LL\_MPU\_CTRL\_HARDFAULT\_NMI\ \ \ \ \ \ \ \ \ \ MPU\_CTRL\_HFNMIENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ LL\_MPU\_CTRL\_PRIVILEGED\_DEFAULT\ \ \ \ \ MPU\_CTRL\_PRIVDEFENA\_Msk\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ LL\_MPU\_CTRL\_HFNMI\_PRIVDEF\ \ \ \ \ \ \ \ \ \ (MPU\_CTRL\_HFNMIENA\_Msk\ |\ MPU\_CTRL\_PRIVDEFENA\_Msk)\ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00U\ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01U\ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02U\ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03U\ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04U\ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER5\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x05U\ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER6\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x06U\ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NUMBER7\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07U\ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_32B\ \ \ \ \ \ \ \ \ \ \ \ \ (0x04U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_64B\ \ \ \ \ \ \ \ \ \ \ \ \ (0x05U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_128B\ \ \ \ \ \ \ \ \ \ \ \ (0x06U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_256B\ \ \ \ \ \ \ \ \ \ \ \ (0x07U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_512B\ \ \ \ \ \ \ \ \ \ \ \ (0x08U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_1KB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x09U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_2KB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x0AU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_4KB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x0BU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_8KB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x0CU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_16KB\ \ \ \ \ \ \ \ \ \ \ \ (0x0DU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_32KB\ \ \ \ \ \ \ \ \ \ \ \ (0x0EU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_64KB\ \ \ \ \ \ \ \ \ \ \ \ (0x0FU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_128KB\ \ \ \ \ \ \ \ \ \ \ (0x10U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_256KB\ \ \ \ \ \ \ \ \ \ \ (0x11U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_512KB\ \ \ \ \ \ \ \ \ \ \ (0x12U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_1MB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x13U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_2MB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x14U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_4MB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x15U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_8MB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x16U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_16MB\ \ \ \ \ \ \ \ \ \ \ \ (0x17U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_32MB\ \ \ \ \ \ \ \ \ \ \ \ (0x18U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_64MB\ \ \ \ \ \ \ \ \ \ \ \ (0x19U\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_128MB\ \ \ \ \ \ \ \ \ \ \ (0x1AU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_256MB\ \ \ \ \ \ \ \ \ \ \ (0x1BU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_512MB\ \ \ \ \ \ \ \ \ \ \ (0x1CU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_1GB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1DU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_2GB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1EU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_SIZE\_4GB\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1FU\ <<\ MPU\_RASR\_SIZE\_Pos)\ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_NO\_ACCESS\ \ \ \ \ \ \ \ \ \ \ \ (0x00U\ <<\ MPU\_RASR\_AP\_Pos)\ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_PRIV\_RW\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01U\ <<\ MPU\_RASR\_AP\_Pos)\ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_PRIV\_RW\_URO\ \ \ \ \ \ \ \ \ \ (0x02U\ <<\ MPU\_RASR\_AP\_Pos)\ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_FULL\_ACCESS\ \ \ \ \ \ \ \ \ \ (0x03U\ <<\ MPU\_RASR\_AP\_Pos)\ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_PRIV\_RO\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x05U\ <<\ MPU\_RASR\_AP\_Pos)\ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LL\_MPU\_REGION\_PRIV\_RO\_URO\ \ \ \ \ \ \ \ \ \ (0x06U\ <<\ MPU\_RASR\_AP\_Pos)\ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ LL\_MPU\_TEX\_LEVEL0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00U\ <<\ MPU\_RASR\_TEX\_Pos)\ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ LL\_MPU\_TEX\_LEVEL1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01U\ <<\ MPU\_RASR\_TEX\_Pos)\ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ LL\_MPU\_TEX\_LEVEL2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x02U\ <<\ MPU\_RASR\_TEX\_Pos)\ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ LL\_MPU\_TEX\_LEVEL4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x04U\ <<\ MPU\_RASR\_TEX\_Pos)\ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ LL\_MPU\_INSTRUCTION\_ACCESS\_ENABLE\ \ \ 0x00U\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ LL\_MPU\_INSTRUCTION\_ACCESS\_DISABLE\ \ MPU\_RASR\_XN\_Msk\ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ LL\_MPU\_ACCESS\_SHAREABLE\ \ \ \ \ \ \ \ \ \ \ \ MPU\_RASR\_S\_Msk\ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ LL\_MPU\_ACCESS\_NOT\_SHAREABLE\ \ \ \ \ \ \ \ 0x00U\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ LL\_MPU\_ACCESS\_CACHEABLE\ \ \ \ \ \ \ \ \ \ \ \ MPU\_RASR\_C\_Msk\ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ LL\_MPU\_ACCESS\_NOT\_CACHEABLE\ \ \ \ \ \ \ \ 0x00U\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ LL\_MPU\_ACCESS\_BUFFERABLE\ \ \ \ \ \ \ \ \ \ \ MPU\_RASR\_B\_Msk\ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ LL\_MPU\_ACCESS\_NOT\_BUFFERABLE\ \ \ \ \ \ \ 0x00U\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_MPU\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00212\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00229\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__SYSTICK_gaf5dfb37d859552753594f9cc66431ba6}{LL\_SYSTICK\_IsActiveCounterFlag}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00230\ \{}
+\DoxyCodeLine{00231\ \ \ \textcolor{keywordflow}{return}\ ((SysTick-\/>CTRL\ \&\ SysTick\_CTRL\_COUNTFLAG\_Msk)\ ==\ (SysTick\_CTRL\_COUNTFLAG\_Msk));}
+\DoxyCodeLine{00232\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00242\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__SYSTICK_gaaf98ae8e0298b44c5d58a3ba9ef358f7}{LL\_SYSTICK\_SetClkSource}}(uint32\_t\ Source)}
+\DoxyCodeLine{00243\ \{}
+\DoxyCodeLine{00244\ \ \ \textcolor{keywordflow}{if}\ (Source\ ==\ \mbox{\hyperlink{group__CORTEX__LL__EC__CLKSOURCE__HCLK_gaa92530d2f2cd8ce785297e4aed960ff0}{LL\_SYSTICK\_CLKSOURCE\_HCLK}})}
+\DoxyCodeLine{00245\ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ SET\_BIT(SysTick-\/>CTRL,\ \mbox{\hyperlink{group__CORTEX__LL__EC__CLKSOURCE__HCLK_gaa92530d2f2cd8ce785297e4aed960ff0}{LL\_SYSTICK\_CLKSOURCE\_HCLK}});}
+\DoxyCodeLine{00247\ \ \ \}}
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00249\ \ \ \{}
+\DoxyCodeLine{00250\ \ \ \ \ CLEAR\_BIT(SysTick-\/>CTRL,\ \mbox{\hyperlink{group__CORTEX__LL__EC__CLKSOURCE__HCLK_gaa92530d2f2cd8ce785297e4aed960ff0}{LL\_SYSTICK\_CLKSOURCE\_HCLK}});}
+\DoxyCodeLine{00251\ \ \ \}}
+\DoxyCodeLine{00252\ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00261\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__SYSTICK_ga2cfeb1396db13a9fbc208cc659064b19}{LL\_SYSTICK\_GetClkSource}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00262\ \{}
+\DoxyCodeLine{00263\ \ \ \textcolor{keywordflow}{return}\ READ\_BIT(SysTick-\/>CTRL,\ \mbox{\hyperlink{group__CORTEX__LL__EC__CLKSOURCE__HCLK_gaa92530d2f2cd8ce785297e4aed960ff0}{LL\_SYSTICK\_CLKSOURCE\_HCLK}});}
+\DoxyCodeLine{00264\ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__SYSTICK_ga770fac4394ddde9a53e1a236c81538f0}{LL\_SYSTICK\_EnableIT}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00272\ \{}
+\DoxyCodeLine{00273\ \ \ SET\_BIT(SysTick-\/>CTRL,\ SysTick\_CTRL\_TICKINT\_Msk);}
+\DoxyCodeLine{00274\ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00281\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__SYSTICK_ga11d0d066050805c9e8d24718d8a15e4d}{LL\_SYSTICK\_DisableIT}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00282\ \{}
+\DoxyCodeLine{00283\ \ \ CLEAR\_BIT(SysTick-\/>CTRL,\ SysTick\_CTRL\_TICKINT\_Msk);}
+\DoxyCodeLine{00284\ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00291\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__SYSTICK_gab34484042fd5a82aa80ba94223b6fbde}{LL\_SYSTICK\_IsEnabledIT}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00292\ \{}
+\DoxyCodeLine{00293\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(SysTick-\/>CTRL,\ SysTick\_CTRL\_TICKINT\_Msk)\ ==\ (SysTick\_CTRL\_TICKINT\_Msk));}
+\DoxyCodeLine{00294\ \}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00309\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__LOW__POWER__MODE_gab55eabc37e5abe00df558c0ba1c37508}{LL\_LPM\_EnableSleep}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00310\ \{}
+\DoxyCodeLine{00311\ \ \ \textcolor{comment}{/*\ Clear\ SLEEPDEEP\ bit\ of\ Cortex\ System\ Control\ Register\ */}}
+\DoxyCodeLine{00312\ \ \ CLEAR\_BIT(SCB-\/>SCR,\ ((uint32\_t)SCB\_SCR\_SLEEPDEEP\_Msk));}
+\DoxyCodeLine{00313\ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00320\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__LOW__POWER__MODE_ga37d70238e98ca1214e3fe4113b119474}{LL\_LPM\_EnableDeepSleep}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00321\ \{}
+\DoxyCodeLine{00322\ \ \ \textcolor{comment}{/*\ Set\ SLEEPDEEP\ bit\ of\ Cortex\ System\ Control\ Register\ */}}
+\DoxyCodeLine{00323\ \ \ SET\_BIT(SCB-\/>SCR,\ ((uint32\_t)SCB\_SCR\_SLEEPDEEP\_Msk));}
+\DoxyCodeLine{00324\ \}}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00333\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__LOW__POWER__MODE_gabb2b2648dff19d88209af8761fc34c30}{LL\_LPM\_EnableSleepOnExit}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00334\ \{}
+\DoxyCodeLine{00335\ \ \ \textcolor{comment}{/*\ Set\ SLEEPONEXIT\ bit\ of\ Cortex\ System\ Control\ Register\ */}}
+\DoxyCodeLine{00336\ \ \ SET\_BIT(SCB-\/>SCR,\ ((uint32\_t)SCB\_SCR\_SLEEPONEXIT\_Msk));}
+\DoxyCodeLine{00337\ \}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00344\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__LOW__POWER__MODE_ga88768c6c5f53de30a647123241451eb9}{LL\_LPM\_DisableSleepOnExit}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00345\ \{}
+\DoxyCodeLine{00346\ \ \ \textcolor{comment}{/*\ Clear\ SLEEPONEXIT\ bit\ of\ Cortex\ System\ Control\ Register\ */}}
+\DoxyCodeLine{00347\ \ \ CLEAR\_BIT(SCB-\/>SCR,\ ((uint32\_t)SCB\_SCR\_SLEEPONEXIT\_Msk));}
+\DoxyCodeLine{00348\ \}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00356\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__LOW__POWER__MODE_gaf1c01ae00b4a13c5b6531f82a9677b90}{LL\_LPM\_EnableEventOnPend}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00357\ \{}
+\DoxyCodeLine{00358\ \ \ \textcolor{comment}{/*\ Set\ SEVEONPEND\ bit\ of\ Cortex\ System\ Control\ Register\ */}}
+\DoxyCodeLine{00359\ \ \ SET\_BIT(SCB-\/>SCR,\ ((uint32\_t)SCB\_SCR\_SEVONPEND\_Msk));}
+\DoxyCodeLine{00360\ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00368\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__LOW__POWER__MODE_gaf4ebb8351f09676067aa0ce1fe08321b}{LL\_LPM\_DisableEventOnPend}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00369\ \{}
+\DoxyCodeLine{00370\ \ \ \textcolor{comment}{/*\ Clear\ SEVEONPEND\ bit\ of\ Cortex\ System\ Control\ Register\ */}}
+\DoxyCodeLine{00371\ \ \ CLEAR\_BIT(SCB-\/>SCR,\ ((uint32\_t)SCB\_SCR\_SEVONPEND\_Msk));}
+\DoxyCodeLine{00372\ \}}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00391\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__HANDLER_ga904eb6ce46a723dd47b468241c6b0a2c}{LL\_HANDLER\_EnableFault}}(uint32\_t\ Fault)}
+\DoxyCodeLine{00392\ \{}
+\DoxyCodeLine{00393\ \ \ \textcolor{comment}{/*\ Enable\ the\ system\ handler\ fault\ */}}
+\DoxyCodeLine{00394\ \ \ SET\_BIT(SCB-\/>SHCSR,\ Fault);}
+\DoxyCodeLine{00395\ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00406\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__CORTEX__LL__EF__HANDLER_ga8b6826c996c587651a651a6138c44e1e}{LL\_HANDLER\_DisableFault}}(uint32\_t\ Fault)}
+\DoxyCodeLine{00407\ \{}
+\DoxyCodeLine{00408\ \ \ \textcolor{comment}{/*\ Disable\ the\ system\ handler\ fault\ */}}
+\DoxyCodeLine{00409\ \ \ CLEAR\_BIT(SCB-\/>SHCSR,\ Fault);}
+\DoxyCodeLine{00410\ \}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00425\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__MCU__INFO_ga648a5236b7fa08786086fcc4ce42b4b9}{LL\_CPUID\_GetImplementer}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00426\ \{}
+\DoxyCodeLine{00427\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(SCB-\/>CPUID,\ SCB\_CPUID\_IMPLEMENTER\_Msk)\ >>\ SCB\_CPUID\_IMPLEMENTER\_Pos);}
+\DoxyCodeLine{00428\ \}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00435\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__MCU__INFO_ga1f843da5f8524bace7fcf8dcce7996cb}{LL\_CPUID\_GetVariant}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00436\ \{}
+\DoxyCodeLine{00437\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(SCB-\/>CPUID,\ SCB\_CPUID\_VARIANT\_Msk)\ >>\ SCB\_CPUID\_VARIANT\_Pos);}
+\DoxyCodeLine{00438\ \}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00445\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__MCU__INFO_ga787f8b30eaa7a4c304fd5784daa98d6c}{LL\_CPUID\_GetConstant}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00446\ \{}
+\DoxyCodeLine{00447\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(SCB-\/>CPUID,\ SCB\_CPUID\_ARCHITECTURE\_Msk)\ >>\ SCB\_CPUID\_ARCHITECTURE\_Pos);}
+\DoxyCodeLine{00448\ \}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00455\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__MCU__INFO_gac98fd56ad9162c3f372004bd07038bdb}{LL\_CPUID\_GetParNo}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00456\ \{}
+\DoxyCodeLine{00457\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(SCB-\/>CPUID,\ SCB\_CPUID\_PARTNO\_Msk)\ >>\ SCB\_CPUID\_PARTNO\_Pos);}
+\DoxyCodeLine{00458\ \}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00465\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__CORTEX__LL__EF__MCU__INFO_ga7372821defd92c49ea4563da407acd01}{LL\_CPUID\_GetRevision}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00466\ \{}
+\DoxyCodeLine{00467\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(SCB-\/>CPUID,\ SCB\_CPUID\_REVISION\_Msk)\ >>\ SCB\_CPUID\_REVISION\_Pos);}
+\DoxyCodeLine{00468\ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#if\ \_\_MPU\_PRESENT}}
+\DoxyCodeLine{00489\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_MPU\_Enable(uint32\_t\ Options)}
+\DoxyCodeLine{00490\ \{}
+\DoxyCodeLine{00491\ \ \ \textcolor{comment}{/*\ Enable\ the\ MPU*/}}
+\DoxyCodeLine{00492\ \ \ WRITE\_REG(MPU-\/>CTRL,\ (MPU\_CTRL\_ENABLE\_Msk\ |\ Options));}
+\DoxyCodeLine{00493\ \ \ \textcolor{comment}{/*\ Ensure\ MPU\ settings\ take\ effects\ */}}
+\DoxyCodeLine{00494\ \ \ \_\_DSB();}
+\DoxyCodeLine{00495\ \ \ \textcolor{comment}{/*\ Sequence\ instruction\ fetches\ using\ update\ settings\ */}}
+\DoxyCodeLine{00496\ \ \ \_\_ISB();}
+\DoxyCodeLine{00497\ \}}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00504\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_MPU\_Disable(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00505\ \{}
+\DoxyCodeLine{00506\ \ \ \textcolor{comment}{/*\ Make\ sure\ outstanding\ transfers\ are\ done\ */}}
+\DoxyCodeLine{00507\ \ \ \_\_DMB();}
+\DoxyCodeLine{00508\ \ \ \textcolor{comment}{/*\ Disable\ MPU*/}}
+\DoxyCodeLine{00509\ \ \ WRITE\_REG(MPU-\/>CTRL,\ 0U);}
+\DoxyCodeLine{00510\ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00517\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_MPU\_IsEnabled(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00518\ \{}
+\DoxyCodeLine{00519\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(MPU-\/>CTRL,\ MPU\_CTRL\_ENABLE\_Msk)\ ==\ (MPU\_CTRL\_ENABLE\_Msk));}
+\DoxyCodeLine{00520\ \}}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00536\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_MPU\_EnableRegion(uint32\_t\ Region)}
+\DoxyCodeLine{00537\ \{}
+\DoxyCodeLine{00538\ \ \ \textcolor{comment}{/*\ Set\ Region\ number\ */}}
+\DoxyCodeLine{00539\ \ \ WRITE\_REG(MPU-\/>RNR,\ Region);}
+\DoxyCodeLine{00540\ \ \ \textcolor{comment}{/*\ Enable\ the\ MPU\ region\ */}}
+\DoxyCodeLine{00541\ \ \ SET\_BIT(MPU-\/>RASR,\ MPU\_RASR\_ENABLE\_Msk);}
+\DoxyCodeLine{00542\ \}}
+\DoxyCodeLine{00543\ }
+\DoxyCodeLine{00582\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_MPU\_ConfigRegion(uint32\_t\ Region,\ uint32\_t\ SubRegionDisable,\ uint32\_t\ Address,\ uint32\_t\ Attributes)}
+\DoxyCodeLine{00583\ \{}
+\DoxyCodeLine{00584\ \ \ \textcolor{comment}{/*\ Set\ Region\ number\ */}}
+\DoxyCodeLine{00585\ \ \ WRITE\_REG(MPU-\/>RNR,\ Region);}
+\DoxyCodeLine{00586\ \ \ \textcolor{comment}{/*\ Set\ base\ address\ */}}
+\DoxyCodeLine{00587\ \ \ WRITE\_REG(MPU-\/>RBAR,\ (Address\ \&\ 0xFFFFFFE0U));}
+\DoxyCodeLine{00588\ \ \ \textcolor{comment}{/*\ Configure\ MPU\ */}}
+\DoxyCodeLine{00589\ \ \ WRITE\_REG(MPU-\/>RASR,\ (MPU\_RASR\_ENABLE\_Msk\ |\ Attributes\ |\ (SubRegionDisable\ <<\ MPU\_RASR\_SRD\_Pos)));}
+\DoxyCodeLine{00590\ \}}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00607\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_MPU\_DisableRegion(uint32\_t\ Region)}
+\DoxyCodeLine{00608\ \{}
+\DoxyCodeLine{00609\ \ \ \textcolor{comment}{/*\ Set\ Region\ number\ */}}
+\DoxyCodeLine{00610\ \ \ WRITE\_REG(MPU-\/>RNR,\ Region);}
+\DoxyCodeLine{00611\ \ \ \textcolor{comment}{/*\ Disable\ the\ MPU\ region\ */}}
+\DoxyCodeLine{00612\ \ \ CLEAR\_BIT(MPU-\/>RASR,\ MPU\_RASR\_ENABLE\_Msk);}
+\DoxyCodeLine{00613\ \}}
+\DoxyCodeLine{00614\ }
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_MPU\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00633\ \}}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_LL\_CORTEX\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00637\ }
+
+\end{DoxyCode}

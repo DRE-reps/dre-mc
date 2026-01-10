@@ -1,0 +1,1132 @@
+\doxysection{Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32l1xx\+\_\+hal\+\_\+rcc.h File Reference}
+\hypertarget{stm32l1xx__hal__rcc_8h}{}\label{stm32l1xx__hal__rcc_8h}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_rcc.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_rcc.h}}
+
+
+Header file of RCC HAL module.  
+
+
+{\ttfamily \#include "{}stm32l1xx\+\_\+hal\+\_\+def.\+h"{}}\newline
+{\ttfamily \#include "{}stm32l1xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+h"{}}\newline
+Include dependency graph for stm32l1xx\+\_\+hal\+\_\+rcc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l1xx__hal__rcc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l1xx__hal__rcc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structRCC__PLLInitTypeDef}{RCC\+\_\+\+PLLInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RCC PLL configuration structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structRCC__OscInitTypeDef}{RCC\+\_\+\+Osc\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RCC Internal/\+External Oscillator (HSE, HSI, LSE and LSI) configuration structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structRCC__ClkInitTypeDef}{RCC\+\_\+\+Clk\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RCC System, AHB and APB busses clock configuration structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gae578b5efd6bd38193ab426ce65cb77b1}{RCC\+\_\+\+DBP\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~(100U)       /\texorpdfstring{$\ast$}{*} 100 ms \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gafe8ed1c0ca0e1c17ea69e09391498cc7}{RCC\+\_\+\+LSE\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~\mbox{\hyperlink{stm32l1xx__hal__conf_8h_a85e6fc812dc26f7161a04be2568a5462}{LSE\+\_\+\+STARTUP\+\_\+\+TIMEOUT}}
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gab3caadc0f23d394d1033aba55d31fcdc}{CLOCKSWITCH\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~(5000U)  /\texorpdfstring{$\ast$}{*} 5 s    \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gac0cd4ed24fa948844e1a40b12c450f32}{HSE\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~\mbox{\hyperlink{stm32l1xx__hal__conf_8h_a68ecbc9b0a1a40a1ec9d18d5e9747c4f}{HSE\+\_\+\+STARTUP\+\_\+\+TIMEOUT}}
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gaaf2d201a5de069ae452276eaf664bb38}{MSI\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~(2U)      /\texorpdfstring{$\ast$}{*} 2 ms (minimum Tick + 1U) \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gad9e56670dcbbe9dbc3a8971b36bbec58}{HSI\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~(2U)      /\texorpdfstring{$\ast$}{*} 2 ms (minimum Tick + 1U) \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gad52c7f624c88b0c82ab41b9dbd2b347f}{LSI\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~(2U)      /\texorpdfstring{$\ast$}{*} 2 ms (minimum Tick + 1U) \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__Timeout_gad54d8ad9b3511329efee38b3ad0665de}{PLL\+\_\+\+TIMEOUT\+\_\+\+VALUE}}~(2U)      /\texorpdfstring{$\ast$}{*} 2 ms (minimum Tick + 1U) \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__Register__Offset_ga539e07c3b3c55f1f1d47231341fb11e1}{RCC\+\_\+\+OFFSET}}~(RCC\+\_\+\+BASE -\/ PERIPH\+\_\+\+BASE)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Register__Offset_ga6df8d81c05c07cb0c26bbf27ea7fe55c}{RCC\+\_\+\+CR\+\_\+\+OFFSET}}~0x00
+\item 
+\#define \mbox{\hyperlink{group__RCC__Register__Offset_gafb1e90a88869585b970749de3c16ce4a}{RCC\+\_\+\+CFGR\+\_\+\+OFFSET}}~0x08
+\item 
+\#define \mbox{\hyperlink{group__RCC__Register__Offset_gace77000e86938c6253dc08e8c17e891a}{RCC\+\_\+\+CIR\+\_\+\+OFFSET}}~0x0C
+\item 
+\#define \mbox{\hyperlink{group__RCC__Register__Offset_ga63141585a221eed1fd009eb80e406619}{RCC\+\_\+\+CSR\+\_\+\+OFFSET}}~0x34
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacda2a01fba2f4f6b28d6533aef2f2396}{RCC\+\_\+\+CR\+\_\+\+OFFSET\+\_\+\+BB}}~(\mbox{\hyperlink{group__RCC__Register__Offset_ga539e07c3b3c55f1f1d47231341fb11e1}{RCC\+\_\+\+OFFSET}} + \mbox{\hyperlink{group__RCC__Register__Offset_ga6df8d81c05c07cb0c26bbf27ea7fe55c}{RCC\+\_\+\+CR\+\_\+\+OFFSET}})
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaff4bdac027bca99768bdbdd4bd794abc}{RCC\+\_\+\+CFGR\+\_\+\+OFFSET\+\_\+\+BB}}~(\mbox{\hyperlink{group__RCC__Register__Offset_ga539e07c3b3c55f1f1d47231341fb11e1}{RCC\+\_\+\+OFFSET}} + \mbox{\hyperlink{group__RCC__Register__Offset_gafb1e90a88869585b970749de3c16ce4a}{RCC\+\_\+\+CFGR\+\_\+\+OFFSET}})
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gae509d1d4d3915d2d95b0c141e09a8fd2}{RCC\+\_\+\+CIR\+\_\+\+OFFSET\+\_\+\+BB}}~(\mbox{\hyperlink{group__RCC__Register__Offset_ga539e07c3b3c55f1f1d47231341fb11e1}{RCC\+\_\+\+OFFSET}} + \mbox{\hyperlink{group__RCC__Register__Offset_gace77000e86938c6253dc08e8c17e891a}{RCC\+\_\+\+CIR\+\_\+\+OFFSET}})
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}}~(\mbox{\hyperlink{group__RCC__Register__Offset_ga539e07c3b3c55f1f1d47231341fb11e1}{RCC\+\_\+\+OFFSET}} + \mbox{\hyperlink{group__RCC__Register__Offset_ga63141585a221eed1fd009eb80e406619}{RCC\+\_\+\+CSR\+\_\+\+OFFSET}})
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga9bf60daa74224ea82d3df7e08d4533f1}{RCC\+\_\+\+HSION\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CR\+\_\+\+HSION\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gabd3eca3cc8b1501f9d8a62c4a0ebcfe7}{RCC\+\_\+\+CR\+\_\+\+HSION\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacda2a01fba2f4f6b28d6533aef2f2396}{RCC\+\_\+\+CR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga9bf60daa74224ea82d3df7e08d4533f1}{RCC\+\_\+\+HSION\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad64ec34200ec2d3f3d1717cbc8ba1244}{RCC\+\_\+\+MSION\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacda2a01fba2f4f6b28d6533aef2f2396}{RCC\+\_\+\+CR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad64ec34200ec2d3f3d1717cbc8ba1244}{RCC\+\_\+\+MSION\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaa9092b285e421195958ef49d9396b321}{RCC\+\_\+\+HSEON\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CR\+\_\+\+HSEON\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gabefdd36d54615fa5771dccb9985ec3b6}{RCC\+\_\+\+CR\+\_\+\+HSEON\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacda2a01fba2f4f6b28d6533aef2f2396}{RCC\+\_\+\+CR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaa9092b285e421195958ef49d9396b321}{RCC\+\_\+\+HSEON\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaa8a1695db870d271a9e79bf0272ec8b6}{RCC\+\_\+\+CSSON\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CR\+\_\+\+CSSON\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga37c353c62ad303e661e99f20dcc6d1f0}{RCC\+\_\+\+CR\+\_\+\+CSSON\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacda2a01fba2f4f6b28d6533aef2f2396}{RCC\+\_\+\+CR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaa8a1695db870d271a9e79bf0272ec8b6}{RCC\+\_\+\+CSSON\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaed4c77e51cc821b9645cb7874bf5861b}{RCC\+\_\+\+PLLON\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacda2a01fba2f4f6b28d6533aef2f2396}{RCC\+\_\+\+CR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gaed4c77e51cc821b9645cb7874bf5861b}{RCC\+\_\+\+PLLON\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga577ffeb20561aa8395fe5327807b5709}{RCC\+\_\+\+LSION\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CSR\+\_\+\+LSION\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gac34a2d63deae3efc65e66f8fb3c26dae}{RCC\+\_\+\+CSR\+\_\+\+LSION\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga577ffeb20561aa8395fe5327807b5709}{RCC\+\_\+\+LSION\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga6cd8836230fcbaf491e9713233690611}{RCC\+\_\+\+RMVF\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CSR\+\_\+\+RMVF\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga40f8ee2c5fa801d0b72ae230578dd77b}{RCC\+\_\+\+CSR\+\_\+\+RMVF\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga6cd8836230fcbaf491e9713233690611}{RCC\+\_\+\+RMVF\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga16e388a406aa93969e2713dd2e0d43e7}{RCC\+\_\+\+LSEON\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CSR\+\_\+\+LSEON\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gab255fbf335d208ed8255c67fb80b84b1}{RCC\+\_\+\+CSR\+\_\+\+LSEON\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga16e388a406aa93969e2713dd2e0d43e7}{RCC\+\_\+\+LSEON\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga099cfa567c89f8643f7671d84ba18a7b}{RCC\+\_\+\+LSEBYP\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CSR\+\_\+\+LSEBYP\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga8638f2321c343d7d985fe122717ea6e4}{RCC\+\_\+\+CSR\+\_\+\+LSEBYP\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga099cfa567c89f8643f7671d84ba18a7b}{RCC\+\_\+\+LSEBYP\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gac4074d20c157f0892c6effb8bf22c8d7}{RCC\+\_\+\+RTCEN\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CSR\+\_\+\+RTCEN\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga5cea2372c8b6876cdabe0d47b8ecbf64}{RCC\+\_\+\+CSR\+\_\+\+RTCEN\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gac4074d20c157f0892c6effb8bf22c8d7}{RCC\+\_\+\+RTCEN\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad338a94b4f6ff8afde3baed311dbce80}{RCC\+\_\+\+RTCRST\+\_\+\+BIT\+\_\+\+NUMBER}}~RCC\+\_\+\+CSR\+\_\+\+RTCRST\+\_\+\+Pos
+\item 
+\#define \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacccd4b9a0c52d7b815ba262a002f0cc8}{RCC\+\_\+\+CSR\+\_\+\+RTCRST\+\_\+\+BB}}~((uint32\+\_\+t)(PERIPH\+\_\+\+BB\+\_\+\+BASE + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad07932326df75b09ed7c43233a7c6666}{RCC\+\_\+\+CSR\+\_\+\+OFFSET\+\_\+\+BB}} \texorpdfstring{$\ast$}{*} 32U) + (\mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gad338a94b4f6ff8afde3baed311dbce80}{RCC\+\_\+\+RTCRST\+\_\+\+BIT\+\_\+\+NUMBER}} \texorpdfstring{$\ast$}{*} 4U)))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Constants_ga1da336203f39dd57462e7f331271f699}{RCC\+\_\+\+CR\+\_\+\+BYTE2\+\_\+\+ADDRESS}}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + \mbox{\hyperlink{group__RCC__Register__Offset_ga6df8d81c05c07cb0c26bbf27ea7fe55c}{RCC\+\_\+\+CR\+\_\+\+OFFSET}} + 0x02U))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Constants_ga97f80d22ba3506a43accbeb9ceb31f51}{RCC\+\_\+\+CIR\+\_\+\+BYTE1\+\_\+\+ADDRESS}}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + \mbox{\hyperlink{group__RCC__Register__Offset_gace77000e86938c6253dc08e8c17e891a}{RCC\+\_\+\+CIR\+\_\+\+OFFSET}} + 0x01U))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Constants_ga1387fb2dfadb830eb83ab2772c8d2294}{RCC\+\_\+\+CIR\+\_\+\+BYTE2\+\_\+\+ADDRESS}}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + \mbox{\hyperlink{group__RCC__Register__Offset_gace77000e86938c6253dc08e8c17e891a}{RCC\+\_\+\+CIR\+\_\+\+OFFSET}} + 0x02U))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Constants_ga56feb1abcd35b22427fa55164c585afa}{CR\+\_\+\+REG\+\_\+\+INDEX}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})1U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})2U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Constants_ga80017c6bf8a5c6f53a1a21bb8db93a82}{RCC\+\_\+\+FLAG\+\_\+\+MASK}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x1\+FU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga13202f72c93b28705bd35aab3cbd951f}{IS\+\_\+\+RCC\+\_\+\+PLLSOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga68584e3b585c1c1770d504a030d0dd34}{IS\+\_\+\+RCC\+\_\+\+OSCILLATORTYPE}}(\+\_\+\+\_\+\+OSCILLATOR\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga3c9bb7f31e4cd8436a41ae33c8908226}{IS\+\_\+\+RCC\+\_\+\+HSE}}(\+\_\+\+\_\+\+HSE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga6c766af016cdc1d63f1ed64c5082737c}{IS\+\_\+\+RCC\+\_\+\+LSE}}(\+\_\+\+\_\+\+LSE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga230f351a740560f6b51cdc4b7051606e}{IS\+\_\+\+RCC\+\_\+\+HSI}}(\+\_\+\+\_\+\+HSI\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HSI\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__HSI__Config_ga1b34d37d3b51afec0758b3ddc7a7e665}{RCC\+\_\+\+HSI\+\_\+\+OFF}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+HSI\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__HSI__Config_ga0bf09ef9e46d5da25cced7b3122f92f5}{RCC\+\_\+\+HSI\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga0811e1266f1690c9f967df0129cb9d66}{IS\+\_\+\+RCC\+\_\+\+CALIBRATION\+\_\+\+VALUE}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) $<$= 0x1\+FU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gafddad15a3c57d33518053c9e6068d883}{IS\+\_\+\+RCC\+\_\+\+MSICALIBRATION\+\_\+\+VALUE}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) $<$= 0x\+FFU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gab858942210685d5f8c7b06c28712fb9d}{IS\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+CLOCK\+\_\+\+RANGE}}(\+\_\+\+\_\+\+RANGE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga2961f77a4ee7870f36d9f7f6729a0608}{IS\+\_\+\+RCC\+\_\+\+LSI}}(\+\_\+\+\_\+\+LSI\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+LSI\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__LSI__Config_gaa1710927d79a2032f87f039c4a27356a}{RCC\+\_\+\+LSI\+\_\+\+OFF}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+LSI\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__LSI__Config_ga6b364ac3500e60b6bff695ee518c87d6}{RCC\+\_\+\+LSI\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gac570b69943ae13dc611be7cf1216a76e}{IS\+\_\+\+RCC\+\_\+\+MSI}}(\+\_\+\+\_\+\+MSI\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+MSI\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__MSI__Config_gac80ce94ec4b5a82e2f3a36abb7cc017a}{RCC\+\_\+\+MSI\+\_\+\+OFF}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+MSI\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__MSI__Config_gabf942d45be1bc843650abc9e79426739}{RCC\+\_\+\+MSI\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga4e8a1f3a151c3011e915df4da312dd73}{IS\+\_\+\+RCC\+\_\+\+PLL}}(\+\_\+\+\_\+\+PLL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga538fbf6f9c19eff60a92d73ce8d8c12f}{IS\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+DIV}}(\+\_\+\+\_\+\+DIV\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gaaa87e62aba8556651b5d09e2f7ec4db5}{IS\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+MUL}}(\+\_\+\+\_\+\+MUL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gaedf7abbab300ed340b88d5f665910707}{IS\+\_\+\+RCC\+\_\+\+CLOCKTYPE}}(CLK)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga7dc6fce00c2191e691fb2b17dd176d65}{IS\+\_\+\+RCC\+\_\+\+SYSCLKSOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gae09fa77206ca9cb1952b7d0ae49c8f4c}{IS\+\_\+\+RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+STATUS}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga0f01b4d9e55bcb7fcbd2c08f6d7bb5b3}{IS\+\_\+\+RCC\+\_\+\+HCLK}}(\+\_\+\+\_\+\+HCLK\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga378b8fcc2e64326f6f98b30cb3fc22d9}{IS\+\_\+\+RCC\+\_\+\+PCLK}}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga9fa7b8751b8f868f0f1dd55b6efced65}{IS\+\_\+\+RCC\+\_\+\+MCO}}(\+\_\+\+\_\+\+MCO\+\_\+\+\_\+)~((\+\_\+\+\_\+\+MCO\+\_\+\+\_\+) == \mbox{\hyperlink{group__RCC__MCO__Index_gad9bc2abe13f0d3e62a5f9aa381927eb3}{RCC\+\_\+\+MCO}})
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gab281379d2f6361a20a082259be63af0f}{IS\+\_\+\+RCC\+\_\+\+MCODIV}}(\+\_\+\+\_\+\+DIV\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_ga17690472f266a032db5324907a0ddc31}{IS\+\_\+\+RCC\+\_\+\+MCO1\+SOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Private__Macros_gacd1d98013cd9a28e8b1544adf931e7b3}{IS\+\_\+\+RCC\+\_\+\+RTCCLKSOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Clock__Source_ga0e07703f1ccb3d60f8a47a2dc631c218}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSI}}~RCC\+\_\+\+CFGR\+\_\+\+PLLSRC\+\_\+\+HSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Clock__Source_ga197cea7fe5c2db26fe7fcdb0f99dd4d7}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSE}}~RCC\+\_\+\+CFGR\+\_\+\+PLLSRC\+\_\+\+HSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__Oscillator__Type_ga5a790362c5d7c4263f0f75a7367dd6b9}{RCC\+\_\+\+OSCILLATORTYPE\+\_\+\+NONE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Oscillator__Type_ga28cacd402dec84e548c9e4ba86d4603f}{RCC\+\_\+\+OSCILLATORTYPE\+\_\+\+HSE}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Oscillator__Type_gaa7ff7cbe9b0c2c511b0d0555e2a32a23}{RCC\+\_\+\+OSCILLATORTYPE\+\_\+\+HSI}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Oscillator__Type_ga7036aec5659343c695d795e04d9152ba}{RCC\+\_\+\+OSCILLATORTYPE\+\_\+\+LSE}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Oscillator__Type_ga3b7abb8ce0544cca0aa4550540194ce2}{RCC\+\_\+\+OSCILLATORTYPE\+\_\+\+LSI}}~(0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Oscillator__Type_ga967ab49a19c9c88b4d7a85faf4707243}{RCC\+\_\+\+OSCILLATORTYPE\+\_\+\+MSI}}~(0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSE__Config_ga1616626d23fbce440398578855df6f97}{RCC\+\_\+\+HSE\+\_\+\+OFF}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSE__Config_gabc4f70a44776c557af20496b04d9a9db}{RCC\+\_\+\+HSE\+\_\+\+ON}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSE__Config_ga5ca515db2d5c4d5bdb9ee3d154df2704}{RCC\+\_\+\+HSE\+\_\+\+BYPASS}}~(0x00000005U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__LSE__Config_ga6645c27708d0cad1a4ab61d2abb24c77}{RCC\+\_\+\+LSE\+\_\+\+OFF}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__LSE__Config_gac981ea636c2f215e4473901e0912f55a}{RCC\+\_\+\+LSE\+\_\+\+ON}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__LSE__Config_gaad580157edbae878edbcc83c5a68e767}{RCC\+\_\+\+LSE\+\_\+\+BYPASS}}~(0x00000005U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSI__Config_ga1b34d37d3b51afec0758b3ddc7a7e665}{RCC\+\_\+\+HSI\+\_\+\+OFF}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSI__Config_ga0bf09ef9e46d5da25cced7b3122f92f5}{RCC\+\_\+\+HSI\+\_\+\+ON}}~RCC\+\_\+\+CR\+\_\+\+HSION
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSI__Config_ga03cf582e263fb7e31a7783d8adabd7a0}{RCC\+\_\+\+HSICALIBRATION\+\_\+\+DEFAULT}}~(0x10U)         /\texorpdfstring{$\ast$}{*} Default HSI calibration trimming value \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_ga3a266a56e6a43bdaef4bbcc1eee4c360}{RCC\+\_\+\+MSIRANGE\+\_\+0}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+0
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_ga90601d6a9beb6a00245ecbf193d0ece5}{RCC\+\_\+\+MSIRANGE\+\_\+1}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+1
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_gafa12a5d5063914b4aa66c8f12324926e}{RCC\+\_\+\+MSIRANGE\+\_\+2}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+2
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_ga2eb0f8e9e5800747454d52f5497dea57}{RCC\+\_\+\+MSIRANGE\+\_\+3}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+3
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_gab5ca16a71f018ae2ceb5bcef29434f1c}{RCC\+\_\+\+MSIRANGE\+\_\+4}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+4
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_gabcd068b50d4fdfb3529272fbb169ebb1}{RCC\+\_\+\+MSIRANGE\+\_\+5}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+5
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Clock__Range_ga7f6e3de13b041244869fba14585c43fe}{RCC\+\_\+\+MSIRANGE\+\_\+6}}~RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE\+\_\+6
+\item 
+\#define \mbox{\hyperlink{group__RCC__LSI__Config_gaa1710927d79a2032f87f039c4a27356a}{RCC\+\_\+\+LSI\+\_\+\+OFF}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__LSI__Config_ga6b364ac3500e60b6bff695ee518c87d6}{RCC\+\_\+\+LSI\+\_\+\+ON}}~RCC\+\_\+\+CSR\+\_\+\+LSION
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Config_gac80ce94ec4b5a82e2f3a36abb7cc017a}{RCC\+\_\+\+MSI\+\_\+\+OFF}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Config_gabf942d45be1bc843650abc9e79426739}{RCC\+\_\+\+MSI\+\_\+\+ON}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Config_ga70bb1809b5ba2dd69171f8f1c4d91728}{RCC\+\_\+\+MSICALIBRATION\+\_\+\+DEFAULT}}~(0x00000000U)   /\texorpdfstring{$\ast$}{*} Default MSI calibration trimming value \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Config_gae47a612f8e15c32917ee2181362d88f3}{RCC\+\_\+\+PLL\+\_\+\+NONE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Config_ga3a8d5c8bcb101c6ca1a574729acfa903}{RCC\+\_\+\+PLL\+\_\+\+OFF}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Config_gaf86dbee130304ba5760818f56d34ec91}{RCC\+\_\+\+PLL\+\_\+\+ON}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Type_ga7e721f5bf3fe925f78dae0356165332e}{RCC\+\_\+\+CLOCKTYPE\+\_\+\+SYSCLK}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Type_gaa5330efbd790632856a2b15851517ef9}{RCC\+\_\+\+CLOCKTYPE\+\_\+\+HCLK}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Type_gab00c7b70f0770a616be4b5df45a454c4}{RCC\+\_\+\+CLOCKTYPE\+\_\+\+PCLK1}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Type_gaef7e78706e597a6551d71f5f9ad60cc0}{RCC\+\_\+\+CLOCKTYPE\+\_\+\+PCLK2}}~(0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source_ga1e02722521eb426d481d52ba9f79afef}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+MSI}}~RCC\+\_\+\+CFGR\+\_\+\+SW\+\_\+\+MSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source_gaaeeb699502e7d7a9f1b5d57fcf1f5095}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+HSI}}~RCC\+\_\+\+CFGR\+\_\+\+SW\+\_\+\+HSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source_ga9116d0627e1e7f33c48e1357b9a35a1c}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+HSE}}~RCC\+\_\+\+CFGR\+\_\+\+SW\+\_\+\+HSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source_ga5caf08ac71d7dd7e7b2e3e421606aca7}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+PLLCLK}}~RCC\+\_\+\+CFGR\+\_\+\+SW\+\_\+\+PLL
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source__Status_gaf1cd59e7fe325bc5b765ae8171d6ce64}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+STATUS\+\_\+\+MSI}}~RCC\+\_\+\+CFGR\+\_\+\+SWS\+\_\+\+MSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source__Status_ga0d6c2b0b2d59e6591295649853bb2abd}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+STATUS\+\_\+\+HSI}}~RCC\+\_\+\+CFGR\+\_\+\+SWS\+\_\+\+HSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source__Status_ga3847769265bf19becf7b976a7e908a64}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+STATUS\+\_\+\+HSE}}~RCC\+\_\+\+CFGR\+\_\+\+SWS\+\_\+\+HSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__System__Clock__Source__Status_ga4f05019ec09da478d084f44dbaad7d6d}{RCC\+\_\+\+SYSCLKSOURCE\+\_\+\+STATUS\+\_\+\+PLLCLK}}~RCC\+\_\+\+CFGR\+\_\+\+SWS\+\_\+\+PLL
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga226f5bf675015ea677868132b6b83494}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV1}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV1
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_gac37c0610458a92e3cb32ec81014625c3}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV2}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV2
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga6fd3652d6853563cdf388a4386b9d22f}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV4}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV4
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga7def31373854ba9c72bb76b1d13e3aad}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV8}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV8
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga895462b261e03eade3d0139cc1327a51}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV16}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV16
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga73814b5a7ee000687ec8334637ca5b14}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV64}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV64
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga43eddf4d4160df30548a714dce102ad8}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV128}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV128
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_ga94956d6e9c3a78230bf660b838f987e2}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV256}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV256
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Source_gabe18a9d55c0858bbfe3db657fb64c76d}{RCC\+\_\+\+SYSCLK\+\_\+\+DIV512}}~RCC\+\_\+\+CFGR\+\_\+\+HPRE\+\_\+\+DIV512
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__APB2__Clock__Source_ga8e3fcdef0e5d77bb61a52420fe1e9fbc}{RCC\+\_\+\+HCLK\+\_\+\+DIV1}}~RCC\+\_\+\+CFGR\+\_\+\+PPRE1\+\_\+\+DIV1
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__APB2__Clock__Source_ga4d2ebcf280d85e8449a5fb7b994b5169}{RCC\+\_\+\+HCLK\+\_\+\+DIV2}}~RCC\+\_\+\+CFGR\+\_\+\+PPRE1\+\_\+\+DIV2
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__APB2__Clock__Source_ga85b5f4fd936e22a3f4df5ed756f6e083}{RCC\+\_\+\+HCLK\+\_\+\+DIV4}}~RCC\+\_\+\+CFGR\+\_\+\+PPRE1\+\_\+\+DIV4
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__APB2__Clock__Source_gadb18bc60e2c639cb59244bedb54f7bb3}{RCC\+\_\+\+HCLK\+\_\+\+DIV8}}~RCC\+\_\+\+CFGR\+\_\+\+PPRE1\+\_\+\+DIV8
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__APB2__Clock__Source_ga27ac27d48360121bc2dc68b99dc8845d}{RCC\+\_\+\+HCLK\+\_\+\+DIV16}}~RCC\+\_\+\+CFGR\+\_\+\+PPRE1\+\_\+\+DIV16
+\item 
+\#define \mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_ga1f44740a93ee5b2317052cc78bb2e0ed}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+2}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_ga76211572770fdd4d498693f977123485}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+4}}~RCC\+\_\+\+CR\+\_\+\+RTCPRE\+\_\+0
+\item 
+\#define \mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_gae6c2f7167f7c487aa37fd28dd40e6228}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+8}}~RCC\+\_\+\+CR\+\_\+\+RTCPRE\+\_\+1
+\item 
+\#define \mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_ga60173d5d241b3b64f747672772c6315f}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+16}}~RCC\+\_\+\+CR\+\_\+\+RTCPRE
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_gacce0b2f54d103340d8c3a218e86e295d}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+NO\+\_\+\+CLK}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_ga5dca8d63f250a20bd6bc005670d0c150}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+LSE}}~RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+LSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_gab47a1afb8b5eef9f20f4772961d0a5f4}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+LSI}}~RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+LSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_ga2e3715826835647795863c32f9aebad7}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+HSE\+\_\+\+DIVX}}~RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+HSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_gac1ee63256acb5637e994abf629edaf3b}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+HSE\+\_\+\+DIV2}}~(\mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_ga1f44740a93ee5b2317052cc78bb2e0ed}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+2}}  \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+HSE)
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_ga0f45ba0fe6a8f125137d3cee8b49f7cc}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+HSE\+\_\+\+DIV4}}~(\mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_ga76211572770fdd4d498693f977123485}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+4}}  \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+HSE)
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_gaf4f0209bbf068b427617f380e8e42490}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+HSE\+\_\+\+DIV8}}~(\mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_gae6c2f7167f7c487aa37fd28dd40e6228}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+8}}  \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+HSE)
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__LCD__Clock__Source_ga48e1ffd844b9e9192c5d7dbeed20765f}{RCC\+\_\+\+RTCCLKSOURCE\+\_\+\+HSE\+\_\+\+DIV16}}~(\mbox{\hyperlink{group__RCC__HAL__EC__RTC__HSE__DIV_ga60173d5d241b3b64f747672772c6315f}{RCC\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+DIV\+\_\+16}} \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+RTCSEL\+\_\+\+HSE)
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Division__Factor_gaa99ce6d8bb2024b91859445ea6dd6e8f}{RCC\+\_\+\+PLL\+\_\+\+DIV2}}~RCC\+\_\+\+CFGR\+\_\+\+PLLDIV2
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Division__Factor_ga08f44363e494f7ab9259e1c64b981dd2}{RCC\+\_\+\+PLL\+\_\+\+DIV3}}~RCC\+\_\+\+CFGR\+\_\+\+PLLDIV3
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Division__Factor_ga2632cb3df857c806ea08a4482df5daa6}{RCC\+\_\+\+PLL\+\_\+\+DIV4}}~RCC\+\_\+\+CFGR\+\_\+\+PLLDIV4
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_ga4ee529382af73885706795fd81538781}{RCC\+\_\+\+PLL\+\_\+\+MUL3}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL3
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_ga2aedc8bc6552d98fb748b58a2379820b}{RCC\+\_\+\+PLL\+\_\+\+MUL4}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL4
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_gae2f8dd748556470dcac6901ac7a3e650}{RCC\+\_\+\+PLL\+\_\+\+MUL6}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL6
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_gaddfa6ebdecba8c5951a774b271fa82eb}{RCC\+\_\+\+PLL\+\_\+\+MUL8}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL8
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_gaca5a5ddd829f682dd9a211e6a9be452a}{RCC\+\_\+\+PLL\+\_\+\+MUL12}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL12
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_ga39bd735dbbdf7f4bbc122b833d2c92f3}{RCC\+\_\+\+PLL\+\_\+\+MUL16}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL16
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_gaee672b4272b1054bb53278972bbd1c76}{RCC\+\_\+\+PLL\+\_\+\+MUL24}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL24
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_gae37615feccd4bdf924c05c6d6576acc2}{RCC\+\_\+\+PLL\+\_\+\+MUL32}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL32
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Multiplication__Factor_gadd0f597bce64d1db8ad83fdfd15ed518}{RCC\+\_\+\+PLL\+\_\+\+MUL48}}~RCC\+\_\+\+CFGR\+\_\+\+PLLMUL48
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO__Index_ga152dd1ae9455e528526c4e23a817937b}{RCC\+\_\+\+MCO1}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO__Index_gad9bc2abe13f0d3e62a5f9aa381927eb3}{RCC\+\_\+\+MCO}}~\mbox{\hyperlink{group__RCC__MCO__Index_ga152dd1ae9455e528526c4e23a817937b}{RCC\+\_\+\+MCO1}}
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCOx__Clock__Prescaler_ga438d8c3bead4e1ec5dd5757cb0313d53}{RCC\+\_\+\+MCODIV\+\_\+1}}~((uint32\+\_\+t)RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+DIV1)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCOx__Clock__Prescaler_ga6198330847077f4da351915518140bfc}{RCC\+\_\+\+MCODIV\+\_\+2}}~((uint32\+\_\+t)RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+DIV2)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCOx__Clock__Prescaler_ga1bdc2eb56aaeb53dc3ca5cd72f22d4c8}{RCC\+\_\+\+MCODIV\+\_\+4}}~((uint32\+\_\+t)RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+DIV4)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCOx__Clock__Prescaler_gadb84d9a10db2c49376be8fada619fe08}{RCC\+\_\+\+MCODIV\+\_\+8}}~((uint32\+\_\+t)RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+DIV8)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCOx__Clock__Prescaler_ga3ab3ab9547ef8800355111517b547882}{RCC\+\_\+\+MCODIV\+\_\+16}}~((uint32\+\_\+t)RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+DIV16)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_ga725a16362f3324ef5866dc5a1ff07cf5}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+NOCLOCK}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+NOCLOCK
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_gae8ca2959a1252ecd319843da02c79526}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+SYSCLK}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+SYSCLK
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_gac5ae615cfe916da9ecb212cf8ac102a6}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+MSI}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+MSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_gad99c388c455852143220397db3730635}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+HSI}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+HSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_gaa01b6cb196df3a4ad690f8bcaa4d0621}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+LSE}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+LSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_ga4ada18d28374df66c1b6da16606c23d8}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+LSI}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+LSI
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_ga5582d2ab152eb440a6cc3ae4833b043f}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+HSE}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+HSE
+\item 
+\#define \mbox{\hyperlink{group__RCC__MCO1__Clock__Source_ga79d888f2238eaa4e4b8d02b3900ea18b}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+PLLCLK}}~RCC\+\_\+\+CFGR\+\_\+\+MCO\+\_\+\+PLL
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_ga2b4ef277c1b71f96e0bef4b9a72fca94}{RCC\+\_\+\+IT\+\_\+\+LSIRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+LSIRDYF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_gad6b6e78a426850f595ef180d292a673d}{RCC\+\_\+\+IT\+\_\+\+LSERDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+LSERDYF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_ga69637e51b71f73f519c8c0a0613d042f}{RCC\+\_\+\+IT\+\_\+\+HSIRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+HSIRDYF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_gad13eaede352bca59611e6cae68665866}{RCC\+\_\+\+IT\+\_\+\+HSERDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+HSERDYF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_ga68d48e7811fb58f2649dce6cf0d823d9}{RCC\+\_\+\+IT\+\_\+\+PLLRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+PLLRDYF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_gae0cfda620ac8949e5b266661dba7ba0a}{RCC\+\_\+\+IT\+\_\+\+MSIRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+MSIRDYF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_gaf3f259914cb56820b1649c9d4413736c}{RCC\+\_\+\+IT\+\_\+\+LSECSS}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+LSECSSF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Interrupt_ga9bb34a4912d2084dc1c0834eb53aa7a3}{RCC\+\_\+\+IT\+\_\+\+CSS}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})RCC\+\_\+\+CIR\+\_\+\+CSSF)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga827d986723e7ce652fa733bb8184d216}{RCC\+\_\+\+FLAG\+\_\+\+HSIRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_ga56feb1abcd35b22427fa55164c585afa}{CR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CR\+\_\+\+HSIRDY\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga62ed7a3bb53fc28801071a2ad0d4f1af}{RCC\+\_\+\+FLAG\+\_\+\+MSIRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_ga56feb1abcd35b22427fa55164c585afa}{CR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CR\+\_\+\+MSIRDY\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga173edf47bec93cf269a0e8d0fec9997c}{RCC\+\_\+\+FLAG\+\_\+\+HSERDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_ga56feb1abcd35b22427fa55164c585afa}{CR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CR\+\_\+\+HSERDY\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_gaf82d8afb18d9df75db1d6c08b9c50046}{RCC\+\_\+\+FLAG\+\_\+\+PLLRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_ga56feb1abcd35b22427fa55164c585afa}{CR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CR\+\_\+\+PLLRDY\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga8c5e4992314d347597621bfe7ab10d72}{RCC\+\_\+\+FLAG\+\_\+\+LSIRDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+LSIRDY\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga7b25cf4df6fbb729b0d3f1530e5f6576}{RCC\+\_\+\+FLAG\+\_\+\+LSECSS}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+LSECSSD\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga9bacaedece5c7cb6d9e52c1412e1a8ae}{RCC\+\_\+\+FLAG\+\_\+\+OBLRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+OBLRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_gabfc3ab5d4a8a94ec1c9f38794ce37ad6}{RCC\+\_\+\+FLAG\+\_\+\+PINRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+PINRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga39ad309070f416720207eece5da7dc2c}{RCC\+\_\+\+FLAG\+\_\+\+PORRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+PORRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_gaf7852615e9b19f0b2dbc8d08c7594b52}{RCC\+\_\+\+FLAG\+\_\+\+SFTRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+SFTRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_gaac46bac8a97cf16635ff7ffc1e6c657f}{RCC\+\_\+\+FLAG\+\_\+\+IWDGRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+IWDGRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_gaa80b60b2d497ccd7b7de1075009999a7}{RCC\+\_\+\+FLAG\+\_\+\+WWDGRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+WWDGRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_ga67049531354aed7546971163d02c9920}{RCC\+\_\+\+FLAG\+\_\+\+LPWRRST}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+LPWRRSTF\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Flag_gac9fb963db446c16e46a18908f7fe1927}{RCC\+\_\+\+FLAG\+\_\+\+LSERDY}}~((\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})((\mbox{\hyperlink{group__RCC__Private__Constants_gab9507f2d9ee5d477b11363b052cd07c8}{CSR\+\_\+\+REG\+\_\+\+INDEX}} $<$$<$ 5U) \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CSR\+\_\+\+LSERDY\+\_\+\+Pos))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga1fde58d775fd2458002df817a68f486e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga5ad43f3f4d8163d40f7d402ef75d27c5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga5ebfeb136612f370950f52306d29b6fd}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga74340ce0f556e370aafc2b8ecdf2dd31}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga041e72359b94f19569e774030fc6ebff}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga5222bac3ebfec517c93055ae065303da}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga17a2870f308b7ccc5aba84d963484bac}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga49fc2c82ba0753e462ea8eb91c634a98}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga7083e491e6a1e165d064d199304bd2f0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+GPIOAEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga60be1be419b57dafbbb93df67d68a424}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+GPIOBEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga0fc90c25d35f9b5b5f66961505de1cd4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+GPIOCEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_gaeaefe364dafdc0c22353969595421422}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+GPIODEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga1eb7dd0a520cef518fb624bf7117b7e1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+GPIOHEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga170a30954a78a81a8f9b381378e0c9af}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+CRCEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga3ecbf76738d7f2b8deb65847614f7574}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+FLITFEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Enable__Disable_ga569dc8b9e178a8afab2664fdf87f46c5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBENR\+\_\+\+DMA1\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga2e895257faa38376b9cdfcd756909a43}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gaf62d32fdde03df10072d856515692c8d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gaf9b08205c361d1779b6c7a3afdb67e7c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga669982035ad2dd6cf095fd8b281f9dab}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga92313068bbe6883497ca424b24f31d44}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gab0c13cc10b36c32d750be226d2fda3b2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga12352adbb876f2b827d6ac3a04d94e26}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gaaf50c7d2265d978fab8fbb68a518096d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga34a7bf921d694c001b67dcd531c807a3}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gaaeae5b9e93721dd4e34274600996baeb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga7826848ae938c7f59984d12bc883a6f0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gacba2aebfe03cd3fd174f5c37a1d62769}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga6c7399cc977622172aeda52a86ceed92}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gabf537ba2ca2f41342fdfb724b1f3f260}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gac7d2931b2a75f3a79174b0e0270b34de}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gad2def81b1df0e62cd322ab60b31ba59f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM2\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga9fb7035f007ec272b725e51018a36b23}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM3\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga8888dfd8a1e50f8019f581506ec776d8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM4\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga1ee14a6e314a50eee7a1a09482a25abf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM6\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga865f11c3f70a9b85ebc5f09baf60eec9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM7\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga6afa0a633cf2553743a494d97aa5b997}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+WWDGEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gabb56a85a6424a60da8edc681f3a1c918}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+SPI2\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga1edc6c83fbebf8b4265ef9500aa04b04}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+USART2\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga5b0866dac14f73ddeafa6308ac447bec}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+USART3\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga490a853eae72da96aad5379a6e939dd8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C1\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga3ebc5988bcf1e2965ed482fd76c67b22}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C2\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga248a0f9f8b79b169d2e5ba5bd87b03c7}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+USBEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gaf3db86d2db2bad45732a742b6a91ea0b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+PWREN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_ga6817d8397756e235e5d29e980c7dbb47}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+DACEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Enable__Disable_gab4c437e55b3328cc80e4807ec3484a71}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+ENR\+\_\+\+COMPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_gafc3ffcbb86e4913ae336ba094ca199e1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga4af6c3c30271fa16eb113e5c0a89d953}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga4e340e8887d84210e36db6903643ea27}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_gab13c6974274c609546b93847b8bf42ae}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_gaa28c08d39ba2ec206a131f0861d7c1a1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga856c7460aa481976644736c703c6702d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga932afe7cea6c567ad63e0f83308b9d3e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_gaf04a5f1f0d6d8577706022a866f4528e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+SYSCFGEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga6c858a3c7df429051fe4459a8a22da43}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM9\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga33f3e5d6b2c337d84ae550b701e37455}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM10\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga2ea675ace35a7a536c9f4cec522f28bc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM11\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_ga80a9e4852bac07d3d9cc6390a361302a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+ADC1\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_gaf2ccb5c6b63a60deb6463cbc629c10fe}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+SPI1\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Enable__Disable_gae0050944298552e9f02f56ec8634f5a6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+CLK\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+ENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+ENR\+\_\+\+USART1\+EN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga70ac7ee64a7f1911e3c89d54efb13695}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+AHB\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR = 0x\+FFFFFFFFU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gab329bd497cccffd979bcca9fd42bbc79}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOARST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga3b89be9638638ffce3ebd4f08a3b64cf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOBRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga6e6a20fa8e0d7b3ebfdce26f6b1a1ed0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOCRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gaf0f7c49787fc94edeea74aa4218aeaf6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+GPIODRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga4f05c575d762edf40a6d17f88671b68d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOHRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gaf12ffda90699081f29cf76dab39b1944}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+CRCRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga7d8fbf9b7297180113c2dc4b4bfa0a3f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+FLITFRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga9135dece327ecc27f333f86dcf3ba8ee}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBRSTR\+\_\+\+DMA1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gab9a849fdb7ef7ea4021af51799b474d7}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+AHB\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR = 0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gad56e47c2eacd972491f94296053d0cc3}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOARST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gaf03da3b36478071844fbd77df618a686}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOBRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga1df0e3536d3450435bdccdbe9c878736}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOCRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga29fbf71f71ea27ffa38e7283b6dce03d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+GPIODRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gaaf11aa8bacb98c4e567bbaa58635acec}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+GPIOHRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gab7426b24c0b9d6aaec3c17f98735a178}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+CRCRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_gacc2ef3e73c5213f095c1c83370c7aaf1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+FLITFRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Force__Release_ga8f7eef8316c35175df11d77f5106d334}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$AHBRSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBRSTR\+\_\+\+DMA1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga6f6e7048eca1abd1be132027f5b79465}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR = 0x\+FFFFFFFFU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga1010b7c4a9122449860babb341f01d7b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga80ff127f3c25bde58ee5c1f224e2dca4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM3\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga16ff4de009e6cf02e8bfff068866837a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM4\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga3446c3ea4d5e101b591fcb0222d0fb10}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM6\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga350e60b0e21e094ff1624e1da9855e65}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM7\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gaf60e74dcb0fdadafd6b4762aa81fc409}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+WWDGRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga869e4f5c1132e3dfce084099cf454c51}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+SPI2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gab4de80173ffa0e599baab0e76d562cc3}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+USART2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga8902e16d49b4335d213b6a115c19127b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+USART3\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga551c171f88af86ca985db634ac9e3275}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+I2\+C1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gaed404dfdc9bc032cf718b7ed17f664f0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+I2\+C2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga3d05fde29c4ac7d73fea2b1a107b28bc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+USBRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gaf454341fae45fdfacfea2f45c07ce3e0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+PWRRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gad8ea14ca039a7298fecf64b829dc6384}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+DACRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gaf5d19646b71d320f28600f62991fff49}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+RSTR\+\_\+\+COMPRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga9d0742ab271ace3dbe1a4e83de3d017b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR = 0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga4b1b3b45c95788edb29ccd2bf6994826}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga27cf9c39217fff6ae9bce2285d9aff8c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM3\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gaab43d37f4682740d15c4b1fadb908d51}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM4\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga7eba1763b83169bc7cec3e10bfbccf20}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM6\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga4451d9cbc82223d913fae1f6b8187996}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+TIM7\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga63fa37b173c2c1d9249389148f96e5f1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+WWDGRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gacb910fd0c3c5a27d020ef3df20fce4c7}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+SPI2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga8baebf28a2739de5f3c5ef72519b9499}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+USART2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga25b71d0f7fb3b9455fb360fcb780c492}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+USART3\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga87cc8c2107c1d0820cc1f7e2aeb1aeb9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+I2\+C1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga2fa8cc909b285813af86c253ec110356}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+I2\+C2\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga8cdd5ad1a3d93937c9e9917e7d40f003}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+USBRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_gaaa5a340d38d50e508243f48bbb47dd32}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+PWRRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga1ac476b29c9395378bc16a7c4df08c7c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+DACRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Force__Release__Reset_ga0f9a57b2f58c3ed9799d5af0393f0462}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB1\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+RSTR\+\_\+\+COMPRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga8788da8c644ad0cc54912baede7d49b4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR = 0x\+FFFFFFFFU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga143ff27d8f59a39732efd79539e3765a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+SYSCFGRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga9a62b264dec3df075dc7207993a9650e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM9\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gaa40d4e3fd1261bb0cd239575a433e8e8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM10\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gaeaf6b459cfeb85e2e098b78825e476f2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM11\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga6176fa4f52de6ebf932d99a4d611634d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+ADC1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga87e6bc588fa1d5ce3928d2fd2a3156a4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+SPI1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga5db01cf30bf3c5c7fc0b42220f4c70ad}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+USART1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gae1e413d623154942d5bbe89769161ece}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR = 0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga56de80d50f5ab276ebdeee16a0e2a31b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+SYSCFGRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga71fee37e3aff2c5040e2e9f4e153f4ff}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM9\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga704b80ff2f733e161d30e4138f90614d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM10\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gab66378d2b26c2c47522f268e129b6709}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM11\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga681299b233339aa39a30fa5589cac5bc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+ADC1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gad7b4bc8c8a9146529a175c45eecf25e5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+SPI1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga243061674e38d05d222697046d43813a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+USART1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gaff8820b47bd3764e7cded76b9368460b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOALPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga0e718efc965ab07752cd865c3f33551a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOBLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gac62505cc695d985fcf18ca1fd2f1a421}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOCLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga5f04963ee5709230888d50574008372f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIODLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga3e9419b44e83ed1e6951801c390a69ad}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOHLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gab9b6703f096a151a86df9d76d4945cda}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+CRCLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga13e370f94b39c72876a321cdc5b31915}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+FLITFLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga568e4d004285fe009bc4e5d33e13af61}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$AHBLPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+AHBLPENR\+\_\+\+DMA1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gad6753edbd9047eeac39ae4f234642942}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOALPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga0a20ad851a2ef9e1ccdbf280dcd1dc44}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOBLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga293f9870ba631d23f8011bad12420f83}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOCLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga8520028c77aa2ecdd497c313665fa381}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+GPIODLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga3150a9552cca2ec7e0f00d799fc52adb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOHLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gaf63d9f5ce9a6922314054a94ee85eac0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+CRCLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga3d776af7d892a32ea3c68edf7891e4f5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+FLITFLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga8786d21490439ef0564edff087203245}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$AHBLPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+AHBLPENR\+\_\+\+DMA1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga975142c90b4e1baf21b361524518235d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN))
+\begin{DoxyCompactList}\small\item\em Enable or disable the APB1 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga2e165dd342f4ab6ea9b2edab08723cf8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga7911836a0e66ab2e4719b298f74b783b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga906c45719dcf2113473f2c3281926368}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga2a1c22a18251e0dac7f77ba8398af543}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gaa3978a2e193b921dc24976880dce7a26}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga8a281ca72aff1c9fa87755c3854cc316}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga12132da4a7f5c62f32cd9d91b1c99495}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga2a18798b0e216c3ccc3caa76e741a689}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga894dbeada170b01faef303d35de84917}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gac0167c77fa1c00add900bb1cf788e68c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga96992be78213cf47b37113840179ae2e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gacad9c9770ee2525fccf6a15e4ee7a07a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gad50feef6d1bdd1d254d96ce2786a502b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga341a7cb88414db0777196d6d772fb4be}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB1\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga65aef0935a6eb3e1ee17e9d19ec6ee8e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gaf380a14a537b7a6e1c0e20fea72d65aa}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga6d1fd6d4f7375b4abf93bd2ec4948d1d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga3dd5073cae99e103545801e21f6e25fb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga65016901a197f433425aca0a206b0c77}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gae61c24ac6b36e7edbabc5b050b38d63e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga4fff9b3416d2940cac20962e6d5655ec}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga3ad038000c76cee2e7ca00d56ba64c17}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gaa395d9d235caf02cac62e5dfb1d0c957}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gac7dc1c5239cd70bee94eefa3d91cdd7a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga46fe2d4331320cfe49b751b5488fc0cd}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga163a738dca988a270e8a1901cbeabd1f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga7b9889044ebfe2c9328d0f6733fda87d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gab24893ba4a827492272e611d2756d928}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga0a2842c49b58e3205331133db69ec8f2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB1\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga6e3a8ca9e554e3aa7aba57d034725655}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+SYSCFGLPEN))
+\begin{DoxyCompactList}\small\item\em Enable or disable the APB2 peripheral clock during Low Power (Sleep) mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga8fb59f888889fc998d1f7e64e370c9d1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM9\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gac1215603b81a7d52b7225ec8f628e51d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM10\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga2d808a429ceb72c79908770e79ff3cfa}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM11\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga37931819af9a7b1a05385e0ae6c984b6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+ADC1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga41997855b2cc7563c8ed0c9873d32daf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+SPI1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga454514918be60a95069da332eb212712}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLE}}()~(RCC-\/$>$APB2\+LPENR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+LPENR\+\_\+\+USART1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga04863ff5c2174552387c549f0410df43}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+SYSCFGLPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga531cefe824de1fa7461b34030d30d75f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM9\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga884747bf8ec12a16a37c512c6979fb4d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM10\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_gaf9c48fd8cd99db0e44d5427afe10c383}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM11\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga9534ddc24145ef6335d76b35632b7fe2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+ADC1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga2abe90eeb15890f45e28e8926bf70838}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+SPI1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__Peripheral__Clock__Sleep__Enable__Disable_ga75ec6abe2e15eaa24893a8cc83f4cb50}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLE}}()~(RCC-\/$>$APB2\+LPENR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+LPENR\+\_\+\+USART1\+LPEN))
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_gad1edbd9407c814110f04c1a609a214e4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOAEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga2fc8f9dc5f5b64c14c325c45ee301b4f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOBEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga528029c120a0154dfd7cfd6159e8debe}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOCEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga7a8a0e334d69163b25692f0450dc569a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIODEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga8e182ed43301e2586bc198a729b50436}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOHEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga0e1b25cbf589c1c47c1d069e4c803d56}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+CRCEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga40f5675d8f45c678b8a2f43fca8f991e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+FLITFEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_gaab05e603c9cadd72e4b6397837b46cef}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+DMA1\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga2d73b007700fe1576c7965ce677148bd}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOAEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga9b9353035473ac5f144f6e5385c4bebb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOBEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga5e939d98ecca025c028bd1d837b84c81}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOCEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga01c2b4166bbcf59a529cd3c5f8b93d76}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIODEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga9c405e3a8e5219c98d0262e18bd0eed9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+GPIOHEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_ga3d2645916b9ee9bad8c724a719c621d9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+CRCEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_gaeab36991bb98be402aae3d70b0887658}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+FLITFEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Peripheral__Clock__Enable__Disable__Status_gae89d94d6252c79e450623f69eb939ed6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBENR \& (RCC\+\_\+\+AHBENR\+\_\+\+DMA1\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gadee5016adb1c8b62a5bb05f055859de0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM2\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gaf6090239db6a8a6917b3f3accea15ed0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM3\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga62bee605d886067f86f890ee3af68eb5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM4\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gabb273361eaae66c857b5db26b639ff45}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM6\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga5642c4226ce18792efeca9d39cb0c5e0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM7\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga9b26aff2638d1e0613b0ce0530f0cd48}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+WWDGEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga282522dda9557cf715be3ee13c031a5b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+SPI2\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gad3bbe0639658ed2cc56f8328b26373ea}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+USART2\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga5addec8b6604857d81c1386cad21c391}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+USART3\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga7570e5654fd61b44dabe0546e524c906}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C1\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga2ae540056d72f4230da38c082b6c34c1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C2\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga59dc128f70029f5fba46edd0fb30f94b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+USBEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga850f4fd113303ed7322577ad023cf748}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+PWREN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga22c9af6855a6f9f9c947497908adcc9f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+DACEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gaf046e02c910a4966a1c120b47aea7406}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+COMPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gacaaa75c78c8ef4cf85f30fb20d522054}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM2\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga50f8e043a42eaf534c1efa2477078c0a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM3\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga30913be6e4b95cf2ebdf79647af18f34}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM4\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga70e84a0b11a0dab64a048f8dd6bbafb2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM6\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gac230813514cd9ee769f8f46b83d83f23}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM7\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga21d4e081c859ddccd4492343743bb245}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+WWDGEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gaab213cf8807d6e7e8b3867ffb404d763}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+SPI2\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga61e4b1f3e82831cdc7508d4c38312eab}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+USART2\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga9c6b66352f998564a6492d3e5d6aa536}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+USART3\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga8868ab331b4bb14a1d5cc55c9133e4de}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C1\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gae051ecb26de5c5b44f1827923c9837a5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C2\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gaccd255f230b6f8d7e753f05a854595bb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+USBEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga1019fdeb30eb4bcb23a0bea2278a94a2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+PWREN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_gadb2c1ec9bfcc21993094506a39e08f33}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+DACEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Peripheral__Clock__Enable__Disable__Status_ga665c0d26e8ff9870531a65daad87c227}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+ENR \& (RCC\+\_\+\+APB1\+ENR\+\_\+\+COMPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gad1ea95d1d5f3a2ecf2b903c4ed22e7c6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+SYSCFGEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gafab635405d33757b42a3df0d89416e8a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM9\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga7a4890d9368f8ea8c87c64d48f09686d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM10\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga7db5f2ab1e44c7ebd59a56d3bdd2a517}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM11\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga66eb89f7d856d9107e814efc751e8996}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+ADC1\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gab1787d7cdf591c099b8d96848aee835e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+SPI1\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga59bd3cd20df76f885695fcdad1edce27}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+USART1\+EN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga9f32ce5d57fe1d7a4871552d2e9a5b0e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+SYSCFGEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga83b7ae4eea41d7c7914716157b4072f4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM9\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gaf9ec8a421c88ea172a5f3cb13c220672}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM10\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gacee7220c840db84ec10d0b89ab20fa1e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+TIM11\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gac9f006a3c1b75c06270f0ae5a2c3ed07}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+ADC1\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_gabd506be27916f029d2214e88bc48f6df}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+SPI1\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Peripheral__Clock__Enable__Disable__Status_ga22c9d59ac6062298a71eed0d6a4a9afd}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+ENR \& (RCC\+\_\+\+APB2\+ENR\+\_\+\+USART1\+EN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gabfca340e2266b35f9eb8bda9f24fb272}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOALPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gae5f9c8d570ca5ce52bd3d1766ad96265}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOBLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga91d9bb261e4eb51ae5c83276ca94ba9e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOCLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga9be4e7cb3610f3242eedb2c38f05cafe}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIODLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gac60e430f28a40aecfc376ad9c00e94f5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOHLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga1983077cf8fed9d77dbb4950a46a3b7e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+CRCLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga968fb378568454a2913e11a238131ae4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+FLITFLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga2840d82c5565e7690a69a6848fa50fea}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+DMA1\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gafb90a4c788e0b1e1dee61e462ada7f17}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOALPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga2eac033c5d40d9e6eda85985322ece6f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOBLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga4dd6a13690da372d5ea52476d0f972c8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOCLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gafdc54fb0d223358257ea5c9f2d9c2db6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOD\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIODLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gae53e66bfd35d315af80f7d33a811de7c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+GPIOHLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gacb97eeee02557f4c5a3afd480227dd1c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+CRCLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_ga06858d9e8310f1d9d2763472d37e9d9c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLITF\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+FLITFLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__AHB__Clock__Sleep__Enable__Disable__Status_gac5b14fe76c4661619636fcdf08e2a874}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$AHBLPENR \& (RCC\+\_\+\+AHBLPENR\+\_\+\+DMA1\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaf38181befdeecf6a61c03885d3645bf1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gabe8c0a343d9bb288dae09aadbab028a6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga57a6fc55a53a8c9d8cc0303ec5d7177e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga8d5d8a349946a4c0698d754ee107c3cf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab1c825aefb8ae4ab199150ce061e7a8e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga60b229aff9ca29a44a5470f52a48bb2f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad6ee3d390b2b2748575725f5b0c42cfc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga91dc6d0fdf5c1c70158336df3bf5e097}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga998cffc84c7d5866a7e4cfae1f764327}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga39a3efabea0fb3cffae7be7726dd668e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaffe9902aa539eca59920b6b165bd1c71}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga7b1c994ebff003ec3728850962bd9be8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga898edde3fc183744da208db023828303}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad97aab0cffdef7edd52e48e0e5bef9dc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga9d83603386ac98f68fc5019c4065e235}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga0a89c97a19d5057d710e475ff24b71ec}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gade73c47dc34e5841b826a0e641220801}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaa138ce5c7fcfcfd42726b03e7de02c41}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaafa07cf3cfeac5be4071e52201dfcc7d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga64c55482f4bb2cdb236796b18c28d786}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga3cbf3b3683a84bac98b6d15d921f5ec8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga38ba0cbb661739ca615881f2ecfcd1c4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad83f4e02928278fc0d9373020a82f4e0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad5c5c2cf7612ea68ae679de26f0bc26e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga133208873edc0be1774bf4f3c224a2ac}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga901cecc03cce495d9f01a7228a3bce1c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab9ea1fbdc9d23388137d087f37a42390}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga13a44a1aacea32084e5bcdba69e4a636}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga12790e0adb572f2cd2c1b643906aa377}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga4f8d0195e28b82b74518f1566bc6b9cf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga0e518b9a088d789d700d121db458403a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+SYSCFGLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga255709a840c9a7e6f894df4f40ee6e64}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM9\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga420cca0cf8e74d769361540b398154ea}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM10\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga4eb8d9a7dcfdba9b830f54c0f19c87c4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM11\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_gaf477ab254684bdedec1dd28ddd7585ed}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+ADC1\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga2db4e1edb831584a39e791c16edfea28}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+SPI1\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga1059a391a514543547809a524b4cdf0d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+USART1\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga564fe78887dba5a7da7da1b9f2ffb372}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+SYSCFGLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga8b043bd22bd1c6aa4617d37e5565f8c6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM9\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga6fe0d52321bc2c97d649ddcc335bffc4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM10\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_gabf2f10634fa4a6a8b4957e46611d2824}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+TIM11\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga5b3baade56bc0603ac5b3ae3bf3b7da9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+ADC1\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_gab9a82b96c7950398956ee6f58c3d5dda}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+SPI1\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Clock__Sleep__Enable__Disable__Status_ga2123ed8a27c8cf060899c1e7a923b8c8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB2\+LPENR \& (RCC\+\_\+\+APB2\+LPENR\+\_\+\+USART1\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSI__Configuration_gaab944f562b53fc74bcc0e4958388fd42}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gabd3eca3cc8b1501f9d8a62c4a0ebcfe7}{RCC\+\_\+\+CR\+\_\+\+HSION\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macros to enable or disable the Internal High Speed oscillator (HSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__HSI__Configuration_ga0c0dc8bc0ef58703782f45b4e487c031}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gabd3eca3cc8b1501f9d8a62c4a0ebcfe7}{RCC\+\_\+\+CR\+\_\+\+HSION\+\_\+\+BB}} = DISABLE)
+\item 
+\#define \mbox{\hyperlink{group__RCC__HSI__Configuration_ga36991d340af7ad14b79f204c748b0e3e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI\+\_\+\+CALIBRATIONVALUE\+\_\+\+ADJUST}}(\+\_\+\+HSICALIBRATIONVALUE\+\_\+)~          (MODIFY\+\_\+\+REG(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+HSITRIM, (uint32\+\_\+t)(\+\_\+\+HSICALIBRATIONVALUE\+\_\+) $<$$<$ RCC\+\_\+\+ICSCR\+\_\+\+HSITRIM\+\_\+\+Pos))
+\begin{DoxyCompactList}\small\item\em Macro to adjust the Internal High Speed oscillator (HSI) calibration value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__LSI__Configuration_ga560de8b8991db4a296de878a7a8aa58b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSI\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gac34a2d63deae3efc65e66f8fb3c26dae}{RCC\+\_\+\+CSR\+\_\+\+LSION\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to enable the Internal Low Speed oscillator (LSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__LSI__Configuration_ga4f96095bb4acda60b7f66d5d927da181}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSI\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gac34a2d63deae3efc65e66f8fb3c26dae}{RCC\+\_\+\+CSR\+\_\+\+LSION\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macro to disable the Internal Low Speed oscillator (LSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__HSE__Configuration_gaa3d98648399f15d02645ef84f6ca8e4b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSE\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the External High Speed oscillator (HSE). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__LSE__Configuration_ga6b2b48f429e347c1c9c469122c64798b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSE\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the External Low Speed oscillator (LSE). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_gaf6797e8502d134483ba092f5d4345c70}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to enable Internal Multi Speed oscillator (MSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_ga49c15fd232bd099f020e508fe9c3cd12}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macro to disable the Internal Multi Speed oscillator (MSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_ga6c1e051a956f43b1895e8b6c0572c45e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+CALIBRATIONVALUE\+\_\+\+ADJUST}}(\+\_\+\+MSICALIBRATIONVALUE\+\_\+)~          (MODIFY\+\_\+\+REG(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+MSITRIM, (uint32\+\_\+t)(\+\_\+\+MSICALIBRATIONVALUE\+\_\+) $<$$<$ RCC\+\_\+\+ICSCR\+\_\+\+MSITRIM\+\_\+\+Pos))
+\begin{DoxyCompactList}\small\item\em Macro adjusts Internal Multi Speed oscillator (MSI) calibration value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_gaa68665004900d9e54d6083861c727af9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+RANGE\+\_\+\+CONFIG}}(\+\_\+\+MSIRANGEVALUE\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_gaad04b0c76f81734ba4881d97321667b9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+MSI\+\_\+\+RANGE}}()~(uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE))
+\begin{DoxyCompactList}\small\item\em Macro to get the Internal Multi Speed oscillator (MSI) clock range in run mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_gaaf196a2df41b0bcbc32745c2b218e696}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to enable the main PLL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_ga718a6afcb1492cc2796be78445a7d5ab}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macro to disable the main PLL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_ga2145b44e05d90ad3ff43653ee98cbba7}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+,  \+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+)~          MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, (RCC\+\_\+\+CFGR\+\_\+\+PLLSRC\texorpdfstring{$\vert$}{|}RCC\+\_\+\+CFGR\+\_\+\+PLLMUL\texorpdfstring{$\vert$}{|}RCC\+\_\+\+CFGR\+\_\+\+PLLDIV),((\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Macro to configure the main PLL clock source, multiplication and division factors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_ga3ea1390f8124e2b3b8d53e95541d6e53}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+PLL\+\_\+\+OSCSOURCE}}()~((uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$CFGR, RCC\+\_\+\+CFGR\+\_\+\+PLLSRC)))
+\begin{DoxyCompactList}\small\item\em Get oscillator clock selected as PLL input clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Get__Clock__source_gaa29be28740b3d480e83efbc2e695c1b8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCLK\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+SYSCLKSOURCE\+\_\+\+\_\+)~                  MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, RCC\+\_\+\+CFGR\+\_\+\+SW, (\+\_\+\+\_\+\+SYSCLKSOURCE\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the system clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Get__Clock__source_gac99c2453d9e77c8b457acc0210e754c2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+SYSCLK\+\_\+\+SOURCE}}()~((uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$CFGR,RCC\+\_\+\+CFGR\+\_\+\+SWS)))
+\begin{DoxyCompactList}\small\item\em Macro to get the clock source used as system clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__MCOx__Clock__Config_ga7e5f7f1efc92794b6f0e96068240b45e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MCO1\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+)~                 MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, (RCC\+\_\+\+CFGR\+\_\+\+MCOSEL \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CFGR\+\_\+\+MCOPRE), ((\+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Macro to configure the MCO clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_gad781a9f1f8aea8713287ca6d7d2ac683}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+RTC\+\_\+\+CLKPRESCALER}}(\+\_\+\+\_\+\+RTC\+\_\+\+CLKSOURCE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the RTC clock (RTCCLK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_ga2d6c4c7e951bfd007d26988fbfe6eaa4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+RTC\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+RTC\+\_\+\+CLKSOURCE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_gad40d00ff1c984ebd011ea9f6e7f93c44}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+RTC\+\_\+\+SOURCE}}()~(READ\+\_\+\+BIT(RCC-\/$>$CSR, RCC\+\_\+\+CSR\+\_\+\+RTCSEL))
+\begin{DoxyCompactList}\small\item\em Macro to get the RTC clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_ga85dc62f0fcb14981c47d7f7da25e26d6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+RTC\+\_\+\+HSE\+\_\+\+PRESCALER}}()~((uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$CR, RCC\+\_\+\+CR\+\_\+\+RTCPRE)))
+\begin{DoxyCompactList}\small\item\em Get the RTC and LCD HSE clock divider (RTCCLK / LCDCLK). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_gab7cc36427c31da645a0e38e181f8ce0f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+RTC\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga5cea2372c8b6876cdabe0d47b8ecbf64}{RCC\+\_\+\+CSR\+\_\+\+RTCEN\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to enable the the RTC clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_gaab5eeb81fc9f0c8d4450069f7a751855}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+RTC\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga5cea2372c8b6876cdabe0d47b8ecbf64}{RCC\+\_\+\+CSR\+\_\+\+RTCEN\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macro to disable the the RTC clock. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_ga3bf7da608ff985873ca8e248fb1dc4f0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+BACKUPRESET\+\_\+\+FORCE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacccd4b9a0c52d7b815ba262a002f0cc8}{RCC\+\_\+\+CSR\+\_\+\+RTCRST\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to force the Backup domain reset. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__RTC__Clock__Configuration_ga14f32622c65f4ae239ba8cb00d510321}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+BACKUPRESET\+\_\+\+RELEASE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_gacccd4b9a0c52d7b815ba262a002f0cc8}{RCC\+\_\+\+CSR\+\_\+\+RTCRST\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macros to release the Backup domain reset. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Flags__Interrupts__Management_ga180fb20a37b31a6e4f7e59213a6c0405}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__Private__Constants_ga97f80d22ba3506a43accbeb9ceb31f51}{RCC\+\_\+\+CIR\+\_\+\+BYTE1\+\_\+\+ADDRESS}} \texorpdfstring{$\vert$}{|}= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable RCC interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Flags__Interrupts__Management_gafc4df8cd4df0a529d11f18bf1f7e9f50}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__Private__Constants_ga97f80d22ba3506a43accbeb9ceb31f51}{RCC\+\_\+\+CIR\+\_\+\+BYTE1\+\_\+\+ADDRESS}} \&= (\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})(\texorpdfstring{$\sim$}{\string~}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Disable RCC interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Flags__Interrupts__Management_ga9d8ab157f58045b8daf8136bee54f139}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CLEAR\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__Private__Constants_ga1387fb2dfadb830eb83ab2772c8d2294}{RCC\+\_\+\+CIR\+\_\+\+BYTE2\+\_\+\+ADDRESS}} = (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the RCC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Flags__Interrupts__Management_ga134af980b892f362c05ae21922cd828d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((RCC-\/$>$CIR \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Check the RCC\textquotesingle{}s interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Flags__Interrupts__Management_gaf28c11b36035ef1e27883ff7ee2c46b0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CLEAR\+\_\+\+RESET\+\_\+\+FLAGS}}()~(RCC-\/$>$CSR \texorpdfstring{$\vert$}{|}= RCC\+\_\+\+CSR\+\_\+\+RMVF)
+\begin{DoxyCompactList}\small\item\em Set RMVF bit to clear the reset flags. The reset flags are RCC\+\_\+\+FLAG\+\_\+\+PINRST, RCC\+\_\+\+FLAG\+\_\+\+PORRST, RCC\+\_\+\+FLAG\+\_\+\+SFTRST, RCC\+\_\+\+FLAG\+\_\+\+IWDGRST, RCC\+\_\+\+FLAG\+\_\+\+WWDGRST, RCC\+\_\+\+FLAG\+\_\+\+LPWRRST. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__Flags__Interrupts__Management_gae2d7d461630562bf2a2ddb31b1f96449}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) $>$$>$ 5U) == \mbox{\hyperlink{group__RCC__Private__Constants_ga56feb1abcd35b22427fa55164c585afa}{CR\+\_\+\+REG\+\_\+\+INDEX}})? RCC-\/$>$CR \+:RCC-\/$>$CSR) \& (1U $<$$<$ ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group__RCC__Private__Constants_ga80017c6bf8a5c6f53a1a21bb8db93a82}{RCC\+\_\+\+FLAG\+\_\+\+MASK}})))
+\begin{DoxyCompactList}\small\item\em Check RCC flag is set or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__RCC__Exported__Functions__Group1_ga064f7d9878ecdc1d4852cba2b9e6a52e}{HAL\+\_\+\+RCC\+\_\+\+De\+Init}} (void)
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__RCC__Exported__Functions__Group1_ga9c504088722e03830df6caad932ad06b}{HAL\+\_\+\+RCC\+\_\+\+Osc\+Config}} (\mbox{\hyperlink{structRCC__OscInitTypeDef}{RCC\+\_\+\+Osc\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}RCC\+\_\+\+Osc\+Init\+Struct)
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__RCC__Exported__Functions__Group1_gadb770505476995fc13c2ca7290d9c484}{HAL\+\_\+\+RCC\+\_\+\+Clock\+Config}} (const \mbox{\hyperlink{structRCC__ClkInitTypeDef}{RCC\+\_\+\+Clk\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}RCC\+\_\+\+Clk\+Init\+Struct, uint32\+\_\+t FLatency)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_ga9de46b9c4ecdb1a5e34136b051a6132c}{HAL\+\_\+\+RCC\+\_\+\+MCOConfig}} (uint32\+\_\+t RCC\+\_\+\+MCOx, uint32\+\_\+t RCC\+\_\+\+MCOSource, uint32\+\_\+t RCC\+\_\+\+MCODiv)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gaa0f440ce71c18e95b12b2044cc044bea}{HAL\+\_\+\+RCC\+\_\+\+Enable\+CSS}} (void)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_ga0c124cf403362750513cae7fb6e6b195}{HAL\+\_\+\+RCC\+\_\+\+NMI\+\_\+\+IRQHandler}} (void)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gaa05b9157de5a48617bd06eb6aafa68aa}{HAL\+\_\+\+RCC\+\_\+\+CSSCallback}} (void)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gac2f9cf8f56fd7b22c62ddf32aa5ee3fb}{HAL\+\_\+\+RCC\+\_\+\+Disable\+CSS}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_ga887cafe88b21a059061b077a1e3fa7d8}{HAL\+\_\+\+RCC\+\_\+\+Get\+Sys\+Clock\+Freq}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_ga38d6c5c7a5d8758849912c9aa0a2156d}{HAL\+\_\+\+RCC\+\_\+\+Get\+HCLKFreq}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gab3042d8ac5703ac696cabf0ee461c599}{HAL\+\_\+\+RCC\+\_\+\+Get\+PCLK1\+Freq}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gabbd5f8933a5ee05e4b3384e33026aca1}{HAL\+\_\+\+RCC\+\_\+\+Get\+PCLK2\+Freq}} (void)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gae2f9413fc447c2d7d6af3a8669c77b36}{HAL\+\_\+\+RCC\+\_\+\+Get\+Osc\+Config}} (\mbox{\hyperlink{structRCC__OscInitTypeDef}{RCC\+\_\+\+Osc\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}RCC\+\_\+\+Osc\+Init\+Struct)
+\item 
+void \mbox{\hyperlink{group__RCC__Exported__Functions__Group2_gabc95375dfca279d88b9ded9d063d2323}{HAL\+\_\+\+RCC\+\_\+\+Get\+Clock\+Config}} (\mbox{\hyperlink{structRCC__ClkInitTypeDef}{RCC\+\_\+\+Clk\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}RCC\+\_\+\+Clk\+Init\+Struct, uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+FLatency)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of RCC HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 

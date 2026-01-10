@@ -1,0 +1,117 @@
+\doxysection{Core/\+Src/steering\+\_\+servo.c File Reference}
+\hypertarget{steering__servo_8c}{}\label{steering__servo_8c}\index{Core/Src/steering\_servo.c@{Core/Src/steering\_servo.c}}
+{\ttfamily \#include "{}steering\+\_\+servo.\+h"{}}\newline
+Include dependency graph for steering\+\_\+servo.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{steering__servo_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{steering__servo_8c_a5ae00189f7e5d8ce80129f55f066e73d}{SERVO\+\_\+\+TIMER}}~\mbox{\hyperlink{main_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}
+\item 
+\#define \mbox{\hyperlink{steering__servo_8c_af9cd14f35dd24b4fcb9ed8aa627a28a4}{SERVO\+\_\+\+CHANNEL}}~\mbox{\hyperlink{group__TIM__Channel_ga33e02d43345a7ac5886f01b39e4f7ccd}{TIM\+\_\+\+CHANNEL\+\_\+2}}
+\item 
+\#define \mbox{\hyperlink{steering__servo_8c_aaee3e47827f209f898338b76dfb1866b}{SERVO\+\_\+\+MIN\+\_\+\+PULSE}}~400
+\item 
+\#define \mbox{\hyperlink{steering__servo_8c_a0ffde0a9cfa57775eef67831f0a6da54}{SERVO\+\_\+\+MAX\+\_\+\+PULSE}}~2380
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{steering__servo_8c_a28004b353665e5578688cb233b10441d}{Steering\+Servo\+\_\+\+Init}} ()
+\item 
+void \mbox{\hyperlink{steering__servo_8c_a01b97a8922ec559d436cb1d04a2b2703}{Steering\+Servo\+\_\+\+Set\+Angle}} (uint16\+\_\+t angle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{steering__servo_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{steering__servo_8c_af9cd14f35dd24b4fcb9ed8aa627a28a4}\label{steering__servo_8c_af9cd14f35dd24b4fcb9ed8aa627a28a4} 
+\index{steering\_servo.c@{steering\_servo.c}!SERVO\_CHANNEL@{SERVO\_CHANNEL}}
+\index{SERVO\_CHANNEL@{SERVO\_CHANNEL}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{SERVO\_CHANNEL}{SERVO\_CHANNEL}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+CHANNEL~\mbox{\hyperlink{group__TIM__Channel_ga33e02d43345a7ac5886f01b39e4f7ccd}{TIM\+\_\+\+CHANNEL\+\_\+2}}}
+
+\Hypertarget{steering__servo_8c_a0ffde0a9cfa57775eef67831f0a6da54}\label{steering__servo_8c_a0ffde0a9cfa57775eef67831f0a6da54} 
+\index{steering\_servo.c@{steering\_servo.c}!SERVO\_MAX\_PULSE@{SERVO\_MAX\_PULSE}}
+\index{SERVO\_MAX\_PULSE@{SERVO\_MAX\_PULSE}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MAX\_PULSE}{SERVO\_MAX\_PULSE}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+MAX\+\_\+\+PULSE~2380}
+
+\Hypertarget{steering__servo_8c_aaee3e47827f209f898338b76dfb1866b}\label{steering__servo_8c_aaee3e47827f209f898338b76dfb1866b} 
+\index{steering\_servo.c@{steering\_servo.c}!SERVO\_MIN\_PULSE@{SERVO\_MIN\_PULSE}}
+\index{SERVO\_MIN\_PULSE@{SERVO\_MIN\_PULSE}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{SERVO\_MIN\_PULSE}{SERVO\_MIN\_PULSE}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+MIN\+\_\+\+PULSE~400}
+
+\Hypertarget{steering__servo_8c_a5ae00189f7e5d8ce80129f55f066e73d}\label{steering__servo_8c_a5ae00189f7e5d8ce80129f55f066e73d} 
+\index{steering\_servo.c@{steering\_servo.c}!SERVO\_TIMER@{SERVO\_TIMER}}
+\index{SERVO\_TIMER@{SERVO\_TIMER}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{SERVO\_TIMER}{SERVO\_TIMER}}
+{\footnotesize\ttfamily \#define SERVO\+\_\+\+TIMER~\mbox{\hyperlink{main_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{steering__servo_8c_a28004b353665e5578688cb233b10441d}\label{steering__servo_8c_a28004b353665e5578688cb233b10441d} 
+\index{steering\_servo.c@{steering\_servo.c}!SteeringServo\_Init@{SteeringServo\_Init}}
+\index{SteeringServo\_Init@{SteeringServo\_Init}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{SteeringServo\_Init()}{SteeringServo\_Init()}}
+{\footnotesize\ttfamily void Steering\+Servo\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{steering__servo_8c_a28004b353665e5578688cb233b10441d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{steering__servo_8c_a28004b353665e5578688cb233b10441d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{steering__servo_8c_a01b97a8922ec559d436cb1d04a2b2703}\label{steering__servo_8c_a01b97a8922ec559d436cb1d04a2b2703} 
+\index{steering\_servo.c@{steering\_servo.c}!SteeringServo\_SetAngle@{SteeringServo\_SetAngle}}
+\index{SteeringServo\_SetAngle@{SteeringServo\_SetAngle}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{SteeringServo\_SetAngle()}{SteeringServo\_SetAngle()}}
+{\footnotesize\ttfamily void Steering\+Servo\+\_\+\+Set\+Angle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{angle }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{steering__servo_8c_a01b97a8922ec559d436cb1d04a2b2703_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{steering__servo_8c_a01b97a8922ec559d436cb1d04a2b2703_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{steering__servo_8c_a2c80fd5510e2990a59a5c90d745c716c}\label{steering__servo_8c_a2c80fd5510e2990a59a5c90d745c716c} 
+\index{steering\_servo.c@{steering\_servo.c}!htim2@{htim2}}
+\index{htim2@{htim2}!steering\_servo.c@{steering\_servo.c}}
+\doxysubsubsection{\texorpdfstring{htim2}{htim2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim2\hspace{0.3cm}{\ttfamily [extern]}}
+

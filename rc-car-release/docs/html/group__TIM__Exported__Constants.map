@@ -1,0 +1,44 @@
+<map id="TIM Exported Constants" name="TIM Exported Constants">
+<area shape="rect" id="Node000042" href="$group__Channel__CC__State.html" title=" " alt="" coords="345,5,509,45"/>
+<area shape="rect" id="Node000041" href="$group__DMA__Handle__index.html" title=" " alt="" coords="341,70,512,95"/>
+<area shape="rect" id="Node000002" href="$group__TIM.html" title=" " alt="" coords="5,983,52,1009"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="100,983,277,1009"/>
+<area shape="rect" id="Node000012" href="$group__TIM__AutoReloadPreload.html" title=" " alt="" coords="335,119,518,145"/>
+<area shape="rect" id="Node000024" href="$group__TIM__CC__DMA__Request.html" title=" " alt="" coords="327,169,526,194"/>
+<area shape="rect" id="Node000026" href="$group__TIM__Channel.html" title=" " alt="" coords="375,218,478,243"/>
+<area shape="rect" id="Node000030" href="$group__TIM__ClearInput__Polarity.html" title=" " alt="" coords="339,267,514,293"/>
+<area shape="rect" id="Node000031" href="$group__TIM__ClearInput__Prescaler.html" title=" " alt="" coords="334,317,519,342"/>
+<area shape="rect" id="Node000003" href="$group__TIM__ClearInput__Source.html" title=" " alt="" coords="342,366,511,391"/>
+<area shape="rect" id="Node000010" href="$group__TIM__ClockDivision.html" title=" " alt="" coords="355,415,498,441"/>
+<area shape="rect" id="Node000028" href="$group__TIM__Clock__Polarity.html" title=" " alt="" coords="357,465,497,490"/>
+<area shape="rect" id="Node000029" href="$group__TIM__Clock__Prescaler.html" title=" " alt="" coords="351,514,502,539"/>
+<area shape="rect" id="Node000027" href="$group__TIM__Clock__Source.html" title=" " alt="" coords="359,563,494,589"/>
+<area shape="rect" id="Node000009" href="$group__TIM__Counter__Mode.html" title=" " alt="" coords="356,613,497,638"/>
+<area shape="rect" id="Node000004" href="$group__TIM__DMA__Base__address.html" title=" " alt="" coords="340,662,513,687"/>
+<area shape="rect" id="Node000040" href="$group__TIM__DMA__Burst__Length.html" title=" " alt="" coords="343,711,510,737"/>
+<area shape="rect" id="Node000023" href="$group__TIM__DMA__sources.html" title=" " alt="" coords="359,761,495,786"/>
+<area shape="rect" id="Node000007" href="$group__TIM__ETR__Polarity.html" title=" " alt="" coords="362,810,491,835"/>
+<area shape="rect" id="Node000008" href="$group__TIM__ETR__Prescaler.html" title=" " alt="" coords="357,859,496,885"/>
+<area shape="rect" id="Node000017" href="$group__TIM__Encoder__Input__Polarity.html" title=" " alt="" coords="330,909,523,934"/>
+<area shape="rect" id="Node000021" href="$group__TIM__Encoder__Mode.html" title=" " alt="" coords="355,958,498,983"/>
+<area shape="rect" id="Node000005" href="$group__TIM__Event__Source.html" title=" " alt="" coords="359,1007,494,1033"/>
+<area shape="rect" id="Node000025" href="$group__TIM__Flag__definition.html" title=" " alt="" coords="354,1057,499,1082"/>
+<area shape="rect" id="Node000016" href="$group__TIM__Input__Capture__Polarity.html" title=" " alt="" coords="331,1106,523,1131"/>
+<area shape="rect" id="Node000019" href="$group__TIM__Input__Capture__Prescaler.html" title=" " alt="" coords="325,1155,528,1181"/>
+<area shape="rect" id="Node000018" href="$group__TIM__Input__Capture__Selection.html" title=" " alt="" coords="325,1205,528,1230"/>
+<area shape="rect" id="Node000006" href="$group__TIM__Input__Channel__Polarity.html" title=" " alt="" coords="329,1254,524,1279"/>
+<area shape="rect" id="Node000022" href="$group__TIM__Interrupt__definition.html" title=" " alt="" coords="340,1303,513,1329"/>
+<area shape="rect" id="Node000032" href="$group__TIM__Master__Mode__Selection.html" title=" " alt="" coords="327,1353,526,1378"/>
+<area shape="rect" id="Node000033" href="$group__TIM__Master__Slave__Mode.html" title=" " alt="" coords="339,1402,514,1427"/>
+<area shape="rect" id="Node000020" href="$group__TIM__One__Pulse__Mode.html" title=" " alt="" coords="349,1451,504,1477"/>
+<area shape="rect" id="Node000014" href="$group__TIM__Output__Compare__N__State.html" title=" " alt="" coords="325,1501,528,1541"/>
+<area shape="rect" id="Node000015" href="$group__TIM__Output__Compare__Polarity.html" title=" " alt="" coords="348,1565,505,1605"/>
+<area shape="rect" id="Node000011" href="$group__TIM__Output__Compare__State.html" title=" " alt="" coords="348,1629,505,1669"/>
+<area shape="rect" id="Node000035" href="$group__TIM__Output__Compare__and__PWM__modes.html" title=" " alt="" coords="348,1693,505,1733"/>
+<area shape="rect" id="Node000013" href="$group__TIM__Output__Fast__State.html" title=" " alt="" coords="345,1758,508,1783"/>
+<area shape="rect" id="Node000034" href="$group__TIM__Slave__Mode.html" title=" " alt="" coords="363,1807,490,1833"/>
+<area shape="rect" id="Node000039" href="$group__TIM__TI1__Selection.html" title=" " alt="" coords="341,1857,512,1882"/>
+<area shape="rect" id="Node000037" href="$group__TIM__Trigger__Polarity.html" title=" " alt="" coords="353,1906,501,1931"/>
+<area shape="rect" id="Node000038" href="$group__TIM__Trigger__Prescaler.html" title=" " alt="" coords="347,1955,506,1981"/>
+<area shape="rect" id="Node000036" href="$group__TIM__Trigger__Selection.html" title=" " alt="" coords="347,2005,506,2030"/>
+</map>

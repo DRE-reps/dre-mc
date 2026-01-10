@@ -1,0 +1,94 @@
+\doxysubsubsubsection{DEVICE ELECTRONIC SIGNATURE}
+\hypertarget{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE}{}\label{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE}\index{DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}}
+Collaboration diagram for DEVICE ELECTRONIC SIGNATURE\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga3a0b557447143f41b93a7fa45270b5b8}{LL\+\_\+\+Get\+UID\+\_\+\+Word0}} (void)
+\begin{DoxyCompactList}\small\item\em Get Word0 of the unique device identifier (UID based on 96 bits) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga67007778e77a6fafc8a1fc440dc208b2}{LL\+\_\+\+Get\+UID\+\_\+\+Word1}} (void)
+\begin{DoxyCompactList}\small\item\em Get Word1 of the unique device identifier (UID based on 96 bits) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_gaa15df2bc902d392f67ee9873943d4904}{LL\+\_\+\+Get\+UID\+\_\+\+Word2}} (void)
+\begin{DoxyCompactList}\small\item\em Get Word2 of the unique device identifier (UID based on 96 bits) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga0e8379766a1799f3c5fedadaa2b0c47e}{LL\+\_\+\+Get\+Flash\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Get Flash memory size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Function Documentation}
+\Hypertarget{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga0e8379766a1799f3c5fedadaa2b0c47e}\label{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga0e8379766a1799f3c5fedadaa2b0c47e} 
+\index{DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}!LL\_GetFlashSize@{LL\_GetFlashSize}}
+\index{LL\_GetFlashSize@{LL\_GetFlashSize}!DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_GetFlashSize()}{LL\_GetFlashSize()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+Get\+Flash\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Flash memory size. 
+
+\begin{DoxyNote}{Note}
+For DEV\+\_\+\+ID = 0x416 or 0x427 or 0x429 or 0x437, this field value indicates the Flash memory size of the device in Kbytes.~\newline
+ Example\+: 0x0080 = 128 Kbytes.~\newline
+ For DEV\+\_\+\+ID = 0x436, the field value can be \textquotesingle{}0\textquotesingle{} or \textquotesingle{}1\textquotesingle{}, with \textquotesingle{}0\textquotesingle{} for 384 Kbytes and \textquotesingle{}1\textquotesingle{} for 256 Kbytes. 
+
+For DEV\+\_\+\+ID = 0x429, only LSB part of F\+\_\+\+SIZE\+: F\+\_\+\+SIZE\mbox{[}7\+:0\mbox{]} is valid. The MSB part F\+\_\+\+SIZE\mbox{[}15\+:8\mbox{]} is reserved and must be ignored. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em FLASH\+\_\+\+SIZE\mbox{[}15\+:0\mbox{]}} & Flash memory size \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga3a0b557447143f41b93a7fa45270b5b8}\label{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga3a0b557447143f41b93a7fa45270b5b8} 
+\index{DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}!LL\_GetUID\_Word0@{LL\_GetUID\_Word0}}
+\index{LL\_GetUID\_Word0@{LL\_GetUID\_Word0}!DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_GetUID\_Word0()}{LL\_GetUID\_Word0()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+Get\+UID\+\_\+\+Word0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Word0 of the unique device identifier (UID based on 96 bits) 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em UID\mbox{[}31\+:0\mbox{]}} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga67007778e77a6fafc8a1fc440dc208b2}\label{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga67007778e77a6fafc8a1fc440dc208b2} 
+\index{DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}!LL\_GetUID\_Word1@{LL\_GetUID\_Word1}}
+\index{LL\_GetUID\_Word1@{LL\_GetUID\_Word1}!DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_GetUID\_Word1()}{LL\_GetUID\_Word1()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+Get\+UID\+\_\+\+Word1 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Word1 of the unique device identifier (UID based on 96 bits) 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em UID\mbox{[}63\+:32\mbox{]}} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_gaa15df2bc902d392f67ee9873943d4904}\label{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_gaa15df2bc902d392f67ee9873943d4904} 
+\index{DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}!LL\_GetUID\_Word2@{LL\_GetUID\_Word2}}
+\index{LL\_GetUID\_Word2@{LL\_GetUID\_Word2}!DEVICE ELECTRONIC SIGNATURE@{DEVICE ELECTRONIC SIGNATURE}}
+\doxysubsubsubsubsubsection{\texorpdfstring{LL\_GetUID\_Word2()}{LL\_GetUID\_Word2()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t LL\+\_\+\+Get\+UID\+\_\+\+Word2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Word2 of the unique device identifier (UID based on 96 bits) 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em UID\mbox{[}95\+:64\mbox{]}} & \\
+\hline
+\end{DoxyRetVals}

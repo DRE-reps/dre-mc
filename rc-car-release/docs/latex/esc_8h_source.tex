@@ -1,0 +1,31 @@
+\doxysection{esc.\+h}
+\hypertarget{esc_8h_source}{}\label{esc_8h_source}\index{Core/Inc/esc.h@{Core/Inc/esc.h}}
+\mbox{\hyperlink{esc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_ESC\_VBOLBAT\_CONTROL\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_ESC\_VBOLBAT\_CONTROL\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}};}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ API:\ */}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structesc__t_aedb93375463677fd0a3e0632524050b4}{direction}};\ \ \ \textcolor{comment}{//1\ -\/>\ forward,\ 0\ -\/>\ backward}}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structesc__t_a279d551b02c34a27e8a0e46b4928420b}{pwm\_percent}};\ \textcolor{comment}{//from\ 0\ to\ 100\ \%}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structesc__t_afedff58d0f5b387682a0d5aa6e65a439}{current\_speed}};\ \textcolor{comment}{//m/s}}
+\DoxyCodeLine{00012\ \}\ \mbox{\hyperlink{structesc__t}{esc\_t}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{esc_8h_a052276def7f484342cb2a6cd2eb53c42}{esc\_init}}(\mbox{\hyperlink{structesc__t}{esc\_t}}*\ pesc\_t);}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{esc_8h_aae733e9d4dc984861eddd938532cb3b1}{esc\_update\_pwm}}(\mbox{\hyperlink{structesc__t}{esc\_t}}*\ pesc\_t);}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{esc_8h_ae43225b6870f97716c83a45d3d1b6a0e}{calibrate\_esc}}();}
+\DoxyCodeLine{00017\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ Алгоритм\ работы:}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ 1)\ Объявите\ структуру\ esc\_t\ в\ main.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ 2)\ Вызовите\ функцию\ esc\_init()\ для\ инициализации\ таймера(PWM)\ и\ структуры.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ 3)\ В\ обработчике\ прерывания\ !!!(обновляем\ данные\ внутри\ структуры)!!!\ и}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ вызываем\ функцию\ esc\_update\_pwm()\ для\ обновления.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

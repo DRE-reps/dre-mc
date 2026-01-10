@@ -1,0 +1,95 @@
+\doxysubsubsubsubsection{Switch Control configuration}
+\hypertarget{group__RI__SwitchControlConfig}{}\label{group__RI__SwitchControlConfig}\index{Switch Control configuration@{Switch Control configuration}}
+Collaboration diagram for Switch Control configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RI__SwitchControlConfig}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_ga2aac480a08cbd6937ed3741a03796ac6}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+SWITCHCONTROLMODE\+\_\+\+ENABLE}}()~SET\+\_\+\+BIT(RI-\/$>$ASCR1, RI\+\_\+\+ASCR1\+\_\+\+SCM)
+\begin{DoxyCompactList}\small\item\em Enable or disable the switch control mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_ga41dca172ed53f7787a32d0f0b7a5e485}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+SWITCHCONTROLMODE\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT(RI-\/$>$ASCR1, RI\+\_\+\+ASCR1\+\_\+\+SCM)
+\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_ga7e35cfb22d277d6a484e206cfd6666c0}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+CLOSE}}(\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_gadef860a5d9313b79a5a595a2788410ee}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+OPEN}}(\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RI__SwitchControlConfig_ga7e35cfb22d277d6a484e206cfd6666c0}\label{group__RI__SwitchControlConfig_ga7e35cfb22d277d6a484e206cfd6666c0} 
+\index{Switch Control configuration@{Switch Control configuration}!\_\_HAL\_RI\_IOSWITCH\_CLOSE@{\_\_HAL\_RI\_IOSWITCH\_CLOSE}}
+\index{\_\_HAL\_RI\_IOSWITCH\_CLOSE@{\_\_HAL\_RI\_IOSWITCH\_CLOSE}!Switch Control configuration@{Switch Control configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_IOSWITCH\_CLOSE}{\_\_HAL\_RI\_IOSWITCH\_CLOSE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+CLOSE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \mbox{\hyperlink{stm32l1xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group__RI__IOSwitch_gae147f908a2020eec270806ef20ad0350}{IS\_RI\_IOSWITCH}}(\_\_IOSWITCH\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ if\ ((\_\_IOSWITCH\_\_)\ >>\ 31\ !=\ 0\ )\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RI-\/>ASCR1,\ (\_\_IOSWITCH\_\_)\ \&\ 0x7FFFFFFF);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RI-\/>ASCR2,\ (\_\_IOSWITCH\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\Hypertarget{group__RI__SwitchControlConfig_gadef860a5d9313b79a5a595a2788410ee}\label{group__RI__SwitchControlConfig_gadef860a5d9313b79a5a595a2788410ee} 
+\index{Switch Control configuration@{Switch Control configuration}!\_\_HAL\_RI\_IOSWITCH\_OPEN@{\_\_HAL\_RI\_IOSWITCH\_OPEN}}
+\index{\_\_HAL\_RI\_IOSWITCH\_OPEN@{\_\_HAL\_RI\_IOSWITCH\_OPEN}!Switch Control configuration@{Switch Control configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_IOSWITCH\_OPEN}{\_\_HAL\_RI\_IOSWITCH\_OPEN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+OPEN(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \mbox{\hyperlink{stm32l1xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group__RI__IOSwitch_gae147f908a2020eec270806ef20ad0350}{IS\_RI\_IOSWITCH}}(\_\_IOSWITCH\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ if\ ((\_\_IOSWITCH\_\_)\ >>\ 31\ !=\ 0\ )\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ CLEAR\_BIT(RI-\/>ASCR1,\ (\_\_IOSWITCH\_\_)\ \&\ 0x7FFFFFFF);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ CLEAR\_BIT(RI-\/>ASCR2,\ (\_\_IOSWITCH\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\Hypertarget{group__RI__SwitchControlConfig_ga41dca172ed53f7787a32d0f0b7a5e485}\label{group__RI__SwitchControlConfig_ga41dca172ed53f7787a32d0f0b7a5e485} 
+\index{Switch Control configuration@{Switch Control configuration}!\_\_HAL\_RI\_SWITCHCONTROLMODE\_DISABLE@{\_\_HAL\_RI\_SWITCHCONTROLMODE\_DISABLE}}
+\index{\_\_HAL\_RI\_SWITCHCONTROLMODE\_DISABLE@{\_\_HAL\_RI\_SWITCHCONTROLMODE\_DISABLE}!Switch Control configuration@{Switch Control configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_SWITCHCONTROLMODE\_DISABLE}{\_\_HAL\_RI\_SWITCHCONTROLMODE\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+SWITCHCONTROLMODE\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(RI-\/$>$ASCR1, RI\+\_\+\+ASCR1\+\_\+\+SCM)}
+
+\Hypertarget{group__RI__SwitchControlConfig_ga2aac480a08cbd6937ed3741a03796ac6}\label{group__RI__SwitchControlConfig_ga2aac480a08cbd6937ed3741a03796ac6} 
+\index{Switch Control configuration@{Switch Control configuration}!\_\_HAL\_RI\_SWITCHCONTROLMODE\_ENABLE@{\_\_HAL\_RI\_SWITCHCONTROLMODE\_ENABLE}}
+\index{\_\_HAL\_RI\_SWITCHCONTROLMODE\_ENABLE@{\_\_HAL\_RI\_SWITCHCONTROLMODE\_ENABLE}!Switch Control configuration@{Switch Control configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_SWITCHCONTROLMODE\_ENABLE}{\_\_HAL\_RI\_SWITCHCONTROLMODE\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+SWITCHCONTROLMODE\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(RI-\/$>$ASCR1, RI\+\_\+\+ASCR1\+\_\+\+SCM)}
+
+
+
+Enable or disable the switch control mode. 
+
+\begin{DoxyNote}{Note}
+ENABLE\+: ADC analog switches closed if the corresponding I/O switch is also closed. When using COMP1, switch control mode must be enabled. 
+
+DISABLE\+: ADC analog switches open or controlled by the ADC interface. When using the ADC for acquisition, switch control mode must be disabled. 
+
+COMP1 comparator and ADC cannot be used at the same time since they share the ADC switch matrix. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,180 @@
+\doxysection{I2\+C\+\_\+\+Handle\+Type\+Def Struct Reference}
+\hypertarget{structI2C__HandleTypeDef}{}\label{structI2C__HandleTypeDef}\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+
+
+{\ttfamily \#include $<$stm32l1xx\+\_\+hal\+\_\+i2c.\+h$>$}
+
+
+
+Collaboration diagram for I2\+C\+\_\+\+Handle\+Type\+Def\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{structI2C__HandleTypeDef__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+I2\+C\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structI2C__HandleTypeDef_ad83b15a12a41fb3958c55085adf931dd}{Instance}}
+\item 
+\mbox{\hyperlink{structI2C__InitTypeDef}{I2\+C\+\_\+\+Init\+Type\+Def}} \mbox{\hyperlink{structI2C__HandleTypeDef_a86c7e0e7be29686399208f9bb07ae2a2}{Init}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structI2C__HandleTypeDef_a6adc95451a3eec4b104564fc3fe8b109}{p\+Buff\+Ptr}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_a47afa75961930ab1743f47245fdf6e85}{Xfer\+Size}}
+\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_a1860b3cf8f463c2751d0c935f33e0ad4}{Xfer\+Count}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_af8de60af8242279e8a65e22bf53fad81}{Xfer\+Options}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_afa4789f3c5c2ff5097ba86e9fa539cbe}{Previous\+State}}
+\item 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structI2C__HandleTypeDef_adb4429cdf02e5564464a1517229826b6}{hdmatx}}
+\item 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structI2C__HandleTypeDef_ad1778574d987009683c8120bd16aa9cf}{hdmarx}}
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \mbox{\hyperlink{structI2C__HandleTypeDef_af28a07c34f97e2b2ade505357a467a50}{Lock}}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__HAL__state__structure__definition_gaef355af8eab251ae2a19ee164ad81c37}{HAL\+\_\+\+I2\+C\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{structI2C__HandleTypeDef_a5b37a3a29bc768fb1c3ff192ab94b6e3}{State}}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__HAL__mode__structure__definition_gabcbb7b844f2ffd63c4e530c117882062}{HAL\+\_\+\+I2\+C\+\_\+\+Mode\+Type\+Def}} \mbox{\hyperlink{structI2C__HandleTypeDef_a97b1beafd59ed47be4b742562d100278}{Mode}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_a15acfdb4bc2e1da9470e9823f127d8f9}{Error\+Code}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_abfa313bfd358a154ffebe308d11141cd}{Devaddress}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_ab5bbdae3f3958c2df981515c03f9fd72}{Memaddress}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_afed13582575258de35e0450811df4228}{Memadd\+Size}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structI2C__HandleTypeDef_a0a2c0470a17a3f556f61df766439cccc}{Event\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structI2C__HandleTypeDef_abfa313bfd358a154ffebe308d11141cd}\label{structI2C__HandleTypeDef_abfa313bfd358a154ffebe308d11141cd} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!Devaddress@{Devaddress}}
+\index{Devaddress@{Devaddress}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Devaddress}{Devaddress}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Devaddress}
+
+I2C Target device address ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a15acfdb4bc2e1da9470e9823f127d8f9}\label{structI2C__HandleTypeDef_a15acfdb4bc2e1da9470e9823f127d8f9} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!ErrorCode@{ErrorCode}}
+\index{ErrorCode@{ErrorCode}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Error\+Code}
+
+I2C Error code ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a0a2c0470a17a3f556f61df766439cccc}\label{structI2C__HandleTypeDef_a0a2c0470a17a3f556f61df766439cccc} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!EventCount@{EventCount}}
+\index{EventCount@{EventCount}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{EventCount}{EventCount}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Event\+Count}
+
+I2C Event counter ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_ad1778574d987009683c8120bd16aa9cf}\label{structI2C__HandleTypeDef_ad1778574d987009683c8120bd16aa9cf} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!hdmarx@{hdmarx}}
+\index{hdmarx@{hdmarx}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdmarx}{hdmarx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} I2\+C\+\_\+\+Handle\+Type\+Def\+::hdmarx}
+
+I2C Rx DMA handle parameters ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_adb4429cdf02e5564464a1517229826b6}\label{structI2C__HandleTypeDef_adb4429cdf02e5564464a1517229826b6} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!hdmatx@{hdmatx}}
+\index{hdmatx@{hdmatx}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdmatx}{hdmatx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} I2\+C\+\_\+\+Handle\+Type\+Def\+::hdmatx}
+
+I2C Tx DMA handle parameters ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a86c7e0e7be29686399208f9bb07ae2a2}\label{structI2C__HandleTypeDef_a86c7e0e7be29686399208f9bb07ae2a2} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!Init@{Init}}
+\index{Init@{Init}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Init}{Init}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structI2C__InitTypeDef}{I2\+C\+\_\+\+Init\+Type\+Def}} I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Init}
+
+I2C communication parameters ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_ad83b15a12a41fb3958c55085adf931dd}\label{structI2C__HandleTypeDef_ad83b15a12a41fb3958c55085adf931dd} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!Instance@{Instance}}
+\index{Instance@{Instance}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily I2\+C\+\_\+\+Type\+Def\texorpdfstring{$\ast$}{*} I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Instance}
+
+I2C registers base address ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_af28a07c34f97e2b2ade505357a467a50}\label{structI2C__HandleTypeDef_af28a07c34f97e2b2ade505357a467a50} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!Lock@{Lock}}
+\index{Lock@{Lock}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Lock}{Lock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Lock}
+
+I2C locking object ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_ab5bbdae3f3958c2df981515c03f9fd72}\label{structI2C__HandleTypeDef_ab5bbdae3f3958c2df981515c03f9fd72} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!Memaddress@{Memaddress}}
+\index{Memaddress@{Memaddress}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Memaddress}{Memaddress}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Memaddress}
+
+I2C Target memory address ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_afed13582575258de35e0450811df4228}\label{structI2C__HandleTypeDef_afed13582575258de35e0450811df4228} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!MemaddSize@{MemaddSize}}
+\index{MemaddSize@{MemaddSize}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{MemaddSize}{MemaddSize}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Memadd\+Size}
+
+I2C Target memory address size ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a97b1beafd59ed47be4b742562d100278}\label{structI2C__HandleTypeDef_a97b1beafd59ed47be4b742562d100278} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__HAL__mode__structure__definition_gabcbb7b844f2ffd63c4e530c117882062}{HAL\+\_\+\+I2\+C\+\_\+\+Mode\+Type\+Def}} I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Mode}
+
+I2C communication mode ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a6adc95451a3eec4b104564fc3fe8b109}\label{structI2C__HandleTypeDef_a6adc95451a3eec4b104564fc3fe8b109} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!pBuffPtr@{pBuffPtr}}
+\index{pBuffPtr@{pBuffPtr}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pBuffPtr}{pBuffPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}\texorpdfstring{$\ast$}{*} I2\+C\+\_\+\+Handle\+Type\+Def\+::p\+Buff\+Ptr}
+
+Pointer to I2C transfer buffer ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_afa4789f3c5c2ff5097ba86e9fa539cbe}\label{structI2C__HandleTypeDef_afa4789f3c5c2ff5097ba86e9fa539cbe} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!PreviousState@{PreviousState}}
+\index{PreviousState@{PreviousState}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{PreviousState}{PreviousState}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Previous\+State}
+
+I2C communication Previous state and mode context for internal usage ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a5b37a3a29bc768fb1c3ff192ab94b6e3}\label{structI2C__HandleTypeDef_a5b37a3a29bc768fb1c3ff192ab94b6e3} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!State@{State}}
+\index{State@{State}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__HAL__state__structure__definition_gaef355af8eab251ae2a19ee164ad81c37}{HAL\+\_\+\+I2\+C\+\_\+\+State\+Type\+Def}} I2\+C\+\_\+\+Handle\+Type\+Def\+::\+State}
+
+I2C communication state ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a1860b3cf8f463c2751d0c935f33e0ad4}\label{structI2C__HandleTypeDef_a1860b3cf8f463c2751d0c935f33e0ad4} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!XferCount@{XferCount}}
+\index{XferCount@{XferCount}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{XferCount}{XferCount}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint16\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Xfer\+Count}
+
+I2C transfer counter ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_af8de60af8242279e8a65e22bf53fad81}\label{structI2C__HandleTypeDef_af8de60af8242279e8a65e22bf53fad81} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!XferOptions@{XferOptions}}
+\index{XferOptions@{XferOptions}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{XferOptions}{XferOptions}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Xfer\+Options}
+
+I2C transfer options ~\newline
+ \Hypertarget{structI2C__HandleTypeDef_a47afa75961930ab1743f47245fdf6e85}\label{structI2C__HandleTypeDef_a47afa75961930ab1743f47245fdf6e85} 
+\index{I2C\_HandleTypeDef@{I2C\_HandleTypeDef}!XferSize@{XferSize}}
+\index{XferSize@{XferSize}!I2C\_HandleTypeDef@{I2C\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{XferSize}{XferSize}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+\_\+\+Handle\+Type\+Def\+::\+Xfer\+Size}
+
+I2C transfer size ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32l1xx__hal__i2c_8h}{stm32l1xx\+\_\+hal\+\_\+i2c.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,384 @@
+\doxysection{Core/\+Src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{Core/Src/main.c@{Core/Src/main.c}}
+
+
+\+: Main program body  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}measure\+\_\+speed\+\_\+\+FC33.\+h"{}}\newline
+{\ttfamily \#include "{}VL53\+L0\+X.\+h"{}}\newline
+{\ttfamily \#include "{}steering\+\_\+servo.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}esc.\+h"{}}\newline
+{\ttfamily \#include "{}mpu6050.\+h"{}}\newline
+{\ttfamily \#include "{}converters.\+h"{}}\newline
+{\ttfamily \#include "{}usart1\+\_\+callbacks.\+h"{}}\newline
+{\ttfamily \#include "{}string.\+h"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_af5b6d82c8c8be898b2325e4447385d3a}{XSHUT\+\_\+\+SENSOR1\+\_\+\+PORT}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8c_a8662bfcb7f3e62435fe744e7f0adabce}{XSHUT\+\_\+\+SENSOR1\+\_\+\+PIN}}~\mbox{\hyperlink{group__GPIO__pins_ga6c35af4e75c3cb57bb650feaa7a136b5}{GPIO\+\_\+\+PIN\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{main_8c_ae9de4c6457290cf2334cd191a5a6d9da}{XSHUT\+\_\+\+SENSOR2\+\_\+\+PORT}}~GPIOB
+\item 
+\#define \mbox{\hyperlink{main_8c_a28df13635977dd38d0d6cf74450812d1}{XSHUT\+\_\+\+SENSOR2\+\_\+\+PIN}}~\mbox{\hyperlink{group__GPIO__pins_ga6eee38b797a7268f04357dfa2759efd2}{GPIO\+\_\+\+PIN\+\_\+2}}
+\item 
+\#define \mbox{\hyperlink{main_8c_aa19526e5c83c1553b1ccf36561ccfad8}{SENSOR1\+\_\+\+NEW\+\_\+\+ADDR}}~0x30
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__TIM__Exported__Functions__Group9_ga8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void \mbox{\hyperlink{group__GPIO__Exported__Functions__Group2_ga0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+\+Pin)
+\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}
+\item 
+\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_a2c80fd5510e2990a59a5c90d745c716c}{htim2}}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62}{htim3}}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_a85788cec5a97ee377e4ee2e74f026484}{htim4}}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_acefaeaaa3856ddddae7083b2d220fe4b}{htim5}}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_a1564492831a79fa18466467c3420c3c3}{htim6}}
+\item 
+\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\item 
+\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}{huart2}}
+\item 
+\mbox{\hyperlink{structesc__t}{esc\+\_\+t}} \mbox{\hyperlink{main_8c_afe33c9d339fbeda78369dcfb0e327afa}{esc\+\_\+struct}}
+\item 
+\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \mbox{\hyperlink{main_8c_aef6f776a64f67760312115d5362c5104}{mpu6050\+\_\+struct}}
+\item 
+\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \mbox{\hyperlink{main_8c_a85756813df9a1d07d38993d353892b1d}{sensor1}}
+\item 
+\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \mbox{\hyperlink{main_8c_ad5016f61865e19881526de01a61ad1dd}{sensor2}}
+\item 
+\mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \mbox{\hyperlink{main_8c_a286fefae78c30daba457f2531577d362}{distance\+Str1}}
+\item 
+\mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \mbox{\hyperlink{main_8c_ae8e4fce27f62bf40d775bfb949b33f52}{distance\+Str2}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{main_8c_a6afc9e2bbd3564dc37350fbdab1acf6d}{speed\+\_\+calibration\+\_\+buffer}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{main_8c_aad25ef11ffd5686e11c4565bfa518d21}{log\+\_\+buf}} \mbox{[}\mbox{\hyperlink{logger_8h_af5a529c60284c738c2c294cc6f828166}{LOGGING\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_a004ab24a13c867300a15efc338250c00}{log\+\_\+pointer}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{main_8c_abecb9f7f424287335a67817a45e061a0}{rx\+\_\+byte}}
+\item 
+\mbox{\hyperlink{structCommand__State__t}{Command\+\_\+\+State\+\_\+t}} \mbox{\hyperlink{main_8c_aee7728920d2aa0b757c4c9bf33a15d8c}{cmd\+\_\+state}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{main_8c_abfb0e0a2bad3c2475fabca5779d59424}{current\+\_\+pwm}} = 0
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{main_8c_a14f417b9081ab6569fe59cf0abe33c9c}{current\+\_\+direction}} = 1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8c_ad9eee04a29f1d09990183fff700e6295}{dist1\+\_\+mm}} = 0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8c_a2f3b1d8c6790606bd9a7cc2fa356ad6e}{dist2\+\_\+mm}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Main program body 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8c_aa19526e5c83c1553b1ccf36561ccfad8}\label{main_8c_aa19526e5c83c1553b1ccf36561ccfad8} 
+\index{main.c@{main.c}!SENSOR1\_NEW\_ADDR@{SENSOR1\_NEW\_ADDR}}
+\index{SENSOR1\_NEW\_ADDR@{SENSOR1\_NEW\_ADDR}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SENSOR1\_NEW\_ADDR}{SENSOR1\_NEW\_ADDR}}
+{\footnotesize\ttfamily \#define SENSOR1\+\_\+\+NEW\+\_\+\+ADDR~0x30}
+
+\Hypertarget{main_8c_a8662bfcb7f3e62435fe744e7f0adabce}\label{main_8c_a8662bfcb7f3e62435fe744e7f0adabce} 
+\index{main.c@{main.c}!XSHUT\_SENSOR1\_PIN@{XSHUT\_SENSOR1\_PIN}}
+\index{XSHUT\_SENSOR1\_PIN@{XSHUT\_SENSOR1\_PIN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{XSHUT\_SENSOR1\_PIN}{XSHUT\_SENSOR1\_PIN}}
+{\footnotesize\ttfamily \#define XSHUT\+\_\+\+SENSOR1\+\_\+\+PIN~\mbox{\hyperlink{group__GPIO__pins_ga6c35af4e75c3cb57bb650feaa7a136b5}{GPIO\+\_\+\+PIN\+\_\+1}}}
+
+\Hypertarget{main_8c_af5b6d82c8c8be898b2325e4447385d3a}\label{main_8c_af5b6d82c8c8be898b2325e4447385d3a} 
+\index{main.c@{main.c}!XSHUT\_SENSOR1\_PORT@{XSHUT\_SENSOR1\_PORT}}
+\index{XSHUT\_SENSOR1\_PORT@{XSHUT\_SENSOR1\_PORT}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{XSHUT\_SENSOR1\_PORT}{XSHUT\_SENSOR1\_PORT}}
+{\footnotesize\ttfamily \#define XSHUT\+\_\+\+SENSOR1\+\_\+\+PORT~GPIOB}
+
+\Hypertarget{main_8c_a28df13635977dd38d0d6cf74450812d1}\label{main_8c_a28df13635977dd38d0d6cf74450812d1} 
+\index{main.c@{main.c}!XSHUT\_SENSOR2\_PIN@{XSHUT\_SENSOR2\_PIN}}
+\index{XSHUT\_SENSOR2\_PIN@{XSHUT\_SENSOR2\_PIN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{XSHUT\_SENSOR2\_PIN}{XSHUT\_SENSOR2\_PIN}}
+{\footnotesize\ttfamily \#define XSHUT\+\_\+\+SENSOR2\+\_\+\+PIN~\mbox{\hyperlink{group__GPIO__pins_ga6eee38b797a7268f04357dfa2759efd2}{GPIO\+\_\+\+PIN\+\_\+2}}}
+
+\Hypertarget{main_8c_ae9de4c6457290cf2334cd191a5a6d9da}\label{main_8c_ae9de4c6457290cf2334cd191a5a6d9da} 
+\index{main.c@{main.c}!XSHUT\_SENSOR2\_PORT@{XSHUT\_SENSOR2\_PORT}}
+\index{XSHUT\_SENSOR2\_PORT@{XSHUT\_SENSOR2\_PORT}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{XSHUT\_SENSOR2\_PORT}{XSHUT\_SENSOR2\_PORT}}
+{\footnotesize\ttfamily \#define XSHUT\+\_\+\+SENSOR2\+\_\+\+PORT~GPIOB}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a1730ffe1e560465665eb47d9264826f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the RCC Oscillators according to the specified parameters in the \doxylink{structRCC__OscInitTypeDef}{RCC\+\_\+\+Osc\+Init\+Type\+Def} structure.
+
+Initializes the CPU, AHB and APB buses clocksHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{main_8c_a70af21c671abfcc773614a9a4f63d920_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_aee7728920d2aa0b757c4c9bf33a15d8c}\label{main_8c_aee7728920d2aa0b757c4c9bf33a15d8c} 
+\index{main.c@{main.c}!cmd\_state@{cmd\_state}}
+\index{cmd\_state@{cmd\_state}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{cmd\_state}{cmd\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structCommand__State__t}{Command\+\_\+\+State\+\_\+t}} cmd\+\_\+state\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_a14f417b9081ab6569fe59cf0abe33c9c}\label{main_8c_a14f417b9081ab6569fe59cf0abe33c9c} 
+\index{main.c@{main.c}!current\_direction@{current\_direction}}
+\index{current\_direction@{current\_direction}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{current\_direction}{current\_direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} current\+\_\+direction = 1}
+
+\Hypertarget{main_8c_abfb0e0a2bad3c2475fabca5779d59424}\label{main_8c_abfb0e0a2bad3c2475fabca5779d59424} 
+\index{main.c@{main.c}!current\_pwm@{current\_pwm}}
+\index{current\_pwm@{current\_pwm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{current\_pwm}{current\_pwm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} current\+\_\+pwm = 0}
+
+\Hypertarget{main_8c_ad9eee04a29f1d09990183fff700e6295}\label{main_8c_ad9eee04a29f1d09990183fff700e6295} 
+\index{main.c@{main.c}!dist1\_mm@{dist1\_mm}}
+\index{dist1\_mm@{dist1\_mm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dist1\_mm}{dist1\_mm}}
+{\footnotesize\ttfamily uint16\+\_\+t dist1\+\_\+mm = 0}
+
+\Hypertarget{main_8c_a2f3b1d8c6790606bd9a7cc2fa356ad6e}\label{main_8c_a2f3b1d8c6790606bd9a7cc2fa356ad6e} 
+\index{main.c@{main.c}!dist2\_mm@{dist2\_mm}}
+\index{dist2\_mm@{dist2\_mm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{dist2\_mm}{dist2\_mm}}
+{\footnotesize\ttfamily uint16\+\_\+t dist2\+\_\+mm = 0}
+
+\Hypertarget{main_8c_a286fefae78c30daba457f2531577d362}\label{main_8c_a286fefae78c30daba457f2531577d362} 
+\index{main.c@{main.c}!distanceStr1@{distanceStr1}}
+\index{distanceStr1@{distanceStr1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{distanceStr1}{distanceStr1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} distance\+Str1}
+
+\Hypertarget{main_8c_ae8e4fce27f62bf40d775bfb949b33f52}\label{main_8c_ae8e4fce27f62bf40d775bfb949b33f52} 
+\index{main.c@{main.c}!distanceStr2@{distanceStr2}}
+\index{distanceStr2@{distanceStr2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{distanceStr2}{distanceStr2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} distance\+Str2}
+
+\Hypertarget{main_8c_afe33c9d339fbeda78369dcfb0e327afa}\label{main_8c_afe33c9d339fbeda78369dcfb0e327afa} 
+\index{main.c@{main.c}!esc\_struct@{esc\_struct}}
+\index{esc\_struct@{esc\_struct}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{esc\_struct}{esc\_struct}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structesc__t}{esc\+\_\+t}} esc\+\_\+struct}
+
+\Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7} 
+\index{main.c@{main.c}!hi2c1@{hi2c1}}
+\index{hi2c1@{hi2c1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hi2c1}{hi2c1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} hi2c1}
+
+\Hypertarget{main_8c_ac379bcc152d860f08b1279fd3e232295}\label{main_8c_ac379bcc152d860f08b1279fd3e232295} 
+\index{main.c@{main.c}!hi2c2@{hi2c2}}
+\index{hi2c2@{hi2c2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hi2c2}{hi2c2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} hi2c2}
+
+\Hypertarget{main_8c_a2c80fd5510e2990a59a5c90d745c716c}\label{main_8c_a2c80fd5510e2990a59a5c90d745c716c} 
+\index{main.c@{main.c}!htim2@{htim2}}
+\index{htim2@{htim2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim2}{htim2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim2}
+
+\Hypertarget{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62}\label{main_8c_aac3d2c59ee0e3bbae1b99529a154eb62} 
+\index{main.c@{main.c}!htim3@{htim3}}
+\index{htim3@{htim3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim3}{htim3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim3}
+
+\Hypertarget{main_8c_a85788cec5a97ee377e4ee2e74f026484}\label{main_8c_a85788cec5a97ee377e4ee2e74f026484} 
+\index{main.c@{main.c}!htim4@{htim4}}
+\index{htim4@{htim4}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim4}{htim4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim4}
+
+\Hypertarget{main_8c_acefaeaaa3856ddddae7083b2d220fe4b}\label{main_8c_acefaeaaa3856ddddae7083b2d220fe4b} 
+\index{main.c@{main.c}!htim5@{htim5}}
+\index{htim5@{htim5}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim5}{htim5}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim5}
+
+\Hypertarget{main_8c_a1564492831a79fa18466467c3420c3c3}\label{main_8c_a1564492831a79fa18466467c3420c3c3} 
+\index{main.c@{main.c}!htim6@{htim6}}
+\index{htim6@{htim6}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{htim6}{htim6}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim6}
+
+\Hypertarget{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5} 
+\index{main.c@{main.c}!huart1@{huart1}}
+\index{huart1@{huart1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{huart1}{huart1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} huart1}
+
+\Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c} 
+\index{main.c@{main.c}!huart2@{huart2}}
+\index{huart2@{huart2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{huart2}{huart2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} huart2}
+
+\Hypertarget{main_8c_aad25ef11ffd5686e11c4565bfa518d21}\label{main_8c_aad25ef11ffd5686e11c4565bfa518d21} 
+\index{main.c@{main.c}!log\_buf@{log\_buf}}
+\index{log\_buf@{log\_buf}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{log\_buf}{log\_buf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} log\+\_\+buf\mbox{[}\mbox{\hyperlink{logger_8h_af5a529c60284c738c2c294cc6f828166}{LOGGING\+\_\+\+BUF\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_a004ab24a13c867300a15efc338250c00}\label{main_8c_a004ab24a13c867300a15efc338250c00} 
+\index{main.c@{main.c}!log\_pointer@{log\_pointer}}
+\index{log\_pointer@{log\_pointer}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{log\_pointer}{log\_pointer}}
+{\footnotesize\ttfamily uint32\+\_\+t log\+\_\+pointer\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_aef6f776a64f67760312115d5362c5104}\label{main_8c_aef6f776a64f67760312115d5362c5104} 
+\index{main.c@{main.c}!mpu6050\_struct@{mpu6050\_struct}}
+\index{mpu6050\_struct@{mpu6050\_struct}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{mpu6050\_struct}{mpu6050\_struct}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} mpu6050\+\_\+struct}
+
+\Hypertarget{main_8c_abecb9f7f424287335a67817a45e061a0}\label{main_8c_abecb9f7f424287335a67817a45e061a0} 
+\index{main.c@{main.c}!rx\_byte@{rx\_byte}}
+\index{rx\_byte@{rx\_byte}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{rx\_byte}{rx\_byte}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} rx\+\_\+byte\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{main_8c_a85756813df9a1d07d38993d353892b1d}\label{main_8c_a85756813df9a1d07d38993d353892b1d} 
+\index{main.c@{main.c}!sensor1@{sensor1}}
+\index{sensor1@{sensor1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sensor1}{sensor1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} sensor1}
+
+\Hypertarget{main_8c_ad5016f61865e19881526de01a61ad1dd}\label{main_8c_ad5016f61865e19881526de01a61ad1dd} 
+\index{main.c@{main.c}!sensor2@{sensor2}}
+\index{sensor2@{sensor2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sensor2}{sensor2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} sensor2}
+
+\Hypertarget{main_8c_a6afc9e2bbd3564dc37350fbdab1acf6d}\label{main_8c_a6afc9e2bbd3564dc37350fbdab1acf6d} 
+\index{main.c@{main.c}!speed\_calibration\_buffer@{speed\_calibration\_buffer}}
+\index{speed\_calibration\_buffer@{speed\_calibration\_buffer}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{speed\_calibration\_buffer}{speed\_calibration\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} speed\+\_\+calibration\+\_\+buffer\mbox{[}2\mbox{]}}
+

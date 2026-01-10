@@ -1,0 +1,13 @@
+<map id="getSequenceStepTimeouts" name="getSequenceStepTimeouts">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,201,81"/>
+<area shape="rect" id="Node000002" href="$VL53L0X_8c.html#a729beb08b6052761420f8b2ba9b965a2" title=" " alt="" coords="249,5,404,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,53,256,31,257,36,161,58"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a6030029639c34876b2bb5b1dc6eaaba6" title=" " alt="" coords="469,56,545,81"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="202,66,456,66,456,71,202,71"/>
+<area shape="rect" id="Node000005" href="$VL53L0X_8c.html#ad073f96b52d96014dade2560dd2fa931" title=" " alt="" coords="452,105,563,131"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="202,78,439,107,438,112,201,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,28,457,52,455,57,372,33"/>
+<area shape="rect" id="Node000004" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="611,81,767,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="546,71,598,79,597,84,545,77"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="562,108,597,103,597,109,563,113"/>
+</map>

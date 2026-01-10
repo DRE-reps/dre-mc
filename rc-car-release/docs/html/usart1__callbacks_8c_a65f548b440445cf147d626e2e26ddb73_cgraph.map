@@ -1,0 +1,7 @@
+<map id="parse_uart_message" name="parse_uart_message">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,163,56"/>
+<area shape="rect" id="Node000002" href="$usart1__callbacks_8c.html#affbfb036f60ddbae3a766279f885dff9" title=" " alt="" coords="211,5,333,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,30,197,25,197,31,163,35"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html#a3278730f835b7230a0de447ea4afd3f0" title=" " alt="" coords="232,55,312,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,51,219,58,218,63,163,56"/>
+</map>

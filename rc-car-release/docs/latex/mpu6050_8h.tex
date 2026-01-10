@@ -1,0 +1,183 @@
+\doxysection{Core/\+Inc/mpu6050.h File Reference}
+\hypertarget{mpu6050_8h}{}\label{mpu6050_8h}\index{Core/Inc/mpu6050.h@{Core/Inc/mpu6050.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+Include dependency graph for mpu6050.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393}{MPU6050\+\_\+\+Init}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5}{MPU6050\+\_\+\+Read\+\_\+\+Accel}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b}{MPU6050\+\_\+\+Read\+\_\+\+Gyro}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0}{MPU6050\+\_\+\+Read\+\_\+\+Temp}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382}{MPU6050\+\_\+\+Read\+\_\+\+All}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+double \mbox{\hyperlink{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2}{Kalman\+\_\+get\+Angle}} (\mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} \texorpdfstring{$\ast$}{*}Kalman, double new\+Angle, double new\+Rate, double dt)
+\item 
+float \mbox{\hyperlink{mpu6050_8h_af23ed1d341ade70d22b86fcf503dbb22}{MPU6050\+\_\+get\+\_\+acceleration}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{mpu6050_8h_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2}\label{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2} 
+\index{mpu6050.h@{mpu6050.h}!Kalman\_getAngle@{Kalman\_getAngle}}
+\index{Kalman\_getAngle@{Kalman\_getAngle}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{Kalman\_getAngle()}{Kalman\_getAngle()}}
+{\footnotesize\ttfamily double Kalman\+\_\+get\+Angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Kalman,  }\item[{double}]{new\+Angle,  }\item[{double}]{new\+Rate,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8h_af23ed1d341ade70d22b86fcf503dbb22}\label{mpu6050_8h_af23ed1d341ade70d22b86fcf503dbb22} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_get\_acceleration@{MPU6050\_get\_acceleration}}
+\index{MPU6050\_get\_acceleration@{MPU6050\_get\_acceleration}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_get\_acceleration()}{MPU6050\_get\_acceleration()}}
+{\footnotesize\ttfamily float MPU6050\+\_\+get\+\_\+acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h_af23ed1d341ade70d22b86fcf503dbb22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h_af23ed1d341ade70d22b86fcf503dbb22_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393}\label{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Init@{MPU6050\_Init}}
+\index{MPU6050\_Init@{MPU6050\_Init}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Init()}{MPU6050\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} MPU6050\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5}\label{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}}
+\index{MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Accel()}{MPU6050\_Read\_Accel()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Accel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382}\label{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_All@{MPU6050\_Read\_All}}
+\index{MPU6050\_Read\_All@{MPU6050\_Read\_All}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_All()}{MPU6050\_Read\_All()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b}\label{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}}
+\index{MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Gyro()}{MPU6050\_Read\_Gyro()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Gyro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0}\label{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}}
+\index{MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Temp()}{MPU6050\_Read\_Temp()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mpu6050_8h_ac379bcc152d860f08b1279fd3e232295}\label{mpu6050_8h_ac379bcc152d860f08b1279fd3e232295} 
+\index{mpu6050.h@{mpu6050.h}!hi2c2@{hi2c2}}
+\index{hi2c2@{hi2c2}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{hi2c2}{hi2c2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} hi2c2\hspace{0.3cm}{\ttfamily [extern]}}
+

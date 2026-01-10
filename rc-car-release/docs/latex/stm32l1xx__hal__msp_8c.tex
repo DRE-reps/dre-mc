@@ -1,0 +1,66 @@
+\doxysection{Core/\+Src/stm32l1xx\+\_\+hal\+\_\+msp.c File Reference}
+\hypertarget{stm32l1xx__hal__msp_8c}{}\label{stm32l1xx__hal__msp_8c}\index{Core/Src/stm32l1xx\_hal\_msp.c@{Core/Src/stm32l1xx\_hal\_msp.c}}
+
+
+This file provides code for the MSP Initialization and de-\/\+Initialization codes.  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+Include dependency graph for stm32l1xx\+\_\+hal\+\_\+msp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l1xx__hal__msp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_ae70bce6c39d0b570a7523b86738cec4b}{HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init}} (\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group1_gae4fb8e66865c87d0ebab74a726a6891f}{HAL\+\_\+\+Msp\+Init}} (void)
+\item 
+void \mbox{\hyperlink{group__I2C__Exported__Functions__Group1_gabe01a202c27b23fc150aa66af3130073}{HAL\+\_\+\+I2\+C\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2c)
+\begin{DoxyCompactList}\small\item\em I2C MSP Initialization This function configures the hardware resources used in this example. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__I2C__Exported__Functions__Group1_ga2ec8d9b09854c732e2feed549278f048}{HAL\+\_\+\+I2\+C\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}hi2c)
+\begin{DoxyCompactList}\small\item\em I2C MSP De-\/\+Initialization This function freeze the hardware resources used in this example. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__TIM__Exported__Functions__Group1_ga818f4d5d1e2f417438d281b4ac9efb9c}{HAL\+\_\+\+TIM\+\_\+\+Base\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim\+\_\+base)
+\begin{DoxyCompactList}\small\item\em TIM\+\_\+\+Base MSP Initialization This function configures the hardware resources used in this example. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__TIM__Exported__Functions__Group1_ga13352a6c9cb3225511e5f29dbb894e84}{HAL\+\_\+\+TIM\+\_\+\+Base\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim\+\_\+base)
+\begin{DoxyCompactList}\small\item\em TIM\+\_\+\+Base MSP De-\/\+Initialization This function freeze the hardware resources used in this example. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__UART__Exported__Functions__Group1_ga0e553b32211877322f949b14801bbfa7}{HAL\+\_\+\+UART\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em UART MSP Initialization This function configures the hardware resources used in this example. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__UART__Exported__Functions__Group1_ga718f39804e3b910d738a0e1e46151188}{HAL\+\_\+\+UART\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}huart)
+\begin{DoxyCompactList}\small\item\em UART MSP De-\/\+Initialization This function freeze the hardware resources used in this example. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides code for the MSP Initialization and de-\/\+Initialization codes. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stm32l1xx__hal__msp_8c_ae70bce6c39d0b570a7523b86738cec4b}\label{stm32l1xx__hal__msp_8c_ae70bce6c39d0b570a7523b86738cec4b} 
+\index{stm32l1xx\_hal\_msp.c@{stm32l1xx\_hal\_msp.c}!HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}}
+\index{HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}!stm32l1xx\_hal\_msp.c@{stm32l1xx\_hal\_msp.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_MspPostInit()}{HAL\_TIM\_MspPostInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+TIM2 GPIO Configuration PA1 -\/-\/-\/---\texorpdfstring{$>$}{>} TIM2\+\_\+\+CH2
+
+TIM3 GPIO Configuration PA6 -\/-\/-\/---\texorpdfstring{$>$}{>} TIM3\+\_\+\+CH1
+
+TIM4 GPIO Configuration PB6 -\/-\/-\/---\texorpdfstring{$>$}{>} TIM4\+\_\+\+CH1Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{stm32l1xx__hal__msp_8c_ae70bce6c39d0b570a7523b86738cec4b_cgraph}
+\end{center}
+\end{figure}

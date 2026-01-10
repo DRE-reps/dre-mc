@@ -1,0 +1,99 @@
+\doxysection{Core/\+Inc/main.h File Reference}
+\hypertarget{main_8h}{}\label{main_8h}\index{Core/Inc/main.h@{Core/Inc/main.h}}
+
+
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application.  
+
+
+{\ttfamily \#include "{}stm32l1xx\+\_\+hal.\+h"{}}\newline
+Include dependency graph for main.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8h_a0a43c1795ee2856931e9a90cc2d37475}{\+\_\+\+\_\+\+LOGGING\+\_\+\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_ae70bce6c39d0b570a7523b86738cec4b}{HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init}} (\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}htim)
+\item 
+void \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Header for \doxylink{main_8c}{main.\+c} file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2025 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8h_a0a43c1795ee2856931e9a90cc2d37475}\label{main_8h_a0a43c1795ee2856931e9a90cc2d37475} 
+\index{main.h@{main.h}!\_\_LOGGING\_\_@{\_\_LOGGING\_\_}}
+\index{\_\_LOGGING\_\_@{\_\_LOGGING\_\_}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{\_\_LOGGING\_\_}{\_\_LOGGING\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+LOGGING\+\_\+\+\_\+}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8h_a1730ffe1e560465665eb47d9264826f9}\label{main_8h_a1730ffe1e560465665eb47d9264826f9} 
+\index{main.h@{main.h}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8h_a1730ffe1e560465665eb47d9264826f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8h_ae70bce6c39d0b570a7523b86738cec4b}\label{main_8h_ae70bce6c39d0b570a7523b86738cec4b} 
+\index{main.h@{main.h}!HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}}
+\index{HAL\_TIM\_MspPostInit@{HAL\_TIM\_MspPostInit}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_TIM\_MspPostInit()}{HAL\_TIM\_MspPostInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+Msp\+Post\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{htim }\end{DoxyParamCaption})}
+
+TIM2 GPIO Configuration PA1 -\/-\/-\/---\texorpdfstring{$>$}{>} TIM2\+\_\+\+CH2
+
+TIM3 GPIO Configuration PA6 -\/-\/-\/---\texorpdfstring{$>$}{>} TIM3\+\_\+\+CH1
+
+TIM4 GPIO Configuration PB6 -\/-\/-\/---\texorpdfstring{$>$}{>} TIM4\+\_\+\+CH1Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{main_8h_ae70bce6c39d0b570a7523b86738cec4b_cgraph}
+\end{center}
+\end{figure}

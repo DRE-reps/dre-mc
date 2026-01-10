@@ -1,0 +1,60 @@
+\doxysubsubsubsection{CORTEX Preemption Priority Group}
+\hypertarget{group__CORTEX__Preemption__Priority__Group__Macro}{}\label{group__CORTEX__Preemption__Priority__Group__Macro}\index{CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}}
+Collaboration diagram for CORTEX Preemption Priority Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CORTEX__Preemption__Priority__Group__Macro}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group__Macro_ga6569304a39fe4f91bd59b6a586c8ede9}{IS\+\_\+\+NVIC\+\_\+\+PRIORITY\+\_\+\+GROUP}}(GROUP)
+\item 
+\#define \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group__Macro_gaf30fd8f5960c2e28a772d8f16bb156dd}{IS\+\_\+\+NVIC\+\_\+\+PREEMPTION\+\_\+\+PRIORITY}}(PRIORITY)~((PRIORITY) $<$ 0x10)
+\item 
+\#define \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group__Macro_ga010705bc997dcff935b965b372cba61d}{IS\+\_\+\+NVIC\+\_\+\+SUB\+\_\+\+PRIORITY}}(PRIORITY)~((PRIORITY) $<$ 0x10)
+\item 
+\#define \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group__Macro_ga9b8dcac4ed8e88c14d9bb04e369dad6a}{IS\+\_\+\+NVIC\+\_\+\+DEVICE\+\_\+\+IRQ}}(IRQ)~((IRQ) $>$= 0x00)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__CORTEX__Preemption__Priority__Group__Macro_ga9b8dcac4ed8e88c14d9bb04e369dad6a}\label{group__CORTEX__Preemption__Priority__Group__Macro_ga9b8dcac4ed8e88c14d9bb04e369dad6a} 
+\index{CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}!IS\_NVIC\_DEVICE\_IRQ@{IS\_NVIC\_DEVICE\_IRQ}}
+\index{IS\_NVIC\_DEVICE\_IRQ@{IS\_NVIC\_DEVICE\_IRQ}!CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_NVIC\_DEVICE\_IRQ}{IS\_NVIC\_DEVICE\_IRQ}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+NVIC\+\_\+\+DEVICE\+\_\+\+IRQ(\begin{DoxyParamCaption}\item[{}]{IRQ }\end{DoxyParamCaption})~((IRQ) $>$= 0x00)}
+
+\Hypertarget{group__CORTEX__Preemption__Priority__Group__Macro_gaf30fd8f5960c2e28a772d8f16bb156dd}\label{group__CORTEX__Preemption__Priority__Group__Macro_gaf30fd8f5960c2e28a772d8f16bb156dd} 
+\index{CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}!IS\_NVIC\_PREEMPTION\_PRIORITY@{IS\_NVIC\_PREEMPTION\_PRIORITY}}
+\index{IS\_NVIC\_PREEMPTION\_PRIORITY@{IS\_NVIC\_PREEMPTION\_PRIORITY}!CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_NVIC\_PREEMPTION\_PRIORITY}{IS\_NVIC\_PREEMPTION\_PRIORITY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+NVIC\+\_\+\+PREEMPTION\+\_\+\+PRIORITY(\begin{DoxyParamCaption}\item[{}]{PRIORITY }\end{DoxyParamCaption})~((PRIORITY) $<$ 0x10)}
+
+\Hypertarget{group__CORTEX__Preemption__Priority__Group__Macro_ga6569304a39fe4f91bd59b6a586c8ede9}\label{group__CORTEX__Preemption__Priority__Group__Macro_ga6569304a39fe4f91bd59b6a586c8ede9} 
+\index{CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}!IS\_NVIC\_PRIORITY\_GROUP@{IS\_NVIC\_PRIORITY\_GROUP}}
+\index{IS\_NVIC\_PRIORITY\_GROUP@{IS\_NVIC\_PRIORITY\_GROUP}!CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_NVIC\_PRIORITY\_GROUP}{IS\_NVIC\_PRIORITY\_GROUP}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+NVIC\+\_\+\+PRIORITY\+\_\+\+GROUP(\begin{DoxyParamCaption}\item[{}]{GROUP }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((GROUP)\ ==\ \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group_ga5e97dcff77680602c86e44f23f5ffa1a}{NVIC\_PRIORITYGROUP\_0}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group_ga702227137b010421c3a3b6434005a132}{NVIC\_PRIORITYGROUP\_1}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group_gaa43a3fd37850c120ce567ab2743d11b4}{NVIC\_PRIORITYGROUP\_2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group_ga8ddb24962e6f0fc3273139d45d374b09}{NVIC\_PRIORITYGROUP\_3}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ \mbox{\hyperlink{group__CORTEX__Preemption__Priority__Group_gae6eab9140204bc938255aa148e597c45}{NVIC\_PRIORITYGROUP\_4}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__CORTEX__Preemption__Priority__Group__Macro_ga010705bc997dcff935b965b372cba61d}\label{group__CORTEX__Preemption__Priority__Group__Macro_ga010705bc997dcff935b965b372cba61d} 
+\index{CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}!IS\_NVIC\_SUB\_PRIORITY@{IS\_NVIC\_SUB\_PRIORITY}}
+\index{IS\_NVIC\_SUB\_PRIORITY@{IS\_NVIC\_SUB\_PRIORITY}!CORTEX Preemption Priority Group@{CORTEX Preemption Priority Group}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_NVIC\_SUB\_PRIORITY}{IS\_NVIC\_SUB\_PRIORITY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+NVIC\+\_\+\+SUB\+\_\+\+PRIORITY(\begin{DoxyParamCaption}\item[{}]{PRIORITY }\end{DoxyParamCaption})~((PRIORITY) $<$ 0x10)}
+

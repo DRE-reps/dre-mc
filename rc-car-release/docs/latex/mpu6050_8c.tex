@@ -1,0 +1,312 @@
+\doxysection{Core/\+Src/mpu6050.c File Reference}
+\hypertarget{mpu6050_8c}{}\label{mpu6050_8c}\index{Core/Src/mpu6050.c@{Core/Src/mpu6050.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}mpu6050.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+Include dependency graph for mpu6050.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_a89e47af0449640d4f15191aba5ca24c6}{RAD\+\_\+\+TO\+\_\+\+DEG}}~57.\+295779513082320876798154814105
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_a7e23ffa5bb718d06bcee89bbdf844ed8}{WHO\+\_\+\+AM\+\_\+\+I\+\_\+\+REG}}~0x75
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_af9bd016ab99b299a4816433252e31c3d}{PWR\+\_\+\+MGMT\+\_\+1\+\_\+\+REG}}~0x6B
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_aa2208da6faf439107b23dee629bb8398}{SMPLRT\+\_\+\+DIV\+\_\+\+REG}}~0x19
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_ad1d05dc09d0025498687ab7e30ffd4e4}{ACCEL\+\_\+\+CONFIG\+\_\+\+REG}}~0x1C
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_a12d3f98f5ae302f7aab5895be9388d69}{ACCEL\+\_\+\+XOUT\+\_\+\+H\+\_\+\+REG}}~0x3B
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_aff3d1ca89fdcdfd99fe28f579b79a041}{TEMP\+\_\+\+OUT\+\_\+\+H\+\_\+\+REG}}~0x41
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_a5b1b1a1ea1298b67cdab17a7213c6356}{GYRO\+\_\+\+CONFIG\+\_\+\+REG}}~0x1B
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_ae2681bec6196f74ae52136e8af1a4dcf}{GYRO\+\_\+\+XOUT\+\_\+\+H\+\_\+\+REG}}~0x43
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_ad4d6255d8f7e5dc770e773b787977508}{MPU6050\+\_\+\+ADDR}}~0x\+D0
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_ab22171c96aa7c860528be39ecc26af69}{CORRECT\+\_\+\+ACCELERATION\+\_\+\+COEF}}~0.\+5f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{mpu6050_8c_af23ed1d341ade70d22b86fcf503dbb22}{MPU6050\+\_\+get\+\_\+acceleration}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393}{MPU6050\+\_\+\+Init}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5}{MPU6050\+\_\+\+Read\+\_\+\+Accel}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b}{MPU6050\+\_\+\+Read\+\_\+\+Gyro}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0}{MPU6050\+\_\+\+Read\+\_\+\+Temp}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382}{MPU6050\+\_\+\+Read\+\_\+\+All}} (\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}Data\+Struct)
+\item 
+double \mbox{\hyperlink{mpu6050_8c_ae076945741048d0c5e3dbfeabc27f5e2}{Kalman\+\_\+get\+Angle}} (\mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} \texorpdfstring{$\ast$}{*}Kalman, double new\+Angle, double new\+Rate, double dt)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint16\+\_\+t \mbox{\hyperlink{mpu6050_8c_ac339720e63c0ffe1ddaa3ab29e207949}{i2c\+\_\+timeout}} = 100
+\item 
+const double \mbox{\hyperlink{mpu6050_8c_a4b2a23e087dac68793981b718a4f5ff4}{Accel\+\_\+\+Z\+\_\+corrector}} = 14418.\+0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{mpu6050_8c_a0d88807102c8d96e37cb4751f0d5a7d3}{timer}}
+\item 
+\mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} \mbox{\hyperlink{mpu6050_8c_af95f7c46fb9b43bb2444904c00426545}{KalmanX}}
+\item 
+\mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} \mbox{\hyperlink{mpu6050_8c_ab827d411b48396d9a23088aa1adcc919}{KalmanY}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{mpu6050_8c_ad1d05dc09d0025498687ab7e30ffd4e4}\label{mpu6050_8c_ad1d05dc09d0025498687ab7e30ffd4e4} 
+\index{mpu6050.c@{mpu6050.c}!ACCEL\_CONFIG\_REG@{ACCEL\_CONFIG\_REG}}
+\index{ACCEL\_CONFIG\_REG@{ACCEL\_CONFIG\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{ACCEL\_CONFIG\_REG}{ACCEL\_CONFIG\_REG}}
+{\footnotesize\ttfamily \#define ACCEL\+\_\+\+CONFIG\+\_\+\+REG~0x1C}
+
+\Hypertarget{mpu6050_8c_a12d3f98f5ae302f7aab5895be9388d69}\label{mpu6050_8c_a12d3f98f5ae302f7aab5895be9388d69} 
+\index{mpu6050.c@{mpu6050.c}!ACCEL\_XOUT\_H\_REG@{ACCEL\_XOUT\_H\_REG}}
+\index{ACCEL\_XOUT\_H\_REG@{ACCEL\_XOUT\_H\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{ACCEL\_XOUT\_H\_REG}{ACCEL\_XOUT\_H\_REG}}
+{\footnotesize\ttfamily \#define ACCEL\+\_\+\+XOUT\+\_\+\+H\+\_\+\+REG~0x3B}
+
+\Hypertarget{mpu6050_8c_ab22171c96aa7c860528be39ecc26af69}\label{mpu6050_8c_ab22171c96aa7c860528be39ecc26af69} 
+\index{mpu6050.c@{mpu6050.c}!CORRECT\_ACCELERATION\_COEF@{CORRECT\_ACCELERATION\_COEF}}
+\index{CORRECT\_ACCELERATION\_COEF@{CORRECT\_ACCELERATION\_COEF}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{CORRECT\_ACCELERATION\_COEF}{CORRECT\_ACCELERATION\_COEF}}
+{\footnotesize\ttfamily \#define CORRECT\+\_\+\+ACCELERATION\+\_\+\+COEF~0.\+5f}
+
+\Hypertarget{mpu6050_8c_a5b1b1a1ea1298b67cdab17a7213c6356}\label{mpu6050_8c_a5b1b1a1ea1298b67cdab17a7213c6356} 
+\index{mpu6050.c@{mpu6050.c}!GYRO\_CONFIG\_REG@{GYRO\_CONFIG\_REG}}
+\index{GYRO\_CONFIG\_REG@{GYRO\_CONFIG\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{GYRO\_CONFIG\_REG}{GYRO\_CONFIG\_REG}}
+{\footnotesize\ttfamily \#define GYRO\+\_\+\+CONFIG\+\_\+\+REG~0x1B}
+
+\Hypertarget{mpu6050_8c_ae2681bec6196f74ae52136e8af1a4dcf}\label{mpu6050_8c_ae2681bec6196f74ae52136e8af1a4dcf} 
+\index{mpu6050.c@{mpu6050.c}!GYRO\_XOUT\_H\_REG@{GYRO\_XOUT\_H\_REG}}
+\index{GYRO\_XOUT\_H\_REG@{GYRO\_XOUT\_H\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{GYRO\_XOUT\_H\_REG}{GYRO\_XOUT\_H\_REG}}
+{\footnotesize\ttfamily \#define GYRO\+\_\+\+XOUT\+\_\+\+H\+\_\+\+REG~0x43}
+
+\Hypertarget{mpu6050_8c_ad4d6255d8f7e5dc770e773b787977508}\label{mpu6050_8c_ad4d6255d8f7e5dc770e773b787977508} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_ADDR@{MPU6050\_ADDR}}
+\index{MPU6050\_ADDR@{MPU6050\_ADDR}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_ADDR}{MPU6050\_ADDR}}
+{\footnotesize\ttfamily \#define MPU6050\+\_\+\+ADDR~0x\+D0}
+
+\Hypertarget{mpu6050_8c_af9bd016ab99b299a4816433252e31c3d}\label{mpu6050_8c_af9bd016ab99b299a4816433252e31c3d} 
+\index{mpu6050.c@{mpu6050.c}!PWR\_MGMT\_1\_REG@{PWR\_MGMT\_1\_REG}}
+\index{PWR\_MGMT\_1\_REG@{PWR\_MGMT\_1\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{PWR\_MGMT\_1\_REG}{PWR\_MGMT\_1\_REG}}
+{\footnotesize\ttfamily \#define PWR\+\_\+\+MGMT\+\_\+1\+\_\+\+REG~0x6B}
+
+\Hypertarget{mpu6050_8c_a89e47af0449640d4f15191aba5ca24c6}\label{mpu6050_8c_a89e47af0449640d4f15191aba5ca24c6} 
+\index{mpu6050.c@{mpu6050.c}!RAD\_TO\_DEG@{RAD\_TO\_DEG}}
+\index{RAD\_TO\_DEG@{RAD\_TO\_DEG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{RAD\_TO\_DEG}{RAD\_TO\_DEG}}
+{\footnotesize\ttfamily \#define RAD\+\_\+\+TO\+\_\+\+DEG~57.\+295779513082320876798154814105}
+
+\Hypertarget{mpu6050_8c_aa2208da6faf439107b23dee629bb8398}\label{mpu6050_8c_aa2208da6faf439107b23dee629bb8398} 
+\index{mpu6050.c@{mpu6050.c}!SMPLRT\_DIV\_REG@{SMPLRT\_DIV\_REG}}
+\index{SMPLRT\_DIV\_REG@{SMPLRT\_DIV\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{SMPLRT\_DIV\_REG}{SMPLRT\_DIV\_REG}}
+{\footnotesize\ttfamily \#define SMPLRT\+\_\+\+DIV\+\_\+\+REG~0x19}
+
+\Hypertarget{mpu6050_8c_aff3d1ca89fdcdfd99fe28f579b79a041}\label{mpu6050_8c_aff3d1ca89fdcdfd99fe28f579b79a041} 
+\index{mpu6050.c@{mpu6050.c}!TEMP\_OUT\_H\_REG@{TEMP\_OUT\_H\_REG}}
+\index{TEMP\_OUT\_H\_REG@{TEMP\_OUT\_H\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{TEMP\_OUT\_H\_REG}{TEMP\_OUT\_H\_REG}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+OUT\+\_\+\+H\+\_\+\+REG~0x41}
+
+\Hypertarget{mpu6050_8c_a7e23ffa5bb718d06bcee89bbdf844ed8}\label{mpu6050_8c_a7e23ffa5bb718d06bcee89bbdf844ed8} 
+\index{mpu6050.c@{mpu6050.c}!WHO\_AM\_I\_REG@{WHO\_AM\_I\_REG}}
+\index{WHO\_AM\_I\_REG@{WHO\_AM\_I\_REG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{WHO\_AM\_I\_REG}{WHO\_AM\_I\_REG}}
+{\footnotesize\ttfamily \#define WHO\+\_\+\+AM\+\_\+\+I\+\_\+\+REG~0x75}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mpu6050_8c_ae076945741048d0c5e3dbfeabc27f5e2}\label{mpu6050_8c_ae076945741048d0c5e3dbfeabc27f5e2} 
+\index{mpu6050.c@{mpu6050.c}!Kalman\_getAngle@{Kalman\_getAngle}}
+\index{Kalman\_getAngle@{Kalman\_getAngle}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{Kalman\_getAngle()}{Kalman\_getAngle()}}
+{\footnotesize\ttfamily double Kalman\+\_\+get\+Angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Kalman,  }\item[{double}]{new\+Angle,  }\item[{double}]{new\+Rate,  }\item[{double}]{dt }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{mpu6050_8c_ae076945741048d0c5e3dbfeabc27f5e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8c_af23ed1d341ade70d22b86fcf503dbb22}\label{mpu6050_8c_af23ed1d341ade70d22b86fcf503dbb22} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_get\_acceleration@{MPU6050\_get\_acceleration}}
+\index{MPU6050\_get\_acceleration@{MPU6050\_get\_acceleration}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_get\_acceleration()}{MPU6050\_get\_acceleration()}}
+{\footnotesize\ttfamily float MPU6050\+\_\+get\+\_\+acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c_af23ed1d341ade70d22b86fcf503dbb22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c_af23ed1d341ade70d22b86fcf503dbb22_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393}\label{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Init@{MPU6050\_Init}}
+\index{MPU6050\_Init@{MPU6050\_Init}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Init()}{MPU6050\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} MPU6050\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5}\label{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}}
+\index{MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Accel()}{MPU6050\_Read\_Accel()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Accel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382}\label{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_All@{MPU6050\_Read\_All}}
+\index{MPU6050\_Read\_All@{MPU6050\_Read\_All}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_All()}{MPU6050\_Read\_All()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b}\label{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}}
+\index{MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Gyro()}{MPU6050\_Read\_Gyro()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Gyro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0}\label{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}}
+\index{MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Temp()}{MPU6050\_Read\_Temp()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{I2\+Cx,  }\item[{\mbox{\hyperlink{structMPU6050__t}{MPU6050\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mpu6050_8c_a4b2a23e087dac68793981b718a4f5ff4}\label{mpu6050_8c_a4b2a23e087dac68793981b718a4f5ff4} 
+\index{mpu6050.c@{mpu6050.c}!Accel\_Z\_corrector@{Accel\_Z\_corrector}}
+\index{Accel\_Z\_corrector@{Accel\_Z\_corrector}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{Accel\_Z\_corrector}{Accel\_Z\_corrector}}
+{\footnotesize\ttfamily const double Accel\+\_\+\+Z\+\_\+corrector = 14418.\+0}
+
+\Hypertarget{mpu6050_8c_ac339720e63c0ffe1ddaa3ab29e207949}\label{mpu6050_8c_ac339720e63c0ffe1ddaa3ab29e207949} 
+\index{mpu6050.c@{mpu6050.c}!i2c\_timeout@{i2c\_timeout}}
+\index{i2c\_timeout@{i2c\_timeout}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{i2c\_timeout}{i2c\_timeout}}
+{\footnotesize\ttfamily const uint16\+\_\+t i2c\+\_\+timeout = 100}
+
+\Hypertarget{mpu6050_8c_af95f7c46fb9b43bb2444904c00426545}\label{mpu6050_8c_af95f7c46fb9b43bb2444904c00426545} 
+\index{mpu6050.c@{mpu6050.c}!KalmanX@{KalmanX}}
+\index{KalmanX@{KalmanX}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{KalmanX}{KalmanX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} KalmanX}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ .Q\_angle\ =\ 0.001f,}
+\DoxyCodeLine{\ \ \ \ .Q\_bias\ =\ 0.003f,}
+\DoxyCodeLine{\ \ \ \ .R\_measure\ =\ 0.03f\}}
+
+\end{DoxyCode}
+\Hypertarget{mpu6050_8c_ab827d411b48396d9a23088aa1adcc919}\label{mpu6050_8c_ab827d411b48396d9a23088aa1adcc919} 
+\index{mpu6050.c@{mpu6050.c}!KalmanY@{KalmanY}}
+\index{KalmanY@{KalmanY}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{KalmanY}{KalmanY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structKalman__t}{Kalman\+\_\+t}} KalmanY}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ .Q\_angle\ =\ 0.001f,}
+\DoxyCodeLine{\ \ \ \ .Q\_bias\ =\ 0.003f,}
+\DoxyCodeLine{\ \ \ \ .R\_measure\ =\ 0.03f,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{mpu6050_8c_a0d88807102c8d96e37cb4751f0d5a7d3}\label{mpu6050_8c_a0d88807102c8d96e37cb4751f0d5a7d3} 
+\index{mpu6050.c@{mpu6050.c}!timer@{timer}}
+\index{timer@{timer}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily uint32\+\_\+t timer}
+

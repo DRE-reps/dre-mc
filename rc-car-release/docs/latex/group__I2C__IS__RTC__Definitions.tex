@@ -1,0 +1,176 @@
+\doxysubsubsubsection{I2C Private macros to check input parameters}
+\hypertarget{group__I2C__IS__RTC__Definitions}{}\label{group__I2C__IS__RTC__Definitions}\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+Collaboration diagram for I2C Private macros to check input parameters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__I2C__IS__RTC__Definitions}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gae9b3276d9b6ec872ee4fafa2b2fafb83}{IS\+\_\+\+I2\+C\+\_\+\+DUTY\+\_\+\+CYCLE}}(CYCLE)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gabfbd7569fe1512aea1cf507afc05e5fe}{IS\+\_\+\+I2\+C\+\_\+\+ADDRESSING\+\_\+\+MODE}}(ADDRESS)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gae683c113d4088dfae90fbe6677f8296a}{IS\+\_\+\+I2\+C\+\_\+\+DUAL\+\_\+\+ADDRESS}}(ADDRESS)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_ga36a9a7855d7f35a6b03b05c6079bf149}{IS\+\_\+\+I2\+C\+\_\+\+GENERAL\+\_\+\+CALL}}(CALL)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gaf7d844f7c7f5c96067468ab47971d0fd}{IS\+\_\+\+I2\+C\+\_\+\+NO\+\_\+\+STRETCH}}(STRETCH)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gace95d2b6add7feef5805f1fa6d2e46be}{IS\+\_\+\+I2\+C\+\_\+\+MEMADD\+\_\+\+SIZE}}(SIZE)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gae0d731df1b264d853703716c29309b9b}{IS\+\_\+\+I2\+C\+\_\+\+CLOCK\+\_\+\+SPEED}}(SPEED)~(((SPEED) $>$ 0U) \&\& ((SPEED) $<$= 400000U))
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gad84e8b9523d45b6105b4d5cb68994a79}{IS\+\_\+\+I2\+C\+\_\+\+OWN\+\_\+\+ADDRESS1}}(ADDRESS1)~(((ADDRESS1) \& 0x\+FFFFFC00U) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_ga83001d53612b83ee90730d3bb2732537}{IS\+\_\+\+I2\+C\+\_\+\+OWN\+\_\+\+ADDRESS2}}(ADDRESS2)~(((ADDRESS2) \& 0x\+FFFFFF01U) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_ga8f3522af9ffef268641698ac80f77859}{IS\+\_\+\+I2\+C\+\_\+\+TRANSFER\+\_\+\+OPTIONS\+\_\+\+REQUEST}}(REQUEST)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_ga13a3986011ca018dd12ff39ea3bec11b}{IS\+\_\+\+I2\+C\+\_\+\+TRANSFER\+\_\+\+OTHER\+\_\+\+OPTIONS\+\_\+\+REQUEST}}(REQUEST)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_ga31873e0595e29c80cffe00c2d2e073ab}{I2\+C\+\_\+\+CHECK\+\_\+\+FLAG}}(\+\_\+\+\_\+\+ISR\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+ISR\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group__I2C__Private__Constants_gafbc0a6e4113be03100fbae1314a8b395}{I2\+C\+\_\+\+FLAG\+\_\+\+MASK}})) == ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group__I2C__Private__Constants_gafbc0a6e4113be03100fbae1314a8b395}{I2\+C\+\_\+\+FLAG\+\_\+\+MASK}})) ? SET \+: RESET)
+\item 
+\#define \mbox{\hyperlink{group__I2C__IS__RTC__Definitions_gacc7c83a67d99d759923c6907f1a1751f}{I2\+C\+\_\+\+CHECK\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+CR1\+\_\+\+\_\+,  \+\_\+\+\_\+\+IT\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+CR1\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) ? SET \+: RESET)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__I2C__IS__RTC__Definitions_ga31873e0595e29c80cffe00c2d2e073ab}\label{group__I2C__IS__RTC__Definitions_ga31873e0595e29c80cffe00c2d2e073ab} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!I2C\_CHECK\_FLAG@{I2C\_CHECK\_FLAG}}
+\index{I2C\_CHECK\_FLAG@{I2C\_CHECK\_FLAG}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{I2C\_CHECK\_FLAG}{I2C\_CHECK\_FLAG}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+CHECK\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ISR\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+ISR\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group__I2C__Private__Constants_gafbc0a6e4113be03100fbae1314a8b395}{I2\+C\+\_\+\+FLAG\+\_\+\+MASK}})) == ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group__I2C__Private__Constants_gafbc0a6e4113be03100fbae1314a8b395}{I2\+C\+\_\+\+FLAG\+\_\+\+MASK}})) ? SET \+: RESET)}
+
+\Hypertarget{group__I2C__IS__RTC__Definitions_gacc7c83a67d99d759923c6907f1a1751f}\label{group__I2C__IS__RTC__Definitions_gacc7c83a67d99d759923c6907f1a1751f} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!I2C\_CHECK\_IT\_SOURCE@{I2C\_CHECK\_IT\_SOURCE}}
+\index{I2C\_CHECK\_IT\_SOURCE@{I2C\_CHECK\_IT\_SOURCE}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{I2C\_CHECK\_IT\_SOURCE}{I2C\_CHECK\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+CHECK\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+CR1\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+IT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+CR1\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+IT\+\_\+\+\_\+)) ? SET \+: RESET)}
+
+\Hypertarget{group__I2C__IS__RTC__Definitions_gabfbd7569fe1512aea1cf507afc05e5fe}\label{group__I2C__IS__RTC__Definitions_gabfbd7569fe1512aea1cf507afc05e5fe} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_ADDRESSING\_MODE@{IS\_I2C\_ADDRESSING\_MODE}}
+\index{IS\_I2C\_ADDRESSING\_MODE@{IS\_I2C\_ADDRESSING\_MODE}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_ADDRESSING\_MODE}{IS\_I2C\_ADDRESSING\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+ADDRESSING\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{ADDRESS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADDRESS)\ ==\ \mbox{\hyperlink{group__I2C__addressing__mode_ga28cf3b277595ac15edf383c2574ed18d}{I2C\_ADDRESSINGMODE\_7BIT}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ADDRESS)\ ==\ \mbox{\hyperlink{group__I2C__addressing__mode_ga2401dc32e64cd53290497bab73c3608d}{I2C\_ADDRESSINGMODE\_10BIT}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_gae0d731df1b264d853703716c29309b9b}\label{group__I2C__IS__RTC__Definitions_gae0d731df1b264d853703716c29309b9b} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_CLOCK\_SPEED@{IS\_I2C\_CLOCK\_SPEED}}
+\index{IS\_I2C\_CLOCK\_SPEED@{IS\_I2C\_CLOCK\_SPEED}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_CLOCK\_SPEED}{IS\_I2C\_CLOCK\_SPEED}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+CLOCK\+\_\+\+SPEED(\begin{DoxyParamCaption}\item[{}]{SPEED }\end{DoxyParamCaption})~(((SPEED) $>$ 0U) \&\& ((SPEED) $<$= 400000U))}
+
+\Hypertarget{group__I2C__IS__RTC__Definitions_gae683c113d4088dfae90fbe6677f8296a}\label{group__I2C__IS__RTC__Definitions_gae683c113d4088dfae90fbe6677f8296a} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_DUAL\_ADDRESS@{IS\_I2C\_DUAL\_ADDRESS}}
+\index{IS\_I2C\_DUAL\_ADDRESS@{IS\_I2C\_DUAL\_ADDRESS}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_DUAL\_ADDRESS}{IS\_I2C\_DUAL\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+DUAL\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{ADDRESS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADDRESS)\ ==\ \mbox{\hyperlink{group__I2C__dual__addressing__mode_gacb8f4a1fd543e5ef2c9e7711fc9b5a67}{I2C\_DUALADDRESS\_DISABLE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ADDRESS)\ ==\ \mbox{\hyperlink{group__I2C__dual__addressing__mode_gae33ff5305d9f38d857cff1774f481fab}{I2C\_DUALADDRESS\_ENABLE}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_gae9b3276d9b6ec872ee4fafa2b2fafb83}\label{group__I2C__IS__RTC__Definitions_gae9b3276d9b6ec872ee4fafa2b2fafb83} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_DUTY\_CYCLE@{IS\_I2C\_DUTY\_CYCLE}}
+\index{IS\_I2C\_DUTY\_CYCLE@{IS\_I2C\_DUTY\_CYCLE}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_DUTY\_CYCLE}{IS\_I2C\_DUTY\_CYCLE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+DUTY\+\_\+\+CYCLE(\begin{DoxyParamCaption}\item[{}]{CYCLE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CYCLE)\ ==\ \mbox{\hyperlink{group__I2C__duty__cycle__in__fast__mode_ga414df076d339793a7c761033346fd4ca}{I2C\_DUTYCYCLE\_2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CYCLE)\ ==\ \mbox{\hyperlink{group__I2C__duty__cycle__in__fast__mode_gae9d1f8a140f052c1fcbcd87b4181f78d}{I2C\_DUTYCYCLE\_16\_9}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_ga36a9a7855d7f35a6b03b05c6079bf149}\label{group__I2C__IS__RTC__Definitions_ga36a9a7855d7f35a6b03b05c6079bf149} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_GENERAL\_CALL@{IS\_I2C\_GENERAL\_CALL}}
+\index{IS\_I2C\_GENERAL\_CALL@{IS\_I2C\_GENERAL\_CALL}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_GENERAL\_CALL}{IS\_I2C\_GENERAL\_CALL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+GENERAL\+\_\+\+CALL(\begin{DoxyParamCaption}\item[{}]{CALL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CALL)\ ==\ \mbox{\hyperlink{group__I2C__general__call__addressing__mode_ga14918ea7d2b23cd67c66b49ebbf5c0a8}{I2C\_GENERALCALL\_DISABLE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CALL)\ ==\ \mbox{\hyperlink{group__I2C__general__call__addressing__mode_ga5ec9ec869e4c78a597c5007c245c01a0}{I2C\_GENERALCALL\_ENABLE}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_gace95d2b6add7feef5805f1fa6d2e46be}\label{group__I2C__IS__RTC__Definitions_gace95d2b6add7feef5805f1fa6d2e46be} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_MEMADD\_SIZE@{IS\_I2C\_MEMADD\_SIZE}}
+\index{IS\_I2C\_MEMADD\_SIZE@{IS\_I2C\_MEMADD\_SIZE}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_MEMADD\_SIZE}{IS\_I2C\_MEMADD\_SIZE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+MEMADD\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{SIZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SIZE)\ ==\ \mbox{\hyperlink{group__I2C__Memory__Address__Size_ga44007b689fa80deeab22820ad0b2dc6d}{I2C\_MEMADD\_SIZE\_8BIT}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SIZE)\ ==\ \mbox{\hyperlink{group__I2C__Memory__Address__Size_ga5b8c4b7d245fd7ab998acf2c7edd61a4}{I2C\_MEMADD\_SIZE\_16BIT}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_gaf7d844f7c7f5c96067468ab47971d0fd}\label{group__I2C__IS__RTC__Definitions_gaf7d844f7c7f5c96067468ab47971d0fd} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_NO\_STRETCH@{IS\_I2C\_NO\_STRETCH}}
+\index{IS\_I2C\_NO\_STRETCH@{IS\_I2C\_NO\_STRETCH}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_NO\_STRETCH}{IS\_I2C\_NO\_STRETCH}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+NO\+\_\+\+STRETCH(\begin{DoxyParamCaption}\item[{}]{STRETCH }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((STRETCH)\ ==\ \mbox{\hyperlink{group__I2C__nostretch__mode_ga611deefe89e56fa65f853e6796f2cf66}{I2C\_NOSTRETCH\_DISABLE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STRETCH)\ ==\ \mbox{\hyperlink{group__I2C__nostretch__mode_ga67ebace1182d99bb5d7968994c01c80e}{I2C\_NOSTRETCH\_ENABLE}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_gad84e8b9523d45b6105b4d5cb68994a79}\label{group__I2C__IS__RTC__Definitions_gad84e8b9523d45b6105b4d5cb68994a79} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_OWN\_ADDRESS1@{IS\_I2C\_OWN\_ADDRESS1}}
+\index{IS\_I2C\_OWN\_ADDRESS1@{IS\_I2C\_OWN\_ADDRESS1}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_OWN\_ADDRESS1}{IS\_I2C\_OWN\_ADDRESS1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+OWN\+\_\+\+ADDRESS1(\begin{DoxyParamCaption}\item[{}]{ADDRESS1 }\end{DoxyParamCaption})~(((ADDRESS1) \& 0x\+FFFFFC00U) == 0U)}
+
+\Hypertarget{group__I2C__IS__RTC__Definitions_ga83001d53612b83ee90730d3bb2732537}\label{group__I2C__IS__RTC__Definitions_ga83001d53612b83ee90730d3bb2732537} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_OWN\_ADDRESS2@{IS\_I2C\_OWN\_ADDRESS2}}
+\index{IS\_I2C\_OWN\_ADDRESS2@{IS\_I2C\_OWN\_ADDRESS2}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_OWN\_ADDRESS2}{IS\_I2C\_OWN\_ADDRESS2}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+OWN\+\_\+\+ADDRESS2(\begin{DoxyParamCaption}\item[{}]{ADDRESS2 }\end{DoxyParamCaption})~(((ADDRESS2) \& 0x\+FFFFFF01U) == 0U)}
+
+\Hypertarget{group__I2C__IS__RTC__Definitions_ga8f3522af9ffef268641698ac80f77859}\label{group__I2C__IS__RTC__Definitions_ga8f3522af9ffef268641698ac80f77859} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}}
+\index{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}{IS\_I2C\_TRANSFER\_OPTIONS\_REQUEST}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+TRANSFER\+\_\+\+OPTIONS\+\_\+\+REQUEST(\begin{DoxyParamCaption}\item[{}]{REQUEST }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_gab23601bfc0eaddbc4823d193b7e49a9c}{I2C\_FIRST\_FRAME}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_ga1396d7236a5e1d52c9fd6d182d1f2869}{I2C\_FIRST\_AND\_NEXT\_FRAME}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_ga8790cd8bea154c662fc6a6d6ef6b9083}{I2C\_NEXT\_FRAME}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_ga56aa81e0fe6ff902f3b0dd0bc9e11b96}{I2C\_FIRST\_AND\_LAST\_FRAME}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_gaf732cc5827622242ce14645f67749f40}{I2C\_LAST\_FRAME}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_gac316c2c562991d4629151b517c2c02d8}{I2C\_LAST\_FRAME\_NO\_STOP}})\ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST(REQUEST))}
+
+\end{DoxyCode}
+\Hypertarget{group__I2C__IS__RTC__Definitions_ga13a3986011ca018dd12ff39ea3bec11b}\label{group__I2C__IS__RTC__Definitions_ga13a3986011ca018dd12ff39ea3bec11b} 
+\index{I2C Private macros to check input parameters@{I2C Private macros to check input parameters}!IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}}
+\index{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST@{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}!I2C Private macros to check input parameters@{I2C Private macros to check input parameters}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}{IS\_I2C\_TRANSFER\_OTHER\_OPTIONS\_REQUEST}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+TRANSFER\+\_\+\+OTHER\+\_\+\+OPTIONS\+\_\+\+REQUEST(\begin{DoxyParamCaption}\item[{}]{REQUEST }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_gabedde3791be7cb544ffeb9e408d1980e}{I2C\_OTHER\_FRAME}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REQUEST)\ ==\ \mbox{\hyperlink{group__I2C__XferOptions__definition_ga272995b7f02a1e44b589cc9794093d0b}{I2C\_OTHER\_AND\_LAST\_FRAME}}))}
+
+\end{DoxyCode}

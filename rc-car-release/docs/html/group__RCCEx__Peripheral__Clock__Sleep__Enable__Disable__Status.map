@@ -1,0 +1,4 @@
+<map id="Peripheral Clock Sleep Enable Disable Status" name="Peripheral Clock Sleep Enable Disable Status">
+<area shape="rect" id="Node000002" href="$group__RCCEx__Exported__Macros.html" title=" " alt="" coords="5,13,184,38"/>
+<area shape="rect" id="Node000001" title="Get the enable or disable status of peripheral clock during Low Power (Sleep) mode." alt="" coords="232,5,400,45"/>
+</map>

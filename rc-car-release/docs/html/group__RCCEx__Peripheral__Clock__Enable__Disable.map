@@ -1,0 +1,4 @@
+<map id="RCCEx_Peripheral_Clock_Enable_Disable" name="RCCEx_Peripheral_Clock_Enable_Disable">
+<area shape="rect" id="Node000002" href="$group__RCCEx__Exported__Macros.html" title=" " alt="" coords="5,13,184,38"/>
+<area shape="rect" id="Node000001" title="Enables or disables the AHB1 peripheral clock." alt="" coords="232,5,413,45"/>
+</map>

@@ -1,0 +1,333 @@
+\doxysection{Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32l1xx\+\_\+hal.h File Reference}
+\hypertarget{stm32l1xx__hal_8h}{}\label{stm32l1xx__hal_8h}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal.h}}
+
+
+This file contains all the functions prototypes for the HAL module driver.  
+
+
+{\ttfamily \#include "{}stm32l1xx\+\_\+hal\+\_\+conf.\+h"{}}\newline
+Include dependency graph for stm32l1xx\+\_\+hal.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l1xx__hal_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l1xx__hal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__HAL__TICK__FREQ_ga1f924e842ad026382e28d8fef15ad0db}{HAL\+\_\+\+TICK\+\_\+\+FREQ\+\_\+10\+HZ}}~100U
+\item 
+\#define \mbox{\hyperlink{group__HAL__TICK__FREQ_gac561c5ed01b5c7522d6df4bebf779d70}{HAL\+\_\+\+TICK\+\_\+\+FREQ\+\_\+100\+HZ}}~10U
+\item 
+\#define \mbox{\hyperlink{group__HAL__TICK__FREQ_ga031afdfeefcc0528a614efe99fd24026}{HAL\+\_\+\+TICK\+\_\+\+FREQ\+\_\+1\+KHZ}}~1U
+\item 
+\#define \mbox{\hyperlink{group__HAL__TICK__FREQ_gaa755d86a0d292d4f9e39e4973e6da76b}{HAL\+\_\+\+TICK\+\_\+\+FREQ\+\_\+\+DEFAULT}}~\mbox{\hyperlink{group__HAL__TICK__FREQ_ga031afdfeefcc0528a614efe99fd24026}{HAL\+\_\+\+TICK\+\_\+\+FREQ\+\_\+1\+KHZ}}
+\item 
+\#define \mbox{\hyperlink{group__HAL__TICK__FREQ_ga3a87bfb949d878fe410cfbd55fe7b64b}{IS\+\_\+\+TICKFREQ}}(\+\_\+\+\_\+\+FREQ\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootMode_ga1cfa68f41fcdf064fe4f57424067581c}{SYSCFG\+\_\+\+BOOT\+\_\+\+MAINFLASH}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootMode_ga603891dcd1d145e4ffbaa2873181974a}{SYSCFG\+\_\+\+BOOT\+\_\+\+SYSTEMFLASH}}~((uint32\+\_\+t)SYSCFG\+\_\+\+MEMRMP\+\_\+\+BOOT\+\_\+\+MODE\+\_\+0)
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootMode_gab5f9d82b9c7af24984cb807d22ea0996}{SYSCFG\+\_\+\+BOOT\+\_\+\+SRAM}}~((uint32\+\_\+t)SYSCFG\+\_\+\+MEMRMP\+\_\+\+BOOT\+\_\+\+MODE)
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCapture_gaa98d1e873a27efd633af657e8b968870}{RI\+\_\+\+INPUTCAPTURE\+\_\+\+IC1}}~RI\+\_\+\+ICR\+\_\+\+IC1
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCapture_gabfeb9d558e0b2be2376a8de7bba47c6f}{RI\+\_\+\+INPUTCAPTURE\+\_\+\+IC2}}~RI\+\_\+\+ICR\+\_\+\+IC2
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCapture_gaa6898cb4fe4fa9c7c8f1575dacde0200}{RI\+\_\+\+INPUTCAPTURE\+\_\+\+IC3}}~RI\+\_\+\+ICR\+\_\+\+IC3
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCapture_ga0fbcaaee4c38c255c923397053db8013}{RI\+\_\+\+INPUTCAPTURE\+\_\+\+IC4}}~RI\+\_\+\+ICR\+\_\+\+IC4
+\item 
+\#define \mbox{\hyperlink{group__TIM__Select_ga646e3019e83865fa050ddce0b8d3bb99}{TIM\+\_\+\+SELECT\+\_\+\+NONE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__TIM__Select_ga3e27a854ea5a487faa34cecbe716f882}{TIM\+\_\+\+SELECT\+\_\+\+TIM2}}~((uint32\+\_\+t)RI\+\_\+\+ICR\+\_\+\+TIM\+\_\+0)
+\item 
+\#define \mbox{\hyperlink{group__TIM__Select_gaf654500d4d845cfc1d89db5ae2b82489}{TIM\+\_\+\+SELECT\+\_\+\+TIM3}}~((uint32\+\_\+t)RI\+\_\+\+ICR\+\_\+\+TIM\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__TIM__Select_gae19e2277f213cc2eda07c1258d5621af}{TIM\+\_\+\+SELECT\+\_\+\+TIM4}}~((uint32\+\_\+t)RI\+\_\+\+ICR\+\_\+\+TIM)
+\item 
+\#define \mbox{\hyperlink{group__TIM__Select_ga4263668be64ccc7d204199e68a8163d2}{IS\+\_\+\+RI\+\_\+\+TIM}}(\+\_\+\+\_\+\+TIM\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gafd5e6eeddaab86cb1d13c91ef37cbf79}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+0}}~(0x00000000U) /\texorpdfstring{$\ast$}{*} PA0       PA1      PA2       PA3      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga558a965c269bd07a59f8169f2a11e091}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+1}}~(0x00000001U) /\texorpdfstring{$\ast$}{*} PA4       PA5      PA6       PA7      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gadfd6d9659b7193d113a15949387705b3}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+2}}~(0x00000002U) /\texorpdfstring{$\ast$}{*} PA8       PA9      PA10      PA11     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gaa3d87f14b718cdb5c833b6beb1e3c823}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+3}}~(0x00000003U) /\texorpdfstring{$\ast$}{*} PA12      PA13     PA14      PA15     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga39646a1f0d212d8a5e0d7ad5c6a80b73}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+4}}~(0x00000004U) /\texorpdfstring{$\ast$}{*} PC0       PC1      PC2       PC3      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gafb8de6324b7122a1d4bc7fb853307a81}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+5}}~(0x00000005U) /\texorpdfstring{$\ast$}{*} PC4       PC5      PC6       PC7      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gade2f23cfc2a4c856b45dbe2b128e9b00}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+6}}~(0x00000006U) /\texorpdfstring{$\ast$}{*} PC8       PC9      PC10      PC11     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga79fd494f01ecf2baec69456f1d51ec20}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+7}}~(0x00000007U) /\texorpdfstring{$\ast$}{*} PC12      PC13     PC14      PC15     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga0009e0d13359feffaa8d23155fc73eba}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+8}}~(0x00000008U) /\texorpdfstring{$\ast$}{*} PD0       PD1      PD2       PD3      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga69e503bb9c7b93e4527e3b9dfc99f0ed}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+9}}~(0x00000009U) /\texorpdfstring{$\ast$}{*} PD4       PD5      PD6       PD7      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gab4f455ce0bd7f6b9d039d8b3b397d515}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+10}}~(0x0000000\+AU) /\texorpdfstring{$\ast$}{*} PD8       PD9      PD10      PD11     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gad0f4578aca2f2969b01d2e286b7eaba3}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+11}}~(0x0000000\+BU) /\texorpdfstring{$\ast$}{*} PD12      PD13     PD14      PD15     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_gac3079d98c769abd5c341567043ed9139}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+12}}~(0x0000000\+CU) /\texorpdfstring{$\ast$}{*} PE0       PE1      PE2       PE3      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga7afce070e1a949d2d6b3b4cf658dc97e}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+13}}~(0x0000000\+DU) /\texorpdfstring{$\ast$}{*} PE4       PE5      PE6       PE7      \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga7ce2ef383f9eb86cd52a68576ea5ebd4}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+14}}~(0x0000000\+EU) /\texorpdfstring{$\ast$}{*} PE8       PE9      PE10      PE11     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga8b1a9aed68110aa0d5732b6d043b53ee}{RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+15}}~(0x0000000\+FU) /\texorpdfstring{$\ast$}{*} PE12      PE13     PE14      PE15     \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaptureRouting_ga708dcd52c15510988327d93cfaebeb42}{IS\+\_\+\+RI\+\_\+\+INPUTCAPTURE\+\_\+\+ROUTING}}(\+\_\+\+\_\+\+ROUTING\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}}~(0x80000000U)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga1e22bbf7c7ac5c6a90b1a99f4ed3908c}{RI\+\_\+\+IOSWITCH\+\_\+\+CH0}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+0)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga39a2d3bd0d2b3dba78183f7f15f3981c}{RI\+\_\+\+IOSWITCH\+\_\+\+CH1}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gaf579d0a5349473de9274854ff2268409}{RI\+\_\+\+IOSWITCH\+\_\+\+CH2}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+2)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga69e1edda4e512ad0e4cd41df87e2d1e8}{RI\+\_\+\+IOSWITCH\+\_\+\+CH3}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+3)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga9dcf19f166894f88b3a8251b69507e38}{RI\+\_\+\+IOSWITCH\+\_\+\+CH4}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+4)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga442259f099d470d4d9a0c5ba09b463d5}{RI\+\_\+\+IOSWITCH\+\_\+\+CH5}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+5)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga5a163377be6198bd33637a0662150abe}{RI\+\_\+\+IOSWITCH\+\_\+\+CH6}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+6)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga69a240b7fad88239b88da259d960f1a4}{RI\+\_\+\+IOSWITCH\+\_\+\+CH7}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+7)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga23a783c3facd7efd0092eae9c33fd7d6}{RI\+\_\+\+IOSWITCH\+\_\+\+CH8}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+8)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gad687cd24d0a17d17694dcf2509b9948b}{RI\+\_\+\+IOSWITCH\+\_\+\+CH9}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+9)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga1a700c79adf1d50ac943737355bf6c82}{RI\+\_\+\+IOSWITCH\+\_\+\+CH10}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+10)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga8e6e7b20244dd1775f7874e07e5fec4c}{RI\+\_\+\+IOSWITCH\+\_\+\+CH11}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+11)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga2cde4d3f89293874621433e754066b49}{RI\+\_\+\+IOSWITCH\+\_\+\+CH12}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+12)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gab0fcb464f29430da817b7f6e3311903a}{RI\+\_\+\+IOSWITCH\+\_\+\+CH13}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+13)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga4d620b8940da85a37de94440dd926531}{RI\+\_\+\+IOSWITCH\+\_\+\+CH14}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+14)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gabbebf3228e1d303278cd34d6261d99bd}{RI\+\_\+\+IOSWITCH\+\_\+\+CH15}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+15)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gabef05696c9554eb7ce80e9bfa795c439}{RI\+\_\+\+IOSWITCH\+\_\+\+CH18}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+18)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga23e857f3b2c617e62a95231caaedf16f}{RI\+\_\+\+IOSWITCH\+\_\+\+CH19}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+19)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gaf87063b0800de54e61cba45e49af0508}{RI\+\_\+\+IOSWITCH\+\_\+\+CH20}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+20)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gaf4cbc545f20f7b58420f5ad3bd7c1a14}{RI\+\_\+\+IOSWITCH\+\_\+\+CH21}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+21)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga78478a60de3b47617d61a7ebba3300ec}{RI\+\_\+\+IOSWITCH\+\_\+\+CH22}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+22)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga68277f0de29b54ba9d24d949ed8e526a}{RI\+\_\+\+IOSWITCH\+\_\+\+CH23}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+23)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga40e84756761134055e6dddf706ff746c}{RI\+\_\+\+IOSWITCH\+\_\+\+CH24}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+24)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga5b9af819e2b157bdf45f56b57620fe5c}{RI\+\_\+\+IOSWITCH\+\_\+\+CH25}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+CH\+\_\+25)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gadb39f8d408a9e8a7031e417dd1de65d1}{RI\+\_\+\+IOSWITCH\+\_\+\+VCOMP}}~((uint32\+\_\+t)\mbox{\hyperlink{group__RI__IOSwitch_gaec574d20dd6b304f25344a443b2fc59a}{RI\+\_\+\+ASCR1\+\_\+\+REGISTER}} \texorpdfstring{$\vert$}{|} RI\+\_\+\+ASCR1\+\_\+\+VCOMP) /\texorpdfstring{$\ast$}{*} VCOMP (ADC channel 26) is an internal switch used to connect selected channel to COMP1 non inverting input \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga0f2ae2e2a8c53d957709c9e78dc08f31}{RI\+\_\+\+IOSWITCH\+\_\+\+GR10\+\_\+1}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR10\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gad0baab5202a246bf37a1700e6a28d3f7}{RI\+\_\+\+IOSWITCH\+\_\+\+GR10\+\_\+2}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR10\+\_\+2)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga173ba05e20df8537bcf8cd29dd8ae764}{RI\+\_\+\+IOSWITCH\+\_\+\+GR10\+\_\+3}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR10\+\_\+3)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga291da0aa5c5e5513a9984cae8431f721}{RI\+\_\+\+IOSWITCH\+\_\+\+GR10\+\_\+4}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR10\+\_\+4)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga47c4ac8cabbecfc5c8ed452d28f2628f}{RI\+\_\+\+IOSWITCH\+\_\+\+GR6\+\_\+1}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR6\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga4b24b500ebe7b5540de425a8b5ad1979}{RI\+\_\+\+IOSWITCH\+\_\+\+GR6\+\_\+2}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR6\+\_\+2)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga26e71594c744199da514c7e9221a5542}{RI\+\_\+\+IOSWITCH\+\_\+\+GR5\+\_\+1}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR5\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga6a88dbc97f571285747e987f96355a8b}{RI\+\_\+\+IOSWITCH\+\_\+\+GR5\+\_\+2}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR5\+\_\+2)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gad336a9ebd3ec31e94d46e18d85935757}{RI\+\_\+\+IOSWITCH\+\_\+\+GR5\+\_\+3}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR5\+\_\+3)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga65e2bb0b95d6467641971998a32ae4c6}{RI\+\_\+\+IOSWITCH\+\_\+\+GR4\+\_\+1}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR4\+\_\+1)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga0322d0e21aea5365497e19119b15065e}{RI\+\_\+\+IOSWITCH\+\_\+\+GR4\+\_\+2}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR4\+\_\+2)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_ga745a4c7a8642a9925420ce16b68f0e10}{RI\+\_\+\+IOSWITCH\+\_\+\+GR4\+\_\+3}}~((uint32\+\_\+t)RI\+\_\+\+ASCR2\+\_\+\+GR4\+\_\+3)
+\item 
+\#define \mbox{\hyperlink{group__RI__IOSwitch_gae147f908a2020eec270806ef20ad0350}{IS\+\_\+\+RI\+\_\+\+IOSWITCH}}(\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga989e7aedb415c13bb98ddc4d96cfaea1}{RI\+\_\+\+PIN\+\_\+0}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gaae78f54d0bdfc28f2c6281dd5e6d6731}{RI\+\_\+\+PIN\+\_\+1}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gaa274394025b195740a30e1f8ebe2b4e2}{RI\+\_\+\+PIN\+\_\+2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga4c79fe9dcee5bda36f7067ed22ba77a4}{RI\+\_\+\+PIN\+\_\+3}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga7f443ade586a8aa3be0da85eee9e7fb9}{RI\+\_\+\+PIN\+\_\+4}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga0db731223773e6d28b38134e64c40076}{RI\+\_\+\+PIN\+\_\+5}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gafdb2d5d7e07e02f945d51d509bb54cce}{RI\+\_\+\+PIN\+\_\+6}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga6dfdbc6035e977af6d9191805a51f8c8}{RI\+\_\+\+PIN\+\_\+7}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gae80b308782b3bf8dc7c7ca756cd26493}{RI\+\_\+\+PIN\+\_\+8}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga1e3cdb6c6e8aa36f83e2bb38f41331f4}{RI\+\_\+\+PIN\+\_\+9}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gafa3387738d707b9a48178d140d643496}{RI\+\_\+\+PIN\+\_\+10}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga962eca26189e20d9baa081670fe2cda5}{RI\+\_\+\+PIN\+\_\+11}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gaaccc7bafa925a119c19e6ad8a648cce2}{RI\+\_\+\+PIN\+\_\+12}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga155ffce85eb8da785a973bc239db95e3}{RI\+\_\+\+PIN\+\_\+13}}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_gafa312ad93801f8c9e12eefd7ded80992}{RI\+\_\+\+PIN\+\_\+14}}~((uint16\+\_\+t)0x4000)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga4d6732c2e125652e77c35e213ac21d86}{RI\+\_\+\+PIN\+\_\+15}}~((uint16\+\_\+t)0x8000)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga45ed67020370018f1964e7686e9d7187}{RI\+\_\+\+PIN\+\_\+\+ALL}}~((uint16\+\_\+t)0x\+FFFF)
+\item 
+\#define \mbox{\hyperlink{group__RI__Pin_ga00b40a9de92cd35a34b0ddabd5e074b8}{IS\+\_\+\+RI\+\_\+\+PIN}}(\+\_\+\+\_\+\+PIN\+\_\+\+\_\+)~((\+\_\+\+\_\+\+PIN\+\_\+\+\_\+) != (uint16\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__VrefInt_gaaf7a83b4563a6dc56f6ffcf4b5a4d3ab}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+VREFINT\+\_\+\+OUT\+\_\+\+ENABLE}}()~SET\+\_\+\+BIT(COMP-\/$>$CSR, COMP\+\_\+\+CSR\+\_\+\+VREFOUTEN)
+\begin{DoxyCompactList}\small\item\em Enables or disables the output of internal reference voltage (Vref\+Int) on I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__VrefInt_gacd1d40334627b9dced9471b91cd11f10}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+VREFINT\+\_\+\+OUT\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT(COMP-\/$>$CSR, COMP\+\_\+\+CSR\+\_\+\+VREFOUTEN)
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga9500619e1ec21659bd32b1dfecd5afc1}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+FLASH}}()~CLEAR\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE)
+\begin{DoxyCompactList}\small\item\em Main Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga59782d94690fd538b25def536c81c3ed}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SYSTEMFLASH}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0)
+\begin{DoxyCompactList}\small\item\em System Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga86d36fdb1571fd56ffeecfaed80c6805}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SRAM}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0 \texorpdfstring{$\vert$}{|} SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+1)
+\begin{DoxyCompactList}\small\item\em Embedded SRAM mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga0e71eb2b553f1a7b8172710184a89caa}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+BOOT\+\_\+\+MODE}}()~READ\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+BOOT\+\_\+\+MODE)
+\begin{DoxyCompactList}\small\item\em Returns the boot mode as configured by user. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__USBConfig_ga7faf3c6611dfc84b6356619d992bdb7e}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+USBPULLUP\+\_\+\+ENABLE}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$PMC, SYSCFG\+\_\+\+PMC\+\_\+\+USB\+\_\+\+PU)
+\begin{DoxyCompactList}\small\item\em Control the internal pull-\/up on USB DP line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__USBConfig_gaee2096666e85cef164572e443433d6f5}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+USBPULLUP\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT(SYSCFG-\/$>$PMC, SYSCFG\+\_\+\+PMC\+\_\+\+USB\+\_\+\+PU)
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_gaab9c6ad79238b046d2c4777e4be81b85}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE1}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 1 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_gab8a178ab5420d9256e02063347704970}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE2}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 2 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_ga7505f9d5c4a5bbf3691515e8522ce5f1}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE3}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 3 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_ga194940d54be3e5091c3225b8f7f312c2}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE4}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 4 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_ga2aac480a08cbd6937ed3741a03796ac6}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+SWITCHCONTROLMODE\+\_\+\+ENABLE}}()~SET\+\_\+\+BIT(RI-\/$>$ASCR1, RI\+\_\+\+ASCR1\+\_\+\+SCM)
+\begin{DoxyCompactList}\small\item\em Enable or disable the switch control mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_ga41dca172ed53f7787a32d0f0b7a5e485}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+SWITCHCONTROLMODE\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT(RI-\/$>$ASCR1, RI\+\_\+\+ASCR1\+\_\+\+SCM)
+\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_ga7e35cfb22d277d6a484e206cfd6666c0}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+CLOSE}}(\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__SwitchControlConfig_gadef860a5d9313b79a5a595a2788410ee}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+OPEN}}(\+\_\+\+\_\+\+IOSWITCH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_gaae52b285744a36800f8493c58972b8a6}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTA\+\_\+\+ON}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable or disable Hysteresis of the input schmitt trigger of Ports A When the I/\+Os are programmed in input mode by standard I/O port registers, the Schmitt trigger and the hysteresis are enabled by default. When hysteresis is disabled, it is possible to read the corresponding port with a trigger level of VDDIO/2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_gaaafb0862552627f6546e9da3bbb05511}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTA\+\_\+\+OFF}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_ga839072e04e904822a6083d21ebf5be18}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTB\+\_\+\+ON}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable or disable Hysteresis of the input schmitt trigger of Ports B When the I/\+Os are programmed in input mode by standard I/O port registers, the Schmitt trigger and the hysteresis are enabled by default. When hysteresis is disabled, it is possible to read the corresponding port with a trigger level of VDDIO/2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_gad4503ee632caa0ad64b3114d0899abc2}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTB\+\_\+\+OFF}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_ga9c36eeb08d67361ad75e414fa3a5d425}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTC\+\_\+\+ON}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable or disable Hysteresis of the input schmitt trigger of Ports C When the I/\+Os are programmed in input mode by standard I/O port registers, the Schmitt trigger and the hysteresis are enabled by default. When hysteresis is disabled, it is possible to read the corresponding port with a trigger level of VDDIO/2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_ga1ee9f61ee59dcb15a3e55210f61fa296}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTC\+\_\+\+OFF}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_ga6e0f3198dfce556529fc5b7fe9143c6c}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTD\+\_\+\+ON}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable or disable Hysteresis of the input schmitt trigger of Ports D When the I/\+Os are programmed in input mode by standard I/O port registers, the Schmitt trigger and the hysteresis are enabled by default. When hysteresis is disabled, it is possible to read the corresponding port with a trigger level of VDDIO/2. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__HystConfig_gabc9a205cb0a9853eec9dfca223ee7f41}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+HYSTERIS\+\_\+\+PORTD\+\_\+\+OFF}}(\+\_\+\+\_\+\+IOPIN\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__HAL__Exported__Functions__Group1_gaecac54d350c3730e6831eb404e557dc4}{HAL\+\_\+\+Init}} (void)
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__HAL__Exported__Functions__Group1_ga95911129a26afb05232caaaefa31956f}{HAL\+\_\+\+De\+Init}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group1_gae4fb8e66865c87d0ebab74a726a6891f}{HAL\+\_\+\+Msp\+Init}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group1_gadd10d026ef02d00e32e80c9eab9db830}{HAL\+\_\+\+Msp\+De\+Init}} (void)
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__HAL__Exported__Functions__Group1_ga879cdb21ef051eb81ec51c18147397d5}{HAL\+\_\+\+Init\+Tick}} (uint32\+\_\+t Tick\+Priority)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gaa8361d44d76b7f6256834f828165837a}{HAL\+\_\+\+Inc\+Tick}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gae63b34eea12780ca2e1100c2402da18e}{HAL\+\_\+\+Delay}} (uint32\+\_\+t Delay)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\+\_\+\+Get\+Tick}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gacdcc8b5d33b9f97fe1b0abd6a86a3d4b}{HAL\+\_\+\+Get\+Tick\+Prio}} (void)
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gaa6152a3f0e3a9521b743e19512692332}{HAL\+\_\+\+Set\+Tick\+Freq}} (uint32\+\_\+t Freq)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_ga6868e5035393dc7af7608226c34f6693}{HAL\+\_\+\+Get\+Tick\+Freq}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gaaf651af2afe688a991c657f64f8fa5f9}{HAL\+\_\+\+Suspend\+Tick}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_ga24e0ee9dae1ec0f9d19200f5575ff790}{HAL\+\_\+\+Resume\+Tick}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gafb139b375512ad2a234e4619b129b966}{HAL\+\_\+\+Get\+Hal\+Version}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gae051ef9e932404b21f5877c7186406b8}{HAL\+\_\+\+Get\+REVID}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gaff785f069ed650de77ff82ac407f7c84}{HAL\+\_\+\+Get\+DEVID}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_gaf982aa0a575eef3758c0840a24077506}{HAL\+\_\+\+Get\+UIDw0}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_ga52720dd92ed2bd4314a2a129855d766c}{HAL\+\_\+\+Get\+UIDw1}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Functions__Group2_ga5785ae5ec8d4c5a7dadb1359f0778700}{HAL\+\_\+\+Get\+UIDw2}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group3_gaf031bcc71ebad9b7edf405547efd762b}{HAL\+\_\+\+DBGMCU\+\_\+\+Enable\+DBGSleep\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group3_gac7820d0561f19999a68d714655b901b5}{HAL\+\_\+\+DBGMCU\+\_\+\+Disable\+DBGSleep\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group3_gadf25043b17de4bef38a95a75fd03e5c4}{HAL\+\_\+\+DBGMCU\+\_\+\+Enable\+DBGStop\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group3_ga2c93dcee35e5983d74f1000de7c042d5}{HAL\+\_\+\+DBGMCU\+\_\+\+Disable\+DBGStop\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group3_ga28a1323b2eeb0a408c1cfdbfa0db5ead}{HAL\+\_\+\+DBGMCU\+\_\+\+Enable\+DBGStandby\+Mode}} (void)
+\item 
+void \mbox{\hyperlink{group__HAL__Exported__Functions__Group3_ga7faa58d8508ea3123b9f247a70379779}{HAL\+\_\+\+DBGMCU\+\_\+\+Disable\+DBGStandby\+Mode}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Variables_ga9d411ea525781e633bf7ea7ef2f90728}{uw\+Tick}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Variables_ga3000c5e83924ed2debb1849c738d4be2}{uw\+Tick\+Prio}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__HAL__Exported__Variables_ga159f3588724e48c3d2bd7a5416c6a9f9}{uw\+Tick\+Freq}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the HAL module driver. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 

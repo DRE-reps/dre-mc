@@ -1,0 +1,109 @@
+\doxysection{Core/\+Inc/usart1\+\_\+callbacks.h File Reference}
+\hypertarget{usart1__callbacks_8h}{}\label{usart1__callbacks_8h}\index{Core/Inc/usart1\_callbacks.h@{Core/Inc/usart1\_callbacks.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structCommand__State__t}{Command\+\_\+\+State\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{usart1__callbacks_8h_a1837314769db44a6256a00ffcb007f84}{Send\+\_\+\+Telemetry}} (void)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{usart1__callbacks_8h_affbfb036f60ddbae3a766279f885dff9}{Compute\+\_\+\+CRC8}} (\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, uint16\+\_\+t length)
+\item 
+void \mbox{\hyperlink{usart1__callbacks_8h_a1e3a5d437575d683b8ca7bc8942599c3}{process\+\_\+parser\+\_\+flags}} (void)
+\item 
+void \mbox{\hyperlink{usart1__callbacks_8h_a65f548b440445cf147d626e2e26ddb73}{parse\+\_\+uart\+\_\+message}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{usart1__callbacks_8h_affbfb036f60ddbae3a766279f885dff9}\label{usart1__callbacks_8h_affbfb036f60ddbae3a766279f885dff9} 
+\index{usart1\_callbacks.h@{usart1\_callbacks.h}!Compute\_CRC8@{Compute\_CRC8}}
+\index{Compute\_CRC8@{Compute\_CRC8}!usart1\_callbacks.h@{usart1\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{Compute\_CRC8()}{Compute\_CRC8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Compute\+\_\+\+CRC8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{uint16\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8h_affbfb036f60ddbae3a766279f885dff9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart1__callbacks_8h_a65f548b440445cf147d626e2e26ddb73}\label{usart1__callbacks_8h_a65f548b440445cf147d626e2e26ddb73} 
+\index{usart1\_callbacks.h@{usart1\_callbacks.h}!parse\_uart\_message@{parse\_uart\_message}}
+\index{parse\_uart\_message@{parse\_uart\_message}!usart1\_callbacks.h@{usart1\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{parse\_uart\_message()}{parse\_uart\_message()}}
+{\footnotesize\ttfamily void parse\+\_\+uart\+\_\+message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{usart1__callbacks_8h_a65f548b440445cf147d626e2e26ddb73_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8h_a65f548b440445cf147d626e2e26ddb73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart1__callbacks_8h_a1e3a5d437575d683b8ca7bc8942599c3}\label{usart1__callbacks_8h_a1e3a5d437575d683b8ca7bc8942599c3} 
+\index{usart1\_callbacks.h@{usart1\_callbacks.h}!process\_parser\_flags@{process\_parser\_flags}}
+\index{process\_parser\_flags@{process\_parser\_flags}!usart1\_callbacks.h@{usart1\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{process\_parser\_flags()}{process\_parser\_flags()}}
+{\footnotesize\ttfamily void process\+\_\+parser\+\_\+flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8h_a1e3a5d437575d683b8ca7bc8942599c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{usart1__callbacks_8h_a1e3a5d437575d683b8ca7bc8942599c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{usart1__callbacks_8h_a1837314769db44a6256a00ffcb007f84}\label{usart1__callbacks_8h_a1837314769db44a6256a00ffcb007f84} 
+\index{usart1\_callbacks.h@{usart1\_callbacks.h}!Send\_Telemetry@{Send\_Telemetry}}
+\index{Send\_Telemetry@{Send\_Telemetry}!usart1\_callbacks.h@{usart1\_callbacks.h}}
+\doxysubsubsection{\texorpdfstring{Send\_Telemetry()}{Send\_Telemetry()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Telemetry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8h_a1837314769db44a6256a00ffcb007f84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart1__callbacks_8h_a1837314769db44a6256a00ffcb007f84_icgraph}
+\end{center}
+\end{figure}

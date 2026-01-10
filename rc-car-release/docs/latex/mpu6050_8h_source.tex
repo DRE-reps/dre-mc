@@ -1,0 +1,64 @@
+\doxysection{mpu6050.\+h}
+\hypertarget{mpu6050_8h_source}{}\label{mpu6050_8h_source}\index{Core/Inc/mpu6050.h@{Core/Inc/mpu6050.h}}
+\mbox{\hyperlink{mpu6050_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INC\_GY521\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INC\_GY521\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ Moddified:\ begin\ */}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ \mbox{\hyperlink{mpu6050_8h_ac379bcc152d860f08b1279fd3e232295}{hi2c2}};}
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ Moddified:\ end\ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ MPU6050\ structure}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structMPU6050__t_a5f3265d5d2c2ae48dcee4b05d720ebfe}{Accel\_X\_RAW}};}
+\DoxyCodeLine{00014\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structMPU6050__t_ad29751cb81a8a02d201cd978976b45b8}{Accel\_Y\_RAW}};}
+\DoxyCodeLine{00015\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structMPU6050__t_a28f4c1ddb785ef651468de1a279a4015}{Accel\_Z\_RAW}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_ae5ec57cf702887ec4d30e33e9ff0f8fb}{Ax}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_a8c566d7c2b697d0ef67ad6d4dc902f55}{Ay}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_adc707670d491467f36637265c2255abe}{Az}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structMPU6050__t_a9f4be11c3bd4417624d4e51bad5726c5}{Gyro\_X\_RAW}};}
+\DoxyCodeLine{00021\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structMPU6050__t_a08ee6883e1cdffb40d4ac90b51f23b2b}{Gyro\_Y\_RAW}};}
+\DoxyCodeLine{00022\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structMPU6050__t_ace2b5b27fdc12ad5a41c7a5fa720ee5f}{Gyro\_Z\_RAW}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_a0e94f3447cefa614cc25c27f4ba83783}{Gx}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_ad5b5de7635d0a6cca78f5464db16bef7}{Gy}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_acf84ca38896c38296bc369e286627366}{Gz}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structMPU6050__t_a16b76504a9d3f2a2f88f0a765ff04ebb}{Temperature}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_a814132d972a9fdb9a5038dccfe872e3b}{KalmanAngleX}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structMPU6050__t_af29ed74f1b17a968d6b2a852e8084b18}{KalmanAngleY}};}
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{structMPU6050__t}{MPU6050\_t}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Kalman\ structure}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structKalman__t_a456b708ce4887c12e148625aa1ab9d81}{Q\_angle}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structKalman__t_a5636bb03467a6e767f56641fc92bb5c8}{Q\_bias}};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structKalman__t_a5a74f05122cd5b26b275d3d1ac5abf84}{R\_measure}};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structKalman__t_a55efa5004d8646a101769e7e527eeb29}{angle}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structKalman__t_aa23e0bbaa78eb85b8568abdb54a60574}{bias}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ P[2][2];}
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{structKalman__t}{Kalman\_t}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393}{MPU6050\_Init}}(\mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *I2Cx);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5}{MPU6050\_Read\_Accel}}(\mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *I2Cx,\ \mbox{\hyperlink{structMPU6050__t}{MPU6050\_t}}\ *DataStruct);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b}{MPU6050\_Read\_Gyro}}(\mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *I2Cx,\ \mbox{\hyperlink{structMPU6050__t}{MPU6050\_t}}\ *DataStruct);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0}{MPU6050\_Read\_Temp}}(\mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *I2Cx,\ \mbox{\hyperlink{structMPU6050__t}{MPU6050\_t}}\ *DataStruct);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382}{MPU6050\_Read\_All}}(\mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *I2Cx,\ \mbox{\hyperlink{structMPU6050__t}{MPU6050\_t}}\ *DataStruct);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2}{Kalman\_getAngle}}(\mbox{\hyperlink{structKalman__t}{Kalman\_t}}\ *Kalman,\ \textcolor{keywordtype}{double}\ newAngle,\ \textcolor{keywordtype}{double}\ newRate,\ \textcolor{keywordtype}{double}\ dt);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{mpu6050_8h_af23ed1d341ade70d22b86fcf503dbb22}{MPU6050\_get\_acceleration}}(\mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *I2Cx,\ \mbox{\hyperlink{structMPU6050__t}{MPU6050\_t}}\ *DataStruct);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_GY521\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

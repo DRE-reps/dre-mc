@@ -1,0 +1,7 @@
+<map id="HAL_GPIO_DeInit" name="HAL_GPIO_DeInit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="216,31,349,56"/>
+<area shape="rect" id="Node000002" href="$group__I2C__Exported__Functions__Group1.html#ga2ec8d9b09854c732e2feed549278f048" title="I2C MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="12,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,36,161,30,162,25,203,30"/>
+<area shape="rect" id="Node000003" href="$group__UART__Exported__Functions__Group1.html#ga718f39804e3b910d738a0e1e46151188" title="UART MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="5,55,168,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,56,168,60,168,55,202,50"/>
+</map>

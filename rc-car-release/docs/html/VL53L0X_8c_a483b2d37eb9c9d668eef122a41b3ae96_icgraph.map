@@ -1,0 +1,17 @@
+<map id="getSequenceStepTimeouts" name="getSequenceStepTimeouts">
+<area shape="rect" id="Node000001" title=" " alt="" coords="581,56,777,81"/>
+<area shape="rect" id="Node000002" href="$VL53L0X_8c.html#a201f8b8b0990845d45596d01161955fc" title=" " alt="" coords="309,7,533,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="598,56,488,35,489,29,600,51"/>
+<area shape="rect" id="Node000005" href="$VL53L0X_8c.html#ae6f31dda28a4c5766247d586b59bf24a" title=" " alt="" coords="310,56,533,81"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="568,71,533,71,533,66,568,66"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html#a8b8437b301634dbba8588e6c269b6258" title=" " alt="" coords="108,107,261,132"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="601,86,534,97,389,111,262,119,261,113,389,105,533,91,600,81"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a7e445bff76f1b43a528e6be773aa3cd3" title=" " alt="" coords="135,5,234,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,21,235,21,235,16,296,16"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,56,60,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="134,38,61,62,60,57,132,33"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="347,56,233,31,235,26,348,50"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="296,71,60,71,60,66,296,66"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="348,87,245,109,244,104,347,82"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="132,105,60,80,61,75,134,100"/>
+</map>

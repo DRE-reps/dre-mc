@@ -1,0 +1,54 @@
+\doxysection{stm32l1xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}
+\hypertarget{stm32l1xx__hal__pwr__ex_8h_source}{}\label{stm32l1xx__hal__pwr__ex_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_pwr\_ex.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_pwr\_ex.h}}
+\mbox{\hyperlink{stm32l1xx__hal__pwr__ex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_HAL\_PWR\_EX\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_HAL\_PWR\_EX\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal__def_8h}{stm32l1xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#if\ defined\ (STM32L151xCA)\ ||\ defined\ (STM32L151xD)\ ||\ defined\ (STM32L152xCA)\ ||\ defined\ (STM32L152xD)\ ||\ defined\ (STM32L162xCA)\ ||\ defined\ (STM32L162xD)\ ||\ defined\ (STM32L151xE)\ ||\ defined\ (STM32L151xDX)\ ||\ defined\ (STM32L152xE)\ ||\ defined\ (STM32L152xDX)\ ||\ defined\ (STM32L162xE)\ ||\ defined\ (STM32L162xDX)\ ||\ defined\ (STM32L151xB)\ ||\ defined\ (STM32L151xBA)\ ||\ defined\ (STM32L151xC)\ ||\ defined\ (STM32L152xB)\ ||\ defined\ (STM32L152xBA)\ ||\ defined\ (STM32L152xC)\ ||\ defined\ (STM32L162xC)}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ PWR\_WAKEUP\_PIN1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP1}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ PWR\_WAKEUP\_PIN2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP2}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ PWR\_WAKEUP\_PIN3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP3}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ IS\_PWR\_WAKEUP\_PIN(PIN)\ (((PIN)\ ==\ PWR\_WAKEUP\_PIN1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ PWR\_WAKEUP\_PIN2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ PWR\_WAKEUP\_PIN3))}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ PWR\_WAKEUP\_PIN1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP1}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ PWR\_WAKEUP\_PIN2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP2}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ IS\_PWR\_WAKEUP\_PIN(PIN)\ (((PIN)\ ==\ PWR\_WAKEUP\_PIN1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ PWR\_WAKEUP\_PIN2))}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{/*\ Peripheral\ Control\ methods\ \ ************************************************/}}
+\DoxyCodeLine{00086\ uint32\_t\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga2978c7160c8d166f1bf2bf39e4bf33f7}{HAL\_PWREx\_GetVoltageRange}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga78afcb4f03c38dadb2a581ae0106499e}{HAL\_PWREx\_EnableFastWakeUp}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga3a8db0be305c4b0161f4c7254ff130e2}{HAL\_PWREx\_DisableFastWakeUp}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga4334b6b788dbf1c9f22c4eff2e85c865}{HAL\_PWREx\_EnableUltraLowPower}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga9444ebf6423de8b7aea0fe58bcbbdad9}{HAL\_PWREx\_DisableUltraLowPower}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga03d018969b6940092bb32a3869b8c84e}{HAL\_PWREx\_EnableLowPowerRunMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00092\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__PWREx__Exported__Functions__Group1_ga848ac532d5c69ae9357a8ebcd8bb82f1}{HAL\_PWREx\_DisableLowPowerRunMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_HAL\_PWR\_EX\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

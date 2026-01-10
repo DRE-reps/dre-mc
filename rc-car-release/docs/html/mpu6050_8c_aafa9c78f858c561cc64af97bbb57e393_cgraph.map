@@ -1,0 +1,9 @@
+<map id="MPU6050_Init" name="MPU6050_Init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,117,80"/>
+<area shape="rect" id="Node000002" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="167,5,323,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,52,183,32,184,37,110,57"/>
+<area shape="rect" id="Node000003" href="$group__I2C__Exported__Functions__Group2.html#ga33e725a824eb672f9f999d9d5ce088fb" title=" " alt="" coords="165,55,324,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,65,151,65,151,70,117,70"/>
+<area shape="rect" id="Node000004" href="$logger_8c.html#a3278730f835b7230a0de447ea4afd3f0" title=" " alt="" coords="205,104,285,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="110,77,192,100,191,105,108,83"/>
+</map>

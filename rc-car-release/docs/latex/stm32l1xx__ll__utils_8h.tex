@@ -1,0 +1,82 @@
+\doxysection{Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32l1xx\+\_\+ll\+\_\+utils.h File Reference}
+\hypertarget{stm32l1xx__ll__utils_8h}{}\label{stm32l1xx__ll__utils_8h}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_utils.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_utils.h}}
+
+
+Header file of UTILS LL module.  
+
+
+{\ttfamily \#include "{}stm32l1xx.\+h"{}}\newline
+Include dependency graph for stm32l1xx\+\_\+ll\+\_\+utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{stm32l1xx__ll__utils_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef}{LL\+\_\+\+UTILS\+\_\+\+PLLInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em UTILS PLL structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef}{LL\+\_\+\+UTILS\+\_\+\+Clk\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em UTILS System, AHB and APB buses clock configuration structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga29a1b776c24b7c32f30fcd6851ddd028}{LL\+\_\+\+MAX\+\_\+\+DELAY}}~0x\+FFFFFFFFU
+\item 
+\#define \mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\+\_\+\+BASE\+\_\+\+ADDRESS}}~UID\+\_\+\+BASE
+\begin{DoxyCompactList}\small\item\em Unique device ID register base address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga75b8f6b080a5dfaaf829edeae69bff70}{FLASHSIZE\+\_\+\+BASE\+\_\+\+ADDRESS}}~FLASHSIZE\+\_\+\+BASE
+\begin{DoxyCompactList}\small\item\em Flash size data register base address. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__UTILS__EC__HSE__BYPASS_ga4aab0968739934c6560805bcf222e1fe}{LL\+\_\+\+UTILS\+\_\+\+HSEBYPASS\+\_\+\+OFF}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group__UTILS__EC__HSE__BYPASS_ga2053b398a3829ad616af6f1a732dbdd4}{LL\+\_\+\+UTILS\+\_\+\+HSEBYPASS\+\_\+\+ON}}~0x00000001U
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga3a0b557447143f41b93a7fa45270b5b8}{LL\+\_\+\+Get\+UID\+\_\+\+Word0}} (void)
+\begin{DoxyCompactList}\small\item\em Get Word0 of the unique device identifier (UID based on 96 bits) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga67007778e77a6fafc8a1fc440dc208b2}{LL\+\_\+\+Get\+UID\+\_\+\+Word1}} (void)
+\begin{DoxyCompactList}\small\item\em Get Word1 of the unique device identifier (UID based on 96 bits) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_gaa15df2bc902d392f67ee9873943d4904}{LL\+\_\+\+Get\+UID\+\_\+\+Word2}} (void)
+\begin{DoxyCompactList}\small\item\em Get Word2 of the unique device identifier (UID based on 96 bits) \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga0e8379766a1799f3c5fedadaa2b0c47e}{LL\+\_\+\+Get\+Flash\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Get Flash memory size. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__UTILS__LL__EF__DELAY_ga170d1d651b46544daf571fb6b4e3b850}{LL\+\_\+\+Init\+Tick}} (uint32\+\_\+t HCLKFrequency, uint32\+\_\+t Ticks)
+\begin{DoxyCompactList}\small\item\em This function configures the Cortex-\/M Sys\+Tick source of the time base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__UTILS__LL__EF__DELAY_ga485805c708e3aa0820454523782d4de4}{LL\+\_\+\+Init1ms\+Tick}} (uint32\+\_\+t HCLKFrequency)
+\item 
+void \mbox{\hyperlink{group__UTILS__LL__EF__DELAY_ga7b7ca6d9cbec320c3e9f326b203807aa}{LL\+\_\+m\+Delay}} (uint32\+\_\+t Delay)
+\item 
+void \mbox{\hyperlink{group__UTILS__EF__SYSTEM_ga5af902d59c4c2d9dc5e189df0bc71ecd}{LL\+\_\+\+Set\+System\+Core\+Clock}} (uint32\+\_\+t HCLKFrequency)
+\item 
+Error\+Status \mbox{\hyperlink{group__UTILS__EF__SYSTEM_ga7ada5e4210f6ef80ef9f55bf9dd048c6}{LL\+\_\+\+PLL\+\_\+\+Config\+System\+Clock\+\_\+\+HSI}} (\mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef}{LL\+\_\+\+UTILS\+\_\+\+PLLInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}UTILS\+\_\+\+PLLInit\+Struct, \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef}{LL\+\_\+\+UTILS\+\_\+\+Clk\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}UTILS\+\_\+\+Clk\+Init\+Struct)
+\item 
+Error\+Status \mbox{\hyperlink{group__UTILS__EF__SYSTEM_gaf6c8553d03464d4646b63321b97d25e2}{LL\+\_\+\+PLL\+\_\+\+Config\+System\+Clock\+\_\+\+HSE}} (uint32\+\_\+t HSEFrequency, uint32\+\_\+t HSEBypass, \mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef}{LL\+\_\+\+UTILS\+\_\+\+PLLInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}UTILS\+\_\+\+PLLInit\+Struct, \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef}{LL\+\_\+\+UTILS\+\_\+\+Clk\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}UTILS\+\_\+\+Clk\+Init\+Struct)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of UTILS LL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team \begin{DoxyVerb}==============================================================================
+                   ##### How to use this driver #####
+==============================================================================
+  [..]
+  The LL UTILS driver contains a set of generic APIs that can be
+  used by user:
+    (+) Device electronic signature
+    (+) Timing functions
+    (+) PLL configuration functions\end{DoxyVerb}
+
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 

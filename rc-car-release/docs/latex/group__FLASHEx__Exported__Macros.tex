@@ -1,0 +1,236 @@
+\doxysubsubsubsection{FLASHEx Exported Macros}
+\hypertarget{group__FLASHEx__Exported__Macros}{}\label{group__FLASHEx__Exported__Macros}\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+Collaboration diagram for FLASHEx Exported Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FLASHEx__Exported__Macros}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gac1c9f459b798cc3700b90a6245df5a1a}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SET\+\_\+\+LATENCY}}(\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Set the FLASH Latency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gaa537e44d74ce35ff5bfef80edf03f895}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+GET\+\_\+\+LATENCY}}()~(READ\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+LATENCY))
+\begin{DoxyCompactList}\small\item\em Get the FLASH Latency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gaba318ae34e00b0110240a22ae026834a}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ACC64\+\_\+\+ENABLE}}()~(SET\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+ACC64))
+\begin{DoxyCompactList}\small\item\em Enable the FLASH 64-\/bit access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_ga6822b67e0b0da1d4283719e152c6d409}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ACC64\+\_\+\+DISABLE}}()~(CLEAR\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+ACC64))
+\begin{DoxyCompactList}\small\item\em Disable the FLASH 64-\/bit access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gad36059641057f824516303ea92734e6f}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+PREFETCH\+\_\+\+BUFFER\+\_\+\+ENABLE}}()
+\begin{DoxyCompactList}\small\item\em Enable the FLASH prefetch buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_ga646a4cb92e85659334d14a8c78f0ede8}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+PREFETCH\+\_\+\+BUFFER\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+PRFTEN)
+\begin{DoxyCompactList}\small\item\em Disable the FLASH prefetch buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_ga93004e7cf2386d656acd467a5013015e}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SLEEP\+\_\+\+POWERDOWN\+\_\+\+ENABLE}}()~SET\+\_\+\+BIT(FLASH-\/$>$ACR, FLASH\+\_\+\+ACR\+\_\+\+SLEEP\+\_\+\+PD)
+\begin{DoxyCompactList}\small\item\em Enable the FLASH power down during Sleep mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gafde0b06ca855f4bb02e94ba21ca8a19b}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SLEEP\+\_\+\+POWERDOWN\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT(FLASH-\/$>$ACR, FLASH\+\_\+\+ACR\+\_\+\+SLEEP\+\_\+\+PD)
+\begin{DoxyCompactList}\small\item\em Disable the FLASH power down during Sleep mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_ga73029745a0042834ae7c332fbafc7bb1}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+POWER\+\_\+\+DOWN\+\_\+\+ENABLE}}()
+\begin{DoxyCompactList}\small\item\em Enable the Flash Run power down mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gaf19524e11b9492975bbecc62ae4c4de6}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+POWER\+\_\+\+DOWN\+\_\+\+DISABLE}}()
+\begin{DoxyCompactList}\small\item\em Disable the Flash Run power down mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__FLASHEx__Exported__Macros_ga6822b67e0b0da1d4283719e152c6d409}\label{group__FLASHEx__Exported__Macros_ga6822b67e0b0da1d4283719e152c6d409} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_ACC64\_DISABLE@{\_\_HAL\_FLASH\_ACC64\_DISABLE}}
+\index{\_\_HAL\_FLASH\_ACC64\_DISABLE@{\_\_HAL\_FLASH\_ACC64\_DISABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_ACC64\_DISABLE}{\_\_HAL\_FLASH\_ACC64\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ACC64\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(CLEAR\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+ACC64))}
+
+
+
+Disable the FLASH 64-\/bit access. 
+
+\begin{DoxyNote}{Note}
+Read access 32 bit is used 
+
+To reset this bit, the LATENCY should be zero wait state and the prefetch off. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_gaba318ae34e00b0110240a22ae026834a}\label{group__FLASHEx__Exported__Macros_gaba318ae34e00b0110240a22ae026834a} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_ACC64\_ENABLE@{\_\_HAL\_FLASH\_ACC64\_ENABLE}}
+\index{\_\_HAL\_FLASH\_ACC64\_ENABLE@{\_\_HAL\_FLASH\_ACC64\_ENABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_ACC64\_ENABLE}{\_\_HAL\_FLASH\_ACC64\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ACC64\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(SET\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+ACC64))}
+
+
+
+Enable the FLASH 64-\/bit access. 
+
+\begin{DoxyNote}{Note}
+Read access 64 bit is used. 
+
+This bit cannot be written at the same time as the LATENCY and PRFTEN bits. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_gaa537e44d74ce35ff5bfef80edf03f895}\label{group__FLASHEx__Exported__Macros_gaa537e44d74ce35ff5bfef80edf03f895} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_GET\_LATENCY@{\_\_HAL\_FLASH\_GET\_LATENCY}}
+\index{\_\_HAL\_FLASH\_GET\_LATENCY@{\_\_HAL\_FLASH\_GET\_LATENCY}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_GET\_LATENCY}{\_\_HAL\_FLASH\_GET\_LATENCY}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+GET\+\_\+\+LATENCY(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(READ\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+LATENCY))}
+
+
+
+Get the FLASH Latency. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em FLASH} & Latency ~\newline
+ This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__FLASH__Latency_ga1276f51e97dc9857ca261fae4eb890f3}{FLASH\+\_\+\+LATENCY\+\_\+0} FLASH Zero Latency cycle \item \doxylink{group__FLASH__Latency_ga28c611f2cb4a3772ab37c538357fd5f6}{FLASH\+\_\+\+LATENCY\+\_\+1} FLASH One Latency cycle \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_gaf19524e11b9492975bbecc62ae4c4de6}\label{group__FLASHEx__Exported__Macros_gaf19524e11b9492975bbecc62ae4c4de6} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_POWER\_DOWN\_DISABLE@{\_\_HAL\_FLASH\_POWER\_DOWN\_DISABLE}}
+\index{\_\_HAL\_FLASH\_POWER\_DOWN\_DISABLE@{\_\_HAL\_FLASH\_POWER\_DOWN\_DISABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_POWER\_DOWN\_DISABLE}{\_\_HAL\_FLASH\_POWER\_DOWN\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+POWER\+\_\+\+DOWN\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ FLASH-\/>PDKEYR\ =\ \mbox{\hyperlink{group__FLASH__Keys_ga75e165b072d1c66e15bab68f4b5bb969}{FLASH\_PDKEY1}};\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH-\/>PDKEYR\ =\ \mbox{\hyperlink{group__FLASH__Keys_ga4fac68eedf8c34c59d1953525819748d}{FLASH\_PDKEY2}};\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CLEAR\_BIT((FLASH-\/>ACR),\ FLASH\_ACR\_RUN\_PD);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0U)}
+
+\end{DoxyCode}
+
+
+Disable the Flash Run power down mode. 
+
+\begin{DoxyNote}{Note}
+Writing this bit to 0 this bit, automatically the keys are loss and a new unlock sequence is necessary to re-\/write it to 1. 
+\end{DoxyNote}
+\Hypertarget{group__FLASHEx__Exported__Macros_ga73029745a0042834ae7c332fbafc7bb1}\label{group__FLASHEx__Exported__Macros_ga73029745a0042834ae7c332fbafc7bb1} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_POWER\_DOWN\_ENABLE@{\_\_HAL\_FLASH\_POWER\_DOWN\_ENABLE}}
+\index{\_\_HAL\_FLASH\_POWER\_DOWN\_ENABLE@{\_\_HAL\_FLASH\_POWER\_DOWN\_ENABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_POWER\_DOWN\_ENABLE}{\_\_HAL\_FLASH\_POWER\_DOWN\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+POWER\+\_\+\+DOWN\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ FLASH-\/>PDKEYR\ =\ \mbox{\hyperlink{group__FLASH__Keys_ga75e165b072d1c66e15bab68f4b5bb969}{FLASH\_PDKEY1}};\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FLASH-\/>PDKEYR\ =\ \mbox{\hyperlink{group__FLASH__Keys_ga4fac68eedf8c34c59d1953525819748d}{FLASH\_PDKEY2}};\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT((FLASH-\/>ACR),\ FLASH\_ACR\_RUN\_PD);\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0U)}
+
+\end{DoxyCode}
+
+
+Enable the Flash Run power down mode. 
+
+\begin{DoxyNote}{Note}
+Writing this bit to 0 this bit, automatically the keys are loss and a new unlock sequence is necessary to re-\/write it to 1. 
+\end{DoxyNote}
+\Hypertarget{group__FLASHEx__Exported__Macros_ga646a4cb92e85659334d14a8c78f0ede8}\label{group__FLASHEx__Exported__Macros_ga646a4cb92e85659334d14a8c78f0ede8} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_DISABLE@{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_DISABLE}}
+\index{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_DISABLE@{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_DISABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_DISABLE}{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+PREFETCH\+\_\+\+BUFFER\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT((FLASH-\/$>$ACR), FLASH\+\_\+\+ACR\+\_\+\+PRFTEN)}
+
+
+
+Disable the FLASH prefetch buffer. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_gad36059641057f824516303ea92734e6f}\label{group__FLASHEx__Exported__Macros_gad36059641057f824516303ea92734e6f} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_ENABLE@{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_ENABLE}}
+\index{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_ENABLE@{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_ENABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_ENABLE}{\_\_HAL\_FLASH\_PREFETCH\_BUFFER\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+PREFETCH\+\_\+\+BUFFER\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \ \{\ \mbox{\hyperlink{group__FLASHEx__Exported__Macros_gaba318ae34e00b0110240a22ae026834a}{\_\_HAL\_FLASH\_ACC64\_ENABLE}}();\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT((FLASH-\/>ACR),\ FLASH\_ACR\_PRFTEN);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Enable the FLASH prefetch buffer. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_gac1c9f459b798cc3700b90a6245df5a1a}\label{group__FLASHEx__Exported__Macros_gac1c9f459b798cc3700b90a6245df5a1a} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_SET\_LATENCY@{\_\_HAL\_FLASH\_SET\_LATENCY}}
+\index{\_\_HAL\_FLASH\_SET\_LATENCY@{\_\_HAL\_FLASH\_SET\_LATENCY}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_SET\_LATENCY}{\_\_HAL\_FLASH\_SET\_LATENCY}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SET\+\_\+\+LATENCY(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ ((\_\_LATENCY\_\_)\ ==\ \mbox{\hyperlink{group__FLASH__Latency_ga28c611f2cb4a3772ab37c538357fd5f6}{FLASH\_LATENCY\_1}})\ \{\mbox{\hyperlink{group__FLASHEx__Exported__Macros_gaba318ae34e00b0110240a22ae026834a}{\_\_HAL\_FLASH\_ACC64\_ENABLE}}();\}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG((FLASH-\/>ACR),\ FLASH\_ACR\_LATENCY,\ (\_\_LATENCY\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Set the FLASH Latency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+} & FLASH Latency This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__FLASH__Latency_ga1276f51e97dc9857ca261fae4eb890f3}{FLASH\+\_\+\+LATENCY\+\_\+0} FLASH Zero Latency cycle \item \doxylink{group__FLASH__Latency_ga28c611f2cb4a3772ab37c538357fd5f6}{FLASH\+\_\+\+LATENCY\+\_\+1} FLASH One Latency cycle \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_gafde0b06ca855f4bb02e94ba21ca8a19b}\label{group__FLASHEx__Exported__Macros_gafde0b06ca855f4bb02e94ba21ca8a19b} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_DISABLE@{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_DISABLE}}
+\index{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_DISABLE@{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_DISABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_DISABLE}{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SLEEP\+\_\+\+POWERDOWN\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(FLASH-\/$>$ACR, FLASH\+\_\+\+ACR\+\_\+\+SLEEP\+\_\+\+PD)}
+
+
+
+Disable the FLASH power down during Sleep mode. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASHEx__Exported__Macros_ga93004e7cf2386d656acd467a5013015e}\label{group__FLASHEx__Exported__Macros_ga93004e7cf2386d656acd467a5013015e} 
+\index{FLASHEx Exported Macros@{FLASHEx Exported Macros}!\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_ENABLE@{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_ENABLE}}
+\index{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_ENABLE@{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_ENABLE}!FLASHEx Exported Macros@{FLASHEx Exported Macros}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_ENABLE}{\_\_HAL\_FLASH\_SLEEP\_POWERDOWN\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+SLEEP\+\_\+\+POWERDOWN\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(FLASH-\/$>$ACR, FLASH\+\_\+\+ACR\+\_\+\+SLEEP\+\_\+\+PD)}
+
+
+
+Enable the FLASH power down during Sleep mode. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}

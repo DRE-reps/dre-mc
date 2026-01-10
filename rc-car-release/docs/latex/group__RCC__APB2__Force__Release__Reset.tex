@@ -1,0 +1,154 @@
+\doxysubsubsubsection{APB2 Force Release Reset}
+\hypertarget{group__RCC__APB2__Force__Release__Reset}{}\label{group__RCC__APB2__Force__Release__Reset}\index{APB2 Force Release Reset@{APB2 Force Release Reset}}
+
+
+Force or release APB1 peripheral reset.  
+
+
+Collaboration diagram for APB2 Force Release Reset\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RCC__APB2__Force__Release__Reset}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga8788da8c644ad0cc54912baede7d49b4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR = 0x\+FFFFFFFFU)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga143ff27d8f59a39732efd79539e3765a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+SYSCFGRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga9a62b264dec3df075dc7207993a9650e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM9\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gaa40d4e3fd1261bb0cd239575a433e8e8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM10\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gaeaf6b459cfeb85e2e098b78825e476f2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM11\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga6176fa4f52de6ebf932d99a4d611634d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+ADC1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga87e6bc588fa1d5ce3928d2fd2a3156a4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+SPI1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga5db01cf30bf3c5c7fc0b42220f4c70ad}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+FORCE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+USART1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gae1e413d623154942d5bbe89769161ece}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR = 0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga56de80d50f5ab276ebdeee16a0e2a31b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+SYSCFGRST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga71fee37e3aff2c5040e2e9f4e153f4ff}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM9\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga704b80ff2f733e161d30e4138f90614d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM10\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gab66378d2b26c2c47522f268e129b6709}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM11\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga681299b233339aa39a30fa5589cac5bc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+ADC1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_gad7b4bc8c8a9146529a175c45eecf25e5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+SPI1\+RST))
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB2__Force__Release__Reset_ga243061674e38d05d222697046d43813a}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+RELEASE\+\_\+\+RESET}}()~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+USART1\+RST))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Force or release APB1 peripheral reset. 
+
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga6176fa4f52de6ebf932d99a4d611634d}\label{group__RCC__APB2__Force__Release__Reset_ga6176fa4f52de6ebf932d99a4d611634d} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_ADC1\_FORCE\_RESET@{\_\_HAL\_RCC\_ADC1\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_ADC1\_FORCE\_RESET@{\_\_HAL\_RCC\_ADC1\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_ADC1\_FORCE\_RESET}{\_\_HAL\_RCC\_ADC1\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+ADC1\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga681299b233339aa39a30fa5589cac5bc}\label{group__RCC__APB2__Force__Release__Reset_ga681299b233339aa39a30fa5589cac5bc} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_ADC1\_RELEASE\_RESET@{\_\_HAL\_RCC\_ADC1\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_ADC1\_RELEASE\_RESET@{\_\_HAL\_RCC\_ADC1\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_ADC1\_RELEASE\_RESET}{\_\_HAL\_RCC\_ADC1\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC1\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+ADC1\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga8788da8c644ad0cc54912baede7d49b4}\label{group__RCC__APB2__Force__Release__Reset_ga8788da8c644ad0cc54912baede7d49b4} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_APB2\_FORCE\_RESET@{\_\_HAL\_RCC\_APB2\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_APB2\_FORCE\_RESET@{\_\_HAL\_RCC\_APB2\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_APB2\_FORCE\_RESET}{\_\_HAL\_RCC\_APB2\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR = 0x\+FFFFFFFFU)}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_gae1e413d623154942d5bbe89769161ece}\label{group__RCC__APB2__Force__Release__Reset_gae1e413d623154942d5bbe89769161ece} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_APB2\_RELEASE\_RESET@{\_\_HAL\_RCC\_APB2\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_APB2\_RELEASE\_RESET@{\_\_HAL\_RCC\_APB2\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_APB2\_RELEASE\_RESET}{\_\_HAL\_RCC\_APB2\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR = 0x00000000U)}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga87e6bc588fa1d5ce3928d2fd2a3156a4}\label{group__RCC__APB2__Force__Release__Reset_ga87e6bc588fa1d5ce3928d2fd2a3156a4} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_SPI1\_FORCE\_RESET@{\_\_HAL\_RCC\_SPI1\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_SPI1\_FORCE\_RESET@{\_\_HAL\_RCC\_SPI1\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_SPI1\_FORCE\_RESET}{\_\_HAL\_RCC\_SPI1\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+SPI1\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_gad7b4bc8c8a9146529a175c45eecf25e5}\label{group__RCC__APB2__Force__Release__Reset_gad7b4bc8c8a9146529a175c45eecf25e5} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_SPI1\_RELEASE\_RESET@{\_\_HAL\_RCC\_SPI1\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_SPI1\_RELEASE\_RESET@{\_\_HAL\_RCC\_SPI1\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_SPI1\_RELEASE\_RESET}{\_\_HAL\_RCC\_SPI1\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI1\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+SPI1\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga143ff27d8f59a39732efd79539e3765a}\label{group__RCC__APB2__Force__Release__Reset_ga143ff27d8f59a39732efd79539e3765a} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_SYSCFG\_FORCE\_RESET@{\_\_HAL\_RCC\_SYSCFG\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_SYSCFG\_FORCE\_RESET@{\_\_HAL\_RCC\_SYSCFG\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_SYSCFG\_FORCE\_RESET}{\_\_HAL\_RCC\_SYSCFG\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+SYSCFGRST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga56de80d50f5ab276ebdeee16a0e2a31b}\label{group__RCC__APB2__Force__Release__Reset_ga56de80d50f5ab276ebdeee16a0e2a31b} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_SYSCFG\_RELEASE\_RESET@{\_\_HAL\_RCC\_SYSCFG\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_SYSCFG\_RELEASE\_RESET@{\_\_HAL\_RCC\_SYSCFG\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_SYSCFG\_RELEASE\_RESET}{\_\_HAL\_RCC\_SYSCFG\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SYSCFG\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+SYSCFGRST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_gaa40d4e3fd1261bb0cd239575a433e8e8}\label{group__RCC__APB2__Force__Release__Reset_gaa40d4e3fd1261bb0cd239575a433e8e8} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_TIM10\_FORCE\_RESET@{\_\_HAL\_RCC\_TIM10\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_TIM10\_FORCE\_RESET@{\_\_HAL\_RCC\_TIM10\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM10\_FORCE\_RESET}{\_\_HAL\_RCC\_TIM10\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM10\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga704b80ff2f733e161d30e4138f90614d}\label{group__RCC__APB2__Force__Release__Reset_ga704b80ff2f733e161d30e4138f90614d} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_TIM10\_RELEASE\_RESET@{\_\_HAL\_RCC\_TIM10\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_TIM10\_RELEASE\_RESET@{\_\_HAL\_RCC\_TIM10\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM10\_RELEASE\_RESET}{\_\_HAL\_RCC\_TIM10\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM10\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM10\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_gaeaf6b459cfeb85e2e098b78825e476f2}\label{group__RCC__APB2__Force__Release__Reset_gaeaf6b459cfeb85e2e098b78825e476f2} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_TIM11\_FORCE\_RESET@{\_\_HAL\_RCC\_TIM11\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_TIM11\_FORCE\_RESET@{\_\_HAL\_RCC\_TIM11\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM11\_FORCE\_RESET}{\_\_HAL\_RCC\_TIM11\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM11\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_gab66378d2b26c2c47522f268e129b6709}\label{group__RCC__APB2__Force__Release__Reset_gab66378d2b26c2c47522f268e129b6709} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_TIM11\_RELEASE\_RESET@{\_\_HAL\_RCC\_TIM11\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_TIM11\_RELEASE\_RESET@{\_\_HAL\_RCC\_TIM11\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM11\_RELEASE\_RESET}{\_\_HAL\_RCC\_TIM11\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM11\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM11\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga9a62b264dec3df075dc7207993a9650e}\label{group__RCC__APB2__Force__Release__Reset_ga9a62b264dec3df075dc7207993a9650e} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_TIM9\_FORCE\_RESET@{\_\_HAL\_RCC\_TIM9\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_TIM9\_FORCE\_RESET@{\_\_HAL\_RCC\_TIM9\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM9\_FORCE\_RESET}{\_\_HAL\_RCC\_TIM9\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM9\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga71fee37e3aff2c5040e2e9f4e153f4ff}\label{group__RCC__APB2__Force__Release__Reset_ga71fee37e3aff2c5040e2e9f4e153f4ff} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_TIM9\_RELEASE\_RESET@{\_\_HAL\_RCC\_TIM9\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_TIM9\_RELEASE\_RESET@{\_\_HAL\_RCC\_TIM9\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM9\_RELEASE\_RESET}{\_\_HAL\_RCC\_TIM9\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM9\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+TIM9\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga5db01cf30bf3c5c7fc0b42220f4c70ad}\label{group__RCC__APB2__Force__Release__Reset_ga5db01cf30bf3c5c7fc0b42220f4c70ad} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_USART1\_FORCE\_RESET@{\_\_HAL\_RCC\_USART1\_FORCE\_RESET}}
+\index{\_\_HAL\_RCC\_USART1\_FORCE\_RESET@{\_\_HAL\_RCC\_USART1\_FORCE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART1\_FORCE\_RESET}{\_\_HAL\_RCC\_USART1\_FORCE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+FORCE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \texorpdfstring{$\vert$}{|}= (RCC\+\_\+\+APB2\+RSTR\+\_\+\+USART1\+RST))}
+
+\Hypertarget{group__RCC__APB2__Force__Release__Reset_ga243061674e38d05d222697046d43813a}\label{group__RCC__APB2__Force__Release__Reset_ga243061674e38d05d222697046d43813a} 
+\index{APB2 Force Release Reset@{APB2 Force Release Reset}!\_\_HAL\_RCC\_USART1\_RELEASE\_RESET@{\_\_HAL\_RCC\_USART1\_RELEASE\_RESET}}
+\index{\_\_HAL\_RCC\_USART1\_RELEASE\_RESET@{\_\_HAL\_RCC\_USART1\_RELEASE\_RESET}!APB2 Force Release Reset@{APB2 Force Release Reset}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART1\_RELEASE\_RESET}{\_\_HAL\_RCC\_USART1\_RELEASE\_RESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART1\+\_\+\+RELEASE\+\_\+\+RESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(RCC-\/$>$APB2\+RSTR \&= \texorpdfstring{$\sim$}{\string~}(RCC\+\_\+\+APB2\+RSTR\+\_\+\+USART1\+RST))}
+

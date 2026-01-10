@@ -1,0 +1,78 @@
+\doxysection{FLASH\+\_\+\+Process\+Type\+Def Struct Reference}
+\hypertarget{structFLASH__ProcessTypeDef}{}\label{structFLASH__ProcessTypeDef}\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+
+
+FLASH handle Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32l1xx\+\_\+hal\+\_\+flash.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__FLASH__Exported__Types_ga2b0268387bc11bcab76be9ce7c43eaaf}{FLASH\+\_\+\+Procedure\+Type\+Def}} \mbox{\hyperlink{structFLASH__ProcessTypeDef_adcc5fdaba7d53dffdab0510a4dd7d179}{Procedure\+On\+Going}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structFLASH__ProcessTypeDef_a0f55783c6dde84a998593cce2e08280b}{Nb\+Pages\+To\+Erase}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structFLASH__ProcessTypeDef_a680a9b907eb67c762b16ef7051cd8942}{Address}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structFLASH__ProcessTypeDef_a36232ab2e05c69dc3a6804685a3b0e8c}{Page}}
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \mbox{\hyperlink{structFLASH__ProcessTypeDef_ab5892cd1aacb0c0304b40f57023061e2}{Lock}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{structFLASH__ProcessTypeDef_a8a6cc581b8b180090429d0a3c0ca0172}{Error\+Code}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+FLASH handle Structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFLASH__ProcessTypeDef_a680a9b907eb67c762b16ef7051cd8942}\label{structFLASH__ProcessTypeDef_a680a9b907eb67c762b16ef7051cd8942} 
+\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}!Address@{Address}}
+\index{Address@{Address}!FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+\doxysubsubsection{\texorpdfstring{Address}{Address}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t FLASH\+\_\+\+Process\+Type\+Def\+::\+Address}
+
+Internal variable to save address selected for program or erase \Hypertarget{structFLASH__ProcessTypeDef_a8a6cc581b8b180090429d0a3c0ca0172}\label{structFLASH__ProcessTypeDef_a8a6cc581b8b180090429d0a3c0ca0172} 
+\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}!ErrorCode@{ErrorCode}}
+\index{ErrorCode@{ErrorCode}!FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+\doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t FLASH\+\_\+\+Process\+Type\+Def\+::\+Error\+Code}
+
+FLASH error code ~\newline
+ This parameter can be a value of \doxylink{group__FLASH__Error__Codes}{FLASH Error Codes} ~\newline
+ \Hypertarget{structFLASH__ProcessTypeDef_ab5892cd1aacb0c0304b40f57023061e2}\label{structFLASH__ProcessTypeDef_ab5892cd1aacb0c0304b40f57023061e2} 
+\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}!Lock@{Lock}}
+\index{Lock@{Lock}!FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+\doxysubsubsection{\texorpdfstring{Lock}{Lock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} FLASH\+\_\+\+Process\+Type\+Def\+::\+Lock}
+
+FLASH locking object ~\newline
+ \Hypertarget{structFLASH__ProcessTypeDef_a0f55783c6dde84a998593cce2e08280b}\label{structFLASH__ProcessTypeDef_a0f55783c6dde84a998593cce2e08280b} 
+\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}!NbPagesToErase@{NbPagesToErase}}
+\index{NbPagesToErase@{NbPagesToErase}!FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+\doxysubsubsection{\texorpdfstring{NbPagesToErase}{NbPagesToErase}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t FLASH\+\_\+\+Process\+Type\+Def\+::\+Nb\+Pages\+To\+Erase}
+
+Internal variable to save the remaining sectors to erase in IT context \Hypertarget{structFLASH__ProcessTypeDef_a36232ab2e05c69dc3a6804685a3b0e8c}\label{structFLASH__ProcessTypeDef_a36232ab2e05c69dc3a6804685a3b0e8c} 
+\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}!Page@{Page}}
+\index{Page@{Page}!FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+\doxysubsubsection{\texorpdfstring{Page}{Page}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t FLASH\+\_\+\+Process\+Type\+Def\+::\+Page}
+
+Internal variable to define the current page which is erasing \Hypertarget{structFLASH__ProcessTypeDef_adcc5fdaba7d53dffdab0510a4dd7d179}\label{structFLASH__ProcessTypeDef_adcc5fdaba7d53dffdab0510a4dd7d179} 
+\index{FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}!ProcedureOnGoing@{ProcedureOnGoing}}
+\index{ProcedureOnGoing@{ProcedureOnGoing}!FLASH\_ProcessTypeDef@{FLASH\_ProcessTypeDef}}
+\doxysubsubsection{\texorpdfstring{ProcedureOnGoing}{ProcedureOnGoing}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__FLASH__Exported__Types_ga2b0268387bc11bcab76be9ce7c43eaaf}{FLASH\+\_\+\+Procedure\+Type\+Def}} FLASH\+\_\+\+Process\+Type\+Def\+::\+Procedure\+On\+Going}
+
+Internal variable to indicate which procedure is ongoing or not in IT context 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32l1xx__hal__flash_8h}{stm32l1xx\+\_\+hal\+\_\+flash.\+h}}\end{DoxyCompactItemize}

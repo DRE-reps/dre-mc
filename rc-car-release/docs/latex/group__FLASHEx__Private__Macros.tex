@@ -1,0 +1,153 @@
+\doxysubsubsection{FLASHEx\+\_\+\+Private\+\_\+\+Macros}
+\hypertarget{group__FLASHEx__Private__Macros}{}\label{group__FLASHEx__Private__Macros}\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+Collaboration diagram for FLASHEx\+\_\+\+Private\+\_\+\+Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FLASHEx__Private__Macros}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__FLASHEx__Address}{FLASHEx Address}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_ga4d40dfc92b46733adbabaae5f3db59ab}{IS\+\_\+\+FLASH\+\_\+\+TYPEERASE}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Type__Erase_ga3664ce55155ec4990873c51737d787ce}{FLASH\+\_\+\+TYPEERASE\+\_\+\+PAGES}}))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_gaaced64683b0f15981a06f3d7581387a4}{IS\+\_\+\+OPTIONBYTE}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) $<$= (\mbox{\hyperlink{group__FLASHEx__Option__Type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group__FLASHEx__Option__Type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group__FLASHEx__Option__Type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group__FLASHEx__Option__Type_gaf4063216c8386467d187663190936c07}{OPTIONBYTE\+\_\+\+BOR}})))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_ga14c03efeabcaa28b9be3be3e68865e10}{IS\+\_\+\+WRPSTATE}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_ga3c4b968d952e28cd4bea2e0a23055076}{IS\+\_\+\+OB\+\_\+\+WRP}}(\+\_\+\+\_\+\+PAGE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+PAGE\+\_\+\+\_\+) != 0x0000000U))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_ga478f97a3fc3df80bfff31ec6e90fe4f9}{IS\+\_\+\+OB\+\_\+\+RDP}}(\+\_\+\+\_\+\+LEVEL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_gaeb13063a8437c23398ed21632b77d243}{IS\+\_\+\+OB\+\_\+\+BOR\+\_\+\+LEVEL}}(\+\_\+\+\_\+\+LEVEL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_gac7984eb8f1c2943abad77f6cc6db1171}{IS\+\_\+\+OB\+\_\+\+IWDG\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__IWatchdog_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__IWatchdog_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_ga619ba079dedc08221f54a91a0fd84001}{IS\+\_\+\+OB\+\_\+\+STOP\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STOP_gac440badc145bc62ab85e1cbca9483584}{OB\+\_\+\+STOP\+\_\+\+NORST}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STOP_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_ga6bd789efc30c91a93b7d1acebdae4a21}{IS\+\_\+\+OB\+\_\+\+STDBY\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STDBY_ga001d8bed938edd0640f5461f859c57af}{OB\+\_\+\+STDBY\+\_\+\+NORST}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STDBY_ga69451a6f69247528f58735c9c83499ce}{OB\+\_\+\+STDBY\+\_\+\+RST}}))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_gadf6c8b0117f3698fc150ebc82ea3ca08}{IS\+\_\+\+TYPEERASEDATA}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Private__Macros_gadadfe8375aa99976e14fea66234bf3ae}{IS\+\_\+\+TYPEPROGRAMDATA}}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__FLASHEx__Private__Macros_ga4d40dfc92b46733adbabaae5f3db59ab}\label{group__FLASHEx__Private__Macros_ga4d40dfc92b46733adbabaae5f3db59ab} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_FLASH\_TYPEERASE@{IS\_FLASH\_TYPEERASE}}
+\index{IS\_FLASH\_TYPEERASE@{IS\_FLASH\_TYPEERASE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_FLASH\_TYPEERASE}{IS\_FLASH\_TYPEERASE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+TYPEERASE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Type__Erase_ga3664ce55155ec4990873c51737d787ce}{FLASH\+\_\+\+TYPEERASE\+\_\+\+PAGES}}))}
+
+\Hypertarget{group__FLASHEx__Private__Macros_gaeb13063a8437c23398ed21632b77d243}\label{group__FLASHEx__Private__Macros_gaeb13063a8437c23398ed21632b77d243} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_BOR\_LEVEL@{IS\_OB\_BOR\_LEVEL}}
+\index{IS\_OB\_BOR\_LEVEL@{IS\_OB\_BOR\_LEVEL}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OB\_BOR\_LEVEL}{IS\_OB\_BOR\_LEVEL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+BOR\+\_\+\+LEVEL(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+LEVEL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__BOR__Level_gaabc231cb1d05a94fe860f67bb5a37b12}{OB\_BOR\_OFF}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__BOR__Level_ga3a888b788e75f0bc1f9add85c9ccd9d6}{OB\_BOR\_LEVEL1}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__BOR__Level_gad678e849fcf817f6ed2d837538e8ebc2}{OB\_BOR\_LEVEL2}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__BOR__Level_ga3132b8202c0a345e9dd33d136714b046}{OB\_BOR\_LEVEL3}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__BOR__Level_gaabff673365a8fc0c7e5b4d62f8b6f16c}{OB\_BOR\_LEVEL4}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__BOR__Level_ga20a498ddcc36d0fe244f280227364c07}{OB\_BOR\_LEVEL5}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__FLASHEx__Private__Macros_gac7984eb8f1c2943abad77f6cc6db1171}\label{group__FLASHEx__Private__Macros_gac7984eb8f1c2943abad77f6cc6db1171} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_IWDG\_SOURCE@{IS\_OB\_IWDG\_SOURCE}}
+\index{IS\_OB\_IWDG\_SOURCE@{IS\_OB\_IWDG\_SOURCE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OB\_IWDG\_SOURCE}{IS\_OB\_IWDG\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+IWDG\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__IWatchdog_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__IWatchdog_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}))}
+
+\Hypertarget{group__FLASHEx__Private__Macros_ga478f97a3fc3df80bfff31ec6e90fe4f9}\label{group__FLASHEx__Private__Macros_ga478f97a3fc3df80bfff31ec6e90fe4f9} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_RDP@{IS\_OB\_RDP}}
+\index{IS\_OB\_RDP@{IS\_OB\_RDP}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OB\_RDP}{IS\_OB\_RDP}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+RDP(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+LEVEL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__Read__Protection_ga22c7871bda267a2844ab9ca9f7bd38e4}{OB\_RDP\_LEVEL\_0}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__Read__Protection_ga778207f0d12d87bbff9d55e985aba5bc}{OB\_RDP\_LEVEL\_1}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_LEVEL\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Option__Bytes__Read__Protection_ga2262afca565429ce2808d835c49e5ee6}{OB\_RDP\_LEVEL\_2}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__FLASHEx__Private__Macros_ga6bd789efc30c91a93b7d1acebdae4a21}\label{group__FLASHEx__Private__Macros_ga6bd789efc30c91a93b7d1acebdae4a21} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_STDBY\_SOURCE@{IS\_OB\_STDBY\_SOURCE}}
+\index{IS\_OB\_STDBY\_SOURCE@{IS\_OB\_STDBY\_SOURCE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OB\_STDBY\_SOURCE}{IS\_OB\_STDBY\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+STDBY\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STDBY_ga001d8bed938edd0640f5461f859c57af}{OB\+\_\+\+STDBY\+\_\+\+NORST}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STDBY_ga69451a6f69247528f58735c9c83499ce}{OB\+\_\+\+STDBY\+\_\+\+RST}}))}
+
+\Hypertarget{group__FLASHEx__Private__Macros_ga619ba079dedc08221f54a91a0fd84001}\label{group__FLASHEx__Private__Macros_ga619ba079dedc08221f54a91a0fd84001} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_STOP\_SOURCE@{IS\_OB\_STOP\_SOURCE}}
+\index{IS\_OB\_STOP\_SOURCE@{IS\_OB\_STOP\_SOURCE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OB\_STOP\_SOURCE}{IS\_OB\_STOP\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+STOP\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STOP_gac440badc145bc62ab85e1cbca9483584}{OB\+\_\+\+STOP\+\_\+\+NORST}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+) == \mbox{\hyperlink{group__FLASHEx__Option__Bytes__nRST__STOP_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}))}
+
+\Hypertarget{group__FLASHEx__Private__Macros_ga3c4b968d952e28cd4bea2e0a23055076}\label{group__FLASHEx__Private__Macros_ga3c4b968d952e28cd4bea2e0a23055076} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_WRP@{IS\_OB\_WRP}}
+\index{IS\_OB\_WRP@{IS\_OB\_WRP}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OB\_WRP}{IS\_OB\_WRP}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+WRP(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+PAGE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+PAGE\+\_\+\+\_\+) != 0x0000000U))}
+
+\Hypertarget{group__FLASHEx__Private__Macros_gaaced64683b0f15981a06f3d7581387a4}\label{group__FLASHEx__Private__Macros_gaaced64683b0f15981a06f3d7581387a4} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OPTIONBYTE@{IS\_OPTIONBYTE}}
+\index{IS\_OPTIONBYTE@{IS\_OPTIONBYTE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_OPTIONBYTE}{IS\_OPTIONBYTE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OPTIONBYTE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) $<$= (\mbox{\hyperlink{group__FLASHEx__Option__Type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group__FLASHEx__Option__Type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group__FLASHEx__Option__Type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}}\texorpdfstring{$\vert$}{|}\mbox{\hyperlink{group__FLASHEx__Option__Type_gaf4063216c8386467d187663190936c07}{OPTIONBYTE\+\_\+\+BOR}})))}
+
+\Hypertarget{group__FLASHEx__Private__Macros_gadf6c8b0117f3698fc150ebc82ea3ca08}\label{group__FLASHEx__Private__Macros_gadf6c8b0117f3698fc150ebc82ea3ca08} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_TYPEERASEDATA@{IS\_TYPEERASEDATA}}
+\index{IS\_TYPEERASEDATA@{IS\_TYPEERASEDATA}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_TYPEERASEDATA}{IS\_TYPEERASEDATA}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TYPEERASEDATA(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Erase__Data_ga337f4bfeaea12349f1350b6b25a9c135}{FLASH\_TYPEERASEDATA\_BYTE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Erase__Data_gafbb0b0f471a5dd56eca9cf1c516d7ed1}{FLASH\_TYPEERASEDATA\_HALFWORD}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Erase__Data_ga56f9f6067a72566ad838b6d0f31df0ad}{FLASH\_TYPEERASEDATA\_WORD}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__FLASHEx__Private__Macros_gadadfe8375aa99976e14fea66234bf3ae}\label{group__FLASHEx__Private__Macros_gadadfe8375aa99976e14fea66234bf3ae} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_TYPEPROGRAMDATA@{IS\_TYPEPROGRAMDATA}}
+\index{IS\_TYPEPROGRAMDATA@{IS\_TYPEPROGRAMDATA}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_TYPEPROGRAMDATA}{IS\_TYPEPROGRAMDATA}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TYPEPROGRAMDATA(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Program__Data_ga582ae928284a107072cc9d2964081f14}{FLASH\_TYPEPROGRAMDATA\_BYTE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Program__Data_ga5273725206e7d7cda74148ba90c51c9f}{FLASH\_TYPEPROGRAMDATA\_HALFWORD}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Program__Data_ga84c4bbdde2127c45ff1dba539b96397f}{FLASH\_TYPEPROGRAMDATA\_WORD}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Program__Data_ga991d2185fe7d6687bf9f74e305fa9388}{FLASH\_TYPEPROGRAMDATA\_FASTBYTE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Program__Data_ga06b94dbaa93b2bdd94a4e8b48cbf5770}{FLASH\_TYPEPROGRAMDATA\_FASTHALFWORD}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__Type__Program__Data_ga7223e44f993459e906d19748753e7780}{FLASH\_TYPEPROGRAMDATA\_FASTWORD}}))}
+
+\end{DoxyCode}
+\Hypertarget{group__FLASHEx__Private__Macros_ga14c03efeabcaa28b9be3be3e68865e10}\label{group__FLASHEx__Private__Macros_ga14c03efeabcaa28b9be3be3e68865e10} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_WRPSTATE@{IS\_WRPSTATE}}
+\index{IS\_WRPSTATE@{IS\_WRPSTATE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_WRPSTATE}{IS\_WRPSTATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+WRPSTATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__WRP__State_gaa34eb6205fe554f65a311ee974d5a4ab}{OB\_WRPSTATE\_DISABLE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_VALUE\_\_)\ ==\ \mbox{\hyperlink{group__FLASHEx__WRP__State_ga9fc463145ab57616baa36d95523186a1}{OB\_WRPSTATE\_ENABLE}}))}
+
+\end{DoxyCode}
+\input{group__FLASHEx__Address}

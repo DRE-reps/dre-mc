@@ -1,0 +1,273 @@
+\doxysubsubsubsection{APB1 Peripheral Clock Sleep Enable Disable Status}
+\hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status}{}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status}\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+
+
+Get the enable or disable status of the APB1 peripheral clock during Low Power (Sleep) mode.  
+
+
+Collaboration diagram for APB1 Peripheral Clock Sleep Enable Disable Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaf38181befdeecf6a61c03885d3645bf1}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gabe8c0a343d9bb288dae09aadbab028a6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga57a6fc55a53a8c9d8cc0303ec5d7177e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga8d5d8a349946a4c0698d754ee107c3cf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab1c825aefb8ae4ab199150ce061e7a8e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga60b229aff9ca29a44a5470f52a48bb2f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad6ee3d390b2b2748575725f5b0c42cfc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga91dc6d0fdf5c1c70158336df3bf5e097}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga998cffc84c7d5866a7e4cfae1f764327}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga39a3efabea0fb3cffae7be7726dd668e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaffe9902aa539eca59920b6b165bd1c71}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga7b1c994ebff003ec3728850962bd9be8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga898edde3fc183744da208db023828303}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad97aab0cffdef7edd52e48e0e5bef9dc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga9d83603386ac98f68fc5019c4065e235}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN)) != 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga0a89c97a19d5057d710e475ff24b71ec}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gade73c47dc34e5841b826a0e641220801}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaa138ce5c7fcfcfd42726b03e7de02c41}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaafa07cf3cfeac5be4071e52201dfcc7d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga64c55482f4bb2cdb236796b18c28d786}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga3cbf3b3683a84bac98b6d15d921f5ec8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga38ba0cbb661739ca615881f2ecfcd1c4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad83f4e02928278fc0d9373020a82f4e0}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad5c5c2cf7612ea68ae679de26f0bc26e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga133208873edc0be1774bf4f3c224a2ac}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga901cecc03cce495d9f01a7228a3bce1c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab9ea1fbdc9d23388137d087f37a42390}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga13a44a1aacea32084e5bcdba69e4a636}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga12790e0adb572f2cd2c1b643906aa377}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN)) == 0U)
+\item 
+\#define \mbox{\hyperlink{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga4f8d0195e28b82b74518f1566bc6b9cf}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}}()~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN)) == 0U)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+Get the enable or disable status of the APB1 peripheral clock during Low Power (Sleep) mode. 
+
+\begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode. 
+\end{DoxyNote}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga4f8d0195e28b82b74518f1566bc6b9cf}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga4f8d0195e28b82b74518f1566bc6b9cf} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga9d83603386ac98f68fc5019c4065e235}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga9d83603386ac98f68fc5019c4065e235} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_COMP\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+COMPLPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga12790e0adb572f2cd2c1b643906aa377}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga12790e0adb572f2cd2c1b643906aa377} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad97aab0cffdef7edd52e48e0e5bef9dc}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad97aab0cffdef7edd52e48e0e5bef9dc} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_DAC\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DAC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+DACLPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga133208873edc0be1774bf4f3c224a2ac}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga133208873edc0be1774bf4f3c224a2ac} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga39a3efabea0fb3cffae7be7726dd668e}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga39a3efabea0fb3cffae7be7726dd668e} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_I2C1\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C1\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga901cecc03cce495d9f01a7228a3bce1c}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga901cecc03cce495d9f01a7228a3bce1c} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaffe9902aa539eca59920b6b165bd1c71}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaffe9902aa539eca59920b6b165bd1c71} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_I2C2\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+I2\+C2\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga13a44a1aacea32084e5bcdba69e4a636}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga13a44a1aacea32084e5bcdba69e4a636} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga898edde3fc183744da208db023828303}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga898edde3fc183744da208db023828303} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_PWR\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+PWRLPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga38ba0cbb661739ca615881f2ecfcd1c4}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga38ba0cbb661739ca615881f2ecfcd1c4} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad6ee3d390b2b2748575725f5b0c42cfc}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad6ee3d390b2b2748575725f5b0c42cfc} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_SPI2\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SPI2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+SPI2\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga0a89c97a19d5057d710e475ff24b71ec}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga0a89c97a19d5057d710e475ff24b71ec} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaf38181befdeecf6a61c03885d3645bf1}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaf38181befdeecf6a61c03885d3645bf1} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_TIM2\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM2\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gade73c47dc34e5841b826a0e641220801}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gade73c47dc34e5841b826a0e641220801} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gabe8c0a343d9bb288dae09aadbab028a6}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gabe8c0a343d9bb288dae09aadbab028a6} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_TIM3\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM3\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaa138ce5c7fcfcfd42726b03e7de02c41}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaa138ce5c7fcfcfd42726b03e7de02c41} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga57a6fc55a53a8c9d8cc0303ec5d7177e}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga57a6fc55a53a8c9d8cc0303ec5d7177e} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_TIM4\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM4\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM4\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaafa07cf3cfeac5be4071e52201dfcc7d}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gaafa07cf3cfeac5be4071e52201dfcc7d} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga8d5d8a349946a4c0698d754ee107c3cf}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga8d5d8a349946a4c0698d754ee107c3cf} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_TIM6\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM6\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM6\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga64c55482f4bb2cdb236796b18c28d786}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga64c55482f4bb2cdb236796b18c28d786} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab1c825aefb8ae4ab199150ce061e7a8e}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab1c825aefb8ae4ab199150ce061e7a8e} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_TIM7\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM7\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+TIM7\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad83f4e02928278fc0d9373020a82f4e0}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad83f4e02928278fc0d9373020a82f4e0} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga91dc6d0fdf5c1c70158336df3bf5e097}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga91dc6d0fdf5c1c70158336df3bf5e097} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_USART2\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART2\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad5c5c2cf7612ea68ae679de26f0bc26e}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gad5c5c2cf7612ea68ae679de26f0bc26e} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga998cffc84c7d5866a7e4cfae1f764327}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga998cffc84c7d5866a7e4cfae1f764327} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_USART3\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USART3\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USART3\+LPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab9ea1fbdc9d23388137d087f37a42390}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_gab9ea1fbdc9d23388137d087f37a42390} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga7b1c994ebff003ec3728850962bd9be8}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga7b1c994ebff003ec3728850962bd9be8} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_USB\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+USB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+USBLPEN)) != 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga3cbf3b3683a84bac98b6d15d921f5ec8}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga3cbf3b3683a84bac98b6d15d921f5ec8} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_DISABLED}}
+\index{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_DISABLED@{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_DISABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_DISABLED}{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_DISABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN)) == 0U)}
+
+\Hypertarget{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga60b229aff9ca29a44a5470f52a48bb2f}\label{group__RCC__APB1__Clock__Sleep__Enable__Disable__Status_ga60b229aff9ca29a44a5470f52a48bb2f} 
+\index{APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}!\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_ENABLED}}
+\index{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_ENABLED@{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_ENABLED}!APB1 Peripheral Clock Sleep Enable Disable Status@{APB1 Peripheral Clock Sleep Enable Disable Status}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_ENABLED}{\_\_HAL\_RCC\_WWDG\_IS\_CLK\_SLEEP\_ENABLED}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((RCC-\/$>$APB1\+LPENR \& (RCC\+\_\+\+APB1\+LPENR\+\_\+\+WWDGLPEN)) != 0U)}
+

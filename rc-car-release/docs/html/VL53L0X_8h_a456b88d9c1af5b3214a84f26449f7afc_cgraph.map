@@ -1,0 +1,9 @@
+<map id="setSignalRateLimit" name="setSignalRateLimit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,151,56"/>
+<area shape="rect" id="Node000002" href="$logger_8c.html#a3278730f835b7230a0de447ea4afd3f0" title=" " alt="" coords="216,5,296,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,30,202,23,203,28,152,36"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a995dc19a05f01452244a2418e2dedd2e" title=" " alt="" coords="199,55,313,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,51,185,55,185,60,151,56"/>
+<area shape="rect" id="Node000004" href="$group__I2C__Exported__Functions__Group2.html#ga33e725a824eb672f9f999d9d5ce088fb" title=" " alt="" coords="361,55,520,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="313,65,347,65,347,70,313,70"/>
+</map>

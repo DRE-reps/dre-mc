@@ -1,0 +1,7 @@
+<map id="send_log" name="send_log">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,85,56"/>
+<area shape="rect" id="Node000002" href="$usart1__callbacks_8c.html#affbfb036f60ddbae3a766279f885dff9" title=" " alt="" coords="149,5,271,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,35,135,27,135,32,86,40"/>
+<area shape="rect" id="Node000003" href="$group__UART__Exported__Functions__Group2.html#ga01a7a7ac3cf0a262814ba44ee7580ddb" title=" " alt="" coords="133,55,287,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="86,46,120,51,119,57,85,52"/>
+</map>

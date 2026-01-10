@@ -1,0 +1,5 @@
+<map id="HAL_I2C_MspInit" name="HAL_I2C_MspInit">
+<area shape="rect" id="Node000001" title="I2C MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,5,136,31"/>
+<area shape="rect" id="Node000002" href="$group__GPIO__Exported__Functions__Group1.html#ga41bda93b6dd639e4905fdb1454eff98e" title=" " alt="" coords="184,5,299,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,15,170,15,170,21,136,21"/>
+</map>

@@ -1,0 +1,59 @@
+\doxysubsubsubsection{FLASHEx Address}
+\hypertarget{group__FLASHEx__Address}{}\label{group__FLASHEx__Address}\index{FLASHEx Address@{FLASHEx Address}}
+Collaboration diagram for FLASHEx Address\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FLASHEx__Address}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Address_ga82ec8ebb9c08428f2a65ea5545b57d45}{IS\+\_\+\+FLASH\+\_\+\+DATA\+\_\+\+ADDRESS}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+EEPROM\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+EEPROM\+\_\+\+END))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Address_gac07480adefa0f54a920561a97c2e5b8a}{IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+ADDRESS}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+BANK2\+\_\+\+END))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Address_ga30dc5a0fc69e32d9c21b86c8fd5b03c1}{IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+BANK1\+\_\+\+ADDRESS}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+BANK1\+\_\+\+END))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Address_gac2786435e0972a95162196eb7120f1e8}{IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+BANK2\+\_\+\+ADDRESS}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+BANK2\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+BANK2\+\_\+\+END))
+\item 
+\#define \mbox{\hyperlink{group__FLASHEx__Address_gae4721a03a8aae12a05546ee7d1fd0f09}{IS\+\_\+\+NBPAGES}}(\+\_\+\+\_\+\+PAGES\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+PAGES\+\_\+\+\_\+) $>$= 1U) \&\& ((\+\_\+\+\_\+\+PAGES\+\_\+\+\_\+) $<$= FLASH\+\_\+\+NBPAGES\+\_\+\+MAX))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__FLASHEx__Address_ga82ec8ebb9c08428f2a65ea5545b57d45}\label{group__FLASHEx__Address_ga82ec8ebb9c08428f2a65ea5545b57d45} 
+\index{FLASHEx Address@{FLASHEx Address}!IS\_FLASH\_DATA\_ADDRESS@{IS\_FLASH\_DATA\_ADDRESS}}
+\index{IS\_FLASH\_DATA\_ADDRESS@{IS\_FLASH\_DATA\_ADDRESS}!FLASHEx Address@{FLASHEx Address}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_FLASH\_DATA\_ADDRESS}{IS\_FLASH\_DATA\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+DATA\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+EEPROM\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+EEPROM\+\_\+\+END))}
+
+\Hypertarget{group__FLASHEx__Address_gac07480adefa0f54a920561a97c2e5b8a}\label{group__FLASHEx__Address_gac07480adefa0f54a920561a97c2e5b8a} 
+\index{FLASHEx Address@{FLASHEx Address}!IS\_FLASH\_PROGRAM\_ADDRESS@{IS\_FLASH\_PROGRAM\_ADDRESS}}
+\index{IS\_FLASH\_PROGRAM\_ADDRESS@{IS\_FLASH\_PROGRAM\_ADDRESS}!FLASHEx Address@{FLASHEx Address}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_FLASH\_PROGRAM\_ADDRESS}{IS\_FLASH\_PROGRAM\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+BANK2\+\_\+\+END))}
+
+\Hypertarget{group__FLASHEx__Address_ga30dc5a0fc69e32d9c21b86c8fd5b03c1}\label{group__FLASHEx__Address_ga30dc5a0fc69e32d9c21b86c8fd5b03c1} 
+\index{FLASHEx Address@{FLASHEx Address}!IS\_FLASH\_PROGRAM\_BANK1\_ADDRESS@{IS\_FLASH\_PROGRAM\_BANK1\_ADDRESS}}
+\index{IS\_FLASH\_PROGRAM\_BANK1\_ADDRESS@{IS\_FLASH\_PROGRAM\_BANK1\_ADDRESS}!FLASHEx Address@{FLASHEx Address}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_FLASH\_PROGRAM\_BANK1\_ADDRESS}{IS\_FLASH\_PROGRAM\_BANK1\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+BANK1\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+BANK1\+\_\+\+END))}
+
+\Hypertarget{group__FLASHEx__Address_gac2786435e0972a95162196eb7120f1e8}\label{group__FLASHEx__Address_gac2786435e0972a95162196eb7120f1e8} 
+\index{FLASHEx Address@{FLASHEx Address}!IS\_FLASH\_PROGRAM\_BANK2\_ADDRESS@{IS\_FLASH\_PROGRAM\_BANK2\_ADDRESS}}
+\index{IS\_FLASH\_PROGRAM\_BANK2\_ADDRESS@{IS\_FLASH\_PROGRAM\_BANK2\_ADDRESS}!FLASHEx Address@{FLASHEx Address}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_FLASH\_PROGRAM\_BANK2\_ADDRESS}{IS\_FLASH\_PROGRAM\_BANK2\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+BANK2\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $>$= FLASH\+\_\+\+BANK2\+\_\+\+BASE) \&\& ((\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+) $<$= FLASH\+\_\+\+BANK2\+\_\+\+END))}
+
+\Hypertarget{group__FLASHEx__Address_gae4721a03a8aae12a05546ee7d1fd0f09}\label{group__FLASHEx__Address_gae4721a03a8aae12a05546ee7d1fd0f09} 
+\index{FLASHEx Address@{FLASHEx Address}!IS\_NBPAGES@{IS\_NBPAGES}}
+\index{IS\_NBPAGES@{IS\_NBPAGES}!FLASHEx Address@{FLASHEx Address}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_NBPAGES}{IS\_NBPAGES}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+NBPAGES(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+PAGES\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((\+\_\+\+\_\+\+PAGES\+\_\+\+\_\+) $>$= 1U) \&\& ((\+\_\+\+\_\+\+PAGES\+\_\+\+\_\+) $<$= FLASH\+\_\+\+NBPAGES\+\_\+\+MAX))}
+

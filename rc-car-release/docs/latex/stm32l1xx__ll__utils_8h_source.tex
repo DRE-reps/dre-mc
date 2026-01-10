@@ -1,0 +1,97 @@
+\doxysection{stm32l1xx\+\_\+ll\+\_\+utils.\+h}
+\hypertarget{stm32l1xx__ll__utils_8h_source}{}\label{stm32l1xx__ll__utils_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_utils.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_utils.h}}
+\mbox{\hyperlink{stm32l1xx__ll__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_LL\_UTILS\_H}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_LL\_UTILS\_H}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}stm32l1xx.h"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*\ Private\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/*\ Private\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ Max\ delay\ can\ be\ used\ in\ LL\_mDelay\ */}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ LL\_MAX\_DELAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFU}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ UID\_BASE\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ UID\_BASE}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ FLASHSIZE\_BASE\_ADDRESS\ \ \ \ \ \ \ \ FLASHSIZE\_BASE}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00082\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ uint32\_t\ \mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef_a3edca092c193d936bef5c17839bf5fd2}{PLLMul}};\ \ \ }
+\DoxyCodeLine{00097\ \ \ uint32\_t\ \mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef_aee4bfcfc518cedaf10f4ad16d845de4d}{PLLDiv}};\ \ \ }
+\DoxyCodeLine{00102\ \}\ \mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef}{LL\_UTILS\_PLLInitTypeDef}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00109\ \ \ uint32\_t\ \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef_a8674805c27fb68e07cdc60a9debe5d5e}{AHBCLKDivider}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ uint32\_t\ \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef_a145153593da600e7840fb1351c95d0d5}{APB1CLKDivider}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ uint32\_t\ \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef_a4e41c3fb594226ee0d7b8a0566b51530}{APB2CLKDivider}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \}\ \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef}{LL\_UTILS\_ClkInitTypeDef}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ LL\_UTILS\_HSEBYPASS\_OFF\ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ LL\_UTILS\_HSEBYPASS\_ON\ \ \ \ \ \ \ \ \ 0x00000001U\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00166\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga3a0b557447143f41b93a7fa45270b5b8}{LL\_GetUID\_Word0}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00167\ \{}
+\DoxyCodeLine{00168\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(*((uint32\_t\ *)\mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\_BASE\_ADDRESS}})));}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga67007778e77a6fafc8a1fc440dc208b2}{LL\_GetUID\_Word1}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(*((uint32\_t\ *)(\mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\_BASE\_ADDRESS}}\ +\ 0x04U))));}
+\DoxyCodeLine{00178\ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_gaa15df2bc902d392f67ee9873943d4904}{LL\_GetUID\_Word2}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00185\ \{}
+\DoxyCodeLine{00186\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(*((uint32\_t\ *)(\mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\_BASE\_ADDRESS}}\ +\ 0x14U))));}
+\DoxyCodeLine{00187\ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00199\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__UTILS__EF__DEVICE__ELECTRONIC__SIGNATURE_ga0e8379766a1799f3c5fedadaa2b0c47e}{LL\_GetFlashSize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00200\ \{}
+\DoxyCodeLine{00201\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(*((uint32\_t\ *)\mbox{\hyperlink{group__UTILS__LL__Private__Constants_ga75b8f6b080a5dfaaf829edeae69bff70}{FLASHSIZE\_BASE\_ADDRESS}}))\ \&\ 0xFFFFU);}
+\DoxyCodeLine{00202\ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00221\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__UTILS__LL__EF__DELAY_ga170d1d651b46544daf571fb6b4e3b850}{LL\_InitTick}}(uint32\_t\ HCLKFrequency,\ uint32\_t\ Ticks)}
+\DoxyCodeLine{00222\ \{}
+\DoxyCodeLine{00223\ \ \ \textcolor{comment}{/*\ Configure\ the\ SysTick\ to\ have\ interrupt\ in\ 1ms\ time\ base\ */}}
+\DoxyCodeLine{00224\ \ \ SysTick-\/>LOAD\ \ =\ (uint32\_t)((HCLKFrequency\ /\ Ticks)\ -\/\ 1UL);\ \ \textcolor{comment}{/*\ set\ reload\ register\ */}}
+\DoxyCodeLine{00225\ \ \ SysTick-\/>VAL\ \ \ =\ 0UL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Load\ the\ SysTick\ Counter\ Value\ */}}
+\DoxyCodeLine{00226\ \ \ SysTick-\/>CTRL\ \ =\ SysTick\_CTRL\_CLKSOURCE\_Msk\ |}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SysTick\_CTRL\_ENABLE\_Msk;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Enable\ the\ Systick\ Timer\ */}}
+\DoxyCodeLine{00228\ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group__UTILS__LL__EF__DELAY_ga485805c708e3aa0820454523782d4de4}{LL\_Init1msTick}}(uint32\_t\ HCLKFrequency);}
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group__UTILS__LL__EF__DELAY_ga7b7ca6d9cbec320c3e9f326b203807aa}{LL\_mDelay}}(uint32\_t\ Delay);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00241\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group__UTILS__EF__SYSTEM_ga5af902d59c4c2d9dc5e189df0bc71ecd}{LL\_SetSystemCoreClock}}(uint32\_t\ HCLKFrequency);}
+\DoxyCodeLine{00242\ ErrorStatus\ \mbox{\hyperlink{group__UTILS__EF__SYSTEM_ga7ada5e4210f6ef80ef9f55bf9dd048c6}{LL\_PLL\_ConfigSystemClock\_HSI}}(\mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef}{LL\_UTILS\_PLLInitTypeDef}}\ *UTILS\_PLLInitStruct,}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef}{LL\_UTILS\_ClkInitTypeDef}}\ *UTILS\_ClkInitStruct);}
+\DoxyCodeLine{00244\ ErrorStatus\ \mbox{\hyperlink{group__UTILS__EF__SYSTEM_gaf6c8553d03464d4646b63321b97d25e2}{LL\_PLL\_ConfigSystemClock\_HSE}}(uint32\_t\ HSEFrequency,\ uint32\_t\ HSEBypass,}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structLL__UTILS__PLLInitTypeDef}{LL\_UTILS\_PLLInitTypeDef}}\ *UTILS\_PLLInitStruct,\ \mbox{\hyperlink{structLL__UTILS__ClkInitTypeDef}{LL\_UTILS\_ClkInitTypeDef}}\ *UTILS\_ClkInitStruct);}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#if\ defined(FLASH\_ACR\_LATENCY)}}
+\DoxyCodeLine{00247\ ErrorStatus\ LL\_SetFlashLatency(uint32\_t\ Frequency);}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FLASH\_ACR\_LATENCY\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00267\ \}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_LL\_UTILS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

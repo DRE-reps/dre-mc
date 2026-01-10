@@ -1,0 +1,5 @@
+<map id="MPU6050_Read_Gyro" name="MPU6050_Read_Gyro">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000002" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="216,5,372,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,15,202,15,202,21,168,21"/>
+</map>

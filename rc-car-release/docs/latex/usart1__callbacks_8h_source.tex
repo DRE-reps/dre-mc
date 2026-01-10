@@ -1,0 +1,27 @@
+\doxysection{usart1\+\_\+callbacks.\+h}
+\hypertarget{usart1__callbacks_8h_source}{}\label{usart1__callbacks_8h_source}\index{Core/Inc/usart1\_callbacks.h@{Core/Inc/usart1\_callbacks.h}}
+\mbox{\hyperlink{usart1__callbacks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_ac19a9e76d804061a44cca2d2934dd952}{set\_angle\_flag}};}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_a3243aa1b8bda98ea990161bcda56d229}{set\_pwm\_flag}};}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_a632a492c60c5efe67f01240b8257230c}{set\_direction\_flag}};}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_a10bc84b832da903965110a1f203f50c4}{get\_telemetry\_flag}};}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_a571e12207c04fb3a4349fbf8e251d211}{read\_log\_flag}};}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_ac6ff7e77cbdc866f70b0572760f5f227}{read\_errors\_stat\_flag}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ int8\_t\ \ \mbox{\hyperlink{structCommand__State__t_ad7163cbdbd0b52a2d44827c03ef7168e}{wheel\_angle}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_a2afbf0d8bd140441b87fe9b5bb4bd79b}{esc\_pwm}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structCommand__State__t_aa0311697f2bf9e5357482811254f9844}{direction}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structCommand__State__t_ac2300e85c7919e7f2018449dd48d5b82}{current\_rpm}};\ \ \ \textcolor{comment}{//\ Для\ телеметрии}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{structCommand__State__t_ac0c8d02066714c700664b28bf8e6cca5}{current\_speed}};\ \textcolor{comment}{//\ Для\ телеметрии}}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{structCommand__State__t}{Command\_State\_t}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart1__callbacks_8h_a1837314769db44a6256a00ffcb007f84}{Send\_Telemetry}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00019\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{usart1__callbacks_8h_affbfb036f60ddbae3a766279f885dff9}{Compute\_CRC8}}(\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ uint16\_t\ length);}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart1__callbacks_8h_a1e3a5d437575d683b8ca7bc8942599c3}{process\_parser\_flags}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usart1__callbacks_8h_a65f548b440445cf147d626e2e26ddb73}{parse\_uart\_message}}(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

@@ -1,0 +1,175 @@
+\doxysection{\+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def Struct Reference}
+\hypertarget{struct____UART__HandleTypeDef}{}\label{struct____UART__HandleTypeDef}\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+
+
+UART handle Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32l1xx\+\_\+hal\+\_\+uart.\+h$>$}
+
+
+
+Collaboration diagram for \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{struct____UART__HandleTypeDef__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+USART\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct____UART__HandleTypeDef_aadd8a626e4d5dd937ee1b6461365831a}{Instance}}
+\item 
+\mbox{\hyperlink{structUART__InitTypeDef}{UART\+\_\+\+Init\+Type\+Def}} \mbox{\hyperlink{struct____UART__HandleTypeDef_a56ed519d3ec77350c528fb8536bd9f5a}{Init}}
+\item 
+const \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct____UART__HandleTypeDef_ac997bb43410d347931f519a745a6e75f}{p\+Tx\+Buff\+Ptr}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct____UART__HandleTypeDef_a1ba050351021762bf0414f9af78080c7}{Tx\+Xfer\+Size}}
+\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \mbox{\hyperlink{struct____UART__HandleTypeDef_a640bb2017f3d6c58937c9cc8f0c866c2}{Tx\+Xfer\+Count}}
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct____UART__HandleTypeDef_a3b693f9fad7d2feed3103b296e8960a8}{p\+Rx\+Buff\+Ptr}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct____UART__HandleTypeDef_adcd45d8ba72e0883dc85a6f217437809}{Rx\+Xfer\+Size}}
+\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \mbox{\hyperlink{struct____UART__HandleTypeDef_a04c4b8902fadb460835b8856123453e1}{Rx\+Xfer\+Count}}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_ga9f272475ea543a68fd8cb19f03a9bce9}{HAL\+\_\+\+UART\+\_\+\+Rx\+Type\+Type\+Def}} \mbox{\hyperlink{struct____UART__HandleTypeDef_ad43c273339bc3aaee1e848e20390d01c}{Reception\+Type}}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_gadddf3d5480235c945dc8eec58f961203}{HAL\+\_\+\+UART\+\_\+\+Rx\+Event\+Type\+Type\+Def}} \mbox{\hyperlink{struct____UART__HandleTypeDef_a00d86b409cac22035cef8c118bb22adf}{Rx\+Event\+Type}}
+\item 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct____UART__HandleTypeDef_afdedbb0ffa1d4bc145a01434d4794c92}{hdmatx}}
+\item 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct____UART__HandleTypeDef_aad7929af8d6acf108c85fe9c7b83c128}{hdmarx}}
+\item 
+\mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \mbox{\hyperlink{struct____UART__HandleTypeDef_a203cf57913d43137feeb4fe24fe38af2}{Lock}}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_gaf55d844a35379c204c90be5d1e8e50ba}{HAL\+\_\+\+UART\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{struct____UART__HandleTypeDef_a0c4242c009d8754417dfd87a5ab6cb10}{g\+State}}
+\item 
+\+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_gaf55d844a35379c204c90be5d1e8e50ba}{HAL\+\_\+\+UART\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{struct____UART__HandleTypeDef_a1b5639a73b305432afeb6aa18506d0fb}{Rx\+State}}
+\item 
+\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{struct____UART__HandleTypeDef_a0447bf9458caff1ad44ee7e947b1413f}{Error\+Code}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UART handle Structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct____UART__HandleTypeDef_a0447bf9458caff1ad44ee7e947b1413f}\label{struct____UART__HandleTypeDef_a0447bf9458caff1ad44ee7e947b1413f} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!ErrorCode@{ErrorCode}}
+\index{ErrorCode@{ErrorCode}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ErrorCode}{ErrorCode}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint32\+\_\+t \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Error\+Code}
+
+UART Error code ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a0c4242c009d8754417dfd87a5ab6cb10}\label{struct____UART__HandleTypeDef_a0c4242c009d8754417dfd87a5ab6cb10} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!gState@{gState}}
+\index{gState@{gState}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{gState}{gState}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_gaf55d844a35379c204c90be5d1e8e50ba}{HAL\+\_\+\+UART\+\_\+\+State\+Type\+Def}} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::g\+State}
+
+UART state information related to global Handle management and also related to Tx operations. This parameter can be a value of \doxylink{group__UART__Exported__Types_gaf55d844a35379c204c90be5d1e8e50ba}{HAL\+\_\+\+UART\+\_\+\+State\+Type\+Def} \Hypertarget{struct____UART__HandleTypeDef_aad7929af8d6acf108c85fe9c7b83c128}\label{struct____UART__HandleTypeDef_aad7929af8d6acf108c85fe9c7b83c128} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!hdmarx@{hdmarx}}
+\index{hdmarx@{hdmarx}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdmarx}{hdmarx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::hdmarx}
+
+UART Rx DMA Handle parameters ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_afdedbb0ffa1d4bc145a01434d4794c92}\label{struct____UART__HandleTypeDef_afdedbb0ffa1d4bc145a01434d4794c92} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!hdmatx@{hdmatx}}
+\index{hdmatx@{hdmatx}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{hdmatx}{hdmatx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::hdmatx}
+
+UART Tx DMA Handle parameters ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a56ed519d3ec77350c528fb8536bd9f5a}\label{struct____UART__HandleTypeDef_a56ed519d3ec77350c528fb8536bd9f5a} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!Init@{Init}}
+\index{Init@{Init}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Init}{Init}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structUART__InitTypeDef}{UART\+\_\+\+Init\+Type\+Def}} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Init}
+
+UART communication parameters ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_aadd8a626e4d5dd937ee1b6461365831a}\label{struct____UART__HandleTypeDef_aadd8a626e4d5dd937ee1b6461365831a} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!Instance@{Instance}}
+\index{Instance@{Instance}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily USART\+\_\+\+Type\+Def\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Instance}
+
+UART registers base address ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a203cf57913d43137feeb4fe24fe38af2}\label{struct____UART__HandleTypeDef_a203cf57913d43137feeb4fe24fe38af2} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!Lock@{Lock}}
+\index{Lock@{Lock}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{Lock}{Lock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32l1xx__hal__def_8h_ab367482e943333a1299294eadaad284b}{HAL\+\_\+\+Lock\+Type\+Def}} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Lock}
+
+Locking object ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a3b693f9fad7d2feed3103b296e8960a8}\label{struct____UART__HandleTypeDef_a3b693f9fad7d2feed3103b296e8960a8} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!pRxBuffPtr@{pRxBuffPtr}}
+\index{pRxBuffPtr@{pRxBuffPtr}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pRxBuffPtr}{pRxBuffPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::p\+Rx\+Buff\+Ptr}
+
+Pointer to UART Rx transfer Buffer \Hypertarget{struct____UART__HandleTypeDef_ac997bb43410d347931f519a745a6e75f}\label{struct____UART__HandleTypeDef_ac997bb43410d347931f519a745a6e75f} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!pTxBuffPtr@{pTxBuffPtr}}
+\index{pTxBuffPtr@{pTxBuffPtr}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pTxBuffPtr}{pTxBuffPtr}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}\texorpdfstring{$\ast$}{*} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::p\+Tx\+Buff\+Ptr}
+
+Pointer to UART Tx transfer Buffer \Hypertarget{struct____UART__HandleTypeDef_ad43c273339bc3aaee1e848e20390d01c}\label{struct____UART__HandleTypeDef_ad43c273339bc3aaee1e848e20390d01c} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!ReceptionType@{ReceptionType}}
+\index{ReceptionType@{ReceptionType}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ReceptionType}{ReceptionType}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_ga9f272475ea543a68fd8cb19f03a9bce9}{HAL\+\_\+\+UART\+\_\+\+Rx\+Type\+Type\+Def}} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Reception\+Type}
+
+Type of ongoing reception ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a00d86b409cac22035cef8c118bb22adf}\label{struct____UART__HandleTypeDef_a00d86b409cac22035cef8c118bb22adf} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!RxEventType@{RxEventType}}
+\index{RxEventType@{RxEventType}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxEventType}{RxEventType}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_gadddf3d5480235c945dc8eec58f961203}{HAL\+\_\+\+UART\+\_\+\+Rx\+Event\+Type\+Type\+Def}} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Rx\+Event\+Type}
+
+Type of Rx Event ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a1b5639a73b305432afeb6aa18506d0fb}\label{struct____UART__HandleTypeDef_a1b5639a73b305432afeb6aa18506d0fb} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!RxState@{RxState}}
+\index{RxState@{RxState}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxState}{RxState}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{group__UART__Exported__Types_gaf55d844a35379c204c90be5d1e8e50ba}{HAL\+\_\+\+UART\+\_\+\+State\+Type\+Def}} \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Rx\+State}
+
+UART state information related to Rx operations. This parameter can be a value of \doxylink{group__UART__Exported__Types_gaf55d844a35379c204c90be5d1e8e50ba}{HAL\+\_\+\+UART\+\_\+\+State\+Type\+Def} \Hypertarget{struct____UART__HandleTypeDef_a04c4b8902fadb460835b8856123453e1}\label{struct____UART__HandleTypeDef_a04c4b8902fadb460835b8856123453e1} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!RxXferCount@{RxXferCount}}
+\index{RxXferCount@{RxXferCount}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxXferCount}{RxXferCount}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint16\+\_\+t \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Rx\+Xfer\+Count}
+
+UART Rx Transfer Counter ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_adcd45d8ba72e0883dc85a6f217437809}\label{struct____UART__HandleTypeDef_adcd45d8ba72e0883dc85a6f217437809} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!RxXferSize@{RxXferSize}}
+\index{RxXferSize@{RxXferSize}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxXferSize}{RxXferSize}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Rx\+Xfer\+Size}
+
+UART Rx Transfer size ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a640bb2017f3d6c58937c9cc8f0c866c2}\label{struct____UART__HandleTypeDef_a640bb2017f3d6c58937c9cc8f0c866c2} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!TxXferCount@{TxXferCount}}
+\index{TxXferCount@{TxXferCount}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{TxXferCount}{TxXferCount}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint16\+\_\+t \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Tx\+Xfer\+Count}
+
+UART Tx Transfer Counter ~\newline
+ \Hypertarget{struct____UART__HandleTypeDef_a1ba050351021762bf0414f9af78080c7}\label{struct____UART__HandleTypeDef_a1ba050351021762bf0414f9af78080c7} 
+\index{\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}!TxXferSize@{TxXferSize}}
+\index{TxXferSize@{TxXferSize}!\_\_UART\_HandleTypeDef@{\_\_UART\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{TxXferSize}{TxXferSize}}
+{\footnotesize\ttfamily uint16\+\_\+t \+\_\+\+\_\+\+UART\+\_\+\+Handle\+Type\+Def\+::\+Tx\+Xfer\+Size}
+
+UART Tx Transfer size ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32l1xx__hal__uart_8h}{stm32l1xx\+\_\+hal\+\_\+uart.\+h}}\end{DoxyCompactItemize}

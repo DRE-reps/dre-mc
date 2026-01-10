@@ -1,0 +1,626 @@
+\doxysection{Core/\+Src/\+VL53\+L0X.c File Reference}
+\hypertarget{VL53L0X_8c}{}\label{VL53L0X_8c}\index{Core/Src/VL53L0X.c@{Core/Src/VL53L0X.c}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}string.\+h"{}}\newline
+{\ttfamily \#include "{}VL53\+L0\+X.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+Include dependency graph for VL53\+L0\+X.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{VL53L0X_8c_afa3215f0aa766367f5d34bee80929152}{I2\+C\+\_\+\+TIMEOUT}}~100
+\item 
+\#define \mbox{\hyperlink{VL53L0X_8c_ab5c0fbe837494c5f9130a5914854250d}{I2\+C\+\_\+\+READ}}~1
+\item 
+\#define \mbox{\hyperlink{VL53L0X_8c_a9536bf85bced4f4e549a82fb18eb6140}{I2\+C\+\_\+\+WRITE}}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{VL53L0X_8c_a3b4e6af36a069212336022e32603932a}{get\+Spad\+Info}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}count, \mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} \texorpdfstring{$\ast$}{*}type\+\_\+is\+\_\+aperture)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a479565c118c7119558e649f74204ed32}{get\+Sequence\+Step\+Enables}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{structSequenceStepEnables}{Sequence\+Step\+Enables}} \texorpdfstring{$\ast$}{*}enables)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a483b2d37eb9c9d668eef122a41b3ae96}{get\+Sequence\+Step\+Timeouts}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{structSequenceStepEnables}{Sequence\+Step\+Enables}} const \texorpdfstring{$\ast$}{*}enables, \mbox{\hyperlink{structSequenceStepTimeouts}{Sequence\+Step\+Timeouts}} \texorpdfstring{$\ast$}{*}timeouts)
+\item 
+\mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{VL53L0X_8c_a8199c6d23a98908d4cf851b36281292a}{perform\+Single\+Ref\+Calibration}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} vhv\+\_\+init\+\_\+byte)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a44de3ddd53a8eeec63b9e8f00e174556}{write\+Reg}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} value)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a995dc19a05f01452244a2418e2dedd2e}{write\+Reg16\+Bit}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg, uint16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_aaab5e29193ed8dc21ed91f508174b1df}{write\+Reg32\+Bit}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg, uint32\+\_\+t value)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{VL53L0X_8c_a6030029639c34876b2bb5b1dc6eaaba6}{read\+Reg}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{VL53L0X_8c_ad073f96b52d96014dade2560dd2fa931}{read\+Reg16\+Bit}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{VL53L0X_8c_a2e33ca8fdefb27b09fd324c88144f04f}{read\+Reg32\+Bit}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_abf926d8cb599b8ad510948aed579c7c1}{write\+Multi}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} const \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} count)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a89e66d9d028359f265f599bbc67c63de}{read\+Multi}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}dst, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} count)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a02636870d400ed1f3f5d64c232a23ac3}{set\+Address\+\_\+\+VL53\+L0X}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} new\+\_\+addr)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{VL53L0X_8c_ac84d01ae44e8f9729f9f91de2661462b}{get\+Address\+\_\+\+VL53\+L0X}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+\mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{VL53L0X_8c_a7e445bff76f1b43a528e6be773aa3cd3}{init\+VL53\+L0X}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} io\+\_\+2v8, \mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}handler)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{VL53L0X_8c_a456b88d9c1af5b3214a84f26449f7afc}{set\+Signal\+Rate\+Limit}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, float limit\+\_\+\+Mcps)
+\item 
+float \mbox{\hyperlink{VL53L0X_8c_a3ef22d648f18b92ff8eceb17875be32f}{get\+Signal\+Rate\+Limit}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{VL53L0X_8c_ae6f31dda28a4c5766247d586b59bf24a}{set\+Measurement\+Timing\+Budget}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t budget\+\_\+us)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{VL53L0X_8c_a201f8b8b0990845d45596d01161955fc}{get\+Measurement\+Timing\+Budget}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{VL53L0X_8c_a8b8437b301634dbba8588e6c269b6258}{set\+Vcsel\+Pulse\+Period}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcsel\+Period\+Type}} type, \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} period\+\_\+pclks)
+\item 
+\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{VL53L0X_8c_a729beb08b6052761420f8b2ba9b965a2}{get\+Vcsel\+Pulse\+Period}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcsel\+Period\+Type}} type)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a22a6527fa0e645ead3dd61ed33e2958a}{start\+Continuous}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, uint32\+\_\+t period\+\_\+ms)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a904075e8e565bdb7529b77d508f1c27f}{stop\+Continuous}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{VL53L0X_8c_a4115dd2d5811402bad03557855e86071}{read\+Range\+Continuous\+Millimeters}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \texorpdfstring{$\ast$}{*}extra\+Stats)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{VL53L0X_8c_a8eda71f2217bcd6ee690e2262984914b}{read\+Range\+Single\+Millimeters}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, \mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \texorpdfstring{$\ast$}{*}extra\+Stats)
+\item 
+\mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} \mbox{\hyperlink{VL53L0X_8c_a80fb46cd819140147af2ff13d4c4bbc2}{timeout\+Occurred}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\item 
+void \mbox{\hyperlink{VL53L0X_8c_a634e5fa22f59012704908b35432014e6}{set\+Timeout}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev, uint16\+\_\+t timeout)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{VL53L0X_8c_ac567ab28a6457e12d7b3fd43d3a560ce}{get\+Timeout}} (\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{VL53L0X_8c_ab5c0fbe837494c5f9130a5914854250d}\label{VL53L0X_8c_ab5c0fbe837494c5f9130a5914854250d} 
+\index{VL53L0X.c@{VL53L0X.c}!I2C\_READ@{I2C\_READ}}
+\index{I2C\_READ@{I2C\_READ}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_READ}{I2C\_READ}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+READ~1}
+
+\Hypertarget{VL53L0X_8c_afa3215f0aa766367f5d34bee80929152}\label{VL53L0X_8c_afa3215f0aa766367f5d34bee80929152} 
+\index{VL53L0X.c@{VL53L0X.c}!I2C\_TIMEOUT@{I2C\_TIMEOUT}}
+\index{I2C\_TIMEOUT@{I2C\_TIMEOUT}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_TIMEOUT}{I2C\_TIMEOUT}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+TIMEOUT~100}
+
+\Hypertarget{VL53L0X_8c_a9536bf85bced4f4e549a82fb18eb6140}\label{VL53L0X_8c_a9536bf85bced4f4e549a82fb18eb6140} 
+\index{VL53L0X.c@{VL53L0X.c}!I2C\_WRITE@{I2C\_WRITE}}
+\index{I2C\_WRITE@{I2C\_WRITE}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_WRITE}{I2C\_WRITE}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+WRITE~0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{VL53L0X_8c_ac84d01ae44e8f9729f9f91de2661462b}\label{VL53L0X_8c_ac84d01ae44e8f9729f9f91de2661462b} 
+\index{VL53L0X.c@{VL53L0X.c}!getAddress\_VL53L0X@{getAddress\_VL53L0X}}
+\index{getAddress\_VL53L0X@{getAddress\_VL53L0X}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getAddress\_VL53L0X()}{getAddress\_VL53L0X()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} get\+Address\+\_\+\+VL53\+L0X (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev }\end{DoxyParamCaption})}
+
+\Hypertarget{VL53L0X_8c_a201f8b8b0990845d45596d01161955fc}\label{VL53L0X_8c_a201f8b8b0990845d45596d01161955fc} 
+\index{VL53L0X.c@{VL53L0X.c}!getMeasurementTimingBudget@{getMeasurementTimingBudget}}
+\index{getMeasurementTimingBudget@{getMeasurementTimingBudget}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getMeasurementTimingBudget()}{getMeasurementTimingBudget()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+Measurement\+Timing\+Budget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a201f8b8b0990845d45596d01161955fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a201f8b8b0990845d45596d01161955fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a479565c118c7119558e649f74204ed32}\label{VL53L0X_8c_a479565c118c7119558e649f74204ed32} 
+\index{VL53L0X.c@{VL53L0X.c}!getSequenceStepEnables@{getSequenceStepEnables}}
+\index{getSequenceStepEnables@{getSequenceStepEnables}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getSequenceStepEnables()}{getSequenceStepEnables()}}
+{\footnotesize\ttfamily void get\+Sequence\+Step\+Enables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{structSequenceStepEnables}{Sequence\+Step\+Enables}} \texorpdfstring{$\ast$}{*}}]{enables }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a479565c118c7119558e649f74204ed32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a479565c118c7119558e649f74204ed32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a483b2d37eb9c9d668eef122a41b3ae96}\label{VL53L0X_8c_a483b2d37eb9c9d668eef122a41b3ae96} 
+\index{VL53L0X.c@{VL53L0X.c}!getSequenceStepTimeouts@{getSequenceStepTimeouts}}
+\index{getSequenceStepTimeouts@{getSequenceStepTimeouts}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getSequenceStepTimeouts()}{getSequenceStepTimeouts()}}
+{\footnotesize\ttfamily void get\+Sequence\+Step\+Timeouts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{structSequenceStepEnables}{Sequence\+Step\+Enables}} const \texorpdfstring{$\ast$}{*}}]{enables,  }\item[{\mbox{\hyperlink{structSequenceStepTimeouts}{Sequence\+Step\+Timeouts}} \texorpdfstring{$\ast$}{*}}]{timeouts }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a483b2d37eb9c9d668eef122a41b3ae96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a483b2d37eb9c9d668eef122a41b3ae96_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a3ef22d648f18b92ff8eceb17875be32f}\label{VL53L0X_8c_a3ef22d648f18b92ff8eceb17875be32f} 
+\index{VL53L0X.c@{VL53L0X.c}!getSignalRateLimit@{getSignalRateLimit}}
+\index{getSignalRateLimit@{getSignalRateLimit}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getSignalRateLimit()}{getSignalRateLimit()}}
+{\footnotesize\ttfamily float get\+Signal\+Rate\+Limit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a3ef22d648f18b92ff8eceb17875be32f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a3b4e6af36a069212336022e32603932a}\label{VL53L0X_8c_a3b4e6af36a069212336022e32603932a} 
+\index{VL53L0X.c@{VL53L0X.c}!getSpadInfo@{getSpadInfo}}
+\index{getSpadInfo@{getSpadInfo}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getSpadInfo()}{getSpadInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} get\+Spad\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{count,  }\item[{\mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} \texorpdfstring{$\ast$}{*}}]{type\+\_\+is\+\_\+aperture }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a3b4e6af36a069212336022e32603932a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{VL53L0X_8c_a3b4e6af36a069212336022e32603932a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_ac567ab28a6457e12d7b3fd43d3a560ce}\label{VL53L0X_8c_ac567ab28a6457e12d7b3fd43d3a560ce} 
+\index{VL53L0X.c@{VL53L0X.c}!getTimeout@{getTimeout}}
+\index{getTimeout@{getTimeout}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getTimeout()}{getTimeout()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+Timeout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev }\end{DoxyParamCaption})}
+
+\Hypertarget{VL53L0X_8c_a729beb08b6052761420f8b2ba9b965a2}\label{VL53L0X_8c_a729beb08b6052761420f8b2ba9b965a2} 
+\index{VL53L0X.c@{VL53L0X.c}!getVcselPulsePeriod@{getVcselPulsePeriod}}
+\index{getVcselPulsePeriod@{getVcselPulsePeriod}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{getVcselPulsePeriod()}{getVcselPulsePeriod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} get\+Vcsel\+Pulse\+Period (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcsel\+Period\+Type}}}]{type }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a729beb08b6052761420f8b2ba9b965a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a729beb08b6052761420f8b2ba9b965a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a7e445bff76f1b43a528e6be773aa3cd3}\label{VL53L0X_8c_a7e445bff76f1b43a528e6be773aa3cd3} 
+\index{VL53L0X.c@{VL53L0X.c}!initVL53L0X@{initVL53L0X}}
+\index{initVL53L0X@{initVL53L0X}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{initVL53L0X()}{initVL53L0X()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} init\+VL53\+L0X (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}}}]{io\+\_\+2v8,  }\item[{\mbox{\hyperlink{structI2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{handler }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a7e445bff76f1b43a528e6be773aa3cd3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{VL53L0X_8c_a7e445bff76f1b43a528e6be773aa3cd3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a8199c6d23a98908d4cf851b36281292a}\label{VL53L0X_8c_a8199c6d23a98908d4cf851b36281292a} 
+\index{VL53L0X.c@{VL53L0X.c}!performSingleRefCalibration@{performSingleRefCalibration}}
+\index{performSingleRefCalibration@{performSingleRefCalibration}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{performSingleRefCalibration()}{performSingleRefCalibration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} perform\+Single\+Ref\+Calibration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{vhv\+\_\+init\+\_\+byte }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a8199c6d23a98908d4cf851b36281292a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a8199c6d23a98908d4cf851b36281292a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a89e66d9d028359f265f599bbc67c63de}\label{VL53L0X_8c_a89e66d9d028359f265f599bbc67c63de} 
+\index{VL53L0X.c@{VL53L0X.c}!readMulti@{readMulti}}
+\index{readMulti@{readMulti}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{readMulti()}{readMulti()}}
+{\footnotesize\ttfamily void read\+Multi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dst,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{count }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{VL53L0X_8c_a89e66d9d028359f265f599bbc67c63de_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a89e66d9d028359f265f599bbc67c63de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a4115dd2d5811402bad03557855e86071}\label{VL53L0X_8c_a4115dd2d5811402bad03557855e86071} 
+\index{VL53L0X.c@{VL53L0X.c}!readRangeContinuousMillimeters@{readRangeContinuousMillimeters}}
+\index{readRangeContinuousMillimeters@{readRangeContinuousMillimeters}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{readRangeContinuousMillimeters()}{readRangeContinuousMillimeters()}}
+{\footnotesize\ttfamily uint16\+\_\+t read\+Range\+Continuous\+Millimeters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \texorpdfstring{$\ast$}{*}}]{extra\+Stats }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a4115dd2d5811402bad03557855e86071_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a4115dd2d5811402bad03557855e86071_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a8eda71f2217bcd6ee690e2262984914b}\label{VL53L0X_8c_a8eda71f2217bcd6ee690e2262984914b} 
+\index{VL53L0X.c@{VL53L0X.c}!readRangeSingleMillimeters@{readRangeSingleMillimeters}}
+\index{readRangeSingleMillimeters@{readRangeSingleMillimeters}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{readRangeSingleMillimeters()}{readRangeSingleMillimeters()}}
+{\footnotesize\ttfamily uint16\+\_\+t read\+Range\+Single\+Millimeters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{structstatInfo__t__VL53L0X}{stat\+Info\+\_\+t\+\_\+\+VL53\+L0X}} \texorpdfstring{$\ast$}{*}}]{extra\+Stats }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a8eda71f2217bcd6ee690e2262984914b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a8eda71f2217bcd6ee690e2262984914b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a6030029639c34876b2bb5b1dc6eaaba6}\label{VL53L0X_8c_a6030029639c34876b2bb5b1dc6eaaba6} 
+\index{VL53L0X.c@{VL53L0X.c}!readReg@{readReg}}
+\index{readReg@{readReg}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{readReg()}{readReg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} read\+Reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{VL53L0X_8c_a6030029639c34876b2bb5b1dc6eaaba6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a6030029639c34876b2bb5b1dc6eaaba6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_ad073f96b52d96014dade2560dd2fa931}\label{VL53L0X_8c_ad073f96b52d96014dade2560dd2fa931} 
+\index{VL53L0X.c@{VL53L0X.c}!readReg16Bit@{readReg16Bit}}
+\index{readReg16Bit@{readReg16Bit}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{readReg16Bit()}{readReg16Bit()}}
+{\footnotesize\ttfamily uint16\+\_\+t read\+Reg16\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{VL53L0X_8c_ad073f96b52d96014dade2560dd2fa931_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_ad073f96b52d96014dade2560dd2fa931_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a2e33ca8fdefb27b09fd324c88144f04f}\label{VL53L0X_8c_a2e33ca8fdefb27b09fd324c88144f04f} 
+\index{VL53L0X.c@{VL53L0X.c}!readReg32Bit@{readReg32Bit}}
+\index{readReg32Bit@{readReg32Bit}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{readReg32Bit()}{readReg32Bit()}}
+{\footnotesize\ttfamily uint32\+\_\+t read\+Reg32\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{VL53L0X_8c_a2e33ca8fdefb27b09fd324c88144f04f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a02636870d400ed1f3f5d64c232a23ac3}\label{VL53L0X_8c_a02636870d400ed1f3f5d64c232a23ac3} 
+\index{VL53L0X.c@{VL53L0X.c}!setAddress\_VL53L0X@{setAddress\_VL53L0X}}
+\index{setAddress\_VL53L0X@{setAddress\_VL53L0X}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{setAddress\_VL53L0X()}{setAddress\_VL53L0X()}}
+{\footnotesize\ttfamily void set\+Address\+\_\+\+VL53\+L0X (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{new\+\_\+addr }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a02636870d400ed1f3f5d64c232a23ac3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{VL53L0X_8c_a02636870d400ed1f3f5d64c232a23ac3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_ae6f31dda28a4c5766247d586b59bf24a}\label{VL53L0X_8c_ae6f31dda28a4c5766247d586b59bf24a} 
+\index{VL53L0X.c@{VL53L0X.c}!setMeasurementTimingBudget@{setMeasurementTimingBudget}}
+\index{setMeasurementTimingBudget@{setMeasurementTimingBudget}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{setMeasurementTimingBudget()}{setMeasurementTimingBudget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} set\+Measurement\+Timing\+Budget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{uint32\+\_\+t}]{budget\+\_\+us }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_ae6f31dda28a4c5766247d586b59bf24a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_ae6f31dda28a4c5766247d586b59bf24a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a456b88d9c1af5b3214a84f26449f7afc}\label{VL53L0X_8c_a456b88d9c1af5b3214a84f26449f7afc} 
+\index{VL53L0X.c@{VL53L0X.c}!setSignalRateLimit@{setSignalRateLimit}}
+\index{setSignalRateLimit@{setSignalRateLimit}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{setSignalRateLimit()}{setSignalRateLimit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} set\+Signal\+Rate\+Limit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{float}]{limit\+\_\+\+Mcps }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a456b88d9c1af5b3214a84f26449f7afc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a456b88d9c1af5b3214a84f26449f7afc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a634e5fa22f59012704908b35432014e6}\label{VL53L0X_8c_a634e5fa22f59012704908b35432014e6} 
+\index{VL53L0X.c@{VL53L0X.c}!setTimeout@{setTimeout}}
+\index{setTimeout@{setTimeout}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{setTimeout()}{setTimeout()}}
+{\footnotesize\ttfamily void set\+Timeout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{uint16\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+\Hypertarget{VL53L0X_8c_a8b8437b301634dbba8588e6c269b6258}\label{VL53L0X_8c_a8b8437b301634dbba8588e6c269b6258} 
+\index{VL53L0X.c@{VL53L0X.c}!setVcselPulsePeriod@{setVcselPulsePeriod}}
+\index{setVcselPulsePeriod@{setVcselPulsePeriod}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{setVcselPulsePeriod()}{setVcselPulsePeriod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} set\+Vcsel\+Pulse\+Period (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcsel\+Period\+Type}}}]{type,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{period\+\_\+pclks }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a8b8437b301634dbba8588e6c269b6258_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{VL53L0X_8c_a8b8437b301634dbba8588e6c269b6258_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a22a6527fa0e645ead3dd61ed33e2958a}\label{VL53L0X_8c_a22a6527fa0e645ead3dd61ed33e2958a} 
+\index{VL53L0X.c@{VL53L0X.c}!startContinuous@{startContinuous}}
+\index{startContinuous@{startContinuous}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{startContinuous()}{startContinuous()}}
+{\footnotesize\ttfamily void start\+Continuous (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{uint32\+\_\+t}]{period\+\_\+ms }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a22a6527fa0e645ead3dd61ed33e2958a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a904075e8e565bdb7529b77d508f1c27f}\label{VL53L0X_8c_a904075e8e565bdb7529b77d508f1c27f} 
+\index{VL53L0X.c@{VL53L0X.c}!stopContinuous@{stopContinuous}}
+\index{stopContinuous@{stopContinuous}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{stopContinuous()}{stopContinuous()}}
+{\footnotesize\ttfamily void stop\+Continuous (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a904075e8e565bdb7529b77d508f1c27f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a80fb46cd819140147af2ff13d4c4bbc2}\label{VL53L0X_8c_a80fb46cd819140147af2ff13d4c4bbc2} 
+\index{VL53L0X.c@{VL53L0X.c}!timeoutOccurred@{timeoutOccurred}}
+\index{timeoutOccurred@{timeoutOccurred}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{timeoutOccurred()}{timeoutOccurred()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{VL53L0X_8h_abb452686968e48b67397da5f97445f5b}{bool}} timeout\+Occurred (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev }\end{DoxyParamCaption})}
+
+\Hypertarget{VL53L0X_8c_abf926d8cb599b8ad510948aed579c7c1}\label{VL53L0X_8c_abf926d8cb599b8ad510948aed579c7c1} 
+\index{VL53L0X.c@{VL53L0X.c}!writeMulti@{writeMulti}}
+\index{writeMulti@{writeMulti}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{writeMulti()}{writeMulti()}}
+{\footnotesize\ttfamily void write\+Multi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} const \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{count }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{VL53L0X_8c_abf926d8cb599b8ad510948aed579c7c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{VL53L0X_8c_abf926d8cb599b8ad510948aed579c7c1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a44de3ddd53a8eeec63b9e8f00e174556}\label{VL53L0X_8c_a44de3ddd53a8eeec63b9e8f00e174556} 
+\index{VL53L0X.c@{VL53L0X.c}!writeReg@{writeReg}}
+\index{writeReg@{writeReg}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{writeReg()}{writeReg()}}
+{\footnotesize\ttfamily void write\+Reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{value }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{VL53L0X_8c_a44de3ddd53a8eeec63b9e8f00e174556_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a44de3ddd53a8eeec63b9e8f00e174556_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_a995dc19a05f01452244a2418e2dedd2e}\label{VL53L0X_8c_a995dc19a05f01452244a2418e2dedd2e} 
+\index{VL53L0X.c@{VL53L0X.c}!writeReg16Bit@{writeReg16Bit}}
+\index{writeReg16Bit@{writeReg16Bit}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{writeReg16Bit()}{writeReg16Bit()}}
+{\footnotesize\ttfamily void write\+Reg16\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg,  }\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{VL53L0X_8c_a995dc19a05f01452244a2418e2dedd2e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VL53L0X_8c_a995dc19a05f01452244a2418e2dedd2e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{VL53L0X_8c_aaab5e29193ed8dc21ed91f508174b1df}\label{VL53L0X_8c_aaab5e29193ed8dc21ed91f508174b1df} 
+\index{VL53L0X.c@{VL53L0X.c}!writeReg32Bit@{writeReg32Bit}}
+\index{writeReg32Bit@{writeReg32Bit}!VL53L0X.c@{VL53L0X.c}}
+\doxysubsubsection{\texorpdfstring{writeReg32Bit()}{writeReg32Bit()}}
+{\footnotesize\ttfamily void write\+Reg32\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53\+L0\+X\+\_\+\+Dev\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{dev,  }\item[{\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{VL53L0X_8c_aaab5e29193ed8dc21ed91f508174b1df_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{VL53L0X_8c_aaab5e29193ed8dc21ed91f508174b1df_icgraph}
+\end{center}
+\end{figure}

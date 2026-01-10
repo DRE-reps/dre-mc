@@ -1,0 +1,7 @@
+<map id="HAL_NVIC_DisableIRQ" name="HAL_NVIC_DisableIRQ">
+<area shape="rect" id="Node000001" title=" " alt="" coords="244,31,411,56"/>
+<area shape="rect" id="Node000002" href="$group__TIM__Exported__Functions__Group1.html#ga13352a6c9cb3225511e5f29dbb894e84" title="TIM_Base MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="5,5,196,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,35,196,31,197,26,231,30"/>
+<area shape="rect" id="Node000003" href="$group__UART__Exported__Functions__Group1.html#ga718f39804e3b910d738a0e1e46151188" title="UART MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="19,55,182,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,56,183,61,182,56,230,51"/>
+</map>

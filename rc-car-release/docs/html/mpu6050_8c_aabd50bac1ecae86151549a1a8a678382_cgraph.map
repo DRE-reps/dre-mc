@@ -1,0 +1,11 @@
+<map id="MPU6050_Read_All" name="MPU6050_Read_All">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,153,105"/>
+<area shape="rect" id="Node000002" href="$group__HAL__Exported__Functions__Group2.html#gaf2c4f03d53e997a54e1fd5e80daa55c4" title=" " alt="" coords="227,5,332,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,77,200,40,221,32,223,37,202,44,110,82"/>
+<area shape="rect" id="Node000003" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="201,55,357,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,81,187,76,188,82,154,86"/>
+<area shape="rect" id="Node000004" href="$mpu6050_8c.html#ae076945741048d0c5e3dbfeabc27f5e2" title=" " alt="" coords="211,104,348,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,99,197,104,197,109,153,104"/>
+<area shape="rect" id="Node000005" href="$logger_8c.html#a3278730f835b7230a0de447ea4afd3f0" title=" " alt="" coords="239,153,319,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="112,103,202,138,227,147,225,152,200,143,110,108"/>
+</map>

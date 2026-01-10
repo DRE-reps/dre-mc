@@ -1,0 +1,106 @@
+\doxysubsubsubsection{MSI Configuration}
+\hypertarget{group__RCC__MSI__Configuration}{}\label{group__RCC__MSI__Configuration}\index{MSI Configuration@{MSI Configuration}}
+Collaboration diagram for MSI Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{group__RCC__MSI__Configuration}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_gaf6797e8502d134483ba092f5d4345c70}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to enable Internal Multi Speed oscillator (MSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_ga49c15fd232bd099f020e508fe9c3cd12}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macro to disable the Internal Multi Speed oscillator (MSI). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_ga6c1e051a956f43b1895e8b6c0572c45e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+CALIBRATIONVALUE\+\_\+\+ADJUST}}(\+\_\+\+MSICALIBRATIONVALUE\+\_\+)~          (MODIFY\+\_\+\+REG(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+MSITRIM, (uint32\+\_\+t)(\+\_\+\+MSICALIBRATIONVALUE\+\_\+) $<$$<$ RCC\+\_\+\+ICSCR\+\_\+\+MSITRIM\+\_\+\+Pos))
+\begin{DoxyCompactList}\small\item\em Macro adjusts Internal Multi Speed oscillator (MSI) calibration value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_gaa68665004900d9e54d6083861c727af9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+RANGE\+\_\+\+CONFIG}}(\+\_\+\+MSIRANGEVALUE\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__RCC__MSI__Configuration_gaad04b0c76f81734ba4881d97321667b9}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+MSI\+\_\+\+RANGE}}()~(uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE))
+\begin{DoxyCompactList}\small\item\em Macro to get the Internal Multi Speed oscillator (MSI) clock range in run mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RCC__MSI__Configuration_gaad04b0c76f81734ba4881d97321667b9}\label{group__RCC__MSI__Configuration_gaad04b0c76f81734ba4881d97321667b9} 
+\index{MSI Configuration@{MSI Configuration}!\_\_HAL\_RCC\_GET\_MSI\_RANGE@{\_\_HAL\_RCC\_GET\_MSI\_RANGE}}
+\index{\_\_HAL\_RCC\_GET\_MSI\_RANGE@{\_\_HAL\_RCC\_GET\_MSI\_RANGE}!MSI Configuration@{MSI Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_MSI\_RANGE}{\_\_HAL\_RCC\_GET\_MSI\_RANGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+MSI\+\_\+\+RANGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+MSIRANGE))}
+
+
+
+Macro to get the Internal Multi Speed oscillator (MSI) clock range in run mode. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em MSI} & clock range. This parameter must be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__MSI__Clock__Range_ga3a266a56e6a43bdaef4bbcc1eee4c360}{RCC\+\_\+\+MSIRANGE\+\_\+0} MSI clock is around 65.\+536 KHz \item \doxylink{group__RCC__MSI__Clock__Range_ga90601d6a9beb6a00245ecbf193d0ece5}{RCC\+\_\+\+MSIRANGE\+\_\+1} MSI clock is around 131.\+072 KHz \item \doxylink{group__RCC__MSI__Clock__Range_gafa12a5d5063914b4aa66c8f12324926e}{RCC\+\_\+\+MSIRANGE\+\_\+2} MSI clock is around 262.\+144 KHz \item \doxylink{group__RCC__MSI__Clock__Range_ga2eb0f8e9e5800747454d52f5497dea57}{RCC\+\_\+\+MSIRANGE\+\_\+3} MSI clock is around 524.\+288 KHz \item \doxylink{group__RCC__MSI__Clock__Range_gab5ca16a71f018ae2ceb5bcef29434f1c}{RCC\+\_\+\+MSIRANGE\+\_\+4} MSI clock is around 1.\+048 MHz \item \doxylink{group__RCC__MSI__Clock__Range_gabcd068b50d4fdfb3529272fbb169ebb1}{RCC\+\_\+\+MSIRANGE\+\_\+5} MSI clock is around 2.\+097 MHz (default after Reset or wake-\/up from STANDBY) \item \doxylink{group__RCC__MSI__Clock__Range_ga7f6e3de13b041244869fba14585c43fe}{RCC\+\_\+\+MSIRANGE\+\_\+6} MSI clock is around 4.\+194 MHz \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__RCC__MSI__Configuration_ga6c1e051a956f43b1895e8b6c0572c45e}\label{group__RCC__MSI__Configuration_ga6c1e051a956f43b1895e8b6c0572c45e} 
+\index{MSI Configuration@{MSI Configuration}!\_\_HAL\_RCC\_MSI\_CALIBRATIONVALUE\_ADJUST@{\_\_HAL\_RCC\_MSI\_CALIBRATIONVALUE\_ADJUST}}
+\index{\_\_HAL\_RCC\_MSI\_CALIBRATIONVALUE\_ADJUST@{\_\_HAL\_RCC\_MSI\_CALIBRATIONVALUE\_ADJUST}!MSI Configuration@{MSI Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_MSI\_CALIBRATIONVALUE\_ADJUST}{\_\_HAL\_RCC\_MSI\_CALIBRATIONVALUE\_ADJUST}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+CALIBRATIONVALUE\+\_\+\+ADJUST(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+MSICALIBRATIONVALUE\+\_\+ }\end{DoxyParamCaption})~          (MODIFY\+\_\+\+REG(RCC-\/$>$ICSCR, RCC\+\_\+\+ICSCR\+\_\+\+MSITRIM, (uint32\+\_\+t)(\+\_\+\+MSICALIBRATIONVALUE\+\_\+) $<$$<$ RCC\+\_\+\+ICSCR\+\_\+\+MSITRIM\+\_\+\+Pos))}
+
+
+
+Macro adjusts Internal Multi Speed oscillator (MSI) calibration value. 
+
+\begin{DoxyNote}{Note}
+The calibration is used to compensate for the variations in voltage and temperature that influence the frequency of the internal MSI RC. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+MSICALIBRATIONVALUE\+\_\+} & specifies the calibration trimming value. (default is RCC\+\_\+\+MSICALIBRATION\+\_\+\+DEFAULT). This parameter must be a number between 0 and 0x\+FF. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__RCC__MSI__Configuration_ga49c15fd232bd099f020e508fe9c3cd12}\label{group__RCC__MSI__Configuration_ga49c15fd232bd099f020e508fe9c3cd12} 
+\index{MSI Configuration@{MSI Configuration}!\_\_HAL\_RCC\_MSI\_DISABLE@{\_\_HAL\_RCC\_MSI\_DISABLE}}
+\index{\_\_HAL\_RCC\_MSI\_DISABLE@{\_\_HAL\_RCC\_MSI\_DISABLE}!MSI Configuration@{MSI Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_MSI\_DISABLE}{\_\_HAL\_RCC\_MSI\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}} = DISABLE)}
+
+
+
+Macro to disable the Internal Multi Speed oscillator (MSI). 
+
+\begin{DoxyNote}{Note}
+The MSI is stopped by hardware when entering STOP and STANDBY modes. It is used (enabled by hardware) as system clock source after startup from Reset, wakeup from STOP and STANDBY mode, or in case of failure of the HSE used directly or indirectly as system clock (if the Clock Security System CSS is enabled). 
+
+MSI can not be stopped if it is used as system clock source. In this case, you have to select another source of the system clock then stop the MSI. 
+
+When the MSI is stopped, MSIRDY flag goes low after 6 MSI oscillator clock cycles. 
+\end{DoxyNote}
+\Hypertarget{group__RCC__MSI__Configuration_gaf6797e8502d134483ba092f5d4345c70}\label{group__RCC__MSI__Configuration_gaf6797e8502d134483ba092f5d4345c70} 
+\index{MSI Configuration@{MSI Configuration}!\_\_HAL\_RCC\_MSI\_ENABLE@{\_\_HAL\_RCC\_MSI\_ENABLE}}
+\index{\_\_HAL\_RCC\_MSI\_ENABLE@{\_\_HAL\_RCC\_MSI\_ENABLE}!MSI Configuration@{MSI Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_MSI\_ENABLE}{\_\_HAL\_RCC\_MSI\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga58be354019d67406b5b1788377caa74e}{RCC\+\_\+\+CR\+\_\+\+MSION\+\_\+\+BB}} = ENABLE)}
+
+
+
+Macro to enable Internal Multi Speed oscillator (MSI). 
+
+\begin{DoxyNote}{Note}
+After enabling the MSI, the application software should wait on MSIRDY flag to be set indicating that MSI clock is stable and can be used as system clock source. 
+\end{DoxyNote}
+\Hypertarget{group__RCC__MSI__Configuration_gaa68665004900d9e54d6083861c727af9}\label{group__RCC__MSI__Configuration_gaa68665004900d9e54d6083861c727af9} 
+\index{MSI Configuration@{MSI Configuration}!\_\_HAL\_RCC\_MSI\_RANGE\_CONFIG@{\_\_HAL\_RCC\_MSI\_RANGE\_CONFIG}}
+\index{\_\_HAL\_RCC\_MSI\_RANGE\_CONFIG@{\_\_HAL\_RCC\_MSI\_RANGE\_CONFIG}!MSI Configuration@{MSI Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_MSI\_RANGE\_CONFIG}{\_\_HAL\_RCC\_MSI\_RANGE\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MSI\+\_\+\+RANGE\+\_\+\+CONFIG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+MSIRANGEVALUE\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ (MODIFY\_REG(RCC-\/>ICSCR,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ RCC\_ICSCR\_MSIRANGE,\ (uint32\_t)(\_MSIRANGEVALUE\_)))}
+
+\end{DoxyCode}

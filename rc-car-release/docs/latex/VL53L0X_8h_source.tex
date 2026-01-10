@@ -1,0 +1,250 @@
+\doxysection{VL53\+L0\+X.\+h}
+\hypertarget{VL53L0X_8h_source}{}\label{VL53L0X_8h_source}\index{Core/Inc/VL53L0X.h@{Core/Inc/VL53L0X.h}}
+\mbox{\hyperlink{VL53L0X_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal_8h}{stm32l1xx\_hal.h}}"{}}\ \textcolor{comment}{//\ Change\ it\ for\ your\ requirements.}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ VL53L0X\_h}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ VL53L0X\_h}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ For\ quick\ and\ dirty\ C++\ compatibility}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ bool\ \ uint8\_t}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ true\ \ 1}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ false\ 0}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Defines}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ I\ use\ a\ 8-\/bit\ number\ for\ the\ address,\ LSB\ must\ be\ 0\ so\ that\ I\ can}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ OR\ over\ the\ last\ bit\ correctly\ based\ on\ reads\ and\ writes}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ ADDRESS\_DEFAULT\ 0b01010010}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Decode\ VCSEL\ (vertical\ cavity\ surface\ emitting\ laser)\ pulse\ period\ in\ PCLKs}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ from\ register\ value}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ based\ on\ VL53L0X\_decode\_vcsel\_period()}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ decodeVcselPeriod(reg\_val)\ \ \ \ \ \ (((reg\_val)\ +\ 1)\ <<\ 1)}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Encode\ VCSEL\ pulse\ period\ register\ value\ from\ period\ in\ PCLKs}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ based\ on\ VL53L0X\_encode\_vcsel\_period()}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ encodeVcselPeriod(period\_pclks)\ (((period\_pclks)\ >>\ 1)\ -\/\ 1)}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Calculate\ macro\ period\ in\ *nanoseconds*\ from\ VCSEL\ period\ in\ PCLKs}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ based\ on\ VL53L0X\_calc\_macro\_period\_ps()}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ PLL\_period\_ps\ =\ 1655;\ macro\_period\_vclks\ =\ 2304}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ calcMacroPeriod(vcsel\_period\_pclks)\ ((((uint32\_t)2304\ *\ (vcsel\_period\_pclks)\ *\ 1655)\ +\ 500)\ /\ 1000)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ register\ addresses\ from\ API\ vl53l0x\_device.h\ (ordered\ as\ listed\ there)}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fc}{regAddr}}\ \{}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca0572317826b04e510f09d8a070b3540c}{SYSRANGE\_START}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca82d522e471992e8d46c4a5c79f0d05aa}{SYSTEM\_THRESH\_HIGH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0C,}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaf4f5e587e4253930fd43f4ccf2abd95f}{SYSTEM\_THRESH\_LOW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0E,}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcace84428c7128413d408e2459ed68eafd}{SYSTEM\_SEQUENCE\_CONFIG}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca23fec83ad3e9764586e337ebcc52f1e1}{SYSTEM\_RANGE\_CONFIG}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x09,}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca72b8939cacbf3f6a6e07f4f6500e80c0}{SYSTEM\_INTERMEASUREMENT\_PERIOD}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x04,}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca103217c59438b19f1a7412dfbf1852f6}{SYSTEM\_INTERRUPT\_CONFIG\_GPIO}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0A,}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca69210b7ac9b6526275bab8d1d160f564}{GPIO\_HV\_MUX\_ACTIVE\_HIGH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x84,}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca94dc30749a68a176dc29af24cc605def}{SYSTEM\_INTERRUPT\_CLEAR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0B,}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaf0c7e8155a2e1df0ad804719cf34deb7}{RESULT\_INTERRUPT\_STATUS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x13,}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcac4d952d37d2014b30f624560112ce7c3}{RESULT\_RANGE\_STATUS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x14,}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca57df6af7139947160c0994d1bc1fccf5}{RESULT\_CORE\_AMBIENT\_WINDOW\_EVENTS\_RTN}}\ \ \ \ \ \ \ =\ 0xBC,}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaf72e4403a6605044e6f557507d6c481c}{RESULT\_CORE\_RANGING\_TOTAL\_EVENTS\_RTN}}\ \ \ \ \ \ \ \ =\ 0xC0,}
+\DoxyCodeLine{00056\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaf227a415d3b83a9fbeb5e3937b44e8ba}{RESULT\_CORE\_AMBIENT\_WINDOW\_EVENTS\_REF}}\ \ \ \ \ \ \ =\ 0xD0,}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca7bac950ef6a0c581508354739acd3203}{RESULT\_CORE\_RANGING\_TOTAL\_EVENTS\_REF}}\ \ \ \ \ \ \ \ =\ 0xD4,}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca087aeada52bd56d30115238ec3c81d78}{RESULT\_PEAK\_SIGNAL\_RATE\_REF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB6,}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca150cbb129a04aae1ddee7c5e430fec35}{ALGO\_PART\_TO\_PART\_RANGE\_OFFSET\_MM}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x28,}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca2752d772f9e25ebd9d30237b32ab7311}{I2C\_SLAVE\_DEVICE\_ADDRESS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x8A,}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca960dca4b3f7f4e2a7b2a551fafbad83a}{MSRC\_CONFIG\_CONTROL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x60,}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca283fdcd0d5a4a1891296bacf800bc6df}{PRE\_RANGE\_CONFIG\_MIN\_SNR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x27,}
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca6b6280ff8b47c44b705cceb9067fb9a3}{PRE\_RANGE\_CONFIG\_VALID\_PHASE\_LOW}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x56,}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca40ebfb817bda5955ffadbc9092531f33}{PRE\_RANGE\_CONFIG\_VALID\_PHASE\_HIGH}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x57,}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcafbf0ca7b70d8272c6c3cc0f2df09a7ae}{PRE\_RANGE\_MIN\_COUNT\_RATE\_RTN\_LIMIT}}\ \ \ \ \ \ \ \ \ \ =\ 0x64,}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcac620df9fbf1db9cf7f1ce715be516082}{FINAL\_RANGE\_CONFIG\_MIN\_SNR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x67,}
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcae09ec59a2cb80f96825292763075d1ec}{FINAL\_RANGE\_CONFIG\_VALID\_PHASE\_LOW}}\ \ \ \ \ \ \ \ \ \ =\ 0x47,}
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca75d4bfb549a04584540d035dbe1c16dd}{FINAL\_RANGE\_CONFIG\_VALID\_PHASE\_HIGH}}\ \ \ \ \ \ \ \ \ =\ 0x48,}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaed6cc0dd98a4a25bb37e86f21d9c5917}{FINAL\_RANGE\_CONFIG\_MIN\_COUNT\_RATE\_RTN\_LIMIT}}\ =\ 0x44,}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca54e86bb499fb23c97f788eb2f8c01bb6}{PRE\_RANGE\_CONFIG\_SIGMA\_THRESH\_HI}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x61,}
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca586edb2d3b8bdfc196184822a03ad3ca}{PRE\_RANGE\_CONFIG\_SIGMA\_THRESH\_LO}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x62,}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca2eeaca4398d101d540728724904594e7}{PRE\_RANGE\_CONFIG\_VCSEL\_PERIOD}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x50,}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca2588f85c2beeef9205f43d929a1f1287}{PRE\_RANGE\_CONFIG\_TIMEOUT\_MACROP\_HI}}\ \ \ \ \ \ \ \ \ \ =\ 0x51,}
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca313ceed759dc61c80822d74536b6120b}{PRE\_RANGE\_CONFIG\_TIMEOUT\_MACROP\_LO}}\ \ \ \ \ \ \ \ \ \ =\ 0x52,}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcae0ba689e6f14387eb5384545f6ebfc6e}{SYSTEM\_HISTOGRAM\_BIN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x81,}
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca4cc1bffbc84e42da7ca1efe1bcf832e5}{HISTOGRAM\_CONFIG\_INITIAL\_PHASE\_SELECT}}\ \ \ \ \ \ \ =\ 0x33,}
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca698d6e2a8523aa60327e372d0be35d71}{HISTOGRAM\_CONFIG\_READOUT\_CTRL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x55,}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca6076198bc73de1671b15e02296fe781b}{FINAL\_RANGE\_CONFIG\_VCSEL\_PERIOD}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x70,}
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca6f2484692ad584a85ce5ec3cfb0e0646}{FINAL\_RANGE\_CONFIG\_TIMEOUT\_MACROP\_HI}}\ \ \ \ \ \ \ \ =\ 0x71,}
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcafc90f45c7ec95e74a1e6fa19c325d3b3}{FINAL\_RANGE\_CONFIG\_TIMEOUT\_MACROP\_LO}}\ \ \ \ \ \ \ \ =\ 0x72,}
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca54ad358e286bab31b6c60454e0f5ae37}{CROSSTALK\_COMPENSATION\_PEAK\_RATE\_MCPS}}\ \ \ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcadec775dc79427dfc081824943bb192fc}{MSRC\_CONFIG\_TIMEOUT\_MACROP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x46,}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca9524e9d048ecf09638f5e3e4a017bea7}{SOFT\_RESET\_GO2\_SOFT\_RESET\_N}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xBF,}
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcad1cc283f9cdc5b1ebcc10c45eb59aec0}{IDENTIFICATION\_MODEL\_ID}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xC0,}
+\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca56485105e1cf5d9974a9841530e1f68f}{IDENTIFICATION\_REVISION\_ID}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xC2,}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaf040ebb0bb9e455e3bbdacf648371142}{OSC\_CALIBRATE\_VAL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF8,}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca5ba27b3c94137a0f65a1cb4df1a82eae}{GLOBAL\_CONFIG\_VCSEL\_WIDTH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x32,}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcafd2f37e2c0ed6f65141ffa77090c331a}{GLOBAL\_CONFIG\_SPAD\_ENABLES\_REF\_0}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB0,}
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca4eb48eb5c59abab37965865979d323cb}{GLOBAL\_CONFIG\_SPAD\_ENABLES\_REF\_1}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB1,}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaba35f5420f1144a264c5d6672aed0433}{GLOBAL\_CONFIG\_SPAD\_ENABLES\_REF\_2}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB2,}
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca635fdb4fe77cb007db8da008382c83c7}{GLOBAL\_CONFIG\_SPAD\_ENABLES\_REF\_3}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB3,}
+\DoxyCodeLine{00105\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca0e174470e2afd78c4d5ada7fb0d7c675}{GLOBAL\_CONFIG\_SPAD\_ENABLES\_REF\_4}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB4,}
+\DoxyCodeLine{00106\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaa0ceefd145302283ceb7dc81478f840e}{GLOBAL\_CONFIG\_SPAD\_ENABLES\_REF\_5}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xB5,}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca7135328cd131cbb09febea6f5f97e69c}{GLOBAL\_CONFIG\_REF\_EN\_START\_SELECT}}\ \ \ \ \ \ \ \ \ \ \ =\ 0xB6,}
+\DoxyCodeLine{00109\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca074e077a78f07f8198e457bb47919166}{DYNAMIC\_SPAD\_NUM\_REQUESTED\_REF\_SPAD}}\ \ \ \ \ \ \ \ \ =\ 0x4E,}
+\DoxyCodeLine{00110\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaa59c9def7b0d4c9988d4587c439f80f7}{DYNAMIC\_SPAD\_REF\_EN\_START\_OFFSET}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x4F,}
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca9e76d2cebc3c79067bcbf32af0af18bf}{POWER\_MANAGEMENT\_GO1\_POWER\_FORCE}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x80,}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca065ec460e2bb203644a9200be037f38a}{VHV\_CONFIG\_PAD\_SCL\_SDA\_\_EXTSUP\_HV}}\ \ \ \ \ \ \ \ \ \ \ =\ 0x89,}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fca21ce06e80db7f971dbe56e5f43a70fcc}{ALGO\_PHASECAL\_LIM}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x30,}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{VL53L0X_8h_aba715d9d4a9eae01b7898c31cfa736fcaa3f4def69e951bf91e26cb27e9180b23}{ALGO\_PHASECAL\_CONFIG\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x30,}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896ca74620bf5eb7a53c38ba2cd9351c5b815}{VcselPeriodPreRange}},\ \mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896ca7a7a58361fb19efc6acb72a0316b3e8b}{VcselPeriodFinalRange}}\ \}\mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcselPeriodType}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ Additional\ info\ for\ one\ measurement}}
+\DoxyCodeLine{00122\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00123\ \ \ uint16\_t\ \mbox{\hyperlink{structstatInfo__t__VL53L0X_a9ed216d1bfc6caf7c49e56b152eb5621}{rawDistance}};\ \textcolor{comment}{//uncorrected\ distance\ \ [mm],\ \ \ uint16\_t}}
+\DoxyCodeLine{00124\ \ \ uint16\_t\ \mbox{\hyperlink{structstatInfo__t__VL53L0X_a948d0d457fadfb6400e41401c6444a2f}{signalCnt}};\ \ \ \textcolor{comment}{//Signal\ \ Counting\ Rate\ [mcps],\ uint16\_t,\ fixpoint9.7}}
+\DoxyCodeLine{00125\ \ \ uint16\_t\ \mbox{\hyperlink{structstatInfo__t__VL53L0X_a2bdd9ab124deaf7d97aa892c51cddbd0}{ambientCnt}};\ \ \textcolor{comment}{//Ambient\ Counting\ Rate\ [mcps],\ uint16\_t,\ fixpoint9.7}}
+\DoxyCodeLine{00126\ \ \ uint16\_t\ \mbox{\hyperlink{structstatInfo__t__VL53L0X_a372af260d7790a3419744de8cac7e157}{spadCnt}};\ \ \ \ \ \textcolor{comment}{//Effective\ SPAD\ return\ count,\ \ uint16\_t,\ fixpoint8.8}}
+\DoxyCodeLine{00127\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{structstatInfo__t__VL53L0X_ae8eba8aee8a6b2051ed427457c974cb4}{rangeStatus}};\ \textcolor{comment}{//Ranging\ status\ (0-\/15)}}
+\DoxyCodeLine{00128\ \}\ \mbox{\hyperlink{structstatInfo__t__VL53L0X}{statInfo\_t\_VL53L0X}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ Device\ object\ structure\ to\ handle\ multiple\ sensors}}
+\DoxyCodeLine{00131\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *\mbox{\hyperlink{structVL53L0X__Dev__t_a97df2d22cc24dfdf9ec54913864f1945}{i2c\_handler}};}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structVL53L0X__Dev__t_ae4bf67a760e066fd92893f62f956fedc}{i2c\_addr}};}
+\DoxyCodeLine{00134\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structVL53L0X__Dev__t_a5d28dbe8c72a4a7744b38c70bbff0669}{io\_timeout}};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structVL53L0X__Dev__t_a59b4561f039ed7323d06e4e82e3c6f39}{did\_timeout}};}
+\DoxyCodeLine{00136\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structVL53L0X__Dev__t_af41001c8f51ebe1fccd2db37f278cacf}{timeout\_start\_ms}};\ \textcolor{comment}{//\ changed\ to\ uint32\_t\ to\ match\ HAL\_GetTick()}}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structVL53L0X__Dev__t_a870b194b482196652f9e46ca618fceaf}{stop\_variable}};}
+\DoxyCodeLine{00138\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structVL53L0X__Dev__t_a2e9ecf056e779d47d63567acb9485208}{measurement\_timing\_budget\_us}};}
+\DoxyCodeLine{00139\ \}\ \mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//\ API\ Functions}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ configures\ chip\ i2c\ and\ lib\ for\ \`{}new\_addr`\ (8\ bit,\ LSB=0)}}
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a02636870d400ed1f3f5d64c232a23ac3}{setAddress\_VL53L0X}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ new\_addr);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ Returns\ the\ current\ I²C\ address.}}
+\DoxyCodeLine{00148\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{VL53L0X_8h_ac84d01ae44e8f9729f9f91de2661462b}{getAddress\_VL53L0X}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ Iniitializes\ and\ configures\ the\ sensor.\ }}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ If\ the\ optional\ argument\ io\_2v8\ is\ 1,\ the\ sensor\ is\ configured\ for\ 2V8\ mode\ (2.8\ V\ I/O);\ }}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ if\ 0,\ the\ sensor\ is\ left\ in\ 1V8\ mode.\ Returns\ 1\ if\ the\ initialization\ completed\ successfully.}}
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{VL53L0X_8h_a7e445bff76f1b43a528e6be773aa3cd3}{initVL53L0X}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \textcolor{keywordtype}{bool}\ io\_2v8,\ \mbox{\hyperlink{structI2C__HandleTypeDef}{I2C\_HandleTypeDef}}\ *handler);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ Sets\ the\ return\ signal\ rate\ limit\ to\ the\ given\ value\ in\ units\ of\ MCPS\ (mega\ counts\ per\ second).\ }}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ This\ is\ the\ minimum\ amplitude\ of\ the\ signal\ reflected\ from\ the\ target\ and\ received\ by\ the\ sensor\ }}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ \ necessary\ for\ it\ to\ report\ a\ valid\ reading.\ Setting\ a\ lower\ limit\ increases\ the\ potential\ range\ }}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ of\ the\ sensor\ but\ also\ increases\ the\ likelihood\ of\ getting\ an\ inaccurate\ reading\ because\ of\ }}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ \ reflections\ from\ objects\ other\ than\ the\ intended\ target.\ This\ limit\ is\ initialized\ to\ 0.25\ MCPS\ }}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ \ by\ default.\ The\ return\ value\ is\ a\ boolean\ indicating\ whether\ the\ requested\ limit\ was\ valid.}}
+\DoxyCodeLine{00161\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{VL53L0X_8h_a456b88d9c1af5b3214a84f26449f7afc}{setSignalRateLimit}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \textcolor{keywordtype}{float}\ limit\_Mcps);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ Returns\ the\ current\ return\ signal\ rate\ limit\ in\ MCPS.}}
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{VL53L0X_8h_a3ef22d648f18b92ff8eceb17875be32f}{getSignalRateLimit}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ Set\ the\ measurement\ timing\ budget\ in\ microseconds,\ which\ is\ the\ time\ allowed}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ for\ one\ measurement;\ the\ ST\ API\ and\ this\ library\ take\ care\ of\ splitting\ the}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ timing\ budget\ among\ the\ sub-\/steps\ in\ the\ ranging\ sequence.\ A\ longer\ timing}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ budget\ allows\ for\ more\ accurate\ measurements.\ Increasing\ the\ budget\ by\ a}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ factor\ of\ N\ decreases\ the\ range\ measurement\ standard\ deviation\ by\ a\ factor\ of}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ sqrt(N).\ Defaults\ to\ about\ 33\ milliseconds;\ the\ minimum\ is\ 20\ ms.}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ based\ on\ VL53L0X\_set\_measurement\_timing\_budget\_micro\_seconds()}}
+\DoxyCodeLine{00173\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{VL53L0X_8h_ae6f31dda28a4c5766247d586b59bf24a}{setMeasurementTimingBudget}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ uint32\_t\ budget\_us);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ Returns\ the\ current\ measurement\ timing\ budget\ in\ microseconds.}}
+\DoxyCodeLine{00176\ uint32\_t\ \mbox{\hyperlink{VL53L0X_8h_a201f8b8b0990845d45596d01161955fc}{getMeasurementTimingBudget}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{comment}{//\ Sets\ the\ VCSEL\ (vertical\ cavity\ surface\ emitting\ laser)\ pulse\ period\ for\ the\ given\ period\ type}}
+\DoxyCodeLine{00179\ \textcolor{comment}{//\ (VcselPeriodPreRange\ or\ VcselPeriodFinalRange)\ to\ the\ given\ value\ (in\ PCLKs).\ }}
+\DoxyCodeLine{00180\ \textcolor{comment}{//\ Longer\ periods\ increase\ the\ potential\ range\ of\ the\ sensor.\ Valid\ values\ are\ (even\ numbers\ only):}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ Pre:\ 12\ to\ 18\ (initialized\ to\ 14\ by\ default)}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ Final:\ 8\ to\ 14\ (initialized\ to\ 10\ by\ default)}}
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ The\ return\ value\ is\ a\ boolean\ indicating\ whether\ the\ requested\ period\ was\ valid.}}
+\DoxyCodeLine{00184\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{VL53L0X_8h_a8b8437b301634dbba8588e6c269b6258}{setVcselPulsePeriod}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcselPeriodType}}\ type,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ period\_pclks);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{comment}{//\ Returns\ the\ current\ VCSEL\ pulse\ period\ for\ the\ given\ period\ type.}}
+\DoxyCodeLine{00187\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{VL53L0X_8h_a729beb08b6052761420f8b2ba9b965a2}{getVcselPulsePeriod}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{VL53L0X_8h_a55c77cf8138cbaa748bf4559ca97896c}{vcselPeriodType}}\ type);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//\ Starts\ continuous\ ranging\ measurements.\ If\ the\ argument\ period\_ms\ is\ 0,\ }}
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ continuous\ back-\/to-\/back\ mode\ is\ used\ (the\ sensor\ takes\ measurements\ as\ often\ as\ possible);\ }}
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ if\ it\ is\ nonzero,\ continuous\ timed\ mode\ is\ used,\ with\ the\ specified\ inter-\/measurement\ period\ }}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ in\ milliseconds\ determining\ how\ often\ the\ sensor\ takes\ a\ measurement.}}
+\DoxyCodeLine{00193\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a22a6527fa0e645ead3dd61ed33e2958a}{startContinuous}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ uint32\_t\ period\_ms);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ Stops\ continuous\ mode.}}
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a904075e8e565bdb7529b77d508f1c27f}{stopContinuous}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{comment}{//\ Returns\ a\ range\ reading\ in\ millimeters\ when\ continuous\ mode\ is\ active.}}
+\DoxyCodeLine{00199\ \textcolor{comment}{//\ Additional\ measurement\ data\ will\ be\ copied\ into\ \`{}extraStats`\ if\ it\ is\ non-\/zero.}}
+\DoxyCodeLine{00200\ uint16\_t\ \mbox{\hyperlink{VL53L0X_8h_a4115dd2d5811402bad03557855e86071}{readRangeContinuousMillimeters}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{structstatInfo__t__VL53L0X}{statInfo\_t\_VL53L0X}}\ *extraStats);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{comment}{//\ Performs\ a\ single-\/shot\ ranging\ measurement\ and\ returns\ the\ reading\ in\ millimeters.}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ Additional\ measurement\ data\ will\ be\ copied\ into\ \`{}extraStats`\ if\ it\ is\ non-\/zero.}}
+\DoxyCodeLine{00204\ uint16\_t\ \mbox{\hyperlink{VL53L0X_8h_a8eda71f2217bcd6ee690e2262984914b}{readRangeSingleMillimeters}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{structstatInfo__t__VL53L0X}{statInfo\_t\_VL53L0X}}\ *extraStats);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{//\ Sets\ a\ timeout\ period\ in\ milliseconds\ after\ which\ read\ operations\ will\ abort\ }}
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ if\ the\ sensor\ is\ not\ ready.\ A\ value\ of\ 0\ disables\ the\ timeout.}}
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a634e5fa22f59012704908b35432014e6}{setTimeout}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ uint16\_t\ timeout);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{comment}{//\ Returns\ the\ current\ timeout\ period\ setting.}}
+\DoxyCodeLine{00211\ uint16\_t\ \mbox{\hyperlink{VL53L0X_8h_ac567ab28a6457e12d7b3fd43d3a560ce}{getTimeout}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{//\ Indicates\ whether\ a\ read\ timeout\ has\ occurred\ since\ the\ last\ call\ to\ timeoutOccurred().}}
+\DoxyCodeLine{00214\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{VL53L0X_8h_a80fb46cd819140147af2ff13d4c4bbc2}{timeoutOccurred}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//\ I2C\ communication\ Functions}}
+\DoxyCodeLine{00218\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00219\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a44de3ddd53a8eeec63b9e8f00e174556}{writeReg}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ value);\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Write\ an\ 8-\/bit\ register}}
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a995dc19a05f01452244a2418e2dedd2e}{writeReg16Bit}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg,\ uint16\_t\ value);\ \ \textcolor{comment}{//\ Write\ a\ 16-\/bit\ register}}
+\DoxyCodeLine{00221\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_aaab5e29193ed8dc21ed91f508174b1df}{writeReg32Bit}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg,\ uint32\_t\ value);\ \ \textcolor{comment}{//\ Write\ a\ 32-\/bit\ register}}
+\DoxyCodeLine{00222\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{VL53L0X_8h_a6030029639c34876b2bb5b1dc6eaaba6}{readReg}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ an\ 8-\/bit\ register}}
+\DoxyCodeLine{00223\ uint16\_t\ \mbox{\hyperlink{VL53L0X_8h_ad073f96b52d96014dade2560dd2fa931}{readReg16Bit}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ a\ 16-\/bit\ register}}
+\DoxyCodeLine{00224\ uint32\_t\ \mbox{\hyperlink{VL53L0X_8h_a2e33ca8fdefb27b09fd324c88144f04f}{readReg32Bit}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Read\ a\ 32-\/bit\ register}}
+\DoxyCodeLine{00225\ \textcolor{comment}{//\ Write\ \`{}count`\ number\ of\ bytes\ from\ \`{}src`\ to\ the\ sensor,\ starting\ at\ \`{}reg`}}
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_abf926d8cb599b8ad510948aed579c7c1}{writeMulti}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \textcolor{keyword}{const}\ *src,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ count);}
+\DoxyCodeLine{00227\ \textcolor{comment}{//\ Read\ \`{}count`\ number\ of\ bytes\ from\ the\ sensor,\ starting\ at\ \`{}reg`,\ to\ \`{}dst`}}
+\DoxyCodeLine{00228\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{VL53L0X_8h_a89e66d9d028359f265f599bbc67c63de}{readMulti}}(\mbox{\hyperlink{structVL53L0X__Dev__t}{VL53L0X\_Dev\_t}}\ *dev,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *dst,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ count);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{comment}{//\ TCC:\ Target\ CentreCheck}}
+\DoxyCodeLine{00231\ \textcolor{comment}{//\ MSRC:\ Minimum\ Signal\ Rate\ Check}}
+\DoxyCodeLine{00232\ \textcolor{comment}{//\ DSS:\ Dynamic\ Spad\ Selection}}
+\DoxyCodeLine{00233\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00234\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ tcc,\ msrc,\ \mbox{\hyperlink{structSequenceStepEnables_a1797bfbe7654e91272ee2b5d865bfd3a}{dss}},\ pre\_range,\ final\_range;}
+\DoxyCodeLine{00235\ \}\mbox{\hyperlink{structSequenceStepEnables}{SequenceStepEnables}};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00238\ \ \ uint16\_t\ pre\_range\_vcsel\_period\_pclks,\ \mbox{\hyperlink{structSequenceStepTimeouts_ae0026f2186f722a36056159fa9aeb9aa}{final\_range\_vcsel\_period\_pclks}};}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ uint16\_t\ msrc\_dss\_tcc\_mclks,\ pre\_range\_mclks,\ \mbox{\hyperlink{structSequenceStepTimeouts_a358e3ea0b96b952a1591f02f625df064}{final\_range\_mclks}};}
+\DoxyCodeLine{00241\ \ \ uint32\_t\ msrc\_dss\_tcc\_us,\ \ \ \ pre\_range\_us,\ \ \ \ \mbox{\hyperlink{structSequenceStepTimeouts_a5472828e69ab41ce884f1892ff3772ff}{final\_range\_us}};}
+\DoxyCodeLine{00242\ \}\mbox{\hyperlink{structSequenceStepTimeouts}{SequenceStepTimeouts}};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

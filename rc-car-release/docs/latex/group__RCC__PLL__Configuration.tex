@@ -1,0 +1,106 @@
+\doxysubsubsubsection{PLL Configuration}
+\hypertarget{group__RCC__PLL__Configuration}{}\label{group__RCC__PLL__Configuration}\index{PLL Configuration@{PLL Configuration}}
+Collaboration diagram for PLL Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{group__RCC__PLL__Configuration}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_gaaf196a2df41b0bcbc32745c2b218e696}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+ENABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}} = ENABLE)
+\begin{DoxyCompactList}\small\item\em Macro to enable the main PLL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_ga718a6afcb1492cc2796be78445a7d5ab}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+DISABLE}}()~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}} = DISABLE)
+\begin{DoxyCompactList}\small\item\em Macro to disable the main PLL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_ga2145b44e05d90ad3ff43653ee98cbba7}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+,  \+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+)~          MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, (RCC\+\_\+\+CFGR\+\_\+\+PLLSRC\texorpdfstring{$\vert$}{|}RCC\+\_\+\+CFGR\+\_\+\+PLLMUL\texorpdfstring{$\vert$}{|}RCC\+\_\+\+CFGR\+\_\+\+PLLDIV),((\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Macro to configure the main PLL clock source, multiplication and division factors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCC__PLL__Configuration_ga3ea1390f8124e2b3b8d53e95541d6e53}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+PLL\+\_\+\+OSCSOURCE}}()~((uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$CFGR, RCC\+\_\+\+CFGR\+\_\+\+PLLSRC)))
+\begin{DoxyCompactList}\small\item\em Get oscillator clock selected as PLL input clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RCC__PLL__Configuration_ga3ea1390f8124e2b3b8d53e95541d6e53}\label{group__RCC__PLL__Configuration_ga3ea1390f8124e2b3b8d53e95541d6e53} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE@{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}}
+\index{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE@{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+PLL\+\_\+\+OSCSOURCE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(READ\+\_\+\+BIT(RCC-\/$>$CFGR, RCC\+\_\+\+CFGR\+\_\+\+PLLSRC)))}
+
+
+
+Get oscillator clock selected as PLL input clock. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source used for PLL entry. The returned value can be one of the following\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__PLL__Clock__Source_ga0e07703f1ccb3d60f8a47a2dc631c218}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSI} HSI oscillator clock selected as PLL input clock \item \doxylink{group__RCC__PLL__Clock__Source_ga197cea7fe5c2db26fe7fcdb0f99dd4d7}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSE} HSE oscillator clock selected as PLL input clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__RCC__PLL__Configuration_ga2145b44e05d90ad3ff43653ee98cbba7}\label{group__RCC__PLL__Configuration_ga2145b44e05d90ad3ff43653ee98cbba7} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_PLL\_CONFIG@{\_\_HAL\_RCC\_PLL\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLL\_CONFIG@{\_\_HAL\_RCC\_PLL\_CONFIG}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_CONFIG}{\_\_HAL\_RCC\_PLL\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+CONFIG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+ }\end{DoxyParamCaption})~          MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, (RCC\+\_\+\+CFGR\+\_\+\+PLLSRC\texorpdfstring{$\vert$}{|}RCC\+\_\+\+CFGR\+\_\+\+PLLMUL\texorpdfstring{$\vert$}{|}RCC\+\_\+\+CFGR\+\_\+\+PLLDIV),((\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+)))}
+
+
+
+Macro to configure the main PLL clock source, multiplication and division factors. 
+
+\begin{DoxyNote}{Note}
+This function must be used only when the main PLL is disabled.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+} & specifies the PLL entry clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__PLL__Clock__Source_ga0e07703f1ccb3d60f8a47a2dc631c218}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSI} HSI oscillator clock selected as PLL clock entry \item \doxylink{group__RCC__PLL__Clock__Source_ga197cea7fe5c2db26fe7fcdb0f99dd4d7}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSE} HSE oscillator clock selected as PLL clock entry \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+} & specifies the multiplication factor for PLL VCO output clock This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__PLL__Multiplication__Factor_ga4ee529382af73885706795fd81538781}{RCC\+\_\+\+PLL\+\_\+\+MUL3} PLLVCO = PLL clock entry x 3 \item \doxylink{group__RCC__PLL__Multiplication__Factor_ga2aedc8bc6552d98fb748b58a2379820b}{RCC\+\_\+\+PLL\+\_\+\+MUL4} PLLVCO = PLL clock entry x 4 \item \doxylink{group__RCC__PLL__Multiplication__Factor_gae2f8dd748556470dcac6901ac7a3e650}{RCC\+\_\+\+PLL\+\_\+\+MUL6} PLLVCO = PLL clock entry x 6 \item \doxylink{group__RCC__PLL__Multiplication__Factor_gaddfa6ebdecba8c5951a774b271fa82eb}{RCC\+\_\+\+PLL\+\_\+\+MUL8} PLLVCO = PLL clock entry x 8 \item \doxylink{group__RCC__PLL__Multiplication__Factor_gaca5a5ddd829f682dd9a211e6a9be452a}{RCC\+\_\+\+PLL\+\_\+\+MUL12} PLLVCO = PLL clock entry x 12 \item \doxylink{group__RCC__PLL__Multiplication__Factor_ga39bd735dbbdf7f4bbc122b833d2c92f3}{RCC\+\_\+\+PLL\+\_\+\+MUL16} PLLVCO = PLL clock entry x 16 \item \doxylink{group__RCC__PLL__Multiplication__Factor_gaee672b4272b1054bb53278972bbd1c76}{RCC\+\_\+\+PLL\+\_\+\+MUL24} PLLVCO = PLL clock entry x 24 \item \doxylink{group__RCC__PLL__Multiplication__Factor_gae37615feccd4bdf924c05c6d6576acc2}{RCC\+\_\+\+PLL\+\_\+\+MUL32} PLLVCO = PLL clock entry x 32 \item \doxylink{group__RCC__PLL__Multiplication__Factor_gadd0f597bce64d1db8ad83fdfd15ed518}{RCC\+\_\+\+PLL\+\_\+\+MUL48} PLLVCO = PLL clock entry x 48 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The PLL VCO clock frequency must not exceed 96 MHz when the product is in Range 1, 48 MHz when the product is in Range 2 and 24 MHz when the product is in Range 3.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+PLLDIV\+\_\+\+\_\+} & specifies the division factor for PLL VCO input clock This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__PLL__Division__Factor_gaa99ce6d8bb2024b91859445ea6dd6e8f}{RCC\+\_\+\+PLL\+\_\+\+DIV2} PLL clock output = PLLVCO / 2 \item \doxylink{group__RCC__PLL__Division__Factor_ga08f44363e494f7ab9259e1c64b981dd2}{RCC\+\_\+\+PLL\+\_\+\+DIV3} PLL clock output = PLLVCO / 3 \item \doxylink{group__RCC__PLL__Division__Factor_ga2632cb3df857c806ea08a4482df5daa6}{RCC\+\_\+\+PLL\+\_\+\+DIV4} PLL clock output = PLLVCO / 4 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__RCC__PLL__Configuration_ga718a6afcb1492cc2796be78445a7d5ab}\label{group__RCC__PLL__Configuration_ga718a6afcb1492cc2796be78445a7d5ab} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_PLL\_DISABLE@{\_\_HAL\_RCC\_PLL\_DISABLE}}
+\index{\_\_HAL\_RCC\_PLL\_DISABLE@{\_\_HAL\_RCC\_PLL\_DISABLE}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_DISABLE}{\_\_HAL\_RCC\_PLL\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}} = DISABLE)}
+
+
+
+Macro to disable the main PLL. 
+
+\begin{DoxyNote}{Note}
+The main PLL can not be disabled if it is used as system clock source 
+\end{DoxyNote}
+\Hypertarget{group__RCC__PLL__Configuration_gaaf196a2df41b0bcbc32745c2b218e696}\label{group__RCC__PLL__Configuration_gaaf196a2df41b0bcbc32745c2b218e696} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_PLL\_ENABLE@{\_\_HAL\_RCC\_PLL\_ENABLE}}
+\index{\_\_HAL\_RCC\_PLL\_ENABLE@{\_\_HAL\_RCC\_PLL\_ENABLE}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_ENABLE}{\_\_HAL\_RCC\_PLL\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\texorpdfstring{$\ast$}{*}(\+\_\+\+\_\+\+IO uint32\+\_\+t \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{group__RCC__BitAddress__AliasRegion_ga0b0a8f171b66cc0d767716ba23ad3c6f}{RCC\+\_\+\+CR\+\_\+\+PLLON\+\_\+\+BB}} = ENABLE)}
+
+
+
+Macro to enable the main PLL. 
+
+\begin{DoxyNote}{Note}
+After enabling the main PLL, the application software should wait on PLLRDY flag to be set indicating that PLL clock is stable and can be used as system clock source. 
+
+The main PLL is disabled by hardware when entering STOP and STANDBY modes. 
+\end{DoxyNote}

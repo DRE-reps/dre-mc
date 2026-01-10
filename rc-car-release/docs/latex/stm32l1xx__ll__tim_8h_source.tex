@@ -1,0 +1,1141 @@
+\doxysection{stm32l1xx\+\_\+ll\+\_\+tim.\+h}
+\hypertarget{stm32l1xx__ll__tim_8h_source}{}\label{stm32l1xx__ll__tim_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_tim.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_tim.h}}
+\mbox{\hyperlink{stm32l1xx__ll__tim_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_LL\_TIM\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_LL\_TIM\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}stm32l1xx.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ defined\ (TIM2)\ ||\ defined\ (TIM3)\ ||\ defined\ (TIM4)\ ||\ defined\ (TIM5)\ ||\ defined\ (TIM9)\ ||\ defined\ (TIM10)\ ||\ defined\ (TIM11)\ ||\ defined\ (TIM6)\ ||\ defined\ (TIM7)}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Private\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ OFFSET\_TAB\_CCMRx[]\ =}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ 0x00U,\ \ \ \textcolor{comment}{/*\ 0:\ TIMx\_CH1\ \ */}}
+\DoxyCodeLine{00048\ \ \ 0x00U,\ \ \ \textcolor{comment}{/*\ 1:\ NA\ */}}
+\DoxyCodeLine{00049\ \ \ 0x00U,\ \ \ \textcolor{comment}{/*\ 2:\ TIMx\_CH2\ \ */}}
+\DoxyCodeLine{00050\ \ \ 0x00U,\ \ \ \textcolor{comment}{/*\ 3:\ NA\ */}}
+\DoxyCodeLine{00051\ \ \ 0x04U,\ \ \ \textcolor{comment}{/*\ 4:\ TIMx\_CH3\ \ */}}
+\DoxyCodeLine{00052\ \ \ 0x00U,\ \ \ \textcolor{comment}{/*\ 5:\ NA\ */}}
+\DoxyCodeLine{00053\ \ \ 0x04U\ \ \ \ \textcolor{comment}{/*\ 6:\ TIMx\_CH4\ \ */}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ SHIFT\_TAB\_OCxx[]\ =}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 0:\ OC1M,\ OC1FE,\ OC1PE\ */}}
+\DoxyCodeLine{00059\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1:\ -\/\ NA\ */}}
+\DoxyCodeLine{00060\ \ \ 8U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 2:\ OC2M,\ OC2FE,\ OC2PE\ */}}
+\DoxyCodeLine{00061\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 3:\ -\/\ NA\ */}}
+\DoxyCodeLine{00062\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 4:\ OC3M,\ OC3FE,\ OC3PE\ */}}
+\DoxyCodeLine{00063\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 5:\ -\/\ NA\ */}}
+\DoxyCodeLine{00064\ \ \ 8U\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 6:\ OC4M,\ OC4FE,\ OC4PE\ */}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ SHIFT\_TAB\_ICxx[]\ =}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 0:\ CC1S,\ IC1PSC,\ IC1F\ */}}
+\DoxyCodeLine{00070\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1:\ -\/\ NA\ */}}
+\DoxyCodeLine{00071\ \ \ 8U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 2:\ CC2S,\ IC2PSC,\ IC2F\ */}}
+\DoxyCodeLine{00072\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 3:\ -\/\ NA\ */}}
+\DoxyCodeLine{00073\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 4:\ CC3S,\ IC3PSC,\ IC3F\ */}}
+\DoxyCodeLine{00074\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 5:\ -\/\ NA\ */}}
+\DoxyCodeLine{00075\ \ \ 8U\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 6:\ CC4S,\ IC4PSC,\ IC4F\ */}}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ SHIFT\_TAB\_CCxP[]\ =}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 0:\ CC1P\ */}}
+\DoxyCodeLine{00081\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1:\ NA\ */}}
+\DoxyCodeLine{00082\ \ \ 4U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 2:\ CC2P\ */}}
+\DoxyCodeLine{00083\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 3:\ NA\ */}}
+\DoxyCodeLine{00084\ \ \ 8U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 4:\ CC3P\ */}}
+\DoxyCodeLine{00085\ \ \ 0U,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 5:\ NA\ */}}
+\DoxyCodeLine{00086\ \ \ 12U\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 6:\ CC4P\ */}}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/*\ Private\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ TIMx\_OR\_RMP\_SHIFT\ \ 16U}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ TIMx\_OR\_RMP\_MASK\ \ \ 0x0000FFFFU}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ TIM\_OR\_RMP\_MASK\ \ \ \ ((TIM\_OR\_TI1RMP\ |\ TIM\_OR\_ETR\_RMP\ |\ TIM\_OR\_TI1\_RMP\_RI)\ <<\ TIMx\_OR\_RMP\_SHIFT)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ TIM9\_OR\_RMP\_MASK\ \ \ ((TIM\_OR\_TI1RMP\ |\ TIM9\_OR\_ITR1\_RMP)\ <<\ TIMx\_OR\_RMP\_SHIFT)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ TIM2\_OR\_RMP\_MASK\ \ \ (TIM2\_OR\_ITR1\_RMP\ <<\ TIMx\_OR\_RMP\_SHIFT)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ TIM3\_OR\_RMP\_MASK\ \ \ (TIM3\_OR\_ITR2\_RMP\ <<\ TIMx\_OR\_RMP\_SHIFT)}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ TIM\_GET\_CHANNEL\_INDEX(\ \_\_CHANNEL\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ (((\_\_CHANNEL\_\_)\ ==\ LL\_TIM\_CHANNEL\_CH1)\ ?\ 0U\ :\(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ ((\_\_CHANNEL\_\_)\ ==\ LL\_TIM\_CHANNEL\_CH2)\ ?\ 2U\ :\(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ ((\_\_CHANNEL\_\_)\ ==\ LL\_TIM\_CHANNEL\_CH3)\ ?\ 4U\ :\ 6U)}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ uint16\_t\ Prescaler;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ uint32\_t\ CounterMode;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ uint32\_t\ Autoreload;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00166\ \ \ uint32\_t\ ClockDivision;\ \ \ \ \ }
+\DoxyCodeLine{00171\ \}\ LL\_TIM\_InitTypeDef;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00177\ \{}
+\DoxyCodeLine{00178\ \ \ uint32\_t\ OCMode;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ uint32\_t\ OCState;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ uint32\_t\ CompareValue;\ \ }
+\DoxyCodeLine{00196\ \ \ uint32\_t\ OCPolarity;\ \ \ \ }
+\DoxyCodeLine{00203\ \}\ LL\_TIM\_OC\_InitTypeDef;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00209\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00210\ \{}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ uint32\_t\ ICPolarity;\ \ \ \ }
+\DoxyCodeLine{00218\ \ \ uint32\_t\ ICActiveInput;\ }
+\DoxyCodeLine{00224\ \ \ uint32\_t\ ICPrescaler;\ \ \ }
+\DoxyCodeLine{00230\ \ \ uint32\_t\ ICFilter;\ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \}\ LL\_TIM\_IC\_InitTypeDef;}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00241\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00242\ \{}
+\DoxyCodeLine{00243\ \ \ uint32\_t\ EncoderMode;\ \ \ \ \ }
+\DoxyCodeLine{00249\ \ \ uint32\_t\ IC1Polarity;\ \ \ \ \ }
+\DoxyCodeLine{00255\ \ \ uint32\_t\ IC1ActiveInput;\ \ }
+\DoxyCodeLine{00261\ \ \ uint32\_t\ IC1Prescaler;\ \ \ \ }
+\DoxyCodeLine{00267\ \ \ uint32\_t\ IC1Filter;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00273\ \ \ uint32\_t\ IC2Polarity;\ \ \ \ \ \ }
+\DoxyCodeLine{00279\ \ \ uint32\_t\ IC2ActiveInput;\ \ }
+\DoxyCodeLine{00285\ \ \ uint32\_t\ IC2Prescaler;\ \ \ \ }
+\DoxyCodeLine{00291\ \ \ uint32\_t\ IC2Filter;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00297\ \}\ LL\_TIM\_ENCODER\_InitTypeDef;}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_FULL\_LL\_DRIVER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_UIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_UIF\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC1IF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC1IF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC2IF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC2IF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC3IF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC3IF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC4IF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC4IF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_TIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_TIF\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC1OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC1OF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC2OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC2OF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC3OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC3OF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SR\_CC4OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SR\_CC4OF\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DIER\_UIE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_DIER\_UIE\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DIER\_CC1IE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_DIER\_CC1IE\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DIER\_CC2IE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_DIER\_CC2IE\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DIER\_CC3IE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_DIER\_CC3IE\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DIER\_CC4IE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_DIER\_CC4IE\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DIER\_TIE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_DIER\_TIE\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ LL\_TIM\_UPDATESOURCE\_REGULAR\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ LL\_TIM\_UPDATESOURCE\_COUNTER\ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_URS\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ONEPULSEMODE\_SINGLE\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_OPM\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ONEPULSEMODE\_REPETITIVE\ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERMODE\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERMODE\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_DIR\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERMODE\_CENTER\_DOWN\ \ \ \ \ \ \ \ \ TIM\_CR1\_CMS\_0\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERMODE\_CENTER\_UP\ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_CMS\_1\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERMODE\_CENTER\_UP\_DOWN\ \ \ \ \ \ TIM\_CR1\_CMS\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CLOCKDIVISION\_DIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CLOCKDIVISION\_DIV2\ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_CKD\_0\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CLOCKDIVISION\_DIV4\ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_CKD\_1\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERDIRECTION\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ LL\_TIM\_COUNTERDIRECTION\_DOWN\ \ \ \ \ \ \ \ \ \ \ TIM\_CR1\_DIR\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CCDMAREQUEST\_CC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CCDMAREQUEST\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR2\_CCDS\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CHANNEL\_CH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC1E\ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CHANNEL\_CH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC2E\ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CHANNEL\_CH3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC3E\ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CHANNEL\_CH4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC4E\ \ \ \ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCSTATE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCSTATE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC1E\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_FULL\_LL\_DRIVER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_FROZEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_ACTIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCMR1\_OC1M\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_INACTIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCMR1\_OC1M\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_TOGGLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_OC1M\_1\ |\ TIM\_CCMR1\_OC1M\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_FORCED\_INACTIVE\ \ \ \ \ \ \ \ \ \ TIM\_CCMR1\_OC1M\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_FORCED\_ACTIVE\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_OC1M\_2\ |\ TIM\_CCMR1\_OC1M\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_PWM1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_OC1M\_2\ |\ TIM\_CCMR1\_OC1M\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCMODE\_PWM2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_OC1M\_2\ |\ TIM\_CCMR1\_OC1M\_1\ |\ TIM\_CCMR1\_OC1M\_0)\ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCPOLARITY\_HIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCPOLARITY\_LOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC1P\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ACTIVEINPUT\_DIRECTTI\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_CC1S\_0\ <<\ 16U)\ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ACTIVEINPUT\_INDIRECTTI\ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_CC1S\_1\ <<\ 16U)\ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ACTIVEINPUT\_TRC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_CC1S\ <<\ 16U)\ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ICPSC\_DIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ICPSC\_DIV2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1PSC\_0\ <<\ 16U)\ \ \ \ }}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ICPSC\_DIV4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1PSC\_1\ <<\ 16U)\ \ \ \ }}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ICPSC\_DIV8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1PSC\ <<\ 16U)\ \ \ \ \ \ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV1\_N2\ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1F\_0\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV1\_N4\ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1F\_1\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV1\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_1\ |\ TIM\_CCMR1\_IC1F\_0)\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV2\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1F\_2\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV2\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_2\ |\ TIM\_CCMR1\_IC1F\_0)\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV4\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_2\ |\ TIM\_CCMR1\_IC1F\_1)\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV4\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_2\ |\ TIM\_CCMR1\_IC1F\_1\ |\ TIM\_CCMR1\_IC1F\_0)\ <<\ 16U)\ \ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV8\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1F\_3\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV8\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_3\ |\ TIM\_CCMR1\_IC1F\_0)\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV16\_N5\ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_3\ |\ TIM\_CCMR1\_IC1F\_1)\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV16\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_3\ |\ TIM\_CCMR1\_IC1F\_1\ |\ TIM\_CCMR1\_IC1F\_0)\ <<\ 16U)\ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV16\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_3\ |\ TIM\_CCMR1\_IC1F\_2)\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV32\_N5\ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_3\ |\ TIM\_CCMR1\_IC1F\_2\ |\ TIM\_CCMR1\_IC1F\_0)\ <<\ 16U)\ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV32\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ ((TIM\_CCMR1\_IC1F\_3\ |\ TIM\_CCMR1\_IC1F\_2\ |\ TIM\_CCMR1\_IC1F\_1)\ <<\ 16U)\ \ }}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_FILTER\_FDIV32\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCMR1\_IC1F\ <<\ 16U)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_POLARITY\_RISING\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_POLARITY\_FALLING\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CCER\_CC1P\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ LL\_TIM\_IC\_POLARITY\_BOTHEDGE\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CCER\_CC1P\ |\ TIM\_CCER\_CC1NP)\ }}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CLOCKSOURCE\_INTERNAL\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CLOCKSOURCE\_EXT\_MODE1\ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_SMS\_2\ |\ TIM\_SMCR\_SMS\_1\ |\ TIM\_SMCR\_SMS\_0)\ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ LL\_TIM\_CLOCKSOURCE\_EXT\_MODE2\ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ECE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ENCODERMODE\_X2\_TI1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_SMS\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ENCODERMODE\_X2\_TI2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_SMS\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ENCODERMODE\_X4\_TI12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_SMS\_1\ |\ TIM\_SMCR\_SMS\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR2\_MMS\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR2\_MMS\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_CC1IF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CR2\_MMS\_1\ |\ TIM\_CR2\_MMS\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_OC1REF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_CR2\_MMS\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_OC2REF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CR2\_MMS\_2\ |\ TIM\_CR2\_MMS\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_OC3REF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CR2\_MMS\_2\ |\ TIM\_CR2\_MMS\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TRGO\_OC4REF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_CR2\_MMS\_2\ |\ TIM\_CR2\_MMS\_1\ |\ TIM\_CR2\_MMS\_0)\ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SLAVEMODE\_DISABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SLAVEMODE\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_SMS\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SLAVEMODE\_GATED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_SMS\_2\ |\ TIM\_SMCR\_SMS\_0)\ \ \ }}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ LL\_TIM\_SLAVEMODE\_TRIGGER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_SMS\_2\ |\ TIM\_SMCR\_SMS\_1)\ \ \ }}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_ITR0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_ITR1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_TS\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_ITR2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_TS\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_ITR3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_TS\_0\ |\ TIM\_SMCR\_TS\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_TI1F\_ED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_TS\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_TI1FP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_TS\_2\ |\ TIM\_SMCR\_TS\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_TI2FP2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_TS\_2\ |\ TIM\_SMCR\_TS\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TS\_ETRF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_TS\_2\ |\ TIM\_SMCR\_TS\_1\ |\ TIM\_SMCR\_TS\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_POLARITY\_NONINVERTED\ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_POLARITY\_INVERTED\ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETP\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_PRESCALER\_DIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_PRESCALER\_DIV2\ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETPS\_0\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_PRESCALER\_DIV4\ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETPS\_1\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_PRESCALER\_DIV8\ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETPS\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV1\_N2\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETF\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV1\_N4\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETF\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV1\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_1\ |\ TIM\_SMCR\_ETF\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV2\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETF\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV2\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_2\ |\ TIM\_SMCR\_ETF\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV4\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_2\ |\ TIM\_SMCR\_ETF\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV4\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_2\ |\ TIM\_SMCR\_ETF\_1\ |\ TIM\_SMCR\_ETF\_0)\ \ \ }}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV8\_N6\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETF\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV8\_N8\ \ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_3\ |\ TIM\_SMCR\_ETF\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV16\_N5\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_3\ |\ TIM\_SMCR\_ETF\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV16\_N6\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_3\ |\ TIM\_SMCR\_ETF\_1\ |\ TIM\_SMCR\_ETF\_0)\ \ \ }}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV16\_N8\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_3\ |\ TIM\_SMCR\_ETF\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV32\_N5\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_3\ |\ TIM\_SMCR\_ETF\_2\ |\ TIM\_SMCR\_ETF\_0)\ \ \ }}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV32\_N6\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_SMCR\_ETF\_3\ |\ TIM\_SMCR\_ETF\_2\ |\ TIM\_SMCR\_ETF\_1)\ \ \ }}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ETR\_FILTER\_FDIV32\_N8\ \ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_ETF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CR1\ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CR2\ \ \ \ \ \ \ \ \ \ \ TIM\_DCR\_DBA\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_SMCR\ \ \ \ \ \ \ \ \ \ TIM\_DCR\_DBA\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_DIER\ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_1\ |\ \ TIM\_DCR\_DBA\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_SR\ \ \ \ \ \ \ \ \ \ \ \ TIM\_DCR\_DBA\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_EGR\ \ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_2\ |\ TIM\_DCR\_DBA\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCMR1\ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_2\ |\ TIM\_DCR\_DBA\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCMR2\ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_2\ |\ TIM\_DCR\_DBA\_1\ |\ TIM\_DCR\_DBA\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCER\ \ \ \ \ \ \ \ \ \ TIM\_DCR\_DBA\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CNT\ \ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_3\ |\ TIM\_DCR\_DBA\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_PSC\ \ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_3\ |\ TIM\_DCR\_DBA\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_ARR\ \ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_3\ |\ TIM\_DCR\_DBA\_1\ |\ TIM\_DCR\_DBA\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCR1\ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_3\ |\ TIM\_DCR\_DBA\_2\ |\ TIM\_DCR\_DBA\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCR2\ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_3\ |\ TIM\_DCR\_DBA\_2\ |\ TIM\_DCR\_DBA\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCR3\ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_3\ |\ TIM\_DCR\_DBA\_2\ |\ TIM\_DCR\_DBA\_1\ |\ TIM\_DCR\_DBA\_0)\ \ }}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_CCR4\ \ \ \ \ \ \ \ \ \ TIM\_DCR\_DBA\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_BASEADDR\_OR\ \ \ \ \ \ \ \ \ \ \ \ (TIM\_DCR\_DBA\_4\ |\ TIM\_DCR\_DBA\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_1TRANSFER\ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_2TRANSFERS\ \ \ \ \ \ TIM\_DCR\_DBL\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_3TRANSFERS\ \ \ \ \ \ TIM\_DCR\_DBL\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_4TRANSFERS\ \ \ \ \ \ (TIM\_DCR\_DBL\_1\ |\ \ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_5TRANSFERS\ \ \ \ \ \ TIM\_DCR\_DBL\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_6TRANSFERS\ \ \ \ \ \ (TIM\_DCR\_DBL\_2\ |\ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_7TRANSFERS\ \ \ \ \ \ (TIM\_DCR\_DBL\_2\ |\ TIM\_DCR\_DBL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_8TRANSFERS\ \ \ \ \ \ (TIM\_DCR\_DBL\_2\ |\ TIM\_DCR\_DBL\_1\ |\ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_9TRANSFERS\ \ \ \ \ \ TIM\_DCR\_DBL\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_10TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_11TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_12TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_1\ |\ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_13TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_14TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_2\ |\ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_15TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_2\ |\ TIM\_DCR\_DBL\_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_16TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_3\ |\ TIM\_DCR\_DBL\_2\ |\ TIM\_DCR\_DBL\_1\ |\ TIM\_DCR\_DBL\_0)\ }}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_17TRANSFERS\ \ \ \ \ TIM\_DCR\_DBL\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ LL\_TIM\_DMABURST\_LENGTH\_18TRANSFERS\ \ \ \ \ (TIM\_DCR\_DBL\_4\ |\ \ TIM\_DCR\_DBL\_0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_TI1\_RMP\_GPIO\ \ \ TIM\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_TI1\_RMP\_LSI\ \ \ \ (TIM\_OR\_TI1RMP\_0\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_TI1\_RMP\_LSE\ \ \ \ (TIM\_OR\_TI1RMP\_1\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_TI1\_RMP\_RTC\ \ \ \ (TIM\_OR\_TI1RMP\_0\ |\ TIM\_OR\_TI1RMP\_1\ |\ TIM\_OR\_RMP\_MASK)\ \ \ }}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_ETR\_RMP\_LSE\ \ \ \ \ \ TIM\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_ETR\_RMP\_TIM9\_TGO\ (TIM\_OR\_ETR\_RMP\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_TI1\_RMP\ \ \ \ \ \ \ \ \ \ TIM\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM10\_TI1\_RMP\_RI\ \ \ \ \ \ \ (TIM\_OR\_TI1\_RMP\_RI\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_TI1\_RMP\_GPIO\ \ \ \ \ \ \ TIM\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_TI1\_RMP\_MSI\ \ \ \ \ \ \ \ (TIM\_OR\_TI1RMP\_0\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_TI1\_RMP\_HSE\_RTC\ \ \ \ (TIM\_OR\_TI1RMP\_1\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_TI1\_RMP\_GPIO1\ \ \ \ \ \ (TIM\_OR\_TI1RMP\_0\ |\ TIM\_OR\_TI1RMP\_1\ |\ TIM\_OR\_RMP\_MASK)\ }}
+\DoxyCodeLine{00707\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_ETR\_RMP\_LSE\ \ \ \ \ \ TIM\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_ETR\_RMP\_TIM9\_TGO\ (TIM\_OR\_ETR\_RMP\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_TI1\_RMP\ \ \ \ \ \ \ \ \ \ TIM\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM11\_TI1\_RMP\_RI\ \ \ \ \ \ \ (TIM\_OR\_TI1\_RMP\_RI\ |\ TIM\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM9\_TI1\_RMP\_GPIO\ \ \ \ \ TIM9\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00726\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM9\_TI1\_RMP\_LSE\ \ \ \ \ \ (TIM\_OR\_TI1RMP\_0\ |\ TIM9\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00727\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM9\_TI1\_RMP\_GPIO1\ \ \ \ (TIM\_OR\_TI1RMP\_1\ |\ TIM9\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM9\_TI1\_RMP\_GPIO2\ \ \ \ (TIM\_OR\_TI1RMP\_0\ |\ TIM\_OR\_TI1RMP\_1\ |\ TIM9\_OR\_RMP\_MASK)\ \ \ \ }}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM9\_ITR1\_RMP\_TIM3\_TGO\ \ \ TIM9\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM9\_ITR1\_RMP\_TOUCH\_IO\ \ \ (TIM9\_OR\_ITR1\_RMP\ |\ TIM9\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM2\_TIR1\_RMP\_TIM10\_OC\ \ \ \ TIM9\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM2\_TIR1\_RMP\_TIM5\_TGO\ \ \ \ (TIM2\_OR\_ITR1\_RMP\ |\ TIM9\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM3\_TIR2\_RMP\_TIM11\_OC\ \ \ \ TIM9\_OR\_RMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\#define\ LL\_TIM\_TIM3\_TIR2\_RMP\_TIM5\_TGO\ \ \ \ (TIM3\_OR\_ITR2\_RMP\ |\ TIM9\_OR\_RMP\_MASK)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCREF\_CLR\_INT\_OCREF\_CLR\ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00765\ \textcolor{preprocessor}{\#define\ LL\_TIM\_OCREF\_CLR\_INT\_ETR\ \ \ \ \ \ \ \ \ \ \ TIM\_SMCR\_OCCS\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00775\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00790\ \textcolor{preprocessor}{\#define\ LL\_TIM\_WriteReg(\_\_INSTANCE\_\_,\ \_\_REG\_\_,\ \_\_VALUE\_\_)\ WRITE\_REG((\_\_INSTANCE\_\_)-\/>\_\_REG\_\_,\ (\_\_VALUE\_\_))}}
+\DoxyCodeLine{00791\ }
+\DoxyCodeLine{00798\ \textcolor{preprocessor}{\#define\ LL\_TIM\_ReadReg(\_\_INSTANCE\_\_,\ \_\_REG\_\_)\ READ\_REG((\_\_INSTANCE\_\_)-\/>\_\_REG\_\_)}}
+\DoxyCodeLine{00810\ \textcolor{preprocessor}{\#define\ \_\_LL\_TIM\_CALC\_PSC(\_\_TIMCLK\_\_,\ \_\_CNTCLK\_\_)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00811\ \textcolor{preprocessor}{\ \ (((\_\_TIMCLK\_\_)\ >=\ (\_\_CNTCLK\_\_))\ ?\ (uint32\_t)((((\_\_TIMCLK\_\_)\ +\ (\_\_CNTCLK\_\_)/2U)/(\_\_CNTCLK\_\_))\ -\/\ 1U)\ :\ 0U)}}
+\DoxyCodeLine{00812\ }
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#define\ \_\_LL\_TIM\_CALC\_ARR(\_\_TIMCLK\_\_,\ \_\_PSC\_\_,\ \_\_FREQ\_\_)\ \(\backslash\)}}
+\DoxyCodeLine{00822\ \textcolor{preprocessor}{\ \ ((((\_\_TIMCLK\_\_)/((\_\_PSC\_\_)\ +\ 1U))\ >=\ (\_\_FREQ\_\_))\ ?\ (((\_\_TIMCLK\_\_)/((\_\_FREQ\_\_)\ *\ ((\_\_PSC\_\_)\ +\ 1U)))\ -\/\ 1U)\ :\ 0U)}}
+\DoxyCodeLine{00823\ }
+\DoxyCodeLine{00833\ \textcolor{preprocessor}{\#define\ \_\_LL\_TIM\_CALC\_DELAY(\_\_TIMCLK\_\_,\ \_\_PSC\_\_,\ \_\_DELAY\_\_)\ \ \(\backslash\)}}
+\DoxyCodeLine{00834\ \textcolor{preprocessor}{\ \ ((uint32\_t)(((uint64\_t)(\_\_TIMCLK\_\_)\ *\ (uint64\_t)(\_\_DELAY\_\_))\ \(\backslash\)}}
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ /\ ((uint64\_t)1000000U\ *\ (uint64\_t)((\_\_PSC\_\_)\ +\ 1U))))}}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00847\ \textcolor{preprocessor}{\#define\ \_\_LL\_TIM\_CALC\_PULSE(\_\_TIMCLK\_\_,\ \_\_PSC\_\_,\ \_\_DELAY\_\_,\ \_\_PULSE\_\_)\ \ \(\backslash\)}}
+\DoxyCodeLine{00848\ \textcolor{preprocessor}{\ \ ((uint32\_t)(\_\_LL\_TIM\_CALC\_DELAY((\_\_TIMCLK\_\_),\ (\_\_PSC\_\_),\ (\_\_PULSE\_\_))\ \(\backslash\)}}
+\DoxyCodeLine{00849\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \_\_LL\_TIM\_CALC\_DELAY((\_\_TIMCLK\_\_),\ (\_\_PSC\_\_),\ (\_\_DELAY\_\_))))}}
+\DoxyCodeLine{00850\ }
+\DoxyCodeLine{00861\ \textcolor{preprocessor}{\#define\ \_\_LL\_TIM\_GET\_ICPSC\_RATIO(\_\_ICPSC\_\_)\ \ \(\backslash\)}}
+\DoxyCodeLine{00862\ \textcolor{preprocessor}{\ \ ((uint32\_t)(0x01U\ <<\ (((\_\_ICPSC\_\_)\ >>\ 16U)\ >>\ TIM\_CCMR1\_IC1PSC\_Pos)))}}
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ }
+\DoxyCodeLine{00869\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00883\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableCounter(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00884\ \{}
+\DoxyCodeLine{00885\ \ \ SET\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_CEN);}
+\DoxyCodeLine{00886\ \}}
+\DoxyCodeLine{00887\ }
+\DoxyCodeLine{00894\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableCounter(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00895\ \{}
+\DoxyCodeLine{00896\ \ \ CLEAR\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_CEN);}
+\DoxyCodeLine{00897\ \}}
+\DoxyCodeLine{00898\ }
+\DoxyCodeLine{00905\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledCounter(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00906\ \{}
+\DoxyCodeLine{00907\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_CEN)\ ==\ (TIM\_CR1\_CEN))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{00908\ \}}
+\DoxyCodeLine{00909\ }
+\DoxyCodeLine{00916\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableUpdateEvent(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00917\ \{}
+\DoxyCodeLine{00918\ \ \ CLEAR\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_UDIS);}
+\DoxyCodeLine{00919\ \}}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00927\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableUpdateEvent(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00928\ \{}
+\DoxyCodeLine{00929\ \ \ SET\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_UDIS);}
+\DoxyCodeLine{00930\ \}}
+\DoxyCodeLine{00931\ }
+\DoxyCodeLine{00938\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledUpdateEvent(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00939\ \{}
+\DoxyCodeLine{00940\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_UDIS)\ ==\ (uint32\_t)RESET)\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{00941\ \}}
+\DoxyCodeLine{00942\ }
+\DoxyCodeLine{00959\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetUpdateSource(TIM\_TypeDef\ *TIMx,\ uint32\_t\ UpdateSource)}
+\DoxyCodeLine{00960\ \{}
+\DoxyCodeLine{00961\ \ \ MODIFY\_REG(TIMx-\/>CR1,\ TIM\_CR1\_URS,\ UpdateSource);}
+\DoxyCodeLine{00962\ \}}
+\DoxyCodeLine{00963\ }
+\DoxyCodeLine{00972\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetUpdateSource(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{00973\ \{}
+\DoxyCodeLine{00974\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_URS));}
+\DoxyCodeLine{00975\ \}}
+\DoxyCodeLine{00976\ }
+\DoxyCodeLine{00986\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetOnePulseMode(TIM\_TypeDef\ *TIMx,\ uint32\_t\ OnePulseMode)}
+\DoxyCodeLine{00987\ \{}
+\DoxyCodeLine{00988\ \ \ MODIFY\_REG(TIMx-\/>CR1,\ TIM\_CR1\_OPM,\ OnePulseMode);}
+\DoxyCodeLine{00989\ \}}
+\DoxyCodeLine{00990\ }
+\DoxyCodeLine{00999\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetOnePulseMode(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01000\ \{}
+\DoxyCodeLine{01001\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_OPM));}
+\DoxyCodeLine{01002\ \}}
+\DoxyCodeLine{01003\ }
+\DoxyCodeLine{01023\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetCounterMode(TIM\_TypeDef\ *TIMx,\ uint32\_t\ CounterMode)}
+\DoxyCodeLine{01024\ \{}
+\DoxyCodeLine{01025\ \ \ MODIFY\_REG(TIMx-\/>CR1,\ (TIM\_CR1\_DIR\ |\ TIM\_CR1\_CMS),\ CounterMode);}
+\DoxyCodeLine{01026\ \}}
+\DoxyCodeLine{01027\ }
+\DoxyCodeLine{01043\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetCounterMode(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01044\ \{}
+\DoxyCodeLine{01045\ \ \ uint32\_t\ counter\_mode;}
+\DoxyCodeLine{01046\ }
+\DoxyCodeLine{01047\ \ \ counter\_mode\ =\ (uint32\_t)(READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_CMS));}
+\DoxyCodeLine{01048\ }
+\DoxyCodeLine{01049\ \ \ \textcolor{keywordflow}{if}\ (counter\_mode\ ==\ 0U)}
+\DoxyCodeLine{01050\ \ \ \{}
+\DoxyCodeLine{01051\ \ \ \ \ counter\_mode\ =\ (uint32\_t)(READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_DIR));}
+\DoxyCodeLine{01052\ \ \ \}}
+\DoxyCodeLine{01053\ }
+\DoxyCodeLine{01054\ \ \ \textcolor{keywordflow}{return}\ counter\_mode;}
+\DoxyCodeLine{01055\ \}}
+\DoxyCodeLine{01056\ }
+\DoxyCodeLine{01063\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableARRPreload(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01064\ \{}
+\DoxyCodeLine{01065\ \ \ SET\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_ARPE);}
+\DoxyCodeLine{01066\ \}}
+\DoxyCodeLine{01067\ }
+\DoxyCodeLine{01074\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableARRPreload(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01075\ \{}
+\DoxyCodeLine{01076\ \ \ CLEAR\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_ARPE);}
+\DoxyCodeLine{01077\ \}}
+\DoxyCodeLine{01078\ }
+\DoxyCodeLine{01085\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledARRPreload(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01086\ \{}
+\DoxyCodeLine{01087\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_ARPE)\ ==\ (TIM\_CR1\_ARPE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{01088\ \}}
+\DoxyCodeLine{01089\ }
+\DoxyCodeLine{01104\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetClockDivision(TIM\_TypeDef\ *TIMx,\ uint32\_t\ ClockDivision)}
+\DoxyCodeLine{01105\ \{}
+\DoxyCodeLine{01106\ \ \ MODIFY\_REG(TIMx-\/>CR1,\ TIM\_CR1\_CKD,\ ClockDivision);}
+\DoxyCodeLine{01107\ \}}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01122\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetClockDivision(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01123\ \{}
+\DoxyCodeLine{01124\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_CKD));}
+\DoxyCodeLine{01125\ \}}
+\DoxyCodeLine{01126\ }
+\DoxyCodeLine{01136\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetCounter(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Counter)}
+\DoxyCodeLine{01137\ \{}
+\DoxyCodeLine{01138\ \ \ WRITE\_REG(TIMx-\/>CNT,\ Counter);}
+\DoxyCodeLine{01139\ \}}
+\DoxyCodeLine{01140\ }
+\DoxyCodeLine{01149\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetCounter(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01150\ \{}
+\DoxyCodeLine{01151\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CNT));}
+\DoxyCodeLine{01152\ \}}
+\DoxyCodeLine{01153\ }
+\DoxyCodeLine{01162\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetDirection(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01163\ \{}
+\DoxyCodeLine{01164\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(TIMx-\/>CR1,\ TIM\_CR1\_DIR));}
+\DoxyCodeLine{01165\ \}}
+\DoxyCodeLine{01166\ }
+\DoxyCodeLine{01178\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetPrescaler(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Prescaler)}
+\DoxyCodeLine{01179\ \{}
+\DoxyCodeLine{01180\ \ \ WRITE\_REG(TIMx-\/>PSC,\ Prescaler);}
+\DoxyCodeLine{01181\ \}}
+\DoxyCodeLine{01182\ }
+\DoxyCodeLine{01189\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetPrescaler(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01190\ \{}
+\DoxyCodeLine{01191\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>PSC));}
+\DoxyCodeLine{01192\ \}}
+\DoxyCodeLine{01193\ }
+\DoxyCodeLine{01205\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetAutoReload(TIM\_TypeDef\ *TIMx,\ uint32\_t\ AutoReload)}
+\DoxyCodeLine{01206\ \{}
+\DoxyCodeLine{01207\ \ \ WRITE\_REG(TIMx-\/>ARR,\ AutoReload);}
+\DoxyCodeLine{01208\ \}}
+\DoxyCodeLine{01209\ }
+\DoxyCodeLine{01218\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_GetAutoReload(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01219\ \{}
+\DoxyCodeLine{01220\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>ARR));}
+\DoxyCodeLine{01221\ \}}
+\DoxyCodeLine{01222\ }
+\DoxyCodeLine{01239\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_CC\_SetDMAReqTrigger(TIM\_TypeDef\ *TIMx,\ uint32\_t\ DMAReqTrigger)}
+\DoxyCodeLine{01240\ \{}
+\DoxyCodeLine{01241\ \ \ MODIFY\_REG(TIMx-\/>CR2,\ TIM\_CR2\_CCDS,\ DMAReqTrigger);}
+\DoxyCodeLine{01242\ \}}
+\DoxyCodeLine{01243\ }
+\DoxyCodeLine{01252\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_CC\_GetDMAReqTrigger(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01253\ \{}
+\DoxyCodeLine{01254\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(TIMx-\/>CR2,\ TIM\_CR2\_CCDS));}
+\DoxyCodeLine{01255\ \}}
+\DoxyCodeLine{01256\ }
+\DoxyCodeLine{01271\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_CC\_EnableChannel(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channels)}
+\DoxyCodeLine{01272\ \{}
+\DoxyCodeLine{01273\ \ \ SET\_BIT(TIMx-\/>CCER,\ Channels);}
+\DoxyCodeLine{01274\ \}}
+\DoxyCodeLine{01275\ }
+\DoxyCodeLine{01290\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_CC\_DisableChannel(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channels)}
+\DoxyCodeLine{01291\ \{}
+\DoxyCodeLine{01292\ \ \ CLEAR\_BIT(TIMx-\/>CCER,\ Channels);}
+\DoxyCodeLine{01293\ \}}
+\DoxyCodeLine{01294\ }
+\DoxyCodeLine{01309\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_CC\_IsEnabledChannel(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channels)}
+\DoxyCodeLine{01310\ \{}
+\DoxyCodeLine{01311\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>CCER,\ Channels)\ ==\ (Channels))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{01312\ \}}
+\DoxyCodeLine{01313\ }
+\DoxyCodeLine{01341\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_ConfigOutput(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ Configuration)}
+\DoxyCodeLine{01342\ \{}
+\DoxyCodeLine{01343\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01344\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01345\ \ \ CLEAR\_BIT(*pReg,\ (TIM\_CCMR1\_CC1S\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01346\ \ \ MODIFY\_REG(TIMx-\/>CCER,\ (TIM\_CCER\_CC1P\ <<\ SHIFT\_TAB\_CCxP[iChannel]),}
+\DoxyCodeLine{01347\ \ \ \ \ \ \ \ \ \ \ \ \ \ (Configuration\ \&\ TIM\_CCER\_CC1P)\ <<\ SHIFT\_TAB\_CCxP[iChannel]);}
+\DoxyCodeLine{01348\ \}}
+\DoxyCodeLine{01349\ }
+\DoxyCodeLine{01374\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_SetMode(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ Mode)}
+\DoxyCodeLine{01375\ \{}
+\DoxyCodeLine{01376\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01377\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01378\ \ \ MODIFY\_REG(*pReg,\ ((TIM\_CCMR1\_OC1M\ \ |\ TIM\_CCMR1\_CC1S)\ <<\ SHIFT\_TAB\_OCxx[iChannel]),\ Mode\ <<\ SHIFT\_TAB\_OCxx[iChannel]);}
+\DoxyCodeLine{01379\ \}}
+\DoxyCodeLine{01380\ }
+\DoxyCodeLine{01403\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_GetMode(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01404\ \{}
+\DoxyCodeLine{01405\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01406\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01407\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(*pReg,\ ((TIM\_CCMR1\_OC1M\ |\ TIM\_CCMR1\_CC1S)\ <<\ SHIFT\_TAB\_OCxx[iChannel]))\ >>\ SHIFT\_TAB\_OCxx[iChannel]);}
+\DoxyCodeLine{01408\ \}}
+\DoxyCodeLine{01409\ }
+\DoxyCodeLine{01427\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_SetPolarity(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ Polarity)}
+\DoxyCodeLine{01428\ \{}
+\DoxyCodeLine{01429\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01430\ \ \ MODIFY\_REG(TIMx-\/>CCER,\ (TIM\_CCER\_CC1P\ <<\ SHIFT\_TAB\_CCxP[iChannel]),\ \ Polarity\ <<\ SHIFT\_TAB\_CCxP[iChannel]);}
+\DoxyCodeLine{01431\ \}}
+\DoxyCodeLine{01432\ }
+\DoxyCodeLine{01449\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_GetPolarity(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01450\ \{}
+\DoxyCodeLine{01451\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01452\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(TIMx-\/>CCER,\ (TIM\_CCER\_CC1P\ <<\ SHIFT\_TAB\_CCxP[iChannel]))\ >>\ SHIFT\_TAB\_CCxP[iChannel]);}
+\DoxyCodeLine{01453\ \}}
+\DoxyCodeLine{01454\ }
+\DoxyCodeLine{01470\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_EnableFast(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01471\ \{}
+\DoxyCodeLine{01472\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01473\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01474\ \ \ SET\_BIT(*pReg,\ (TIM\_CCMR1\_OC1FE\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01475\ }
+\DoxyCodeLine{01476\ \}}
+\DoxyCodeLine{01477\ }
+\DoxyCodeLine{01492\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_DisableFast(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01493\ \{}
+\DoxyCodeLine{01494\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01495\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01496\ \ \ CLEAR\_BIT(*pReg,\ (TIM\_CCMR1\_OC1FE\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01497\ }
+\DoxyCodeLine{01498\ \}}
+\DoxyCodeLine{01499\ }
+\DoxyCodeLine{01514\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_IsEnabledFast(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01515\ \{}
+\DoxyCodeLine{01516\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01517\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01518\ \ \ uint32\_t\ bitfield\ =\ TIM\_CCMR1\_OC1FE\ <<\ SHIFT\_TAB\_OCxx[iChannel];}
+\DoxyCodeLine{01519\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(*pReg,\ bitfield)\ ==\ bitfield)\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{01520\ \}}
+\DoxyCodeLine{01521\ }
+\DoxyCodeLine{01536\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_EnablePreload(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01537\ \{}
+\DoxyCodeLine{01538\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01539\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01540\ \ \ SET\_BIT(*pReg,\ (TIM\_CCMR1\_OC1PE\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01541\ \}}
+\DoxyCodeLine{01542\ }
+\DoxyCodeLine{01557\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_DisablePreload(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01558\ \{}
+\DoxyCodeLine{01559\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01560\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01561\ \ \ CLEAR\_BIT(*pReg,\ (TIM\_CCMR1\_OC1PE\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01562\ \}}
+\DoxyCodeLine{01563\ }
+\DoxyCodeLine{01578\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_IsEnabledPreload(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01579\ \{}
+\DoxyCodeLine{01580\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01581\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01582\ \ \ uint32\_t\ bitfield\ =\ TIM\_CCMR1\_OC1PE\ <<\ SHIFT\_TAB\_OCxx[iChannel];}
+\DoxyCodeLine{01583\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(*pReg,\ bitfield)\ ==\ bitfield)\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{01584\ \}}
+\DoxyCodeLine{01585\ }
+\DoxyCodeLine{01603\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_EnableClear(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01604\ \{}
+\DoxyCodeLine{01605\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01606\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01607\ \ \ SET\_BIT(*pReg,\ (TIM\_CCMR1\_OC1CE\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01608\ \}}
+\DoxyCodeLine{01609\ }
+\DoxyCodeLine{01626\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_DisableClear(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01627\ \{}
+\DoxyCodeLine{01628\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01629\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01630\ \ \ CLEAR\_BIT(*pReg,\ (TIM\_CCMR1\_OC1CE\ <<\ SHIFT\_TAB\_OCxx[iChannel]));}
+\DoxyCodeLine{01631\ \}}
+\DoxyCodeLine{01632\ }
+\DoxyCodeLine{01651\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_IsEnabledClear(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01652\ \{}
+\DoxyCodeLine{01653\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01654\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01655\ \ \ uint32\_t\ bitfield\ =\ TIM\_CCMR1\_OC1CE\ <<\ SHIFT\_TAB\_OCxx[iChannel];}
+\DoxyCodeLine{01656\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(*pReg,\ bitfield)\ ==\ bitfield)\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{01657\ \}}
+\DoxyCodeLine{01658\ }
+\DoxyCodeLine{01671\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_SetCompareCH1(TIM\_TypeDef\ *TIMx,\ uint32\_t\ CompareValue)}
+\DoxyCodeLine{01672\ \{}
+\DoxyCodeLine{01673\ \ \ WRITE\_REG(TIMx-\/>CCR1,\ CompareValue);}
+\DoxyCodeLine{01674\ \}}
+\DoxyCodeLine{01675\ }
+\DoxyCodeLine{01688\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_SetCompareCH2(TIM\_TypeDef\ *TIMx,\ uint32\_t\ CompareValue)}
+\DoxyCodeLine{01689\ \{}
+\DoxyCodeLine{01690\ \ \ WRITE\_REG(TIMx-\/>CCR2,\ CompareValue);}
+\DoxyCodeLine{01691\ \}}
+\DoxyCodeLine{01692\ }
+\DoxyCodeLine{01705\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_SetCompareCH3(TIM\_TypeDef\ *TIMx,\ uint32\_t\ CompareValue)}
+\DoxyCodeLine{01706\ \{}
+\DoxyCodeLine{01707\ \ \ WRITE\_REG(TIMx-\/>CCR3,\ CompareValue);}
+\DoxyCodeLine{01708\ \}}
+\DoxyCodeLine{01709\ }
+\DoxyCodeLine{01722\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_SetCompareCH4(TIM\_TypeDef\ *TIMx,\ uint32\_t\ CompareValue)}
+\DoxyCodeLine{01723\ \{}
+\DoxyCodeLine{01724\ \ \ WRITE\_REG(TIMx-\/>CCR4,\ CompareValue);}
+\DoxyCodeLine{01725\ \}}
+\DoxyCodeLine{01726\ }
+\DoxyCodeLine{01738\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_GetCompareCH1(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01739\ \{}
+\DoxyCodeLine{01740\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR1));}
+\DoxyCodeLine{01741\ \}}
+\DoxyCodeLine{01742\ }
+\DoxyCodeLine{01754\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_GetCompareCH2(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01755\ \{}
+\DoxyCodeLine{01756\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR2));}
+\DoxyCodeLine{01757\ \}}
+\DoxyCodeLine{01758\ }
+\DoxyCodeLine{01770\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_GetCompareCH3(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01771\ \{}
+\DoxyCodeLine{01772\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR3));}
+\DoxyCodeLine{01773\ \}}
+\DoxyCodeLine{01774\ }
+\DoxyCodeLine{01786\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_OC\_GetCompareCH4(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{01787\ \{}
+\DoxyCodeLine{01788\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR4));}
+\DoxyCodeLine{01789\ \}}
+\DoxyCodeLine{01790\ }
+\DoxyCodeLine{01833\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_Config(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ Configuration)}
+\DoxyCodeLine{01834\ \{}
+\DoxyCodeLine{01835\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01836\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01837\ \ \ MODIFY\_REG(*pReg,\ ((TIM\_CCMR1\_IC1F\ |\ TIM\_CCMR1\_IC1PSC\ |\ TIM\_CCMR1\_CC1S)\ <<\ SHIFT\_TAB\_ICxx[iChannel]),}
+\DoxyCodeLine{01838\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((Configuration\ >>\ 16U)\ \&\ (TIM\_CCMR1\_IC1F\ |\ TIM\_CCMR1\_IC1PSC\ |\ TIM\_CCMR1\_CC1S))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{01839\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ SHIFT\_TAB\_ICxx[iChannel]);}
+\DoxyCodeLine{01840\ \ \ MODIFY\_REG(TIMx-\/>CCER,\ ((TIM\_CCER\_CC1NP\ |\ TIM\_CCER\_CC1P)\ <<\ SHIFT\_TAB\_CCxP[iChannel]),}
+\DoxyCodeLine{01841\ \ \ \ \ \ \ \ \ \ \ \ \ \ (Configuration\ \&\ (TIM\_CCER\_CC1NP\ |\ TIM\_CCER\_CC1P))\ <<\ SHIFT\_TAB\_CCxP[iChannel]);}
+\DoxyCodeLine{01842\ \}}
+\DoxyCodeLine{01843\ }
+\DoxyCodeLine{01862\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_SetActiveInput(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ ICActiveInput)}
+\DoxyCodeLine{01863\ \{}
+\DoxyCodeLine{01864\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01865\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01866\ \ \ MODIFY\_REG(*pReg,\ ((TIM\_CCMR1\_CC1S)\ <<\ SHIFT\_TAB\_ICxx[iChannel]),\ (ICActiveInput\ >>\ 16U)\ <<\ SHIFT\_TAB\_ICxx[iChannel]);}
+\DoxyCodeLine{01867\ \}}
+\DoxyCodeLine{01868\ }
+\DoxyCodeLine{01886\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetActiveInput(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01887\ \{}
+\DoxyCodeLine{01888\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01889\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01890\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(*pReg,\ ((TIM\_CCMR1\_CC1S)\ <<\ SHIFT\_TAB\_ICxx[iChannel]))\ >>\ SHIFT\_TAB\_ICxx[iChannel])\ <<\ 16U);}
+\DoxyCodeLine{01891\ \}}
+\DoxyCodeLine{01892\ }
+\DoxyCodeLine{01912\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_SetPrescaler(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ ICPrescaler)}
+\DoxyCodeLine{01913\ \{}
+\DoxyCodeLine{01914\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01915\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01916\ \ \ MODIFY\_REG(*pReg,\ ((TIM\_CCMR1\_IC1PSC)\ <<\ SHIFT\_TAB\_ICxx[iChannel]),\ (ICPrescaler\ >>\ 16U)\ <<\ SHIFT\_TAB\_ICxx[iChannel]);}
+\DoxyCodeLine{01917\ \}}
+\DoxyCodeLine{01918\ }
+\DoxyCodeLine{01937\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetPrescaler(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{01938\ \{}
+\DoxyCodeLine{01939\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01940\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01941\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(*pReg,\ ((TIM\_CCMR1\_IC1PSC)\ <<\ SHIFT\_TAB\_ICxx[iChannel]))\ >>\ SHIFT\_TAB\_ICxx[iChannel])\ <<\ 16U);}
+\DoxyCodeLine{01942\ \}}
+\DoxyCodeLine{01943\ }
+\DoxyCodeLine{01975\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_SetFilter(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ ICFilter)}
+\DoxyCodeLine{01976\ \{}
+\DoxyCodeLine{01977\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{01978\ \ \ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{01979\ \ \ MODIFY\_REG(*pReg,\ ((TIM\_CCMR1\_IC1F)\ <<\ SHIFT\_TAB\_ICxx[iChannel]),\ (ICFilter\ >>\ 16U)\ <<\ SHIFT\_TAB\_ICxx[iChannel]);}
+\DoxyCodeLine{01980\ \}}
+\DoxyCodeLine{01981\ }
+\DoxyCodeLine{02012\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetFilter(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{02013\ \{}
+\DoxyCodeLine{02014\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{02015\ \ \ \textcolor{keyword}{const}\ \_\_IO\ uint32\_t\ *pReg\ =\ (\_\_IO\ uint32\_t\ *)((uint32\_t)((uint32\_t)(\&TIMx-\/>CCMR1)\ +\ OFFSET\_TAB\_CCMRx[iChannel]));}
+\DoxyCodeLine{02016\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(*pReg,\ ((TIM\_CCMR1\_IC1F)\ <<\ SHIFT\_TAB\_ICxx[iChannel]))\ >>\ SHIFT\_TAB\_ICxx[iChannel])\ <<\ 16U);}
+\DoxyCodeLine{02017\ \}}
+\DoxyCodeLine{02018\ }
+\DoxyCodeLine{02041\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_SetPolarity(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ uint32\_t\ ICPolarity)}
+\DoxyCodeLine{02042\ \{}
+\DoxyCodeLine{02043\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{02044\ \ \ MODIFY\_REG(TIMx-\/>CCER,\ ((TIM\_CCER\_CC1NP\ |\ TIM\_CCER\_CC1P)\ <<\ SHIFT\_TAB\_CCxP[iChannel]),}
+\DoxyCodeLine{02045\ \ \ \ \ \ \ \ \ \ \ \ \ \ ICPolarity\ <<\ SHIFT\_TAB\_CCxP[iChannel]);}
+\DoxyCodeLine{02046\ \}}
+\DoxyCodeLine{02047\ }
+\DoxyCodeLine{02069\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetPolarity(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel)}
+\DoxyCodeLine{02070\ \{}
+\DoxyCodeLine{02071\ \ \ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iChannel\ =\ TIM\_GET\_CHANNEL\_INDEX(Channel);}
+\DoxyCodeLine{02072\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(TIMx-\/>CCER,\ ((TIM\_CCER\_CC1NP\ |\ TIM\_CCER\_CC1P)\ <<\ SHIFT\_TAB\_CCxP[iChannel]))\ >>}
+\DoxyCodeLine{02073\ \ \ \ \ \ \ \ \ \ \ SHIFT\_TAB\_CCxP[iChannel]);}
+\DoxyCodeLine{02074\ \}}
+\DoxyCodeLine{02075\ }
+\DoxyCodeLine{02084\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_EnableXORCombination(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02085\ \{}
+\DoxyCodeLine{02086\ \ \ SET\_BIT(TIMx-\/>CR2,\ TIM\_CR2\_TI1S);}
+\DoxyCodeLine{02087\ \}}
+\DoxyCodeLine{02088\ }
+\DoxyCodeLine{02097\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_DisableXORCombination(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02098\ \{}
+\DoxyCodeLine{02099\ \ \ CLEAR\_BIT(TIMx-\/>CR2,\ TIM\_CR2\_TI1S);}
+\DoxyCodeLine{02100\ \}}
+\DoxyCodeLine{02101\ }
+\DoxyCodeLine{02110\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_IsEnabledXORCombination(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02111\ \{}
+\DoxyCodeLine{02112\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>CR2,\ TIM\_CR2\_TI1S)\ ==\ (TIM\_CR2\_TI1S))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02113\ \}}
+\DoxyCodeLine{02114\ }
+\DoxyCodeLine{02126\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetCaptureCH1(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02127\ \{}
+\DoxyCodeLine{02128\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR1));}
+\DoxyCodeLine{02129\ \}}
+\DoxyCodeLine{02130\ }
+\DoxyCodeLine{02142\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetCaptureCH2(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02143\ \{}
+\DoxyCodeLine{02144\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR2));}
+\DoxyCodeLine{02145\ \}}
+\DoxyCodeLine{02146\ }
+\DoxyCodeLine{02158\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetCaptureCH3(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02159\ \{}
+\DoxyCodeLine{02160\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR3));}
+\DoxyCodeLine{02161\ \}}
+\DoxyCodeLine{02162\ }
+\DoxyCodeLine{02174\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IC\_GetCaptureCH4(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02175\ \{}
+\DoxyCodeLine{02176\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_REG(TIMx-\/>CCR4));}
+\DoxyCodeLine{02177\ \}}
+\DoxyCodeLine{02178\ }
+\DoxyCodeLine{02195\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableExternalClock(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02196\ \{}
+\DoxyCodeLine{02197\ \ \ SET\_BIT(TIMx-\/>SMCR,\ TIM\_SMCR\_ECE);}
+\DoxyCodeLine{02198\ \}}
+\DoxyCodeLine{02199\ }
+\DoxyCodeLine{02208\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableExternalClock(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02209\ \{}
+\DoxyCodeLine{02210\ \ \ CLEAR\_BIT(TIMx-\/>SMCR,\ TIM\_SMCR\_ECE);}
+\DoxyCodeLine{02211\ \}}
+\DoxyCodeLine{02212\ }
+\DoxyCodeLine{02221\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledExternalClock(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02222\ \{}
+\DoxyCodeLine{02223\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SMCR,\ TIM\_SMCR\_ECE)\ ==\ (TIM\_SMCR\_ECE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02224\ \}}
+\DoxyCodeLine{02225\ }
+\DoxyCodeLine{02245\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetClockSource(TIM\_TypeDef\ *TIMx,\ uint32\_t\ ClockSource)}
+\DoxyCodeLine{02246\ \{}
+\DoxyCodeLine{02247\ \ \ MODIFY\_REG(TIMx-\/>SMCR,\ TIM\_SMCR\_SMS\ |\ TIM\_SMCR\_ECE,\ ClockSource);}
+\DoxyCodeLine{02248\ \}}
+\DoxyCodeLine{02249\ }
+\DoxyCodeLine{02262\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetEncoderMode(TIM\_TypeDef\ *TIMx,\ uint32\_t\ EncoderMode)}
+\DoxyCodeLine{02263\ \{}
+\DoxyCodeLine{02264\ \ \ MODIFY\_REG(TIMx-\/>SMCR,\ TIM\_SMCR\_SMS,\ EncoderMode);}
+\DoxyCodeLine{02265\ \}}
+\DoxyCodeLine{02266\ }
+\DoxyCodeLine{02291\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetTriggerOutput(TIM\_TypeDef\ *TIMx,\ uint32\_t\ TimerSynchronization)}
+\DoxyCodeLine{02292\ \{}
+\DoxyCodeLine{02293\ \ \ MODIFY\_REG(TIMx-\/>CR2,\ TIM\_CR2\_MMS,\ TimerSynchronization);}
+\DoxyCodeLine{02294\ \}}
+\DoxyCodeLine{02295\ }
+\DoxyCodeLine{02309\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetSlaveMode(TIM\_TypeDef\ *TIMx,\ uint32\_t\ SlaveMode)}
+\DoxyCodeLine{02310\ \{}
+\DoxyCodeLine{02311\ \ \ MODIFY\_REG(TIMx-\/>SMCR,\ TIM\_SMCR\_SMS,\ SlaveMode);}
+\DoxyCodeLine{02312\ \}}
+\DoxyCodeLine{02313\ }
+\DoxyCodeLine{02331\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetTriggerInput(TIM\_TypeDef\ *TIMx,\ uint32\_t\ TriggerInput)}
+\DoxyCodeLine{02332\ \{}
+\DoxyCodeLine{02333\ \ \ MODIFY\_REG(TIMx-\/>SMCR,\ TIM\_SMCR\_TS,\ TriggerInput);}
+\DoxyCodeLine{02334\ \}}
+\DoxyCodeLine{02335\ }
+\DoxyCodeLine{02344\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableMasterSlaveMode(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02345\ \{}
+\DoxyCodeLine{02346\ \ \ SET\_BIT(TIMx-\/>SMCR,\ TIM\_SMCR\_MSM);}
+\DoxyCodeLine{02347\ \}}
+\DoxyCodeLine{02348\ }
+\DoxyCodeLine{02357\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableMasterSlaveMode(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02358\ \{}
+\DoxyCodeLine{02359\ \ \ CLEAR\_BIT(TIMx-\/>SMCR,\ TIM\_SMCR\_MSM);}
+\DoxyCodeLine{02360\ \}}
+\DoxyCodeLine{02361\ }
+\DoxyCodeLine{02370\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledMasterSlaveMode(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02371\ \{}
+\DoxyCodeLine{02372\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SMCR,\ TIM\_SMCR\_MSM)\ ==\ (TIM\_SMCR\_MSM))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02373\ \}}
+\DoxyCodeLine{02374\ }
+\DoxyCodeLine{02410\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ConfigETR(TIM\_TypeDef\ *TIMx,\ uint32\_t\ ETRPolarity,\ uint32\_t\ ETRPrescaler,}
+\DoxyCodeLine{02411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ ETRFilter)}
+\DoxyCodeLine{02412\ \{}
+\DoxyCodeLine{02413\ \ \ MODIFY\_REG(TIMx-\/>SMCR,\ TIM\_SMCR\_ETP\ |\ TIM\_SMCR\_ETPS\ |\ TIM\_SMCR\_ETF,\ ETRPolarity\ |\ ETRPrescaler\ |\ ETRFilter);}
+\DoxyCodeLine{02414\ \}}
+\DoxyCodeLine{02415\ }
+\DoxyCodeLine{02469\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ConfigDMABurst(TIM\_TypeDef\ *TIMx,\ uint32\_t\ DMABurstBaseAddress,\ uint32\_t\ DMABurstLength)}
+\DoxyCodeLine{02470\ \{}
+\DoxyCodeLine{02471\ \ \ MODIFY\_REG(TIMx-\/>DCR,\ (TIM\_DCR\_DBL\ |\ TIM\_DCR\_DBA),\ (DMABurstBaseAddress\ |\ DMABurstLength));}
+\DoxyCodeLine{02472\ \}}
+\DoxyCodeLine{02473\ }
+\DoxyCodeLine{02559\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetRemap(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Remap)}
+\DoxyCodeLine{02560\ \{}
+\DoxyCodeLine{02561\ \ \ MODIFY\_REG(TIMx-\/>OR,\ (Remap\ >>\ TIMx\_OR\_RMP\_SHIFT),\ (Remap\ \&\ TIMx\_OR\_RMP\_MASK));}
+\DoxyCodeLine{02562\ \}}
+\DoxyCodeLine{02563\ }
+\DoxyCodeLine{02583\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_SetOCRefClearInputSource(TIM\_TypeDef\ *TIMx,\ uint32\_t\ OCRefClearInputSource)}
+\DoxyCodeLine{02584\ \{}
+\DoxyCodeLine{02585\ \ \ MODIFY\_REG(TIMx-\/>SMCR,\ TIM\_SMCR\_OCCS,\ OCRefClearInputSource);}
+\DoxyCodeLine{02586\ \}}
+\DoxyCodeLine{02600\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_UPDATE(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02601\ \{}
+\DoxyCodeLine{02602\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_UIF));}
+\DoxyCodeLine{02603\ \}}
+\DoxyCodeLine{02604\ }
+\DoxyCodeLine{02611\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_UPDATE(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02612\ \{}
+\DoxyCodeLine{02613\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_UIF)\ ==\ (TIM\_SR\_UIF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02614\ \}}
+\DoxyCodeLine{02615\ }
+\DoxyCodeLine{02622\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC1(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02623\ \{}
+\DoxyCodeLine{02624\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC1IF));}
+\DoxyCodeLine{02625\ \}}
+\DoxyCodeLine{02626\ }
+\DoxyCodeLine{02633\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC1(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02634\ \{}
+\DoxyCodeLine{02635\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC1IF)\ ==\ (TIM\_SR\_CC1IF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02636\ \}}
+\DoxyCodeLine{02637\ }
+\DoxyCodeLine{02644\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC2(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02645\ \{}
+\DoxyCodeLine{02646\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC2IF));}
+\DoxyCodeLine{02647\ \}}
+\DoxyCodeLine{02648\ }
+\DoxyCodeLine{02655\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC2(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02656\ \{}
+\DoxyCodeLine{02657\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC2IF)\ ==\ (TIM\_SR\_CC2IF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02658\ \}}
+\DoxyCodeLine{02659\ }
+\DoxyCodeLine{02666\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC3(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02667\ \{}
+\DoxyCodeLine{02668\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC3IF));}
+\DoxyCodeLine{02669\ \}}
+\DoxyCodeLine{02670\ }
+\DoxyCodeLine{02677\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC3(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02678\ \{}
+\DoxyCodeLine{02679\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC3IF)\ ==\ (TIM\_SR\_CC3IF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02680\ \}}
+\DoxyCodeLine{02681\ }
+\DoxyCodeLine{02688\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC4(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02689\ \{}
+\DoxyCodeLine{02690\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC4IF));}
+\DoxyCodeLine{02691\ \}}
+\DoxyCodeLine{02692\ }
+\DoxyCodeLine{02699\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC4(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02700\ \{}
+\DoxyCodeLine{02701\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC4IF)\ ==\ (TIM\_SR\_CC4IF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02702\ \}}
+\DoxyCodeLine{02703\ }
+\DoxyCodeLine{02710\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_TRIG(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02711\ \{}
+\DoxyCodeLine{02712\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_TIF));}
+\DoxyCodeLine{02713\ \}}
+\DoxyCodeLine{02714\ }
+\DoxyCodeLine{02721\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_TRIG(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02722\ \{}
+\DoxyCodeLine{02723\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_TIF)\ ==\ (TIM\_SR\_TIF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02724\ \}}
+\DoxyCodeLine{02725\ }
+\DoxyCodeLine{02732\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC1OVR(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02733\ \{}
+\DoxyCodeLine{02734\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC1OF));}
+\DoxyCodeLine{02735\ \}}
+\DoxyCodeLine{02736\ }
+\DoxyCodeLine{02744\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC1OVR(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02745\ \{}
+\DoxyCodeLine{02746\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC1OF)\ ==\ (TIM\_SR\_CC1OF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02747\ \}}
+\DoxyCodeLine{02748\ }
+\DoxyCodeLine{02755\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC2OVR(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02756\ \{}
+\DoxyCodeLine{02757\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC2OF));}
+\DoxyCodeLine{02758\ \}}
+\DoxyCodeLine{02759\ }
+\DoxyCodeLine{02767\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC2OVR(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02768\ \{}
+\DoxyCodeLine{02769\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC2OF)\ ==\ (TIM\_SR\_CC2OF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02770\ \}}
+\DoxyCodeLine{02771\ }
+\DoxyCodeLine{02778\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC3OVR(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02779\ \{}
+\DoxyCodeLine{02780\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC3OF));}
+\DoxyCodeLine{02781\ \}}
+\DoxyCodeLine{02782\ }
+\DoxyCodeLine{02790\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC3OVR(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02791\ \{}
+\DoxyCodeLine{02792\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC3OF)\ ==\ (TIM\_SR\_CC3OF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02793\ \}}
+\DoxyCodeLine{02794\ }
+\DoxyCodeLine{02801\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_ClearFlag\_CC4OVR(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02802\ \{}
+\DoxyCodeLine{02803\ \ \ WRITE\_REG(TIMx-\/>SR,\ \string~(TIM\_SR\_CC4OF));}
+\DoxyCodeLine{02804\ \}}
+\DoxyCodeLine{02805\ }
+\DoxyCodeLine{02813\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsActiveFlag\_CC4OVR(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02814\ \{}
+\DoxyCodeLine{02815\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>SR,\ TIM\_SR\_CC4OF)\ ==\ (TIM\_SR\_CC4OF))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02816\ \}}
+\DoxyCodeLine{02817\ }
+\DoxyCodeLine{02831\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableIT\_UPDATE(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02832\ \{}
+\DoxyCodeLine{02833\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_UIE);}
+\DoxyCodeLine{02834\ \}}
+\DoxyCodeLine{02835\ }
+\DoxyCodeLine{02842\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableIT\_UPDATE(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02843\ \{}
+\DoxyCodeLine{02844\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_UIE);}
+\DoxyCodeLine{02845\ \}}
+\DoxyCodeLine{02846\ }
+\DoxyCodeLine{02853\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledIT\_UPDATE(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02854\ \{}
+\DoxyCodeLine{02855\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_UIE)\ ==\ (TIM\_DIER\_UIE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02856\ \}}
+\DoxyCodeLine{02857\ }
+\DoxyCodeLine{02864\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableIT\_CC1(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02865\ \{}
+\DoxyCodeLine{02866\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC1IE);}
+\DoxyCodeLine{02867\ \}}
+\DoxyCodeLine{02868\ }
+\DoxyCodeLine{02875\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableIT\_CC1(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02876\ \{}
+\DoxyCodeLine{02877\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC1IE);}
+\DoxyCodeLine{02878\ \}}
+\DoxyCodeLine{02879\ }
+\DoxyCodeLine{02886\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledIT\_CC1(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02887\ \{}
+\DoxyCodeLine{02888\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC1IE)\ ==\ (TIM\_DIER\_CC1IE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02889\ \}}
+\DoxyCodeLine{02890\ }
+\DoxyCodeLine{02897\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableIT\_CC2(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02898\ \{}
+\DoxyCodeLine{02899\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC2IE);}
+\DoxyCodeLine{02900\ \}}
+\DoxyCodeLine{02901\ }
+\DoxyCodeLine{02908\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableIT\_CC2(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02909\ \{}
+\DoxyCodeLine{02910\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC2IE);}
+\DoxyCodeLine{02911\ \}}
+\DoxyCodeLine{02912\ }
+\DoxyCodeLine{02919\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledIT\_CC2(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02920\ \{}
+\DoxyCodeLine{02921\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC2IE)\ ==\ (TIM\_DIER\_CC2IE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02922\ \}}
+\DoxyCodeLine{02923\ }
+\DoxyCodeLine{02930\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableIT\_CC3(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02931\ \{}
+\DoxyCodeLine{02932\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC3IE);}
+\DoxyCodeLine{02933\ \}}
+\DoxyCodeLine{02934\ }
+\DoxyCodeLine{02941\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableIT\_CC3(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02942\ \{}
+\DoxyCodeLine{02943\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC3IE);}
+\DoxyCodeLine{02944\ \}}
+\DoxyCodeLine{02945\ }
+\DoxyCodeLine{02952\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledIT\_CC3(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02953\ \{}
+\DoxyCodeLine{02954\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC3IE)\ ==\ (TIM\_DIER\_CC3IE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02955\ \}}
+\DoxyCodeLine{02956\ }
+\DoxyCodeLine{02963\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableIT\_CC4(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02964\ \{}
+\DoxyCodeLine{02965\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC4IE);}
+\DoxyCodeLine{02966\ \}}
+\DoxyCodeLine{02967\ }
+\DoxyCodeLine{02974\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableIT\_CC4(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02975\ \{}
+\DoxyCodeLine{02976\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC4IE);}
+\DoxyCodeLine{02977\ \}}
+\DoxyCodeLine{02978\ }
+\DoxyCodeLine{02985\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledIT\_CC4(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02986\ \{}
+\DoxyCodeLine{02987\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC4IE)\ ==\ (TIM\_DIER\_CC4IE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{02988\ \}}
+\DoxyCodeLine{02989\ }
+\DoxyCodeLine{02996\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableIT\_TRIG(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{02997\ \{}
+\DoxyCodeLine{02998\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_TIE);}
+\DoxyCodeLine{02999\ \}}
+\DoxyCodeLine{03000\ }
+\DoxyCodeLine{03007\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableIT\_TRIG(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03008\ \{}
+\DoxyCodeLine{03009\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_TIE);}
+\DoxyCodeLine{03010\ \}}
+\DoxyCodeLine{03011\ }
+\DoxyCodeLine{03018\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledIT\_TRIG(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03019\ \{}
+\DoxyCodeLine{03020\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_TIE)\ ==\ (TIM\_DIER\_TIE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03021\ \}}
+\DoxyCodeLine{03022\ }
+\DoxyCodeLine{03036\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableDMAReq\_UPDATE(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03037\ \{}
+\DoxyCodeLine{03038\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_UDE);}
+\DoxyCodeLine{03039\ \}}
+\DoxyCodeLine{03040\ }
+\DoxyCodeLine{03047\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableDMAReq\_UPDATE(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03048\ \{}
+\DoxyCodeLine{03049\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_UDE);}
+\DoxyCodeLine{03050\ \}}
+\DoxyCodeLine{03051\ }
+\DoxyCodeLine{03058\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledDMAReq\_UPDATE(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03059\ \{}
+\DoxyCodeLine{03060\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_UDE)\ ==\ (TIM\_DIER\_UDE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03061\ \}}
+\DoxyCodeLine{03062\ }
+\DoxyCodeLine{03069\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableDMAReq\_CC1(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03070\ \{}
+\DoxyCodeLine{03071\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC1DE);}
+\DoxyCodeLine{03072\ \}}
+\DoxyCodeLine{03073\ }
+\DoxyCodeLine{03080\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableDMAReq\_CC1(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03081\ \{}
+\DoxyCodeLine{03082\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC1DE);}
+\DoxyCodeLine{03083\ \}}
+\DoxyCodeLine{03084\ }
+\DoxyCodeLine{03091\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledDMAReq\_CC1(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03092\ \{}
+\DoxyCodeLine{03093\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC1DE)\ ==\ (TIM\_DIER\_CC1DE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03094\ \}}
+\DoxyCodeLine{03095\ }
+\DoxyCodeLine{03102\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableDMAReq\_CC2(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03103\ \{}
+\DoxyCodeLine{03104\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC2DE);}
+\DoxyCodeLine{03105\ \}}
+\DoxyCodeLine{03106\ }
+\DoxyCodeLine{03113\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableDMAReq\_CC2(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03114\ \{}
+\DoxyCodeLine{03115\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC2DE);}
+\DoxyCodeLine{03116\ \}}
+\DoxyCodeLine{03117\ }
+\DoxyCodeLine{03124\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledDMAReq\_CC2(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03125\ \{}
+\DoxyCodeLine{03126\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC2DE)\ ==\ (TIM\_DIER\_CC2DE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03127\ \}}
+\DoxyCodeLine{03128\ }
+\DoxyCodeLine{03135\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableDMAReq\_CC3(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03136\ \{}
+\DoxyCodeLine{03137\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC3DE);}
+\DoxyCodeLine{03138\ \}}
+\DoxyCodeLine{03139\ }
+\DoxyCodeLine{03146\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableDMAReq\_CC3(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03147\ \{}
+\DoxyCodeLine{03148\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC3DE);}
+\DoxyCodeLine{03149\ \}}
+\DoxyCodeLine{03150\ }
+\DoxyCodeLine{03157\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledDMAReq\_CC3(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03158\ \{}
+\DoxyCodeLine{03159\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC3DE)\ ==\ (TIM\_DIER\_CC3DE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03160\ \}}
+\DoxyCodeLine{03161\ }
+\DoxyCodeLine{03168\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableDMAReq\_CC4(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03169\ \{}
+\DoxyCodeLine{03170\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC4DE);}
+\DoxyCodeLine{03171\ \}}
+\DoxyCodeLine{03172\ }
+\DoxyCodeLine{03179\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableDMAReq\_CC4(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03180\ \{}
+\DoxyCodeLine{03181\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC4DE);}
+\DoxyCodeLine{03182\ \}}
+\DoxyCodeLine{03183\ }
+\DoxyCodeLine{03190\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledDMAReq\_CC4(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03191\ \{}
+\DoxyCodeLine{03192\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_CC4DE)\ ==\ (TIM\_DIER\_CC4DE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03193\ \}}
+\DoxyCodeLine{03194\ }
+\DoxyCodeLine{03201\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_EnableDMAReq\_TRIG(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03202\ \{}
+\DoxyCodeLine{03203\ \ \ SET\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_TDE);}
+\DoxyCodeLine{03204\ \}}
+\DoxyCodeLine{03205\ }
+\DoxyCodeLine{03212\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_DisableDMAReq\_TRIG(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03213\ \{}
+\DoxyCodeLine{03214\ \ \ CLEAR\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_TDE);}
+\DoxyCodeLine{03215\ \}}
+\DoxyCodeLine{03216\ }
+\DoxyCodeLine{03223\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_TIM\_IsEnabledDMAReq\_TRIG(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03224\ \{}
+\DoxyCodeLine{03225\ \ \ \textcolor{keywordflow}{return}\ ((READ\_BIT(TIMx-\/>DIER,\ TIM\_DIER\_TDE)\ ==\ (TIM\_DIER\_TDE))\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{03226\ \}}
+\DoxyCodeLine{03227\ }
+\DoxyCodeLine{03241\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_GenerateEvent\_UPDATE(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03242\ \{}
+\DoxyCodeLine{03243\ \ \ SET\_BIT(TIMx-\/>EGR,\ TIM\_EGR\_UG);}
+\DoxyCodeLine{03244\ \}}
+\DoxyCodeLine{03245\ }
+\DoxyCodeLine{03252\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_GenerateEvent\_CC1(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03253\ \{}
+\DoxyCodeLine{03254\ \ \ SET\_BIT(TIMx-\/>EGR,\ TIM\_EGR\_CC1G);}
+\DoxyCodeLine{03255\ \}}
+\DoxyCodeLine{03256\ }
+\DoxyCodeLine{03263\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_GenerateEvent\_CC2(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03264\ \{}
+\DoxyCodeLine{03265\ \ \ SET\_BIT(TIMx-\/>EGR,\ TIM\_EGR\_CC2G);}
+\DoxyCodeLine{03266\ \}}
+\DoxyCodeLine{03267\ }
+\DoxyCodeLine{03274\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_GenerateEvent\_CC3(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03275\ \{}
+\DoxyCodeLine{03276\ \ \ SET\_BIT(TIMx-\/>EGR,\ TIM\_EGR\_CC3G);}
+\DoxyCodeLine{03277\ \}}
+\DoxyCodeLine{03278\ }
+\DoxyCodeLine{03285\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_GenerateEvent\_CC4(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03286\ \{}
+\DoxyCodeLine{03287\ \ \ SET\_BIT(TIMx-\/>EGR,\ TIM\_EGR\_CC4G);}
+\DoxyCodeLine{03288\ \}}
+\DoxyCodeLine{03289\ }
+\DoxyCodeLine{03296\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_TIM\_GenerateEvent\_TRIG(TIM\_TypeDef\ *TIMx)}
+\DoxyCodeLine{03297\ \{}
+\DoxyCodeLine{03298\ \ \ SET\_BIT(TIMx-\/>EGR,\ TIM\_EGR\_TG);}
+\DoxyCodeLine{03299\ \}}
+\DoxyCodeLine{03300\ }
+\DoxyCodeLine{03305\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{03310\ ErrorStatus\ LL\_TIM\_DeInit(\textcolor{keyword}{const}\ TIM\_TypeDef\ *TIMx);}
+\DoxyCodeLine{03311\ \textcolor{keywordtype}{void}\ LL\_TIM\_StructInit(LL\_TIM\_InitTypeDef\ *TIM\_InitStruct);}
+\DoxyCodeLine{03312\ ErrorStatus\ LL\_TIM\_Init(TIM\_TypeDef\ *TIMx,\ \textcolor{keyword}{const}\ LL\_TIM\_InitTypeDef\ *TIM\_InitStruct);}
+\DoxyCodeLine{03313\ \textcolor{keywordtype}{void}\ LL\_TIM\_OC\_StructInit(LL\_TIM\_OC\_InitTypeDef\ *TIM\_OC\_InitStruct);}
+\DoxyCodeLine{03314\ ErrorStatus\ LL\_TIM\_OC\_Init(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ \textcolor{keyword}{const}\ LL\_TIM\_OC\_InitTypeDef\ *TIM\_OC\_InitStruct);}
+\DoxyCodeLine{03315\ \textcolor{keywordtype}{void}\ LL\_TIM\_IC\_StructInit(LL\_TIM\_IC\_InitTypeDef\ *TIM\_ICInitStruct);}
+\DoxyCodeLine{03316\ ErrorStatus\ LL\_TIM\_IC\_Init(TIM\_TypeDef\ *TIMx,\ uint32\_t\ Channel,\ \textcolor{keyword}{const}\ LL\_TIM\_IC\_InitTypeDef\ *TIM\_IC\_InitStruct);}
+\DoxyCodeLine{03317\ \textcolor{keywordtype}{void}\ LL\_TIM\_ENCODER\_StructInit(LL\_TIM\_ENCODER\_InitTypeDef\ *TIM\_EncoderInitStruct);}
+\DoxyCodeLine{03318\ ErrorStatus\ LL\_TIM\_ENCODER\_Init(TIM\_TypeDef\ *TIMx,\ \textcolor{keyword}{const}\ LL\_TIM\_ENCODER\_InitTypeDef\ *TIM\_EncoderInitStruct);}
+\DoxyCodeLine{03322\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_FULL\_LL\_DRIVER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{03323\ }
+\DoxyCodeLine{03332\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ TIM2\ ||\ TIM3\ ||\ TIM4\ ||\ TIM5\ ||\ TIM9\ ||\ TIM10\ ||\ TIM11\ TIM6\ ||\ TIM7\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{03333\ }
+\DoxyCodeLine{03338\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{03339\ \}}
+\DoxyCodeLine{03340\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{03341\ }
+\DoxyCodeLine{03342\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_LL\_TIM\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

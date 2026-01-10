@@ -1,0 +1,50 @@
+\doxysection{logger.\+h}
+\hypertarget{logger_8h_source}{}\label{logger_8h_source}\index{Core/Inc/logger.h@{Core/Inc/logger.h}}
+\mbox{\hyperlink{logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{logger_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}};}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//vars}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ update\ logger\_init()\ \&\&\ logger\_send\_errors\_stat()\ func\ when\ touching\ this\ */}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structlogged__errors_aec265f815d006e50eb03edb08e1f33b7}{HAL\_UART\_ErrorCallback\_errors}};}
+\DoxyCodeLine{00009\ \}\ \mbox{\hyperlink{structlogged__errors}{logged\_errors}};}
+\DoxyCodeLine{00010\ \textcolor{comment}{//funcs}}
+\DoxyCodeLine{00011\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logger_8h_a3278730f835b7230a0de447ea4afd3f0}{save\_log}}(\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ status);}
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logger_8h_a56e187f87ce6f62d868702d19601848b}{send\_log}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logger_8h_a7f0a1ef369c8017a21abc0f68371b64e}{logger\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logger_8h_a6b0ab6ea376e6170c62b3f0e794e68e3}{logger\_send\_errors\_stat}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifdef\ \_\_LOGGING\_\_}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ LOGGING\_BUF\_SIZE\ 128U\ }\textcolor{comment}{//vbolbat:\ keep\ it\ less\ then\ 200\ for\ safety\ cause\ of\ send\_log()\ realization}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ GET\_KALMAN\_SPEED\ 0x00}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SET\_BUFFER\ 0x01}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ FLOAT2STR\ 0x02}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ HAL\_UART\_RXCPLTCALLBACK\_\ 0x03}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ HAL\_UART\_TXCPLTCALLBACK\_\ 0x04}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ HAL\_UART\_ERRORCALLBACK\_\ 0x05}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ ESC\_INIT\ 0x06}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ CALIBRATE\_ESC\ 0x07}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ ESC\_UPDATE\_PWM\ 0x08}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MPU6050\_GET\_ACCELERATION\ 0x09}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ MPU6050\_INIT\ 0x0A}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MPU6050\_READ\_ALL\ 0x0B}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ERROR\_HANDLER\_\ 0x0C}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//Misha-\/Ovs\ VL53L0X.c\ macro:}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ INIT\_LOG\ 0x0D}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ SET\_CONFIDENCE\ 0x0E}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ VLX\_PULSE\_PERIOD\ 0x0F}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ VLX\_TIME\_BETWEEN\_MEAS\ 0x10}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ VLX\_READ\_DATA\ 0x11}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//Alexander-\/Chv\ measure\_speed\_FC33.c\ macro:}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SteeringServoInit\ 0xfe}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SteeringServoSetAngle\ 0xff}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//vbolbat\ again:}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ PARSE\_UART\_\_\ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ CUSTOM\_DELAY\_20MS\ 0x13}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

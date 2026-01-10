@@ -1,0 +1,14 @@
+<map id="Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h" name="Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_rcc.h">
+<area shape="rect" id="Node000001" title="Header file of RCC HAL module." alt="" coords="142,5,323,60"/>
+<area shape="rect" id="Node000002" href="$stm32l1xx__hal__def_8h.html" title="This file contains HAL common defines, enumeration, macros and structures definitions." alt="" coords="154,181,311,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,61,199,96,196,114,198,133,206,152,217,169,212,172,201,154,193,134,191,114,194,94,211,59"/>
+<area shape="rect" id="Node000006" href="$stm32l1xx__hal__rcc__ex_8h.html" title="Header file of RCC HAL Extension module." alt="" coords="207,108,386,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="254,58,282,95,278,99,250,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,255,108,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,209,99,252,97,247,203,204"/>
+<area shape="rect" id="Node000004" href="$stm32__hal__legacy_8h.html" title="This file contains aliases definition for the STM32Cube HAL constants macros and functions maintained..." alt="" coords="133,255,333,280"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="235,207,235,241,230,241,230,207"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="357,255,431,280"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="260,204,356,247,354,251,258,209"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="288,135,254,173,250,169,284,132"/>
+</map>

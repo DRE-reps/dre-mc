@@ -1,0 +1,101 @@
+\doxysection{stm32l1xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}
+\hypertarget{stm32l1xx__hal__tim__ex_8h_source}{}\label{stm32l1xx__hal__tim__ex_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_tim\_ex.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_tim\_ex.h}}
+\mbox{\hyperlink{stm32l1xx__hal__tim__ex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ STM32L1xx\_HAL\_TIM\_EX\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ STM32L1xx\_HAL\_TIM\_EX\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal__def_8h}{stm32l1xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ End\ of\ exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00056\ \textcolor{comment}{/*\ @note\ STM32L1XX\ devices\ are\ organized\ in\ 6\ categories:\ Cat.1,\ Cat.2,\ Cat.3,\ Cat.4,\ Cat.5,\ Cat.6.}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Remap\ capabilities\ depend\ on\ the\ device\ category.\ As\ the\ DMA2\ controller\ is\ available\ only\ in}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Cat.3,\ Cat.4,Cat.5\ and\ Cat.6\ devices\ it\ is\ used\ to\ discriminate\ Cat.1\ and\ Cat.2\ devices\ v.s.}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ Cat.3,\ Cat.4,\ Cat.5\ and\ Cat.6\ devices.\ */}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#if\ defined(DMA2)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ TIM\_TIM2\_ITR1\_TIM10\_OC\ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ TIM\_TIM2\_ITR1\_TIM5\_TGO\ \ \ \ \ \ \ \ TIM2\_OR\_ITR1\_RMP\ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DMA2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#if\ defined(DMA2)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ TIM\_TIM3\_ITR2\_TIM11\_OC\ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ TIM\_TIM3\_ITR2\_TIM5\_TGO\ \ \ \ \ \ \ \ TIM2\_OR\_ITR1\_RMP\ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DMA2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#if\ defined(DMA2)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ TIM\_TIM9\_ITR1\_TIM3\_TGO\ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ TIM\_TIM9\_ITR1\_TS\ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM9\_OR\_ITR1\_RMP\ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DMA2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ TIM\_TIM9\_GPIO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ TIM\_TIM9\_LSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\_0\ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ TIM\_TIM9\_GPIO1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\_1\ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ TIM\_TIM9\_GPIO2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#if\ defined(DMA2)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_TI1RMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_RI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1\_RMP\_RI\ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_ETR\_LSE\ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_ETR\_TIM9\_TGO\ \ \ \ \ \ \ \ TIM\_OR\_ETR\_RMP\ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DMA2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_GPIO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_LSI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\_0\ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_LSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\_1\ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ TIM\_TIM10\_RTC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#if\ defined(DMA2)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_TI1RMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_RI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1\_RMP\_RI\ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_ETR\_LSE\ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_ETR\_TIM9\_TGO\ \ \ \ \ \ \ \ TIM\_OR\_ETR\_RMP\ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DMA2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_GPIO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00000000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_MSI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\_0\ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_HSE\_RTC\ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\_1\ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ TIM\_TIM11\_GPIO1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIM\_OR\_TI1RMP\ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{comment}{/*\ End\ of\ exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00117\ \textcolor{comment}{/*\ End\ of\ exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{/*\ Private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#if\ defined(DMA2)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ IS\_TIM\_REMAP(INSTANCE,\ TIM\_REMAP)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ (\ (((INSTANCE)\ ==\ TIM2)\ \ \&\&\ (((TIM\_REMAP)\ ==\ TIM\_TIM2\_ITR1\_TIM10\_OC)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM2\_ITR1\_TIM5\_TGO)))\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ (((INSTANCE)\ ==\ TIM3)\ \ \&\&\ (((TIM\_REMAP)\ ==\ TIM\_TIM3\_ITR2\_TIM11\_OC)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM3\_ITR2\_TIM5\_TGO)))\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ (((INSTANCE)\ ==\ TIM9)\ \ \&\&\ ((TIM\_REMAP)\ <=\ (TIM\_TIM9\_ITR1\_TS\ |\ TIM\_TIM9\_GPIO2)))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ (((INSTANCE)\ ==\ TIM10)\ \&\&\ ((TIM\_REMAP)\ <=\ (TIM\_TIM10\_RI\ |\ TIM\_TIM10\_ETR\_TIM9\_TGO\ |\ TIM\_TIM10\_RTC)))\ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ (((INSTANCE)\ ==\ TIM11)\ \&\&\ ((TIM\_REMAP)\ <=\ (TIM\_TIM11\_RI\ |\ TIM\_TIM11\_ETR\_TIM9\_TGO\ |\ TIM\_TIM11\_GPIO1)))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ IS\_TIM\_REMAP(INSTANCE,\ TIM\_REMAP)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ (\ (((INSTANCE)\ ==\ TIM9)\ \ \&\&\ (((TIM\_REMAP)\ ==\ TIM\_TIM9\_GPIO)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM9\_LSE)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM9\_GPIO1)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM9\_GPIO2)))\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ (((INSTANCE)\ ==\ TIM10)\ \&\&\ (((TIM\_REMAP)\ ==\ TIM\_TIM10\_GPIO)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM10\_LSI)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM10\_LSE)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM10\_RTC)))\ \ \ \ \ \ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ (((INSTANCE)\ ==\ TIM11)\ \&\&\ (((TIM\_REMAP)\ ==\ TIM\_TIM11\_GPIO)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM11\_MSI)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM11\_HSE\_RTC)\ ||\ ((TIM\_REMAP)\ ==\ TIM\_TIM11\_GPIO1)))\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ )}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DMA2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00142\ \textcolor{comment}{/*\ End\ of\ private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00153\ \textcolor{comment}{/*\ Extended\ Control\ functions\ \ ************************************************/}}
+\DoxyCodeLine{00154\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__TIMEx__Exported__Functions__Group5_ga772129e4fa76d4af34b9b6913698d3c8}{HAL\_TIMEx\_MasterConfigSynchronization}}(\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\_HandleTypeDef}}\ *htim,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTIM__MasterConfigTypeDef}{TIM\_MasterConfigTypeDef}}\ *sMasterConfig);}
+\DoxyCodeLine{00156\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__TIMEx__Exported__Functions__Group5_ga683118282daf3aa2e319eb8eea93af31}{HAL\_TIMEx\_RemapConfig}}(\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\_HandleTypeDef}}\ *htim,\ uint32\_t\ Remap);}
+\DoxyCodeLine{00164\ \textcolor{comment}{/*\ End\ of\ exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00175\ \}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32L1xx\_HAL\_TIM\_EX\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

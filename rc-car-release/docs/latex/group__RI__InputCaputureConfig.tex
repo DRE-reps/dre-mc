@@ -1,0 +1,168 @@
+\doxysubsubsubsubsection{Input Capture configuration}
+\hypertarget{group__RI__InputCaputureConfig}{}\label{group__RI__InputCaputureConfig}\index{Input Capture configuration@{Input Capture configuration}}
+Collaboration diagram for Input Capture configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RI__InputCaputureConfig}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_gaab9c6ad79238b046d2c4777e4be81b85}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE1}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 1 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_gab8a178ab5420d9256e02063347704970}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE2}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 2 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_ga7505f9d5c4a5bbf3691515e8522ce5f1}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE3}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 3 of TIMx to a selected I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RI__InputCaputureConfig_ga194940d54be3e5091c3225b8f7f312c2}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE4}}(\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Configures the routing interface to map Input Capture 4 of TIMx to a selected I/O pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RI__InputCaputureConfig_gaab9c6ad79238b046d2c4777e4be81b85}\label{group__RI__InputCaputureConfig_gaab9c6ad79238b046d2c4777e4be81b85} 
+\index{Input Capture configuration@{Input Capture configuration}!\_\_HAL\_RI\_REMAP\_INPUTCAPTURE1@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE1}}
+\index{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE1@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE1}!Input Capture configuration@{Input Capture configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE1}{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE1}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE1(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INPUT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\mbox{\hyperlink{stm32l1xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group__TIM__Select_ga4263668be64ccc7d204199e68a8163d2}{IS\_RI\_TIM}}(\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ assert\_param(\mbox{\hyperlink{group__RI__InputCaptureRouting_ga708dcd52c15510988327d93cfaebeb42}{IS\_RI\_INPUTCAPTURE\_ROUTING}}(\_\_INPUT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_TIM,\ (\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RI-\/>ICR,\ \mbox{\hyperlink{group__RI__InputCapture_gaa98d1e873a27efd633af657e8b968870}{RI\_INPUTCAPTURE\_IC1}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_IC1OS,\ (\_\_INPUT\_\_)\ <<\ POSITION\_VAL(RI\_ICR\_IC1OS));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Configures the routing interface to map Input Capture 1 of TIMx to a selected I/O pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+} & Timer select. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+SELECT\+\_\+\+NONE\+: No timer selected and default Timer mapping is enabled. \item TIM\+\_\+\+SELECT\+\_\+\+TIM2\+: Timer 2 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM3\+: Timer 3 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM4\+: Timer 4 Input Captures to be routed. \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+} & selects which pin to be routed to Input Capture. This parameter must be a value of \doxylink{group__RI__InputCaptureRouting}{Input Capture Routing} e.\+g. \doxylink{group__RI__InputCaputureConfig_gaab9c6ad79238b046d2c4777e4be81b85}{\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE1(\+TIM\+\_\+\+SELECT\+\_\+\+TIM2, RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+1)} allows routing of Input capture IC1 of TIM2 to PA4. For details about correspondence between RI\+\_\+\+INPUTCAPTUREROUTING\+\_\+x and I/O pins refer to the parameters\textquotesingle{} description in the header file or refer to the product reference manual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Input capture selection bits are not reset by this function. To reset input capture selection bits, use SYSCFG\+\_\+\+RIDe\+Init() function. 
+
+The I/O should be configured in alternate function mode (AF14) using GPIO\+\_\+\+Pin\+AFConfig() function. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__RI__InputCaputureConfig_gab8a178ab5420d9256e02063347704970}\label{group__RI__InputCaputureConfig_gab8a178ab5420d9256e02063347704970} 
+\index{Input Capture configuration@{Input Capture configuration}!\_\_HAL\_RI\_REMAP\_INPUTCAPTURE2@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE2}}
+\index{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE2@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE2}!Input Capture configuration@{Input Capture configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE2}{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE2}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE2(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INPUT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\mbox{\hyperlink{stm32l1xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group__TIM__Select_ga4263668be64ccc7d204199e68a8163d2}{IS\_RI\_TIM}}(\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ assert\_param(\mbox{\hyperlink{group__RI__InputCaptureRouting_ga708dcd52c15510988327d93cfaebeb42}{IS\_RI\_INPUTCAPTURE\_ROUTING}}(\_\_INPUT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_TIM,\ (\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RI-\/>ICR,\ \mbox{\hyperlink{group__RI__InputCapture_gabfeb9d558e0b2be2376a8de7bba47c6f}{RI\_INPUTCAPTURE\_IC2}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_IC2OS,\ (\_\_INPUT\_\_)\ <<\ POSITION\_VAL(RI\_ICR\_IC2OS));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Configures the routing interface to map Input Capture 2 of TIMx to a selected I/O pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+} & Timer select. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+SELECT\+\_\+\+NONE\+: No timer selected and default Timer mapping is enabled. \item TIM\+\_\+\+SELECT\+\_\+\+TIM2\+: Timer 2 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM3\+: Timer 3 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM4\+: Timer 4 Input Captures to be routed. \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+} & selects which pin to be routed to Input Capture. This parameter must be a value of \doxylink{group__RI__InputCaptureRouting}{Input Capture Routing} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__RI__InputCaputureConfig_ga7505f9d5c4a5bbf3691515e8522ce5f1}\label{group__RI__InputCaputureConfig_ga7505f9d5c4a5bbf3691515e8522ce5f1} 
+\index{Input Capture configuration@{Input Capture configuration}!\_\_HAL\_RI\_REMAP\_INPUTCAPTURE3@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE3}}
+\index{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE3@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE3}!Input Capture configuration@{Input Capture configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE3}{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE3}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE3(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INPUT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\mbox{\hyperlink{stm32l1xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group__TIM__Select_ga4263668be64ccc7d204199e68a8163d2}{IS\_RI\_TIM}}(\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ assert\_param(\mbox{\hyperlink{group__RI__InputCaptureRouting_ga708dcd52c15510988327d93cfaebeb42}{IS\_RI\_INPUTCAPTURE\_ROUTING}}(\_\_INPUT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_TIM,\ (\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RI-\/>ICR,\ \mbox{\hyperlink{group__RI__InputCapture_gaa6898cb4fe4fa9c7c8f1575dacde0200}{RI\_INPUTCAPTURE\_IC3}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_IC3OS,\ (\_\_INPUT\_\_)\ <<\ POSITION\_VAL(RI\_ICR\_IC3OS));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Configures the routing interface to map Input Capture 3 of TIMx to a selected I/O pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+} & Timer select. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+SELECT\+\_\+\+NONE\+: No timer selected and default Timer mapping is enabled. \item TIM\+\_\+\+SELECT\+\_\+\+TIM2\+: Timer 2 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM3\+: Timer 3 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM4\+: Timer 4 Input Captures to be routed. \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+} & selects which pin to be routed to Input Capture. This parameter must be a value of \doxylink{group__RI__InputCaptureRouting}{Input Capture Routing} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__RI__InputCaputureConfig_ga194940d54be3e5091c3225b8f7f312c2}\label{group__RI__InputCaputureConfig_ga194940d54be3e5091c3225b8f7f312c2} 
+\index{Input Capture configuration@{Input Capture configuration}!\_\_HAL\_RI\_REMAP\_INPUTCAPTURE4@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE4}}
+\index{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE4@{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE4}!Input Capture configuration@{Input Capture configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE4}{\_\_HAL\_RI\_REMAP\_INPUTCAPTURE4}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+REMAP\+\_\+\+INPUTCAPTURE4(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INPUT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\mbox{\hyperlink{stm32l1xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group__TIM__Select_ga4263668be64ccc7d204199e68a8163d2}{IS\_RI\_TIM}}(\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ assert\_param(\mbox{\hyperlink{group__RI__InputCaptureRouting_ga708dcd52c15510988327d93cfaebeb42}{IS\_RI\_INPUTCAPTURE\_ROUTING}}(\_\_INPUT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_TIM,\ (\_\_TIMSELECT\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(RI-\/>ICR,\ \mbox{\hyperlink{group__RI__InputCapture_ga0fbcaaee4c38c255c923397053db8013}{RI\_INPUTCAPTURE\_IC4}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(RI-\/>ICR,\ RI\_ICR\_IC4OS,\ (\_\_INPUT\_\_)\ <<\ POSITION\_VAL(RI\_ICR\_IC4OS));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Configures the routing interface to map Input Capture 4 of TIMx to a selected I/O pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+TIMSELECT\+\_\+\+\_\+} & Timer select. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+SELECT\+\_\+\+NONE\+: No timer selected and default Timer mapping is enabled. \item TIM\+\_\+\+SELECT\+\_\+\+TIM2\+: Timer 2 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM3\+: Timer 3 Input Captures to be routed. \item TIM\+\_\+\+SELECT\+\_\+\+TIM4\+: Timer 4 Input Captures to be routed. \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+INPUT\+\_\+\+\_\+} & selects which pin to be routed to Input Capture. This parameter must be a value of \doxylink{group__RI__InputCaptureRouting}{Input Capture Routing} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,7 @@
+<map id="HAL_NVIC_SetPriority" name="HAL_NVIC_SetPriority">
+<area shape="rect" id="Node000001" title=" " alt="" coords="227,31,389,56"/>
+<area shape="rect" id="Node000002" href="$group__TIM__Exported__Functions__Group1.html#ga818f4d5d1e2f417438d281b4ac9efb9c" title="TIM_Base MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,5,179,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,35,179,31,179,26,214,30"/>
+<area shape="rect" id="Node000003" href="$group__UART__Exported__Functions__Group1.html#ga0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="19,55,165,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,57,165,62,164,57,213,51"/>
+</map>

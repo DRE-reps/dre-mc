@@ -1,0 +1,54 @@
+\doxysubsubsubsubsection{VREFINT configuration}
+\hypertarget{group__SYSCFG__VrefInt}{}\label{group__SYSCFG__VrefInt}\index{VREFINT configuration@{VREFINT configuration}}
+Collaboration diagram for VREFINT configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__SYSCFG__VrefInt}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__VrefInt_gaaf7a83b4563a6dc56f6ffcf4b5a4d3ab}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+VREFINT\+\_\+\+OUT\+\_\+\+ENABLE}}()~SET\+\_\+\+BIT(COMP-\/$>$CSR, COMP\+\_\+\+CSR\+\_\+\+VREFOUTEN)
+\begin{DoxyCompactList}\small\item\em Enables or disables the output of internal reference voltage (Vref\+Int) on I/O pin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__VrefInt_gacd1d40334627b9dced9471b91cd11f10}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+VREFINT\+\_\+\+OUT\+\_\+\+DISABLE}}()~CLEAR\+\_\+\+BIT(COMP-\/$>$CSR, COMP\+\_\+\+CSR\+\_\+\+VREFOUTEN)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__SYSCFG__VrefInt_gacd1d40334627b9dced9471b91cd11f10}\label{group__SYSCFG__VrefInt_gacd1d40334627b9dced9471b91cd11f10} 
+\index{VREFINT configuration@{VREFINT configuration}!\_\_HAL\_SYSCFG\_VREFINT\_OUT\_DISABLE@{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_DISABLE}}
+\index{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_DISABLE@{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_DISABLE}!VREFINT configuration@{VREFINT configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_DISABLE}{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+VREFINT\+\_\+\+OUT\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(COMP-\/$>$CSR, COMP\+\_\+\+CSR\+\_\+\+VREFOUTEN)}
+
+\Hypertarget{group__SYSCFG__VrefInt_gaaf7a83b4563a6dc56f6ffcf4b5a4d3ab}\label{group__SYSCFG__VrefInt_gaaf7a83b4563a6dc56f6ffcf4b5a4d3ab} 
+\index{VREFINT configuration@{VREFINT configuration}!\_\_HAL\_SYSCFG\_VREFINT\_OUT\_ENABLE@{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_ENABLE}}
+\index{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_ENABLE@{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_ENABLE}!VREFINT configuration@{VREFINT configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_ENABLE}{\_\_HAL\_SYSCFG\_VREFINT\_OUT\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+VREFINT\+\_\+\+OUT\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(COMP-\/$>$CSR, COMP\+\_\+\+CSR\+\_\+\+VREFOUTEN)}
+
+
+
+Enables or disables the output of internal reference voltage (Vref\+Int) on I/O pin. 
+
+\begin{DoxyNote}{Note}
+The Vref\+Int output can be routed to any I/O in group 3\+:
+\begin{DoxyItemize}
+\item For Cat.\+1 and Cat.\+2 devices\+: CH8 (PB0) or CH9 (PB1).
+\item For Cat.\+3 devices\+: CH8 (PB0), CH9 (PB1) or CH0b (PB2).
+\item For Cat.\+4 and Cat.\+5 devices\+: CH8 (PB0), CH9 (PB1), CH0b (PB2), CH1b (PF11) or CH2b (PF12). Note\+: Comparator peripheral clock must be preliminarily enabled, either in COMP user function "{}\+HAL\+\_\+\+COMP\+\_\+\+Msp\+Init()"{} (should be done if comparators are used) or by direct clock enable\+: Refer to macro "{}\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+COMP\+\_\+\+CLK\+\_\+\+ENABLE()"{}. Note\+: In addition with this macro, Vref\+Int output buffer must be connected to the selected I/O pin. Refer to macro "{}\+\_\+\+\_\+\+HAL\+\_\+\+RI\+\_\+\+IOSWITCH\+\_\+\+CLOSE()"{}. 
+\end{DoxyItemize}
+
+Vref\+Int output enable\+: Internal reference voltage connected to I/O group 3 Vref\+Int output disable\+: Internal reference voltage disconnected from I/O group 3 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

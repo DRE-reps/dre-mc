@@ -1,0 +1,42 @@
+\doxysubsubsubsection{RCC Extended MCOx Clock Config}
+\hypertarget{group__RCCEx__MCOx__Clock__Config}{}\label{group__RCCEx__MCOx__Clock__Config}\index{RCC Extended MCOx Clock Config@{RCC Extended MCOx Clock Config}}
+Collaboration diagram for RCC Extended MCOx Clock Config\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RCCEx__MCOx__Clock__Config}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCCEx__MCOx__Clock__Config_ga7e5f7f1efc92794b6f0e96068240b45e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MCO1\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+)~                 MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, (RCC\+\_\+\+CFGR\+\_\+\+MCOSEL \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CFGR\+\_\+\+MCOPRE), ((\+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Macro to configure the MCO clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__RCCEx__MCOx__Clock__Config_ga7e5f7f1efc92794b6f0e96068240b45e}\label{group__RCCEx__MCOx__Clock__Config_ga7e5f7f1efc92794b6f0e96068240b45e} 
+\index{RCC Extended MCOx Clock Config@{RCC Extended MCOx Clock Config}!\_\_HAL\_RCC\_MCO1\_CONFIG@{\_\_HAL\_RCC\_MCO1\_CONFIG}}
+\index{\_\_HAL\_RCC\_MCO1\_CONFIG@{\_\_HAL\_RCC\_MCO1\_CONFIG}!RCC Extended MCOx Clock Config@{RCC Extended MCOx Clock Config}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_RCC\_MCO1\_CONFIG}{\_\_HAL\_RCC\_MCO1\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+MCO1\+\_\+\+CONFIG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+ }\end{DoxyParamCaption})~                 MODIFY\+\_\+\+REG(RCC-\/$>$CFGR, (RCC\+\_\+\+CFGR\+\_\+\+MCOSEL \texorpdfstring{$\vert$}{|} RCC\+\_\+\+CFGR\+\_\+\+MCOPRE), ((\+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+) \texorpdfstring{$\vert$}{|} (\+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+)))}
+
+
+
+Macro to configure the MCO clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+MCOCLKSOURCE\+\_\+\+\_\+} & specifies the MCO clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__MCO1__Clock__Source_ga725a16362f3324ef5866dc5a1ff07cf5}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+NOCLOCK} No clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_gae8ca2959a1252ecd319843da02c79526}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+SYSCLK} System Clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_gad99c388c455852143220397db3730635}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+HSI} HSI oscillator clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_gac5ae615cfe916da9ecb212cf8ac102a6}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+MSI} MSI oscillator clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_ga5582d2ab152eb440a6cc3ae4833b043f}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+HSE} HSE oscillator clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_ga79d888f2238eaa4e4b8d02b3900ea18b}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+PLLCLK} PLL clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_ga4ada18d28374df66c1b6da16606c23d8}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+LSI} LSI clock selected as MCO clock \item \doxylink{group__RCC__MCO1__Clock__Source_gaa01b6cb196df3a4ad690f8bcaa4d0621}{RCC\+\_\+\+MCO1\+SOURCE\+\_\+\+LSE} LSE clock selected as MCO clock \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+MCODIV\+\_\+\+\_\+} & specifies the MCO clock prescaler. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__RCC__MCOx__Clock__Prescaler_ga438d8c3bead4e1ec5dd5757cb0313d53}{RCC\+\_\+\+MCODIV\+\_\+1} MCO clock source is divided by 1 \item \doxylink{group__RCC__MCOx__Clock__Prescaler_ga6198330847077f4da351915518140bfc}{RCC\+\_\+\+MCODIV\+\_\+2} MCO clock source is divided by 2 \item \doxylink{group__RCC__MCOx__Clock__Prescaler_ga1bdc2eb56aaeb53dc3ca5cd72f22d4c8}{RCC\+\_\+\+MCODIV\+\_\+4} MCO clock source is divided by 4 \item \doxylink{group__RCC__MCOx__Clock__Prescaler_gadb84d9a10db2c49376be8fada619fe08}{RCC\+\_\+\+MCODIV\+\_\+8} MCO clock source is divided by 8 \item \doxylink{group__RCC__MCOx__Clock__Prescaler_ga3ab3ab9547ef8800355111517b547882}{RCC\+\_\+\+MCODIV\+\_\+16} MCO clock source is divided by 16 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,11 @@
+<map id="Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h" name="Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h">
+<area shape="rect" id="Node000001" title="Header file of UART HAL module." alt="" coords="142,5,323,60"/>
+<area shape="rect" id="Node000002" href="$stm32l1xx__hal__def_8h.html" title="This file contains HAL common defines, enumeration, macros and structures definitions." alt="" coords="154,108,311,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,60,235,94,230,94,230,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,181,108,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,136,99,178,97,174,203,131"/>
+<area shape="rect" id="Node000004" href="$stm32__hal__legacy_8h.html" title="This file contains aliases definition for the STM32Cube HAL constants macros and functions maintained..." alt="" coords="133,181,333,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="235,134,235,168,230,168,230,134"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="357,181,431,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="260,131,356,173,354,178,258,136"/>
+</map>

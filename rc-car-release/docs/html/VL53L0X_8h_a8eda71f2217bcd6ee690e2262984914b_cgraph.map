@@ -1,0 +1,26 @@
+<map id="readRangeSingleMillimeters" name="readRangeSingleMillimeters">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,107,212,132"/>
+<area shape="rect" id="Node000002" href="$group__HAL__Exported__Functions__Group2.html#gaf2c4f03d53e997a54e1fd5e80daa55c4" title=" " alt="" coords="549,5,655,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,104,195,83,259,63,333,48,407,36,535,21,536,26,408,41,334,53,261,69,196,88,141,109"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a4115dd2d5811402bad03557855e86071" title=" " alt="" coords="260,107,499,132"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,117,246,117,246,122,212,122"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html#a6030029639c34876b2bb5b1dc6eaaba6" title=" " alt="" coords="564,55,640,80"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="177,104,260,91,419,76,550,67,551,73,419,81,260,97,178,109"/>
+<area shape="rect" id="Node000008" href="$VL53L0X_8c.html#a44de3ddd53a8eeec63b9e8f00e174556" title=" " alt="" coords="562,203,642,228"/>
+<area shape="poly" id="edge14_Node000001_Node000008" title=" " alt="" coords="176,129,549,203,548,208,175,135"/>
+<area shape="rect" id="Node000010" href="$logger_8c.html#a3278730f835b7230a0de447ea4afd3f0" title=" " alt="" coords="339,208,419,233"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="136,130,192,157,261,186,327,206,325,211,259,191,190,162,133,135"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="407,104,546,40,558,34,560,39,548,44,409,109"/>
+<area shape="rect" id="Node000004" href="$VL53L0X_8c.html#a89e66d9d028359f265f599bbc67c63de" title=" " alt="" coords="560,153,644,179"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="441,129,547,152,546,157,440,135"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="434,104,550,77,551,82,435,109"/>
+<area shape="rect" id="Node000007" href="$VL53L0X_8c.html#ad073f96b52d96014dade2560dd2fa931" title=" " alt="" coords="547,104,657,129"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="499,115,533,115,533,120,499,121"/>
+<area shape="poly" id="edge10_Node000003_Node000008" title=" " alt="" coords="448,130,500,149,525,169,548,189,557,194,554,199,545,194,521,173,497,154,447,135"/>
+<area shape="rect" id="Node000005" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="707,104,863,129"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="643,152,723,130,725,135,645,157"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="641,75,724,98,723,103,639,80"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="657,114,693,114,693,119,657,119"/>
+<area shape="rect" id="Node000009" href="$group__I2C__Exported__Functions__Group2.html#ga33e725a824eb672f9f999d9d5ce088fb" title=" " alt="" coords="705,203,864,228"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="642,213,691,213,691,218,642,218"/>
+</map>

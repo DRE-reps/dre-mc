@@ -1,0 +1,51 @@
+\doxysection{stm32l1xx\+\_\+hal\+\_\+flash\+\_\+ramfunc.\+h}
+\hypertarget{stm32l1xx__hal__flash__ramfunc_8h_source}{}\label{stm32l1xx__hal__flash__ramfunc_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_flash\_ramfunc.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_hal\_flash\_ramfunc.h}}
+\mbox{\hyperlink{stm32l1xx__hal__flash__ramfunc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_FLASH\_RAMFUNC\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_FLASH\_RAMFUNC\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00023\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32l1xx__hal__def_8h}{stm32l1xx\_hal\_def.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ *\ @brief\ \ FLASH\ memory\ functions\ that\ should\ be\ executed\ from\ internal\ SRAM.}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ These\ functions\ are\ defined\ inside\ the\ "{}stm32l1xx\_hal\_flash\_ramfunc.c"{}}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ file.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00051\ \ \ }
+\DoxyCodeLine{00056\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__RAMFUNC__Exported__Functions__Group1_ga3b58330ebe07fa667a61b23667c3e930}{HAL\_FLASHEx\_EnableRunPowerDown}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00057\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__RAMFUNC__Exported__Functions__Group1_ga3ab8b24e2021e4bb4c427e2e6aa62220}{HAL\_FLASHEx\_DisableRunPowerDown}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#if\ defined(FLASH\_PECR\_PARALLBANK)}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_FLASHEx\_EraseParallelPage(uint32\_t\ Page\_Address1,\ uint32\_t\ Page\_Address2);}
+\DoxyCodeLine{00070\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ HAL\_FLASHEx\_ProgramParallelHalfPage(uint32\_t\ Address1,\ uint32\_t*\ pBuffer1,\ uint32\_t\ Address2,\ uint32\_t*\ pBuffer2);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FLASH\_PECR\_PARALLBANK\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__RAMFUNC__Exported__Functions__Group2_gafda1adfcd45f248873e381da7c43e2be}{HAL\_FLASHEx\_HalfPageProgram}}(uint32\_t\ Address,\ uint32\_t*\ pBuffer);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00083\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__RAMFUNC__Exported__Functions__Group3_gaa953511f68578b83d939b6d25ad97b96}{HAL\_FLASHEx\_GetError}}(uint32\_t\ *Error);}
+\DoxyCodeLine{00092\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__RAMFUNC__Exported__Functions__Group4_gae007938581d8c588f9ccd6fed387d4e1}{HAL\_FLASHEx\_DATAEEPROM\_EraseDoubleWord}}(uint32\_t\ Address);}
+\DoxyCodeLine{00093\ \_\_RAM\_FUNC\ \mbox{\hyperlink{stm32l1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group__FLASH__RAMFUNC__Exported__Functions__Group4_ga629b642d56f886b23048e7ee55d14f35}{HAL\_FLASHEx\_DATAEEPROM\_ProgramDoubleWord}}(uint32\_t\ Address,\ uint64\_t\ Data);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_FLASH\_RAMFUNC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00116\ }
+
+\end{DoxyCode}

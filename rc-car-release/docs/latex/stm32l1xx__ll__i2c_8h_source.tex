@@ -1,0 +1,679 @@
+\doxysection{stm32l1xx\+\_\+ll\+\_\+i2c.\+h}
+\hypertarget{stm32l1xx__ll__i2c_8h_source}{}\label{stm32l1xx__ll__i2c_8h_source}\index{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_i2c.h@{Drivers/STM32L1xx\_HAL\_Driver/Inc/stm32l1xx\_ll\_i2c.h}}
+\mbox{\hyperlink{stm32l1xx__ll__i2c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32L1xx\_LL\_I2C\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_\_STM32L1xx\_LL\_I2C\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}stm32l1xx.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ defined\ (I2C1)\ ||\ defined\ (I2C2)}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Private\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ Private\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00048\ \textcolor{comment}{/*\ Defines\ used\ to\ perform\ compute\ and\ check\ in\ the\ macros\ */}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LL\_I2C\_MAX\_SPEED\_STANDARD\ \ \ \ \ \ \ \ \ \ \ 100000U}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LL\_I2C\_MAX\_SPEED\_FAST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 400000U}}
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*USE\_FULL\_LL\_DRIVER*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ uint32\_t\ PeripheralMode;\ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ uint32\_t\ ClockSpeed;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ uint32\_t\ DutyCycle;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ uint32\_t\ OwnAddress1;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ uint32\_t\ TypeAcknowledge;\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ uint32\_t\ OwnAddrSize;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \}\ LL\_I2C\_InitTypeDef;}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*USE\_FULL\_LL\_DRIVER*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_SB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_SB\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_BTF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_BTF\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_ADD10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_ADD10\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_STOPF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_STOPF\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_BERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_BERR\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_ARLO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_ARLO\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_AF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_AF\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_OVR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR1\_OVR\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_PECERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_ISR\_PECERR\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_TIMEOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_ISR\_TIMEOUT\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR1\_SMALERT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_ISR\_SMALERT\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_MSL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_MSL\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_TRA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_TRA\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_GENCALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_GENCALL\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_SMBDEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_SMBDEFAULT\ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_SMBHOST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_SMBHOST\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LL\_I2C\_SR2\_DUALF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_DUALF\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ LL\_I2C\_CR2\_ITEVTEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_CR2\_ITEVTEN\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ LL\_I2C\_CR2\_ITBUFEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_CR2\_ITBUFEN\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ LL\_I2C\_CR2\_ITERREN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_CR2\_ITERREN\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ LL\_I2C\_OWNADDRESS1\_7BIT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00004000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ LL\_I2C\_OWNADDRESS1\_10BIT\ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)(I2C\_OAR1\_ADDMODE\ |\ 0x00004000U)\ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ LL\_I2C\_DUTYCYCLE\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ LL\_I2C\_DUTYCYCLE\_16\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_CCR\_DUTY\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ LL\_I2C\_CLOCK\_SPEED\_STANDARD\_MODE\ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ LL\_I2C\_CLOCK\_SPEED\_FAST\_MODE\ \ \ \ \ \ \ \ I2C\_CCR\_FS\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ LL\_I2C\_MODE\_I2C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ LL\_I2C\_MODE\_SMBUS\_HOST\ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)(I2C\_CR1\_SMBUS\ |\ I2C\_CR1\_SMBTYPE\ |\ I2C\_CR1\_ENARP)\ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ LL\_I2C\_MODE\_SMBUS\_DEVICE\ \ \ \ \ \ \ \ \ \ \ \ I2C\_CR1\_SMBUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ LL\_I2C\_MODE\_SMBUS\_DEVICE\_ARP\ \ \ \ \ \ \ \ (uint32\_t)(I2C\_CR1\_SMBUS\ |\ I2C\_CR1\_ENARP)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ LL\_I2C\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_CR1\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ LL\_I2C\_NACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ LL\_I2C\_DIRECTION\_WRITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ I2C\_SR2\_TRA\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ LL\_I2C\_DIRECTION\_READ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ LL\_I2C\_WriteReg(\_\_INSTANCE\_\_,\ \_\_REG\_\_,\ \_\_VALUE\_\_)\ WRITE\_REG(\_\_INSTANCE\_\_-\/>\_\_REG\_\_,\ (\_\_VALUE\_\_))}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ LL\_I2C\_ReadReg(\_\_INSTANCE\_\_,\ \_\_REG\_\_)\ READ\_REG(\_\_INSTANCE\_\_-\/>\_\_REG\_\_)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_FREQ\_HZ\_TO\_MHZ(\_\_PCLK\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)((\_\_PCLK\_\_)/1000000U)}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_FREQ\_MHZ\_TO\_HZ(\_\_PCLK\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)((\_\_PCLK\_\_)*1000000U)}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_RISE\_TIME(\_\_FREQRANGE\_\_,\ \_\_SPEED\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)(((\_\_SPEED\_\_)\ <=\ LL\_I2C\_MAX\_SPEED\_STANDARD)\ ?\ ((\_\_FREQRANGE\_\_)\ +\ 1U)\ :\ ((((\_\_FREQRANGE\_\_)\ *\ 300U)\ /\ 1000U)\ +\ 1U))}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_SPEED\_TO\_CCR(\_\_PCLK\_\_,\ \_\_SPEED\_\_,\ \_\_DUTYCYCLE\_\_)\ \ \ \ \ \ \ (uint32\_t)(((\_\_SPEED\_\_)\ <=\ LL\_I2C\_MAX\_SPEED\_STANDARD)?\ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_LL\_I2C\_SPEED\_STANDARD\_TO\_CCR((\_\_PCLK\_\_),\ (\_\_SPEED\_\_)))\ :\ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_\_LL\_I2C\_SPEED\_FAST\_TO\_CCR((\_\_PCLK\_\_),\ (\_\_SPEED\_\_),\ (\_\_DUTYCYCLE\_\_))))}}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_SPEED\_STANDARD\_TO\_CCR(\_\_PCLK\_\_,\ \_\_SPEED\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)(((((\_\_PCLK\_\_)/((\_\_SPEED\_\_)\ <<\ 1U))\ \&\ I2C\_CCR\_CCR)\ <\ 4U)?\ 4U:((\_\_PCLK\_\_)\ /\ ((\_\_SPEED\_\_)\ <<\ 1U)))}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_SPEED\_FAST\_TO\_CCR(\_\_PCLK\_\_,\ \_\_SPEED\_\_,\ \_\_DUTYCYCLE\_\_)\ \ (uint32\_t)(((\_\_DUTYCYCLE\_\_)\ ==\ LL\_I2C\_DUTYCYCLE\_2)?\ \(\backslash\)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_PCLK\_\_)\ /\ ((\_\_SPEED\_\_)\ *\ 3U))\ \&\ I2C\_CCR\_CCR)\ ==\ 0U)?\ 1U:((\_\_PCLK\_\_)\ /\ ((\_\_SPEED\_\_)\ *\ 3U)))\ :\ \(\backslash\)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((((\_\_PCLK\_\_)\ /\ ((\_\_SPEED\_\_)\ *\ 25U))\ \&\ I2C\_CCR\_CCR)\ ==\ 0U)?\ 1U:((\_\_PCLK\_\_)\ /\ ((\_\_SPEED\_\_)\ *\ 25U))))}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_10BIT\_ADDRESS(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)((uint16\_t)((\_\_ADDRESS\_\_)\ \&\ (uint16\_t)(0x00FF))))}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_10BIT\_HEADER\_WRITE(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)((uint16\_t)((uint16\_t)(((uint16\_t)((\_\_ADDRESS\_\_)\ \&\ (uint16\_t)(0x0300)))\ >>\ 7)\ |\ (uint16\_t)(0xF0))))}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ \_\_LL\_I2C\_10BIT\_HEADER\_READ(\_\_ADDRESS\_\_)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)((uint16\_t)((uint16\_t)(((uint16\_t)((\_\_ADDRESS\_\_)\ \&\ (uint16\_t)(0x0300)))\ >>\ 7)\ |\ (uint16\_t)(0xF1))))}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00332\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00348\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_Enable(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00349\ \{}
+\DoxyCodeLine{00350\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PE);}
+\DoxyCodeLine{00351\ \}}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00359\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_Disable(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00360\ \{}
+\DoxyCodeLine{00361\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PE);}
+\DoxyCodeLine{00362\ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00370\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabled(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00371\ \{}
+\DoxyCodeLine{00372\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PE)\ ==\ (I2C\_CR1\_PE));}
+\DoxyCodeLine{00373\ \}}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00382\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableDMAReq\_TX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00383\ \{}
+\DoxyCodeLine{00384\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_DMAEN);}
+\DoxyCodeLine{00385\ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00393\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableDMAReq\_TX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00394\ \{}
+\DoxyCodeLine{00395\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_DMAEN);}
+\DoxyCodeLine{00396\ \}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00404\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledDMAReq\_TX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00405\ \{}
+\DoxyCodeLine{00406\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_DMAEN)\ ==\ (I2C\_CR2\_DMAEN));}
+\DoxyCodeLine{00407\ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00415\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableDMAReq\_RX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00416\ \{}
+\DoxyCodeLine{00417\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_DMAEN);}
+\DoxyCodeLine{00418\ \}}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00426\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableDMAReq\_RX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00427\ \{}
+\DoxyCodeLine{00428\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_DMAEN);}
+\DoxyCodeLine{00429\ \}}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00437\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledDMAReq\_RX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00438\ \{}
+\DoxyCodeLine{00439\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_DMAEN)\ ==\ (I2C\_CR2\_DMAEN));}
+\DoxyCodeLine{00440\ \}}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00448\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_DMA\_GetRegAddr(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00449\ \{}
+\DoxyCodeLine{00450\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)\ \&\ (I2Cx-\/>DR);}
+\DoxyCodeLine{00451\ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00460\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableClockStretching(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00461\ \{}
+\DoxyCodeLine{00462\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_NOSTRETCH);}
+\DoxyCodeLine{00463\ \}}
+\DoxyCodeLine{00464\ }
+\DoxyCodeLine{00472\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableClockStretching(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00473\ \{}
+\DoxyCodeLine{00474\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_NOSTRETCH);}
+\DoxyCodeLine{00475\ \}}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00483\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledClockStretching(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00484\ \{}
+\DoxyCodeLine{00485\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_NOSTRETCH)\ !=\ (I2C\_CR1\_NOSTRETCH));}
+\DoxyCodeLine{00486\ \}}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00495\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableGeneralCall(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00496\ \{}
+\DoxyCodeLine{00497\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ENGC);}
+\DoxyCodeLine{00498\ \}}
+\DoxyCodeLine{00499\ }
+\DoxyCodeLine{00507\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableGeneralCall(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00508\ \{}
+\DoxyCodeLine{00509\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ENGC);}
+\DoxyCodeLine{00510\ \}}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00518\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledGeneralCall(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00519\ \{}
+\DoxyCodeLine{00520\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ENGC)\ ==\ (I2C\_CR1\_ENGC));}
+\DoxyCodeLine{00521\ \}}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00536\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetOwnAddress1(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ OwnAddress1,\ uint32\_t\ OwnAddrSize)}
+\DoxyCodeLine{00537\ \{}
+\DoxyCodeLine{00538\ \ \ MODIFY\_REG(I2Cx-\/>OAR1,\ I2C\_OAR1\_ADD0\ |\ I2C\_OAR1\_ADD1\_7\ |\ I2C\_OAR1\_ADD8\_9\ |\ I2C\_OAR1\_ADDMODE,\ OwnAddress1\ |\ OwnAddrSize);}
+\DoxyCodeLine{00539\ \}}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00549\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetOwnAddress2(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ OwnAddress2)}
+\DoxyCodeLine{00550\ \{}
+\DoxyCodeLine{00551\ \ \ MODIFY\_REG(I2Cx-\/>OAR2,\ I2C\_OAR2\_ADD2,\ OwnAddress2);}
+\DoxyCodeLine{00552\ \}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00560\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableOwnAddress2(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00561\ \{}
+\DoxyCodeLine{00562\ \ \ SET\_BIT(I2Cx-\/>OAR2,\ I2C\_OAR2\_ENDUAL);}
+\DoxyCodeLine{00563\ \}}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00571\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableOwnAddress2(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00572\ \{}
+\DoxyCodeLine{00573\ \ \ CLEAR\_BIT(I2Cx-\/>OAR2,\ I2C\_OAR2\_ENDUAL);}
+\DoxyCodeLine{00574\ \}}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00582\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledOwnAddress2(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00583\ \{}
+\DoxyCodeLine{00584\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>OAR2,\ I2C\_OAR2\_ENDUAL)\ ==\ (I2C\_OAR2\_ENDUAL));}
+\DoxyCodeLine{00585\ \}}
+\DoxyCodeLine{00586\ }
+\DoxyCodeLine{00594\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetPeriphClock(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ PeriphClock)}
+\DoxyCodeLine{00595\ \{}
+\DoxyCodeLine{00596\ \ \ MODIFY\_REG(I2Cx-\/>CR2,\ I2C\_CR2\_FREQ,\ \_\_LL\_I2C\_FREQ\_HZ\_TO\_MHZ(PeriphClock));}
+\DoxyCodeLine{00597\ \}}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00605\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetPeriphClock(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00606\ \{}
+\DoxyCodeLine{00607\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\_\_LL\_I2C\_FREQ\_MHZ\_TO\_HZ(READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_FREQ)));}
+\DoxyCodeLine{00608\ \}}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00619\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetDutyCycle(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ DutyCycle)}
+\DoxyCodeLine{00620\ \{}
+\DoxyCodeLine{00621\ \ \ MODIFY\_REG(I2Cx-\/>CCR,\ I2C\_CCR\_DUTY,\ DutyCycle);}
+\DoxyCodeLine{00622\ \}}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00632\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetDutyCycle(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00633\ \{}
+\DoxyCodeLine{00634\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>CCR,\ I2C\_CCR\_DUTY));}
+\DoxyCodeLine{00635\ \}}
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00646\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetClockSpeedMode(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ ClockSpeedMode)}
+\DoxyCodeLine{00647\ \{}
+\DoxyCodeLine{00648\ \ \ MODIFY\_REG(I2Cx-\/>CCR,\ I2C\_CCR\_FS,\ ClockSpeedMode);}
+\DoxyCodeLine{00649\ \}}
+\DoxyCodeLine{00650\ }
+\DoxyCodeLine{00659\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetClockSpeedMode(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00660\ \{}
+\DoxyCodeLine{00661\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>CCR,\ I2C\_CCR\_FS));}
+\DoxyCodeLine{00662\ \}}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00672\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetRiseTime(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ RiseTime)}
+\DoxyCodeLine{00673\ \{}
+\DoxyCodeLine{00674\ \ \ MODIFY\_REG(I2Cx-\/>TRISE,\ I2C\_TRISE\_TRISE,\ RiseTime);}
+\DoxyCodeLine{00675\ \}}
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00683\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetRiseTime(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00684\ \{}
+\DoxyCodeLine{00685\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>TRISE,\ I2C\_TRISE\_TRISE));}
+\DoxyCodeLine{00686\ \}}
+\DoxyCodeLine{00687\ }
+\DoxyCodeLine{00696\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetClockPeriod(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ ClockPeriod)}
+\DoxyCodeLine{00697\ \{}
+\DoxyCodeLine{00698\ \ \ MODIFY\_REG(I2Cx-\/>CCR,\ I2C\_CCR\_CCR,\ ClockPeriod);}
+\DoxyCodeLine{00699\ \}}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00707\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetClockPeriod(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00708\ \{}
+\DoxyCodeLine{00709\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>CCR,\ I2C\_CCR\_CCR));}
+\DoxyCodeLine{00710\ \}}
+\DoxyCodeLine{00711\ }
+\DoxyCodeLine{00728\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ConfigSpeed(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ PeriphClock,\ uint32\_t\ ClockSpeed,}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ DutyCycle)}
+\DoxyCodeLine{00730\ \{}
+\DoxyCodeLine{00731\ \ \ uint32\_t\ freqrange\ =\ 0x0U;}
+\DoxyCodeLine{00732\ \ \ uint32\_t\ clockconfig\ =\ 0x0U;}
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00734\ \ \ \textcolor{comment}{/*\ Compute\ frequency\ range\ */}}
+\DoxyCodeLine{00735\ \ \ freqrange\ =\ \_\_LL\_I2C\_FREQ\_HZ\_TO\_MHZ(PeriphClock);}
+\DoxyCodeLine{00736\ }
+\DoxyCodeLine{00737\ \ \ \textcolor{comment}{/*\ Configure\ I2Cx:\ Frequency\ range\ register\ */}}
+\DoxyCodeLine{00738\ \ \ MODIFY\_REG(I2Cx-\/>CR2,\ I2C\_CR2\_FREQ,\ freqrange);}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \ \ \textcolor{comment}{/*\ Configure\ I2Cx:\ Rise\ Time\ register\ */}}
+\DoxyCodeLine{00741\ \ \ MODIFY\_REG(I2Cx-\/>TRISE,\ I2C\_TRISE\_TRISE,\ \_\_LL\_I2C\_RISE\_TIME(freqrange,\ ClockSpeed));}
+\DoxyCodeLine{00742\ }
+\DoxyCodeLine{00743\ \ \ \textcolor{comment}{/*\ Configure\ Speed\ mode,\ Duty\ Cycle\ and\ Clock\ control\ register\ value\ */}}
+\DoxyCodeLine{00744\ \ \ \textcolor{keywordflow}{if}\ (ClockSpeed\ >\ LL\_I2C\_MAX\_SPEED\_STANDARD)}
+\DoxyCodeLine{00745\ \ \ \{}
+\DoxyCodeLine{00746\ \ \ \ \ \textcolor{comment}{/*\ Set\ Speed\ mode\ at\ fast\ and\ duty\ cycle\ for\ Clock\ Speed\ request\ in\ fast\ clock\ range\ */}}
+\DoxyCodeLine{00747\ \ \ \ \ clockconfig\ =\ LL\_I2C\_CLOCK\_SPEED\_FAST\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \(\backslash\)}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_LL\_I2C\_SPEED\_FAST\_TO\_CCR(PeriphClock,\ ClockSpeed,\ DutyCycle)\ \ \ \ \ \ \ \ |\ \(\backslash\)}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DutyCycle;}
+\DoxyCodeLine{00750\ \ \ \}}
+\DoxyCodeLine{00751\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00752\ \ \ \{}
+\DoxyCodeLine{00753\ \ \ \ \ \textcolor{comment}{/*\ Set\ Speed\ mode\ at\ standard\ for\ Clock\ Speed\ request\ in\ standard\ clock\ range\ */}}
+\DoxyCodeLine{00754\ \ \ \ \ clockconfig\ =\ LL\_I2C\_CLOCK\_SPEED\_STANDARD\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \(\backslash\)}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_LL\_I2C\_SPEED\_STANDARD\_TO\_CCR(PeriphClock,\ ClockSpeed);}
+\DoxyCodeLine{00756\ \ \ \}}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \ \ \textcolor{comment}{/*\ Configure\ I2Cx:\ Clock\ control\ register\ */}}
+\DoxyCodeLine{00759\ \ \ MODIFY\_REG(I2Cx-\/>CCR,\ (I2C\_CCR\_FS\ |\ I2C\_CCR\_DUTY\ |\ I2C\_CCR\_CCR),\ clockconfig);}
+\DoxyCodeLine{00760\ \}}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00777\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_SetMode(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ PeripheralMode)}
+\DoxyCodeLine{00778\ \{}
+\DoxyCodeLine{00779\ \ \ MODIFY\_REG(I2Cx-\/>CR1,\ I2C\_CR1\_SMBUS\ |\ I2C\_CR1\_SMBTYPE\ |\ I2C\_CR1\_ENARP,\ PeripheralMode);}
+\DoxyCodeLine{00780\ \}}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00796\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetMode(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00797\ \{}
+\DoxyCodeLine{00798\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_SMBUS\ |\ I2C\_CR1\_SMBTYPE\ |\ I2C\_CR1\_ENARP));}
+\DoxyCodeLine{00799\ \}}
+\DoxyCodeLine{00800\ }
+\DoxyCodeLine{00814\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableSMBusAlert(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00815\ \{}
+\DoxyCodeLine{00816\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ALERT);}
+\DoxyCodeLine{00817\ \}}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00832\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableSMBusAlert(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00833\ \{}
+\DoxyCodeLine{00834\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ALERT);}
+\DoxyCodeLine{00835\ \}}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00845\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledSMBusAlert(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00846\ \{}
+\DoxyCodeLine{00847\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ALERT)\ ==\ (I2C\_CR1\_ALERT));}
+\DoxyCodeLine{00848\ \}}
+\DoxyCodeLine{00849\ }
+\DoxyCodeLine{00858\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableSMBusPEC(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00859\ \{}
+\DoxyCodeLine{00860\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ENPEC);}
+\DoxyCodeLine{00861\ \}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00871\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableSMBusPEC(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00872\ \{}
+\DoxyCodeLine{00873\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ENPEC);}
+\DoxyCodeLine{00874\ \}}
+\DoxyCodeLine{00875\ }
+\DoxyCodeLine{00884\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledSMBusPEC(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00885\ \{}
+\DoxyCodeLine{00886\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_ENPEC)\ ==\ (I2C\_CR1\_ENPEC));}
+\DoxyCodeLine{00887\ \}}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00904\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableIT\_TX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00905\ \{}
+\DoxyCodeLine{00906\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN);}
+\DoxyCodeLine{00907\ \}}
+\DoxyCodeLine{00908\ }
+\DoxyCodeLine{00916\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableIT\_TX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00917\ \{}
+\DoxyCodeLine{00918\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN);}
+\DoxyCodeLine{00919\ \}}
+\DoxyCodeLine{00920\ }
+\DoxyCodeLine{00928\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledIT\_TX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00929\ \{}
+\DoxyCodeLine{00930\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN)\ ==\ (I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN));}
+\DoxyCodeLine{00931\ \}}
+\DoxyCodeLine{00932\ }
+\DoxyCodeLine{00940\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableIT\_RX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00941\ \{}
+\DoxyCodeLine{00942\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN);}
+\DoxyCodeLine{00943\ \}}
+\DoxyCodeLine{00944\ }
+\DoxyCodeLine{00952\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableIT\_RX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00953\ \{}
+\DoxyCodeLine{00954\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN);}
+\DoxyCodeLine{00955\ \}}
+\DoxyCodeLine{00956\ }
+\DoxyCodeLine{00964\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledIT\_RX(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00965\ \{}
+\DoxyCodeLine{00966\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN)\ ==\ (I2C\_CR2\_ITEVTEN\ |\ I2C\_CR2\_ITBUFEN));}
+\DoxyCodeLine{00967\ \}}
+\DoxyCodeLine{00968\ }
+\DoxyCodeLine{00985\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableIT\_EVT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{00986\ \{}
+\DoxyCodeLine{00987\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN);}
+\DoxyCodeLine{00988\ \}}
+\DoxyCodeLine{00989\ }
+\DoxyCodeLine{01004\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableIT\_EVT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01005\ \{}
+\DoxyCodeLine{01006\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN);}
+\DoxyCodeLine{01007\ \}}
+\DoxyCodeLine{01008\ }
+\DoxyCodeLine{01015\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledIT\_EVT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01016\ \{}
+\DoxyCodeLine{01017\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITEVTEN)\ ==\ (I2C\_CR2\_ITEVTEN));}
+\DoxyCodeLine{01018\ \}}
+\DoxyCodeLine{01019\ }
+\DoxyCodeLine{01029\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableIT\_BUF(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01030\ \{}
+\DoxyCodeLine{01031\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITBUFEN);}
+\DoxyCodeLine{01032\ \}}
+\DoxyCodeLine{01033\ }
+\DoxyCodeLine{01043\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableIT\_BUF(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01044\ \{}
+\DoxyCodeLine{01045\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITBUFEN);}
+\DoxyCodeLine{01046\ \}}
+\DoxyCodeLine{01047\ }
+\DoxyCodeLine{01054\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledIT\_BUF(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01055\ \{}
+\DoxyCodeLine{01056\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITBUFEN)\ ==\ (I2C\_CR2\_ITBUFEN));}
+\DoxyCodeLine{01057\ \}}
+\DoxyCodeLine{01058\ }
+\DoxyCodeLine{01075\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableIT\_ERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01076\ \{}
+\DoxyCodeLine{01077\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITERREN);}
+\DoxyCodeLine{01078\ \}}
+\DoxyCodeLine{01079\ }
+\DoxyCodeLine{01096\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableIT\_ERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01097\ \{}
+\DoxyCodeLine{01098\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITERREN);}
+\DoxyCodeLine{01099\ \}}
+\DoxyCodeLine{01100\ }
+\DoxyCodeLine{01107\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledIT\_ERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01108\ \{}
+\DoxyCodeLine{01109\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_ITERREN)\ ==\ (I2C\_CR2\_ITERREN));}
+\DoxyCodeLine{01110\ \}}
+\DoxyCodeLine{01111\ }
+\DoxyCodeLine{01128\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_TXE(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01129\ \{}
+\DoxyCodeLine{01130\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_TXE)\ ==\ (I2C\_SR1\_TXE));}
+\DoxyCodeLine{01131\ \}}
+\DoxyCodeLine{01132\ }
+\DoxyCodeLine{01141\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_BTF(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01142\ \{}
+\DoxyCodeLine{01143\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_BTF)\ ==\ (I2C\_SR1\_BTF));}
+\DoxyCodeLine{01144\ \}}
+\DoxyCodeLine{01145\ }
+\DoxyCodeLine{01154\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_RXNE(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01155\ \{}
+\DoxyCodeLine{01156\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_RXNE)\ ==\ (I2C\_SR1\_RXNE));}
+\DoxyCodeLine{01157\ \}}
+\DoxyCodeLine{01158\ }
+\DoxyCodeLine{01167\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_SB(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01168\ \{}
+\DoxyCodeLine{01169\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_SB)\ ==\ (I2C\_SR1\_SB));}
+\DoxyCodeLine{01170\ \}}
+\DoxyCodeLine{01171\ }
+\DoxyCodeLine{01180\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_ADDR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01181\ \{}
+\DoxyCodeLine{01182\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_ADDR)\ ==\ (I2C\_SR1\_ADDR));}
+\DoxyCodeLine{01183\ \}}
+\DoxyCodeLine{01184\ }
+\DoxyCodeLine{01193\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_ADD10(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01194\ \{}
+\DoxyCodeLine{01195\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_ADD10)\ ==\ (I2C\_SR1\_ADD10));}
+\DoxyCodeLine{01196\ \}}
+\DoxyCodeLine{01197\ }
+\DoxyCodeLine{01206\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_AF(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01207\ \{}
+\DoxyCodeLine{01208\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_AF)\ ==\ (I2C\_SR1\_AF));}
+\DoxyCodeLine{01209\ \}}
+\DoxyCodeLine{01210\ }
+\DoxyCodeLine{01219\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_STOP(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01220\ \{}
+\DoxyCodeLine{01221\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_STOPF)\ ==\ (I2C\_SR1\_STOPF));}
+\DoxyCodeLine{01222\ \}}
+\DoxyCodeLine{01223\ }
+\DoxyCodeLine{01232\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_BERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01233\ \{}
+\DoxyCodeLine{01234\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_BERR)\ ==\ (I2C\_SR1\_BERR));}
+\DoxyCodeLine{01235\ \}}
+\DoxyCodeLine{01236\ }
+\DoxyCodeLine{01245\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_ARLO(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01246\ \{}
+\DoxyCodeLine{01247\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_ARLO)\ ==\ (I2C\_SR1\_ARLO));}
+\DoxyCodeLine{01248\ \}}
+\DoxyCodeLine{01249\ }
+\DoxyCodeLine{01258\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_OVR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01259\ \{}
+\DoxyCodeLine{01260\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_OVR)\ ==\ (I2C\_SR1\_OVR));}
+\DoxyCodeLine{01261\ \}}
+\DoxyCodeLine{01262\ }
+\DoxyCodeLine{01271\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveSMBusFlag\_PECERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01272\ \{}
+\DoxyCodeLine{01273\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_PECERR)\ ==\ (I2C\_SR1\_PECERR));}
+\DoxyCodeLine{01274\ \}}
+\DoxyCodeLine{01275\ }
+\DoxyCodeLine{01284\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveSMBusFlag\_TIMEOUT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01285\ \{}
+\DoxyCodeLine{01286\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_TIMEOUT)\ ==\ (I2C\_SR1\_TIMEOUT));}
+\DoxyCodeLine{01287\ \}}
+\DoxyCodeLine{01288\ }
+\DoxyCodeLine{01297\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveSMBusFlag\_ALERT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01298\ \{}
+\DoxyCodeLine{01299\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_SMBALERT)\ ==\ (I2C\_SR1\_SMBALERT));}
+\DoxyCodeLine{01300\ \}}
+\DoxyCodeLine{01301\ }
+\DoxyCodeLine{01310\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_BUSY(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01311\ \{}
+\DoxyCodeLine{01312\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_BUSY)\ ==\ (I2C\_SR2\_BUSY));}
+\DoxyCodeLine{01313\ \}}
+\DoxyCodeLine{01314\ }
+\DoxyCodeLine{01323\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_DUAL(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01324\ \{}
+\DoxyCodeLine{01325\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_DUALF)\ ==\ (I2C\_SR2\_DUALF));}
+\DoxyCodeLine{01326\ \}}
+\DoxyCodeLine{01327\ }
+\DoxyCodeLine{01339\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveSMBusFlag\_SMBHOST(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01340\ \{}
+\DoxyCodeLine{01341\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_SMBHOST)\ ==\ (I2C\_SR2\_SMBHOST));}
+\DoxyCodeLine{01342\ \}}
+\DoxyCodeLine{01343\ }
+\DoxyCodeLine{01355\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveSMBusFlag\_SMBDEFAULT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01356\ \{}
+\DoxyCodeLine{01357\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_SMBDEFAULT)\ ==\ (I2C\_SR2\_SMBDEFAULT));}
+\DoxyCodeLine{01358\ \}}
+\DoxyCodeLine{01359\ }
+\DoxyCodeLine{01369\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_GENCALL(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01370\ \{}
+\DoxyCodeLine{01371\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_GENCALL)\ ==\ (I2C\_SR2\_GENCALL));}
+\DoxyCodeLine{01372\ \}}
+\DoxyCodeLine{01373\ }
+\DoxyCodeLine{01382\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsActiveFlag\_MSL(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01383\ \{}
+\DoxyCodeLine{01384\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_MSL)\ ==\ (I2C\_SR2\_MSL));}
+\DoxyCodeLine{01385\ \}}
+\DoxyCodeLine{01386\ }
+\DoxyCodeLine{01395\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearFlag\_ADDR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01396\ \{}
+\DoxyCodeLine{01397\ \ \ \_\_IO\ uint32\_t\ tmpreg;}
+\DoxyCodeLine{01398\ \ \ tmpreg\ =\ I2Cx-\/>SR1;}
+\DoxyCodeLine{01399\ \ \ (void)\ tmpreg;}
+\DoxyCodeLine{01400\ \ \ tmpreg\ =\ I2Cx-\/>SR2;}
+\DoxyCodeLine{01401\ \ \ (void)\ tmpreg;}
+\DoxyCodeLine{01402\ \}}
+\DoxyCodeLine{01403\ }
+\DoxyCodeLine{01410\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearFlag\_AF(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01411\ \{}
+\DoxyCodeLine{01412\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_AF);}
+\DoxyCodeLine{01413\ \}}
+\DoxyCodeLine{01414\ }
+\DoxyCodeLine{01424\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearFlag\_STOP(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01425\ \{}
+\DoxyCodeLine{01426\ \ \ \_\_IO\ uint32\_t\ tmpreg;}
+\DoxyCodeLine{01427\ \ \ tmpreg\ =\ I2Cx-\/>SR1;}
+\DoxyCodeLine{01428\ \ \ (void)\ tmpreg;}
+\DoxyCodeLine{01429\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PE);}
+\DoxyCodeLine{01430\ \}}
+\DoxyCodeLine{01431\ }
+\DoxyCodeLine{01438\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearFlag\_BERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01439\ \{}
+\DoxyCodeLine{01440\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_BERR);}
+\DoxyCodeLine{01441\ \}}
+\DoxyCodeLine{01442\ }
+\DoxyCodeLine{01449\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearFlag\_ARLO(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01450\ \{}
+\DoxyCodeLine{01451\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_ARLO);}
+\DoxyCodeLine{01452\ \}}
+\DoxyCodeLine{01453\ }
+\DoxyCodeLine{01460\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearFlag\_OVR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01461\ \{}
+\DoxyCodeLine{01462\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_OVR);}
+\DoxyCodeLine{01463\ \}}
+\DoxyCodeLine{01464\ }
+\DoxyCodeLine{01471\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearSMBusFlag\_PECERR(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01472\ \{}
+\DoxyCodeLine{01473\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_PECERR);}
+\DoxyCodeLine{01474\ \}}
+\DoxyCodeLine{01475\ }
+\DoxyCodeLine{01484\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearSMBusFlag\_TIMEOUT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01485\ \{}
+\DoxyCodeLine{01486\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_TIMEOUT);}
+\DoxyCodeLine{01487\ \}}
+\DoxyCodeLine{01488\ }
+\DoxyCodeLine{01497\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_ClearSMBusFlag\_ALERT(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01498\ \{}
+\DoxyCodeLine{01499\ \ \ CLEAR\_BIT(I2Cx-\/>SR1,\ I2C\_SR1\_SMBALERT);}
+\DoxyCodeLine{01500\ \}}
+\DoxyCodeLine{01501\ }
+\DoxyCodeLine{01516\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableReset(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01517\ \{}
+\DoxyCodeLine{01518\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_SWRST);}
+\DoxyCodeLine{01519\ \}}
+\DoxyCodeLine{01520\ }
+\DoxyCodeLine{01527\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableReset(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01528\ \{}
+\DoxyCodeLine{01529\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_SWRST);}
+\DoxyCodeLine{01530\ \}}
+\DoxyCodeLine{01531\ }
+\DoxyCodeLine{01538\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsResetEnabled(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01539\ \{}
+\DoxyCodeLine{01540\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_SWRST)\ ==\ (I2C\_CR1\_SWRST));}
+\DoxyCodeLine{01541\ \}}
+\DoxyCodeLine{01542\ }
+\DoxyCodeLine{01553\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_AcknowledgeNextData(I2C\_TypeDef\ *I2Cx,\ uint32\_t\ TypeAcknowledge)}
+\DoxyCodeLine{01554\ \{}
+\DoxyCodeLine{01555\ \ \ MODIFY\_REG(I2Cx-\/>CR1,\ I2C\_CR1\_ACK,\ TypeAcknowledge);}
+\DoxyCodeLine{01556\ \}}
+\DoxyCodeLine{01557\ }
+\DoxyCodeLine{01566\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_GenerateStartCondition(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01567\ \{}
+\DoxyCodeLine{01568\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_START);}
+\DoxyCodeLine{01569\ \}}
+\DoxyCodeLine{01570\ }
+\DoxyCodeLine{01577\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_GenerateStopCondition(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01578\ \{}
+\DoxyCodeLine{01579\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_STOP);}
+\DoxyCodeLine{01580\ \}}
+\DoxyCodeLine{01581\ }
+\DoxyCodeLine{01589\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableBitPOS(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01590\ \{}
+\DoxyCodeLine{01591\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_POS);}
+\DoxyCodeLine{01592\ \}}
+\DoxyCodeLine{01593\ }
+\DoxyCodeLine{01601\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableBitPOS(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01602\ \{}
+\DoxyCodeLine{01603\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_POS);}
+\DoxyCodeLine{01604\ \}}
+\DoxyCodeLine{01605\ }
+\DoxyCodeLine{01612\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledBitPOS(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01613\ \{}
+\DoxyCodeLine{01614\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_POS)\ ==\ (I2C\_CR1\_POS));}
+\DoxyCodeLine{01615\ \}}
+\DoxyCodeLine{01616\ }
+\DoxyCodeLine{01627\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetTransferDirection(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01628\ \{}
+\DoxyCodeLine{01629\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_TRA));}
+\DoxyCodeLine{01630\ \}}
+\DoxyCodeLine{01631\ }
+\DoxyCodeLine{01639\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableLastDMA(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01640\ \{}
+\DoxyCodeLine{01641\ \ \ SET\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_LAST);}
+\DoxyCodeLine{01642\ \}}
+\DoxyCodeLine{01643\ }
+\DoxyCodeLine{01651\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableLastDMA(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01652\ \{}
+\DoxyCodeLine{01653\ \ \ CLEAR\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_LAST);}
+\DoxyCodeLine{01654\ \}}
+\DoxyCodeLine{01655\ }
+\DoxyCodeLine{01662\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledLastDMA(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01663\ \{}
+\DoxyCodeLine{01664\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR2,\ I2C\_CR2\_LAST)\ ==\ (I2C\_CR2\_LAST));}
+\DoxyCodeLine{01665\ \}}
+\DoxyCodeLine{01666\ }
+\DoxyCodeLine{01677\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_EnableSMBusPECCompare(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01678\ \{}
+\DoxyCodeLine{01679\ \ \ SET\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PEC);}
+\DoxyCodeLine{01680\ \}}
+\DoxyCodeLine{01681\ }
+\DoxyCodeLine{01690\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_DisableSMBusPECCompare(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01691\ \{}
+\DoxyCodeLine{01692\ \ \ CLEAR\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PEC);}
+\DoxyCodeLine{01693\ \}}
+\DoxyCodeLine{01694\ }
+\DoxyCodeLine{01703\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_IsEnabledSMBusPECCompare(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01704\ \{}
+\DoxyCodeLine{01705\ \ \ \textcolor{keywordflow}{return}\ (READ\_BIT(I2Cx-\/>CR1,\ I2C\_CR1\_PEC)\ ==\ (I2C\_CR1\_PEC));}
+\DoxyCodeLine{01706\ \}}
+\DoxyCodeLine{01707\ }
+\DoxyCodeLine{01716\ \_\_STATIC\_INLINE\ uint32\_t\ LL\_I2C\_GetSMBusPEC(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01717\ \{}
+\DoxyCodeLine{01718\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(READ\_BIT(I2Cx-\/>SR2,\ I2C\_SR2\_PEC)\ >>\ I2C\_SR2\_PEC\_Pos);}
+\DoxyCodeLine{01719\ \}}
+\DoxyCodeLine{01720\ }
+\DoxyCodeLine{01727\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ LL\_I2C\_ReceiveData8(I2C\_TypeDef\ *I2Cx)}
+\DoxyCodeLine{01728\ \{}
+\DoxyCodeLine{01729\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}})(READ\_BIT(I2Cx-\/>DR,\ I2C\_DR\_DR));}
+\DoxyCodeLine{01730\ \}}
+\DoxyCodeLine{01731\ }
+\DoxyCodeLine{01739\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LL\_I2C\_TransmitData8(I2C\_TypeDef\ *I2Cx,\ \mbox{\hyperlink{esc_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ Data)}
+\DoxyCodeLine{01740\ \{}
+\DoxyCodeLine{01741\ \ \ MODIFY\_REG(I2Cx-\/>DR,\ I2C\_DR\_DR,\ Data);}
+\DoxyCodeLine{01742\ \}}
+\DoxyCodeLine{01743\ }
+\DoxyCodeLine{01748\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{01753\ uint32\_t\ LL\_I2C\_Init(I2C\_TypeDef\ *I2Cx,\ LL\_I2C\_InitTypeDef\ *I2C\_InitStruct);}
+\DoxyCodeLine{01754\ uint32\_t\ LL\_I2C\_DeInit(I2C\_TypeDef\ *I2Cx);}
+\DoxyCodeLine{01755\ \textcolor{keywordtype}{void}\ LL\_I2C\_StructInit(LL\_I2C\_InitTypeDef\ *I2C\_InitStruct);}
+\DoxyCodeLine{01756\ }
+\DoxyCodeLine{01757\ }
+\DoxyCodeLine{01761\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_FULL\_LL\_DRIVER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01762\ }
+\DoxyCodeLine{01771\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ I2C1\ ||\ I2C2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01772\ }
+\DoxyCodeLine{01777\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01778\ \}}
+\DoxyCodeLine{01779\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01780\ }
+\DoxyCodeLine{01781\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32L1xx\_LL\_I2C\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01782\ }
+
+\end{DoxyCode}

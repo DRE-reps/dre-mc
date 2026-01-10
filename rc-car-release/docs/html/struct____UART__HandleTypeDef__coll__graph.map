@@ -1,0 +1,9 @@
+<map id="__UART_HandleTypeDef" name="__UART_HandleTypeDef">
+<area shape="rect" id="Node000001" title="UART handle Structure definition." alt="" coords="45,196,222,221"/>
+<area shape="rect" id="Node000002" href="$structUART__InitTypeDef.html" title="UART Init Structure definition." alt="" coords="5,93,144,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,130,129,195,124,197,86,132"/>
+<area shape="rect" id="Node000003" href="$struct____DMA__HandleTypeDef.html" title="DMA handle Structure definition." alt="" coords="168,93,341,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,129,149,198,145,194,229,125"/>
+<area shape="rect" id="Node000004" href="$structDMA__InitTypeDef.html" title="DMA Configuration Structure definition." alt="" coords="187,5,322,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="257,45,257,93,252,93,252,45"/>
+</map>

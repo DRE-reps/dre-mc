@@ -1,0 +1,161 @@
+\doxysection{Core/\+Src/esc.c File Reference}
+\hypertarget{esc_8c}{}\label{esc_8c}\index{Core/Src/esc.c@{Core/Src/esc.c}}
+{\ttfamily \#include "{}esc.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}stdio.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+Include dependency graph for esc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{esc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{esc_8c_a8507f3c11d3addead8ca0fbd55616c62}{MIN\+\_\+\+PWM}}~1000
+\item 
+\#define \mbox{\hyperlink{esc_8c_a74f1291ea11e69502d01b9e141dd80a2}{MIDDLE\+\_\+\+PWM}}~1500
+\item 
+\#define \mbox{\hyperlink{esc_8c_a1df990f1a1fc97b95e8d53f719968026}{MAX\+\_\+\+PWM}}~2000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{esc_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{esc_8c_a052276def7f484342cb2a6cd2eb53c42}{esc\+\_\+init}} (\mbox{\hyperlink{structesc__t}{esc\+\_\+t}} \texorpdfstring{$\ast$}{*}pesc\+\_\+t)
+\item 
+void \mbox{\hyperlink{esc_8c_ae43225b6870f97716c83a45d3d1b6a0e}{calibrate\+\_\+esc}} ()
+\item 
+void \mbox{\hyperlink{esc_8c_aae733e9d4dc984861eddd938532cb3b1}{esc\+\_\+update\+\_\+pwm}} (\mbox{\hyperlink{structesc__t}{esc\+\_\+t}} \texorpdfstring{$\ast$}{*}pesc\+\_\+t)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{esc_8c_a85788cec5a97ee377e4ee2e74f026484}{htim4}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{esc_8c_a1df990f1a1fc97b95e8d53f719968026}\label{esc_8c_a1df990f1a1fc97b95e8d53f719968026} 
+\index{esc.c@{esc.c}!MAX\_PWM@{MAX\_PWM}}
+\index{MAX\_PWM@{MAX\_PWM}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_PWM}{MAX\_PWM}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PWM~2000}
+
+\Hypertarget{esc_8c_a74f1291ea11e69502d01b9e141dd80a2}\label{esc_8c_a74f1291ea11e69502d01b9e141dd80a2} 
+\index{esc.c@{esc.c}!MIDDLE\_PWM@{MIDDLE\_PWM}}
+\index{MIDDLE\_PWM@{MIDDLE\_PWM}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{MIDDLE\_PWM}{MIDDLE\_PWM}}
+{\footnotesize\ttfamily \#define MIDDLE\+\_\+\+PWM~1500}
+
+\Hypertarget{esc_8c_a8507f3c11d3addead8ca0fbd55616c62}\label{esc_8c_a8507f3c11d3addead8ca0fbd55616c62} 
+\index{esc.c@{esc.c}!MIN\_PWM@{MIN\_PWM}}
+\index{MIN\_PWM@{MIN\_PWM}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_PWM}{MIN\_PWM}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+PWM~1000}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{esc_8c_ae43225b6870f97716c83a45d3d1b6a0e}\label{esc_8c_ae43225b6870f97716c83a45d3d1b6a0e} 
+\index{esc.c@{esc.c}!calibrate\_esc@{calibrate\_esc}}
+\index{calibrate\_esc@{calibrate\_esc}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{calibrate\_esc()}{calibrate\_esc()}}
+{\footnotesize\ttfamily void calibrate\+\_\+esc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{esc_8c_ae43225b6870f97716c83a45d3d1b6a0e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{esc_8c_a1730ffe1e560465665eb47d9264826f9}\label{esc_8c_a1730ffe1e560465665eb47d9264826f9} 
+\index{esc.c@{esc.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{esc_8c_a1730ffe1e560465665eb47d9264826f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{esc_8c_a1730ffe1e560465665eb47d9264826f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{esc_8c_a052276def7f484342cb2a6cd2eb53c42}\label{esc_8c_a052276def7f484342cb2a6cd2eb53c42} 
+\index{esc.c@{esc.c}!esc\_init@{esc\_init}}
+\index{esc\_init@{esc\_init}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{esc\_init()}{esc\_init()}}
+{\footnotesize\ttfamily void esc\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structesc__t}{esc\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pesc\+\_\+t }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{esc_8c_a052276def7f484342cb2a6cd2eb53c42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{esc_8c_a052276def7f484342cb2a6cd2eb53c42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{esc_8c_aae733e9d4dc984861eddd938532cb3b1}\label{esc_8c_aae733e9d4dc984861eddd938532cb3b1} 
+\index{esc.c@{esc.c}!esc\_update\_pwm@{esc\_update\_pwm}}
+\index{esc\_update\_pwm@{esc\_update\_pwm}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{esc\_update\_pwm()}{esc\_update\_pwm()}}
+{\footnotesize\ttfamily void esc\+\_\+update\+\_\+pwm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structesc__t}{esc\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pesc\+\_\+t }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{esc_8c_aae733e9d4dc984861eddd938532cb3b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{esc_8c_aae733e9d4dc984861eddd938532cb3b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{esc_8c_a85788cec5a97ee377e4ee2e74f026484}\label{esc_8c_a85788cec5a97ee377e4ee2e74f026484} 
+\index{esc.c@{esc.c}!htim4@{htim4}}
+\index{htim4@{htim4}!esc.c@{esc.c}}
+\doxysubsubsection{\texorpdfstring{htim4}{htim4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} htim4\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,18 @@
+<map id="writeReg16Bit" name="writeReg16Bit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="580,56,695,81"/>
+<area shape="rect" id="Node000002" href="$VL53L0X_8c.html#ae6f31dda28a4c5766247d586b59bf24a" title=" " alt="" coords="309,56,532,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="566,71,532,71,532,66,566,66"/>
+<area shape="rect" id="Node000005" href="$VL53L0X_8c.html#a8b8437b301634dbba8588e6c269b6258" title=" " alt="" coords="108,5,261,31"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="577,55,532,46,388,30,262,23,262,17,389,25,532,41,578,50"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html#a456b88d9c1af5b3214a84f26449f7afc" title=" " alt="" coords="348,107,493,132"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="572,87,533,97,479,109,477,104,531,91,570,82"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a7e445bff76f1b43a528e6be773aa3cd3" title=" " alt="" coords="135,107,234,132"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,87,235,111,234,106,347,82"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,81,60,107"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="295,79,60,95,60,90,295,74"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="347,56,244,33,245,28,348,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="122,112,60,101,61,96,123,106"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="139,38,109,52,55,84,52,79,107,48,137,34"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="334,122,234,122,234,117,334,117"/>
+<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="366,138,312,150,246,159,176,160,141,155,107,147,73,130,46,109,49,105,75,125,109,142,142,150,176,154,246,154,311,145,365,133"/>
+</map>

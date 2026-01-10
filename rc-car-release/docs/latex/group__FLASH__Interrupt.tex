@@ -1,0 +1,125 @@
+\doxysubsubsubsection{FLASH Interrupts}
+\hypertarget{group__FLASH__Interrupt}{}\label{group__FLASH__Interrupt}\index{FLASH Interrupts@{FLASH Interrupts}}
+
+
+macros to handle FLASH interrupts  
+
+
+Collaboration diagram for FLASH Interrupts\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{group__FLASH__Interrupt}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__FLASH__Interrupt_ga13fa137a911f02a2f94fb9fb0762a340}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~SET\+\_\+\+BIT((FLASH-\/$>$PECR), (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the specified FLASH interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASH__Interrupt_ga1f40f507b5d4b3a4da68e4244a1097ee}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~CLEAR\+\_\+\+BIT((FLASH-\/$>$PECR), (uint32\+\_\+t)(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the specified FLASH interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__FLASH__Interrupt_ga0d3dd161fecc0e47c9e109c7c28672c1}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((FLASH-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\item 
+\#define \mbox{\hyperlink{group__FLASH__Interrupt_ga68e49c4675761e2ec35153e747de7622}{\+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((FLASH-\/$>$SR) = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+macros to handle FLASH interrupts 
+
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__FLASH__Interrupt_ga68e49c4675761e2ec35153e747de7622}\label{group__FLASH__Interrupt_ga68e49c4675761e2ec35153e747de7622} 
+\index{FLASH Interrupts@{FLASH Interrupts}!\_\_HAL\_FLASH\_CLEAR\_FLAG@{\_\_HAL\_FLASH\_CLEAR\_FLAG}}
+\index{\_\_HAL\_FLASH\_CLEAR\_FLAG@{\_\_HAL\_FLASH\_CLEAR\_FLAG}!FLASH Interrupts@{FLASH Interrupts}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_CLEAR\_FLAG}{\_\_HAL\_FLASH\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((FLASH-\/$>$SR) = (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+\begin{DoxyVerb}@brief  Clear the specified FLASH flag.
+@param  __FLAG__ specifies the FLASH flags to clear.
+         This parameter can be any combination of the following values:
+           @arg @ref FLASH_FLAG_EOP         FLASH End of Operation flag 
+           @arg @ref FLASH_FLAG_PGAERR      FLASH Programming Alignment error flag
+           @arg @ref FLASH_FLAG_SIZERR      FLASH Size error flag
+           @arg @ref FLASH_FLAG_OPTVERR     FLASH Option validity error error flag
+\end{DoxyVerb}
+  \begin{DoxyItemize}
+\item FLASH\+\_\+\+FLAG\+\_\+\+OPTVERRUSR FLASH Option User validity error  \item \doxylink{group__FLASH__Flags_ga6abf64f916992585899369166db3f266}{FLASH\+\_\+\+FLAG\+\_\+\+WRPERR} FLASH Write protected error flag 
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\end{DoxyItemize}
+\Hypertarget{group__FLASH__Interrupt_ga1f40f507b5d4b3a4da68e4244a1097ee}\label{group__FLASH__Interrupt_ga1f40f507b5d4b3a4da68e4244a1097ee} 
+\index{FLASH Interrupts@{FLASH Interrupts}!\_\_HAL\_FLASH\_DISABLE\_IT@{\_\_HAL\_FLASH\_DISABLE\_IT}}
+\index{\_\_HAL\_FLASH\_DISABLE\_IT@{\_\_HAL\_FLASH\_DISABLE\_IT}!FLASH Interrupts@{FLASH Interrupts}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_DISABLE\_IT}{\_\_HAL\_FLASH\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT((FLASH-\/$>$PECR), (uint32\+\_\+t)(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Disable the specified FLASH interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & FLASH interrupt This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__FLASH__Interrupts_gaea20e80e1806d58a7544cfe8659e7f11}{FLASH\+\_\+\+IT\+\_\+\+EOP} End of FLASH Operation Interrupt \item \doxylink{group__FLASH__Interrupts_ga4e2c23ab8c1b9a5ee49bf6d695d9ae8c}{FLASH\+\_\+\+IT\+\_\+\+ERR} Error Interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASH__Interrupt_ga13fa137a911f02a2f94fb9fb0762a340}\label{group__FLASH__Interrupt_ga13fa137a911f02a2f94fb9fb0762a340} 
+\index{FLASH Interrupts@{FLASH Interrupts}!\_\_HAL\_FLASH\_ENABLE\_IT@{\_\_HAL\_FLASH\_ENABLE\_IT}}
+\index{\_\_HAL\_FLASH\_ENABLE\_IT@{\_\_HAL\_FLASH\_ENABLE\_IT}!FLASH Interrupts@{FLASH Interrupts}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_ENABLE\_IT}{\_\_HAL\_FLASH\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~SET\+\_\+\+BIT((FLASH-\/$>$PECR), (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable the specified FLASH interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & FLASH interrupt This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item \doxylink{group__FLASH__Interrupts_gaea20e80e1806d58a7544cfe8659e7f11}{FLASH\+\_\+\+IT\+\_\+\+EOP} End of FLASH Operation Interrupt \item \doxylink{group__FLASH__Interrupts_ga4e2c23ab8c1b9a5ee49bf6d695d9ae8c}{FLASH\+\_\+\+IT\+\_\+\+ERR} Error Interrupt ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__FLASH__Interrupt_ga0d3dd161fecc0e47c9e109c7c28672c1}\label{group__FLASH__Interrupt_ga0d3dd161fecc0e47c9e109c7c28672c1} 
+\index{FLASH Interrupts@{FLASH Interrupts}!\_\_HAL\_FLASH\_GET\_FLAG@{\_\_HAL\_FLASH\_GET\_FLAG}}
+\index{\_\_HAL\_FLASH\_GET\_FLAG@{\_\_HAL\_FLASH\_GET\_FLAG}!FLASH Interrupts@{FLASH Interrupts}}
+\doxysubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_FLASH\_GET\_FLAG}{\_\_HAL\_FLASH\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+FLASH\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((FLASH-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))}
+
+\begin{DoxyVerb}@brief  Get the specified FLASH flag status. 
+@param  __FLAG__ specifies the FLASH flag to check.
+         This parameter can be one of the following values:
+           @arg @ref FLASH_FLAG_BSY         FLASH Busy flag
+           @arg @ref FLASH_FLAG_EOP         FLASH End of Operation flag 
+           @arg @ref FLASH_FLAG_ENDHV       FLASH End of High Voltage flag
+           @arg @ref FLASH_FLAG_READY       FLASH Ready flag after low power mode
+           @arg @ref FLASH_FLAG_PGAERR      FLASH Programming Alignment error flag
+           @arg @ref FLASH_FLAG_SIZERR      FLASH Size error flag
+           @arg @ref FLASH_FLAG_OPTVERR     FLASH Option validity error error flag
+\end{DoxyVerb}
+  \begin{DoxyItemize}
+\item FLASH\+\_\+\+FLAG\+\_\+\+OPTVERRUSR FLASH Option User validity error  \item \doxylink{group__FLASH__Flags_ga6abf64f916992585899369166db3f266}{FLASH\+\_\+\+FLAG\+\_\+\+WRPERR} FLASH Write protected error flag 
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{FLAG}} (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\end{DoxyItemize}

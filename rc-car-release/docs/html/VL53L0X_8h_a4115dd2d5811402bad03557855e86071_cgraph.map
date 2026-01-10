@@ -1,0 +1,19 @@
+<map id="readRangeContinuousMillimeters" name="readRangeContinuousMillimeters">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,244,129"/>
+<area shape="rect" id="Node000002" href="$group__HAL__Exported__Functions__Group2.html#gaf2c4f03d53e997a54e1fd5e80daa55c4" title=" " alt="" coords="295,5,400,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,102,291,40,304,34,306,39,293,44,155,106"/>
+<area shape="rect" id="Node000003" href="$VL53L0X_8c.html#a89e66d9d028359f265f599bbc67c63de" title=" " alt="" coords="305,55,389,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,101,291,77,293,82,183,107"/>
+<area shape="rect" id="Node000005" href="$VL53L0X_8c.html#a6030029639c34876b2bb5b1dc6eaaba6" title=" " alt="" coords="309,104,385,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="244,114,296,114,296,119,244,119"/>
+<area shape="rect" id="Node000006" href="$VL53L0X_8c.html#ad073f96b52d96014dade2560dd2fa931" title=" " alt="" coords="292,153,403,179"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="183,127,279,148,278,153,182,132"/>
+<area shape="rect" id="Node000007" href="$VL53L0X_8c.html#a44de3ddd53a8eeec63b9e8f00e174556" title=" " alt="" coords="307,203,387,228"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="155,127,306,195,304,199,153,132"/>
+<area shape="rect" id="Node000004" href="$group__I2C__Exported__Functions__Group2.html#ga7b593a1b85bd989dd002ee209eae4ad2" title=" " alt="" coords="452,104,608,129"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="390,76,470,98,469,103,389,81"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="386,114,438,114,438,119,386,119"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="394,151,468,130,470,136,396,156"/>
+<area shape="rect" id="Node000008" href="$group__I2C__Exported__Functions__Group2.html#ga33e725a824eb672f9f999d9d5ce088fb" title=" " alt="" coords="451,203,609,228"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="388,213,437,213,437,218,388,218"/>
+</map>

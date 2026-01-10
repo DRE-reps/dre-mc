@@ -1,0 +1,74 @@
+\doxysubsubsubsubsection{Boot Mode Configuration}
+\hypertarget{group__SYSCFG__BootModeConfig}{}\label{group__SYSCFG__BootModeConfig}\index{Boot Mode Configuration@{Boot Mode Configuration}}
+Collaboration diagram for Boot Mode Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__SYSCFG__BootModeConfig}
+\end{center}
+\end{figure}
+\doxysubsubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga9500619e1ec21659bd32b1dfecd5afc1}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+FLASH}}()~CLEAR\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE)
+\begin{DoxyCompactList}\small\item\em Main Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga59782d94690fd538b25def536c81c3ed}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SYSTEMFLASH}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0)
+\begin{DoxyCompactList}\small\item\em System Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga86d36fdb1571fd56ffeecfaed80c6805}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SRAM}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0 \texorpdfstring{$\vert$}{|} SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+1)
+\begin{DoxyCompactList}\small\item\em Embedded SRAM mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__BootModeConfig_ga0e71eb2b553f1a7b8172710184a89caa}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+BOOT\+\_\+\+MODE}}()~READ\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+BOOT\+\_\+\+MODE)
+\begin{DoxyCompactList}\small\item\em Returns the boot mode as configured by user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group__SYSCFG__BootModeConfig_ga0e71eb2b553f1a7b8172710184a89caa}\label{group__SYSCFG__BootModeConfig_ga0e71eb2b553f1a7b8172710184a89caa} 
+\index{Boot Mode Configuration@{Boot Mode Configuration}!\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE@{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}}
+\index{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE@{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}!Boot Mode Configuration@{Boot Mode Configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+BOOT\+\_\+\+MODE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~READ\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+BOOT\+\_\+\+MODE)}
+
+
+
+Returns the boot mode as configured by user. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & boot mode as configured by user. The returned value can be one of the following values\+: \begin{DoxyItemize}
+\item SYSCFG\+\_\+\+BOOT\+\_\+\+MAINFLASH \item SYSCFG\+\_\+\+BOOT\+\_\+\+SYSTEMFLASH \item SYSCFG\+\_\+\+BOOT\+\_\+\+FSMC (available only for STM32\+L151xD, STM32\+L152xD \& STM32\+L162xD) \item SYSCFG\+\_\+\+BOOT\+\_\+\+SRAM \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__SYSCFG__BootModeConfig_ga9500619e1ec21659bd32b1dfecd5afc1}\label{group__SYSCFG__BootModeConfig_ga9500619e1ec21659bd32b1dfecd5afc1} 
+\index{Boot Mode Configuration@{Boot Mode Configuration}!\_\_HAL\_SYSCFG\_REMAPMEMORY\_FLASH@{\_\_HAL\_SYSCFG\_REMAPMEMORY\_FLASH}}
+\index{\_\_HAL\_SYSCFG\_REMAPMEMORY\_FLASH@{\_\_HAL\_SYSCFG\_REMAPMEMORY\_FLASH}!Boot Mode Configuration@{Boot Mode Configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_REMAPMEMORY\_FLASH}{\_\_HAL\_SYSCFG\_REMAPMEMORY\_FLASH}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+FLASH(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE)}
+
+
+
+Main Flash memory mapped at 0x00000000. 
+
+\Hypertarget{group__SYSCFG__BootModeConfig_ga86d36fdb1571fd56ffeecfaed80c6805}\label{group__SYSCFG__BootModeConfig_ga86d36fdb1571fd56ffeecfaed80c6805} 
+\index{Boot Mode Configuration@{Boot Mode Configuration}!\_\_HAL\_SYSCFG\_REMAPMEMORY\_SRAM@{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SRAM}}
+\index{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SRAM@{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SRAM}!Boot Mode Configuration@{Boot Mode Configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SRAM}{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SRAM}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SRAM(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0 \texorpdfstring{$\vert$}{|} SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+1)}
+
+
+
+Embedded SRAM mapped at 0x00000000. 
+
+\Hypertarget{group__SYSCFG__BootModeConfig_ga59782d94690fd538b25def536c81c3ed}\label{group__SYSCFG__BootModeConfig_ga59782d94690fd538b25def536c81c3ed} 
+\index{Boot Mode Configuration@{Boot Mode Configuration}!\_\_HAL\_SYSCFG\_REMAPMEMORY\_SYSTEMFLASH@{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SYSTEMFLASH}}
+\index{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SYSTEMFLASH@{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SYSTEMFLASH}!Boot Mode Configuration@{Boot Mode Configuration}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SYSTEMFLASH}{\_\_HAL\_SYSCFG\_REMAPMEMORY\_SYSTEMFLASH}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SYSTEMFLASH(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE, SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0)}
+
+
+
+System Flash memory mapped at 0x00000000. 
+

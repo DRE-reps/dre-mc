@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['readmulti_0',['readmulti',['../VL53L0X_8c.html#a89e66d9d028359f265f599bbc67c63de',1,'readMulti(VL53L0X_Dev_t *dev, uint8_t reg, uint8_t *dst, uint8_t count):&#160;VL53L0X.c'],['../VL53L0X_8h.html#a89e66d9d028359f265f599bbc67c63de',1,'readMulti(VL53L0X_Dev_t *dev, uint8_t reg, uint8_t *dst, uint8_t count):&#160;VL53L0X.c']]],
+  ['readrangecontinuousmillimeters_1',['readrangecontinuousmillimeters',['../VL53L0X_8c.html#a4115dd2d5811402bad03557855e86071',1,'readRangeContinuousMillimeters(VL53L0X_Dev_t *dev, statInfo_t_VL53L0X *extraStats):&#160;VL53L0X.c'],['../VL53L0X_8h.html#a4115dd2d5811402bad03557855e86071',1,'readRangeContinuousMillimeters(VL53L0X_Dev_t *dev, statInfo_t_VL53L0X *extraStats):&#160;VL53L0X.c']]],
+  ['readrangesinglemillimeters_2',['readrangesinglemillimeters',['../VL53L0X_8c.html#a8eda71f2217bcd6ee690e2262984914b',1,'readRangeSingleMillimeters(VL53L0X_Dev_t *dev, statInfo_t_VL53L0X *extraStats):&#160;VL53L0X.c'],['../VL53L0X_8h.html#a8eda71f2217bcd6ee690e2262984914b',1,'readRangeSingleMillimeters(VL53L0X_Dev_t *dev, statInfo_t_VL53L0X *extraStats):&#160;VL53L0X.c']]],
+  ['readreg_3',['readreg',['../VL53L0X_8c.html#a6030029639c34876b2bb5b1dc6eaaba6',1,'readReg(VL53L0X_Dev_t *dev, uint8_t reg):&#160;VL53L0X.c'],['../VL53L0X_8h.html#a6030029639c34876b2bb5b1dc6eaaba6',1,'readReg(VL53L0X_Dev_t *dev, uint8_t reg):&#160;VL53L0X.c']]],
+  ['readreg16bit_4',['readreg16bit',['../VL53L0X_8c.html#ad073f96b52d96014dade2560dd2fa931',1,'readReg16Bit(VL53L0X_Dev_t *dev, uint8_t reg):&#160;VL53L0X.c'],['../VL53L0X_8h.html#ad073f96b52d96014dade2560dd2fa931',1,'readReg16Bit(VL53L0X_Dev_t *dev, uint8_t reg):&#160;VL53L0X.c']]],
+  ['readreg32bit_5',['readreg32bit',['../VL53L0X_8c.html#a2e33ca8fdefb27b09fd324c88144f04f',1,'readReg32Bit(VL53L0X_Dev_t *dev, uint8_t reg):&#160;VL53L0X.c'],['../VL53L0X_8h.html#a2e33ca8fdefb27b09fd324c88144f04f',1,'readReg32Bit(VL53L0X_Dev_t *dev, uint8_t reg):&#160;VL53L0X.c']]]
+];

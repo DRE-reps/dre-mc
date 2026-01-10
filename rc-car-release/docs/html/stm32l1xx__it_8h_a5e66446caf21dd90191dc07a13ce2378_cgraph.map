@@ -1,0 +1,5 @@
+<map id="TIM5_IRQHandler" name="TIM5_IRQHandler">
+<area shape="rect" id="Node000001" title="This function handles TIM5 global interrupt." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="Node000002" href="$group__TIM__Exported__Functions__Group7.html#ga2dc3ef34340412aa8a01d734d2ff8f88" title=" " alt="" coords="188,5,348,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,15,174,15,174,21,140,21"/>
+</map>

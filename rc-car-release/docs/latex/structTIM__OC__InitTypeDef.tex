@@ -1,0 +1,60 @@
+\doxysection{TIM\+\_\+\+OC\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{structTIM__OC__InitTypeDef}{}\label{structTIM__OC__InitTypeDef}\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+
+
+TIM Output Compare Configuration Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32l1xx\+\_\+hal\+\_\+tim.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structTIM__OC__InitTypeDef_ae5faa1cba0b3f1ab6179cc54e1015ee8}{OCMode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structTIM__OC__InitTypeDef_a61fb5b9ef4154de67620ac81085a0e39}{Pulse}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structTIM__OC__InitTypeDef_a556b7137d041aceed3e45c87cbfb39cd}{OCPolarity}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structTIM__OC__InitTypeDef_a4c4203c5ed779ac86fb793bb9d628e55}{OCFast\+Mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TIM Output Compare Configuration Structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structTIM__OC__InitTypeDef_a4c4203c5ed779ac86fb793bb9d628e55}\label{structTIM__OC__InitTypeDef_a4c4203c5ed779ac86fb793bb9d628e55} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCFastMode@{OCFastMode}}
+\index{OCFastMode@{OCFastMode}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OCFastMode}{OCFastMode}}
+{\footnotesize\ttfamily uint32\+\_\+t TIM\+\_\+\+OC\+\_\+\+Init\+Type\+Def\+::\+OCFast\+Mode}
+
+Specifies the Fast mode state. This parameter can be a value of \doxylink{group__TIM__Output__Fast__State}{TIM Output Fast State} \begin{DoxyNote}{Note}
+This parameter is valid only in PWM1 and PWM2 mode. 
+\end{DoxyNote}
+\Hypertarget{structTIM__OC__InitTypeDef_ae5faa1cba0b3f1ab6179cc54e1015ee8}\label{structTIM__OC__InitTypeDef_ae5faa1cba0b3f1ab6179cc54e1015ee8} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCMode@{OCMode}}
+\index{OCMode@{OCMode}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OCMode}{OCMode}}
+{\footnotesize\ttfamily uint32\+\_\+t TIM\+\_\+\+OC\+\_\+\+Init\+Type\+Def\+::\+OCMode}
+
+Specifies the TIM mode. This parameter can be a value of \doxylink{group__TIM__Output__Compare__and__PWM__modes}{TIM Output Compare and PWM Modes} \Hypertarget{structTIM__OC__InitTypeDef_a556b7137d041aceed3e45c87cbfb39cd}\label{structTIM__OC__InitTypeDef_a556b7137d041aceed3e45c87cbfb39cd} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!OCPolarity@{OCPolarity}}
+\index{OCPolarity@{OCPolarity}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{OCPolarity}{OCPolarity}}
+{\footnotesize\ttfamily uint32\+\_\+t TIM\+\_\+\+OC\+\_\+\+Init\+Type\+Def\+::\+OCPolarity}
+
+Specifies the output polarity. This parameter can be a value of \doxylink{group__TIM__Output__Compare__Polarity}{TIM Output Compare Polarity} \Hypertarget{structTIM__OC__InitTypeDef_a61fb5b9ef4154de67620ac81085a0e39}\label{structTIM__OC__InitTypeDef_a61fb5b9ef4154de67620ac81085a0e39} 
+\index{TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}!Pulse@{Pulse}}
+\index{Pulse@{Pulse}!TIM\_OC\_InitTypeDef@{TIM\_OC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Pulse}{Pulse}}
+{\footnotesize\ttfamily uint32\+\_\+t TIM\+\_\+\+OC\+\_\+\+Init\+Type\+Def\+::\+Pulse}
+
+Specifies the pulse value to be loaded into the Capture Compare Register. This parameter can be a number between Min\+\_\+\+Data = 0x0000 and Max\+\_\+\+Data = 0x\+FFFF 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+L1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32l1xx__hal__tim_8h}{stm32l1xx\+\_\+hal\+\_\+tim.\+h}}\end{DoxyCompactItemize}
