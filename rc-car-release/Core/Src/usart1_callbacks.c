@@ -213,8 +213,7 @@ void parse_uart_message(void)
 
                 switch (cmd_code) {
 					case 0x02: // CODE: Установка угла
-						// Приводим payload к знаковому типу, чтобы 0xFF воспринималось как -1
-						cmd_state.wheel_angle = (int8_t)packet[6];
+						cmd_state.wheel_angle = (uint8_t)packet[6];
 						cmd_state.set_angle_flag = 1;
 						break;
                     case 0x03: // PWM
