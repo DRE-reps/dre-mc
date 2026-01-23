@@ -204,9 +204,9 @@ void parse_uart_message(void)
     else if (packet_idx == 2 && packet[1] != 0x53) packet_idx = 0;
     else if (packet_idx >= 3) {
         uint8_t len = packet[2];
-        if (packet_idx == (len + 3)) {
+        if (packet_idx == (len + 4)) {
             // Проверка CRC8
-            if (Compute_CRC8(&packet[2], len) == packet[packet_idx - 1]) {
+            if (Compute_CRC8(&packet[2], (uint16_t)len) == packet[packet_idx - 1]) {
 
                 uint8_t cmd_code = packet[5]; // Позиция CODE
                 uint8_t payload  = packet[6]; // Первый байт DATA

@@ -152,11 +152,11 @@ int main(void)
   TIM5_Init(1000); // Параметр - период таймера в мс. Для датчика FC33
   MX_TIM2_Init();
   MX_TIM6_Init();
-//#define TEST
-#ifndef TEST
+
   SteeringServo_Init(); // Инициализация для сервопривода рулевого управления
   SteeringServo_SetAngle(90); // Выставление угла поворота колёс нейтральное положение (0 градусов)
 
+#ifndef TEST
   HAL_TIM_Base_Start_IT(&htim5);
   __HAL_RCC_SYSCFG_CLK_ENABLE();
   /* USER CODE BEGIN 2 */
@@ -205,13 +205,13 @@ int main(void)
 
    //vbolbat: MPU6050 init
    MPU6050_Init(&hi2c2);
-#endif
+
   //vbolbat: ESC init
   esc_init(&esc_struct);
 
   //vbolbat: init the logger
   logger_init();
-
+#endif
   /* vbolbat: Вызывать после всех инициализаций: */
   if (HAL_TIM_Base_Start_IT(&htim6) != HAL_OK)
   {
@@ -733,6 +733,19 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : PA0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+#warning "temp for en BT"
+  /*Configure GPIO pin : PA2 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
