@@ -69,6 +69,7 @@ void Error_Handler(void);
 #endif
 #define __LOGGING__
 #define MAX_PWM_PERCENT 58
+#define _USE_TELEMETRY_
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

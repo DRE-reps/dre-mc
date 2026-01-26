@@ -1,11 +1,11 @@
 #include "steering_servo.h"
 
-#define SERVO_TIMER              htim2 // таймер, который генерирует ШИМ
-#define SERVO_CHANNEL            TIM_CHANNEL_2
+#define SERVO_TIMER              htim3 // таймер, который генерирует ШИМ
+#define SERVO_CHANNEL            TIM_CHANNEL_1
 #define SERVO_MIN_PULSE          400   // угол поворота 0°
 #define SERVO_MAX_PULSE          2380  // угол поворота 180°
 
-extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
 
 void SteeringServo_Init()
 {

@@ -82,10 +82,10 @@ void Send_Telemetry(void) {
     //packing uint16_t to uint8_t
     uint8_t FC33_RPM_send[2] = {(FC33_RPM >> 8)& 0xFF, (FC33_RPM & 0xFF)};
     //distance part
-    uint16_t dist1_mm = readRangeSingleMillimeters(&sensor1, &distanceStr1);
+    uint16_t dist1_mm = 0x00;//readRangeSingleMillimeters(&sensor1, &distanceStr1);
     //packing uint16_t to uint8_t
     uint8_t dist1_mm_send[2] = {(dist1_mm >> 8)& 0xFF, (dist1_mm & 0xFF)};
-	uint16_t dist2_mm = readRangeSingleMillimeters(&sensor2, &distanceStr2);
+	uint16_t dist2_mm = 0x00;//readRangeSingleMillimeters(&sensor2, &distanceStr2);
 	//packing uint16_t to uint8_t
 	uint8_t dist2_mm_send[2] = {(dist2_mm >> 8)& 0xFF, (dist2_mm & 0xFF)};
     float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
@@ -127,7 +127,7 @@ void Send_Telemetry(void) {
     // Считаем CRC (LEN включительно + SQN,ADDR и тд)
     uint8_t crc = Compute_CRC8(&tx_pck[2], tx_pck[2]);
     /*send PACK*/
-    HAL_UART_Transmit(&huart1, tx_pck, 17, HAL_MAX_DELAY);
+    HAL_UART_Transmit(&huart1, tx_pck, 19, HAL_MAX_DELAY);
     /*send CRC*/
     HAL_UART_Transmit(&huart1, &crc, 1, HAL_MAX_DELAY);
 }
@@ -153,7 +153,7 @@ void process_parser_flags(void)
 {
 //vbolbat: no logging needed, func used in while(1) cycle...
     if (cmd_state.set_angle_flag) {
-    	SteeringServo_SetAngle((uint16_t)cmd_state.set_angle_flag);
+    	SteeringServo_SetAngle((uint16_t)cmd_state.wheel_angle);
         cmd_state.set_angle_flag = 0;
     }
     if (cmd_state.set_pwm_flag) {

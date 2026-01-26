@@ -42,12 +42,12 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // Определяем пины управления питанием (XSHUT) датчиков
-// Предполагаем, что они подключены к PB1 и PB2, которые у вас уже инициализированы
+// Предполагаем, что они подключены к PB5 и PB7, которые у вас уже инициализированы
 #define XSHUT_SENSOR1_PORT GPIOB
-#define XSHUT_SENSOR1_PIN  GPIO_PIN_1
+#define XSHUT_SENSOR1_PIN  GPIO_PIN_5
 
 #define XSHUT_SENSOR2_PORT GPIOB
-#define XSHUT_SENSOR2_PIN  GPIO_PIN_2
+#define XSHUT_SENSOR2_PIN  GPIO_PIN_7
 
 // Адреса датчиков (7-битные, сдвинутые библиотекой, или как принимает ваша либа)
 // Стандартный адрес 0x29. Второй переназначим на 0x30.
@@ -150,14 +150,13 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   TIM5_Init(1000); // Параметр - период таймера в мс. Для датчика FC33
-  MX_TIM2_Init();
+//  MX_TIM2_Init();
   MX_TIM6_Init();
 
-//  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   SteeringServo_Init(); // Инициализация для сервопривода рулевого управления
   SteeringServo_SetAngle(90); // Выставление угла поворота колёс нейтральное положение (0 градусов)
-#define TEST
-#ifndef TEST
+
+#ifdef _USE_TELEMETRY_
   HAL_TIM_Base_Start_IT(&htim5);
   __HAL_RCC_SYSCFG_CLK_ENABLE();
   /* USER CODE BEGIN 2 */
@@ -165,7 +164,7 @@ int main(void)
   MeasureSpeedFC33_Init(6.5f, 1000, 1); //Диаметр колеса в см, период TIM5, кол-во прерываний за одно вращение
 
   // --- ЛОГИКА ИНИЦИАЛИЗАЦИИ ДВУХ ДАТЧИКОВ ---
-
+  /*
   // 1. Сбрасываем оба датчика (ставим XSHUT в Low)
   HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_RESET);
@@ -203,7 +202,7 @@ int main(void)
    setVcselPulsePeriod(&sensor2, VcselPeriodPreRange, 10);
    setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
    setMeasurementTimingBudget(&sensor2, 30000);
-
+*/
    //vbolbat: MPU6050 init
    MPU6050_Init(&hi2c2);
 #endif
@@ -493,7 +492,7 @@ static void MX_TIM3_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1000;
+  sConfigOC.Pulse = 1500;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
