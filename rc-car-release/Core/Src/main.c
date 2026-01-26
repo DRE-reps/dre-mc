@@ -153,9 +153,10 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM6_Init();
 
+//  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   SteeringServo_Init(); // Инициализация для сервопривода рулевого управления
   SteeringServo_SetAngle(90); // Выставление угла поворота колёс нейтральное положение (0 градусов)
-
+#define TEST
 #ifndef TEST
   HAL_TIM_Base_Start_IT(&htim5);
   __HAL_RCC_SYSCFG_CLK_ENABLE();
@@ -205,13 +206,13 @@ int main(void)
 
    //vbolbat: MPU6050 init
    MPU6050_Init(&hi2c2);
-
+#endif
   //vbolbat: ESC init
   esc_init(&esc_struct);
 
   //vbolbat: init the logger
   logger_init();
-#endif
+
   /* vbolbat: Вызывать после всех инициализаций: */
   if (HAL_TIM_Base_Start_IT(&htim6) != HAL_OK)
   {

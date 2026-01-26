@@ -68,9 +68,9 @@ void esc_update_pwm(esc_t* pesc_t)
 #ifdef __LOGGING__
 	save_log(ESC_UPDATE_PWM);
 #endif
-	if (pesc_t->pwm_percent > 100)
+	if (pesc_t->pwm_percent >= MAX_PWM_PERCENT)
 	{
-		pesc_t->pwm_percent = 100;
+		pesc_t->pwm_percent = MAX_PWM_PERCENT;
 	}
 	static unsigned int temp_var = 0;
 	if (pesc_t->direction) //forward

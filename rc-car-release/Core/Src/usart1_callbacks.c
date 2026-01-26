@@ -90,32 +90,20 @@ void Send_Telemetry(void) {
 	uint8_t dist2_mm_send[2] = {(dist2_mm >> 8)& 0xFF, (dist2_mm & 0xFF)};
     float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
     float AX_mpu6050 = MPU6050_get_acceleration(&hi2c2,&mpu6050_struct); /* module of AX */
-    //float to char for transfering, string contains \0!
-    char* speed_khm_str = float2str(speed_kmh ,4);
-    int sizeof_speed_khm_str = sizeof(speed_khm_str);
-    char buf1 [20];
-    if (sizeof_speed_khm_str >= 20)
-    {
-    	sizeof_speed_khm_str = 20;
-    }
-    /* dest source size */
-    memcpy(buf1,speed_khm_str,sizeof_speed_khm_str);
-	buf1[19] = '\0';
-    char* AX_mpu6050_str = float2str(AX_mpu6050,4);
-    int sizeof_AX_mpu6050_str = sizeof(AX_mpu6050_str);
-    char buf2 [20];
-    if (sizeof_AX_mpu6050_str >= 20)
-    {
-    	sizeof_AX_mpu6050_str = 20;
-    }
-    /* dest source size */
-    memcpy(buf2,AX_mpu6050_str,sizeof_AX_mpu6050_str);
-	buf2[19] = '\0';
+    uint8_t speed_khm_1 = (*((uint32_t *)&speed_kmh) >> 24) & 0xFF;
+    uint8_t speed_khm_2 = (*((uint32_t *)&speed_kmh) >> 16) & 0xFF;
+    uint8_t speed_khm_3 = (*((uint32_t *)&speed_kmh) >>  8) & 0xFF;
+    uint8_t speed_khm_4 = (*((uint32_t *)&speed_kmh) >>  0) & 0xFF;
+
+    uint8_t AX_mpu6050_1 = (*((uint32_t *)&AX_mpu6050) >> 24) & 0xFF;
+    uint8_t AX_mpu6050_2 = (*((uint32_t *)&AX_mpu6050) >> 16) & 0xFF;
+    uint8_t AX_mpu6050_3 = (*((uint32_t *)&AX_mpu6050) >>  8) & 0xFF;
+    uint8_t AX_mpu6050_4 = (*((uint32_t *)&AX_mpu6050) >>  0) & 0xFF;
 	//packet part
     uint8_t tx_pck[256];
     tx_pck[0] = 0xAC;
     tx_pck[1] = 0x53;
-    tx_pck[2] = 10 + sizeof_speed_khm_str + sizeof_AX_mpu6050_str; // LEN: 10 + sizeof_speed_khm_str + sizeof_AX_mpu6050_str
+    tx_pck[2] = 9 + 8; // LEN: 9 + floats
     tx_pck[3] = 0x00; // SQN
     tx_pck[4] = 0x01; // ADDR
     tx_pck[5] = 0x15; // CODE
@@ -125,21 +113,21 @@ void Send_Telemetry(void) {
     tx_pck[9] = dist1_mm_send[1];  //LSB
     tx_pck[10] = dist2_mm_send[0]; //MSB
     tx_pck[11] = dist2_mm_send[1]; //LSB
-    int var = 12;
-    for(int i = 0; i < sizeof_speed_khm_str; i++)
-    {
-    	tx_pck[var + i] = buf1[i];
-    }
-    var += sizeof_speed_khm_str;
-    for(int i = 0; i < sizeof_AX_mpu6050_str; i++)
-    {
-    	tx_pck[var + i] = buf2[i];
-    }
-    var += sizeof_AX_mpu6050_str; /* общее колво байтов */
+
+    tx_pck[12] = speed_khm_1;
+    tx_pck[13] = speed_khm_2;
+    tx_pck[14] = speed_khm_3;
+    tx_pck[15] = speed_khm_4;
+
+    tx_pck[16] = AX_mpu6050_1;
+    tx_pck[17] = AX_mpu6050_2;
+    tx_pck[18] = AX_mpu6050_3;
+    tx_pck[19] = AX_mpu6050_4;
+
     // Считаем CRC (LEN включительно + SQN,ADDR и тд)
-    uint8_t crc = Compute_CRC8(&tx_pck[2], var - 2 /* общее колво байтов - 0xAC 0x53 */);
+    uint8_t crc = Compute_CRC8(&tx_pck[2], tx_pck[2]);
     /*send PACK*/
-    HAL_UART_Transmit(&huart1, tx_pck, var, HAL_MAX_DELAY);
+    HAL_UART_Transmit(&huart1, tx_pck, 17, HAL_MAX_DELAY);
     /*send CRC*/
     HAL_UART_Transmit(&huart1, &crc, 1, HAL_MAX_DELAY);
 }
