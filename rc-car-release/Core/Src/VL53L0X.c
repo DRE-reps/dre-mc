@@ -5,6 +5,7 @@
 #include "string.h"
 #include "VL53L0X.h"
 #include "logger.h"
+#include "main.h"
 
 //---------------------------------------------------------
 // Локальные переменные (общие буферы)
@@ -17,6 +18,18 @@
 
 static uint8_t msgBuffer[4];
 static HAL_StatusTypeDef i2cStat;
+
+// Вспомогательная функция для отправки JSON логов через UART
+static void debug_log_uart(const char* location, const char* message, const char* data_json) {
+  extern UART_HandleTypeDef huart1;
+  char log_buf[256];
+  int len = snprintf(log_buf, sizeof(log_buf), 
+    "{\"id\":\"log_%lu\",\"timestamp\":%lu,\"location\":\"%s\",\"message\":\"%s\",\"data\":%s,\"sessionId\":\"debug-session\",\"runId\":\"run1\"}\r\n",
+    HAL_GetTick(), HAL_GetTick(), location, message, data_json ? data_json : "{}");
+  if (len > 0 && len < sizeof(log_buf)) {
+    HAL_UART_Transmit(&huart1, (uint8_t*)log_buf, len, 100);
+  }
+}
 
 //---------------------------------------------------------
 // Прототипы локальных функций (приватные)
@@ -37,8 +50,17 @@ static uint32_t timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t v
 
 // Запись 8-битного регистра
 void writeReg(VL53L0X_Dev_t *dev, uint8_t reg, uint8_t value) {
+  // #region agent log
+  char data_buf[64];
+  snprintf(data_buf, sizeof(data_buf), "{\"reg\":%u,\"value\":%u,\"addr\":%u}", reg, value, dev->i2c_addr);
+  debug_log_uart("VL53L0X.c:49", "writeReg entry", data_buf);
+  // #endregion
   msgBuffer[0] = value;
   i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr | I2C_WRITE, reg, 1, msgBuffer, 1, I2C_TIMEOUT);
+  // #region agent log
+  snprintf(data_buf, sizeof(data_buf), "{\"i2cStat\":%d,\"reg\":%u}", i2cStat, reg);
+  debug_log_uart("VL53L0X.c:54", "writeReg exit", data_buf);
+  // #endregion
 }
 
 // Запись 16-битного регистра
@@ -70,9 +92,18 @@ void writeReg32Bit(VL53L0X_Dev_t *dev, uint8_t reg, uint32_t value){
 
 // Чтение 8-битного регистра
 uint8_t readReg(VL53L0X_Dev_t *dev, uint8_t reg) {
+  // #region agent log
+  char data_buf[64];
+  snprintf(data_buf, sizeof(data_buf), "{\"reg\":%u,\"addr\":%u}", reg, dev->i2c_addr);
+  debug_log_uart("VL53L0X.c:87", "readReg entry", data_buf);
+  // #endregion
   uint8_t value;
   i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr | I2C_READ, reg, 1, msgBuffer, 1, I2C_TIMEOUT);
   value = msgBuffer[0];
+  // #region agent log
+  snprintf(data_buf, sizeof(data_buf), "{\"i2cStat\":%d,\"reg\":%u,\"value\":%u}", i2cStat, reg, value);
+  debug_log_uart("VL53L0X.c:94", "readReg exit", data_buf);
+  // #endregion
   return value;
 }
 
@@ -124,6 +155,11 @@ uint8_t getAddress_VL53L0X(VL53L0X_Dev_t *dev) {
 
 // Инициализация датчика
 bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
+  // #region agent log
+  char data_buf[64];
+  snprintf(data_buf, sizeof(data_buf), "{\"io_2v8\":%d}", io_2v8);
+  debug_log_uart("VL53L0X.c:160", "initVL53L0X entry", data_buf);
+  // #endregion
 
   // Инициализация структуры
   dev->i2c_handler = handler;
@@ -167,7 +203,15 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
 
   uint8_t spad_count;
   bool spad_type_is_aperture;
-  if (!getSpadInfo(dev, &spad_count, &spad_type_is_aperture)) { return false; }
+  // #region agent log
+  debug_log_uart("VL53L0X.c:210", "before getSpadInfo", "{}");
+  // #endregion
+  if (!getSpadInfo(dev, &spad_count, &spad_type_is_aperture)) {
+    // #region agent log
+    debug_log_uart("VL53L0X.c:213", "getSpadInfo failed", "{}");
+    // #endregion
+    return false;
+  }
 
   uint8_t ref_spad_map[6];
   readMulti(dev, GLOBAL_CONFIG_SPAD_ENABLES_REF_0, ref_spad_map, 6);
@@ -313,16 +357,35 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
   // VL53L0X_PerformRefCalibration() начало
 
   writeReg(dev, SYSTEM_SEQUENCE_CONFIG, 0x01);
-  if (!performSingleRefCalibration(dev, 0x40)) { return false; }
+  // #region agent log
+  debug_log_uart("VL53L0X.c:372", "before calibration 1", "{}");
+  // #endregion
+  if (!performSingleRefCalibration(dev, 0x40)) {
+    // #region agent log
+    debug_log_uart("VL53L0X.c:375", "calibration 1 failed", "{}");
+    // #endregion
+    return false;
+  }
 
   writeReg(dev, SYSTEM_SEQUENCE_CONFIG, 0x02);
-  if (!performSingleRefCalibration(dev, 0x00)) { return false; }
+  // #region agent log
+  debug_log_uart("VL53L0X.c:382", "before calibration 2", "{}");
+  // #endregion
+  if (!performSingleRefCalibration(dev, 0x00)) {
+    // #region agent log
+    debug_log_uart("VL53L0X.c:386", "calibration 2 failed", "{}");
+    // #endregion
+    return false;
+  }
 
   // "восстановление предыдущей конфигурации последовательности"
   writeReg(dev, SYSTEM_SEQUENCE_CONFIG, 0xE8);
 
   // VL53L0X_PerformRefCalibration() конец
 
+  // #region agent log
+  debug_log_uart("VL53L0X.c:393", "initVL53L0X success", "{}");
+  // #endregion
   return true;
 }
 

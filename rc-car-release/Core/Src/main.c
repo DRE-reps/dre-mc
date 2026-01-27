@@ -112,6 +112,18 @@ static void MX_TIM6_Init(void); /* used by vbolbat for esc && mpu6050 data updat
 /* USER CODE BEGIN 0 */
 uint16_t dist1_mm = 0;
 uint16_t dist2_mm = 0;
+
+// Вспомогательная функция для отправки JSON логов через UART
+static void debug_log_uart(const char* location, const char* message, const char* data_json) {
+  extern UART_HandleTypeDef huart1;
+  char log_buf[256];
+  int len = snprintf(log_buf, sizeof(log_buf), 
+    "{\"id\":\"log_%lu\",\"timestamp\":%lu,\"location\":\"%s\",\"message\":\"%s\",\"data\":%s,\"sessionId\":\"debug-session\",\"runId\":\"run1\"}\r\n",
+    HAL_GetTick(), HAL_GetTick(), location, message, data_json ? data_json : "{}");
+  if (len > 0 && len < sizeof(log_buf)) {
+    HAL_UART_Transmit(&huart1, (uint8_t*)log_buf, len, 100);
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -164,45 +176,81 @@ int main(void)
   MeasureSpeedFC33_Init(6.5f, 1000, 1); //Диаметр колеса в см, период TIM5, кол-во прерываний за одно вращение
 
   // --- ЛОГИКА ИНИЦИАЛИЗАЦИИ ДВУХ ДАТЧИКОВ ---
-  /*
+  // #region agent log
+  debug_log_uart("main.c:167", "sensor init start", "{}");
+  // #endregion
+  
   // 1. Сбрасываем оба датчика (ставим XSHUT в Low)
   HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_RESET);
+  // #region agent log
+  debug_log_uart("main.c:178", "XSHUT pins set to LOW", "{}");
+  // #endregion
   HAL_Delay(20);
 
   // 2. Включаем ПЕРВЫЙ датчик
   HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_SET);
+  // #region agent log
+  debug_log_uart("main.c:190", "sensor1 XSHUT set HIGH", "{}");
+  // #endregion
   HAL_Delay(20); // Ждем загрузки
 
   // 3. Инициализируем первый датчик (он сейчас на адресе по умолчанию 0x29)
   // ВАЖНО: Функции initVL53L0X теперь нужно передавать указатель на структуру (&sensor1)
+  // #region agent log
+  debug_log_uart("main.c:199", "before sensor1 init", "{}");
+  // #endregion
   if(initVL53L0X(&sensor1, 1, &hi2c1)) {
       // 4. МЕНЯЕМ АДРЕС первого датчика
+      // #region agent log
+      char data_buf[64];
+      snprintf(data_buf, sizeof(data_buf), "{\"newAddr\":%u}", SENSOR1_NEW_ADDR);
+      debug_log_uart("main.c:209", "sensor1 init OK, changing address", data_buf);
+      // #endregion
       setAddress_VL53L0X(&sensor1, SENSOR1_NEW_ADDR);
   } else {
       // Ошибка инициализации датчика 1
+      // #region agent log
+      debug_log_uart("main.c:217", "sensor1 init FAILED", "{}");
+      // #endregion
   }
 
   // 5. Включаем ВТОРОЙ датчик (он проснется с адресом по умолчанию 0x29)
-   HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_SET);
-   HAL_Delay(20);
+  HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_SET);
+  // #region agent log
+  debug_log_uart("main.c:230", "sensor2 XSHUT set HIGH", "{}");
+  // #endregion
+  HAL_Delay(20);
 
-   // 6. Инициализируем второй датчик (адрес менять не надо, оставим 0x29)
-   if(!initVL53L0X(&sensor2, 1, &hi2c1)) {
-       // Ошибка инициализации датчика 2
-   }
+  // 6. Инициализируем второй датчик (адрес менять не надо, оставим 0x29)
+  // #region agent log
+  debug_log_uart("main.c:240", "before sensor2 init", "{}");
+  // #endregion
+  if(!initVL53L0X(&sensor2, 1, &hi2c1)) {
+      // Ошибка инициализации датчика 2
+      // #region agent log
+      debug_log_uart("main.c:244", "sensor2 init FAILED", "{}");
+      // #endregion
+  } else {
+      // #region agent log
+      debug_log_uart("main.c:248", "sensor2 init OK", "{}");
+      // #endregion
+  }
 
-   // Настройка параметров для обоих датчиков
-   setSignalRateLimit(&sensor1, 0.25); // Обратите внимание на аргумент &sensor1
-   setVcselPulsePeriod(&sensor1, VcselPeriodPreRange, 10);
-   setVcselPulsePeriod(&sensor1, VcselPeriodFinalRange, 14);
-   setMeasurementTimingBudget(&sensor1, 30000); // 30ms для скорости
+  // Настройка параметров для обоих датчиков
+  setSignalRateLimit(&sensor1, 0.25); // Обратите внимание на аргумент &sensor1
+  setVcselPulsePeriod(&sensor1, VcselPeriodPreRange, 10);
+  setVcselPulsePeriod(&sensor1, VcselPeriodFinalRange, 14);
+  setMeasurementTimingBudget(&sensor1, 30000); // 30ms для скорости
 
-   setSignalRateLimit(&sensor2, 0.25);
-   setVcselPulsePeriod(&sensor2, VcselPeriodPreRange, 10);
-   setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
-   setMeasurementTimingBudget(&sensor2, 30000);
-*/
+  setSignalRateLimit(&sensor2, 0.25);
+  setVcselPulsePeriod(&sensor2, VcselPeriodPreRange, 10);
+  setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
+  setMeasurementTimingBudget(&sensor2, 30000);
+  
+  // #region agent log
+  debug_log_uart("main.c:276", "sensor init complete", "{}");
+  // #endregion
    //vbolbat: MPU6050 init
    MPU6050_Init(&hi2c2);
 #endif
@@ -755,6 +803,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB5 PB7 (XSHUT для дальномеров) */
+  GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  // Изначально ставим XSHUT в LOW (датчики выключены)
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5|GPIO_PIN_7, GPIO_PIN_RESET);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
