@@ -23,6 +23,7 @@ extern VL53L0X_Dev_t sensor1;
 extern VL53L0X_Dev_t sensor2;
 extern statInfo_t_VL53L0X distanceStr1;
 extern statInfo_t_VL53L0X distanceStr2;
+extern TIM_HandleTypeDef htim6;
 /* private vars */
 uint8_t rx_byte; // Принимаем по одному байту
 static uint8_t packet[256]; // Буфер для сборки пакета
@@ -82,10 +83,10 @@ void Send_Telemetry(void) {
     //packing uint16_t to uint8_t
     uint8_t FC33_RPM_send[2] = {(FC33_RPM >> 8)& 0xFF, (FC33_RPM & 0xFF)};
     //distance part
-    uint16_t dist1_mm = 0x00;//readRangeSingleMillimeters(&sensor1, &distanceStr1);
+    uint16_t dist1_mm = readRangeSingleMillimeters(&sensor1, &distanceStr1);
     //packing uint16_t to uint8_t
     uint8_t dist1_mm_send[2] = {(dist1_mm >> 8)& 0xFF, (dist1_mm & 0xFF)};
-	uint16_t dist2_mm = 0x00;//readRangeSingleMillimeters(&sensor2, &distanceStr2);
+	uint16_t dist2_mm = dist1_mm;//readRangeSingleMillimeters(&sensor2, &distanceStr2);
 	//packing uint16_t to uint8_t
 	uint8_t dist2_mm_send[2] = {(dist2_mm >> 8)& 0xFF, (dist2_mm & 0xFF)};
     float speed_kmh = MeasureSpeedFC33_GetSpeedKmh();
@@ -157,16 +158,19 @@ void process_parser_flags(void)
         cmd_state.set_angle_flag = 0;
     }
     if (cmd_state.set_pwm_flag) {
-        speed_calibration_buffer[0] = cmd_state.esc_pwm;
+        esc_struct.pwm_percent = cmd_state.esc_pwm;
+        esc_update_pwm(&esc_struct);
+        __HAL_TIM_SET_COUNTER(&htim6, 0);
         cmd_state.set_pwm_flag = 0;
     }
     if (cmd_state.set_direction_flag) {
-        speed_calibration_buffer[1] = cmd_state.direction;
+    	esc_struct.direction = cmd_state.direction;
+    	esc_update_pwm(&esc_struct);
         cmd_state.set_direction_flag = 0;
     }
     if (cmd_state.get_telemetry_flag) {
         Send_Telemetry();
-        sync_count = 0; /* var to control communication between car and phone */
+        __HAL_TIM_SET_COUNTER(&htim6, 0);
         cmd_state.get_telemetry_flag = 0;
     }
     if (cmd_state.read_log_flag) {

@@ -51,7 +51,7 @@
 
 // Адреса датчиков (7-битные, сдвинутые библиотекой, или как принимает ваша либа)
 // Стандартный адрес 0x29. Второй переназначим на 0x30.
-#define SENSOR1_NEW_ADDR 0x30
+#define SENSOR1_NEW_ADDR 0x22 // Поменяем адрес для надежности (7-bit 0x11)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -73,6 +73,8 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+VL53_Debug_t debug_info = {0};
+
 //TIM_HandleTypeDef htim_esc_interrupt;
 esc_t esc_struct;
 MPU6050_t mpu6050_struct;
@@ -112,18 +114,6 @@ static void MX_TIM6_Init(void); /* used by vbolbat for esc && mpu6050 data updat
 /* USER CODE BEGIN 0 */
 uint16_t dist1_mm = 0;
 uint16_t dist2_mm = 0;
-
-// Вспомогательная функция для отправки JSON логов через UART
-static void debug_log_uart(const char* location, const char* message, const char* data_json) {
-  extern UART_HandleTypeDef huart1;
-  char log_buf[256];
-  int len = snprintf(log_buf, sizeof(log_buf), 
-    "{\"id\":\"log_%lu\",\"timestamp\":%lu,\"location\":\"%s\",\"message\":\"%s\",\"data\":%s,\"sessionId\":\"debug-session\",\"runId\":\"run1\"}\r\n",
-    HAL_GetTick(), HAL_GetTick(), location, message, data_json ? data_json : "{}");
-  if (len > 0 && len < sizeof(log_buf)) {
-    HAL_UART_Transmit(&huart1, (uint8_t*)log_buf, len, 100);
-  }
-}
 /* USER CODE END 0 */
 
 /**
@@ -176,80 +166,78 @@ int main(void)
   MeasureSpeedFC33_Init(6.5f, 1000, 1); //Диаметр колеса в см, период TIM5, кол-во прерываний за одно вращение
 
   // --- ЛОГИКА ИНИЦИАЛИЗАЦИИ ДВУХ ДАТЧИКОВ ---
-  // #region agent log
-  debug_log_uart("main.c:167", "sensor init start", "{}");
-  // #endregion
+  debug_info.stage = 1; 
   
-  // 1. Сбрасываем оба датчика (ставим XSHUT в Low)
-  HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_RESET);
-  // #region agent log
-  debug_log_uart("main.c:178", "XSHUT pins set to LOW", "{}");
-  // #endregion
-  HAL_Delay(20);
+  // 1. Принудительно выключаем оба
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_Delay(200);
 
   // 2. Включаем ПЕРВЫЙ датчик
-  HAL_GPIO_WritePin(XSHUT_SENSOR1_PORT, XSHUT_SENSOR1_PIN, GPIO_PIN_SET);
-  // #region agent log
-  debug_log_uart("main.c:190", "sensor1 XSHUT set HIGH", "{}");
-  // #endregion
-  HAL_Delay(20); // Ждем загрузки
+  debug_info.stage = 2;
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+  HAL_Delay(200); 
 
-  // 3. Инициализируем первый датчик (он сейчас на адресе по умолчанию 0x29)
-  // ВАЖНО: Функции initVL53L0X теперь нужно передавать указатель на структуру (&sensor1)
-  // #region agent log
-  debug_log_uart("main.c:199", "before sensor1 init", "{}");
-  // #endregion
+  // 3. Инициализируем первый датчик
   if(initVL53L0X(&sensor1, 1, &hi2c1)) {
-      // 4. МЕНЯЕМ АДРЕС первого датчика
-      // #region agent log
-      char data_buf[64];
-      snprintf(data_buf, sizeof(data_buf), "{\"newAddr\":%u}", SENSOR1_NEW_ADDR);
-      debug_log_uart("main.c:209", "sensor1 init OK, changing address", data_buf);
-      // #endregion
+      debug_info.s1_init_ok = 1;
       setAddress_VL53L0X(&sensor1, SENSOR1_NEW_ADDR);
-  } else {
-      // Ошибка инициализации датчика 1
-      // #region agent log
-      debug_log_uart("main.c:217", "sensor1 init FAILED", "{}");
-      // #endregion
+      debug_info.s1_addr_ok = 1;
   }
 
-  // 5. Включаем ВТОРОЙ датчик (он проснется с адресом по умолчанию 0x29)
-  HAL_GPIO_WritePin(XSHUT_SENSOR2_PORT, XSHUT_SENSOR2_PIN, GPIO_PIN_SET);
-  // #region agent log
-  debug_log_uart("main.c:230", "sensor2 XSHUT set HIGH", "{}");
-  // #endregion
-  HAL_Delay(20);
-
-  // 6. Инициализируем второй датчик (адрес менять не надо, оставим 0x29)
-  // #region agent log
-  debug_log_uart("main.c:240", "before sensor2 init", "{}");
-  // #endregion
-  if(!initVL53L0X(&sensor2, 1, &hi2c1)) {
-      // Ошибка инициализации датчика 2
-      // #region agent log
-      debug_log_uart("main.c:244", "sensor2 init FAILED", "{}");
-      // #endregion
-  } else {
-      // #region agent log
-      debug_log_uart("main.c:248", "sensor2 init OK", "{}");
-      // #endregion
-  }
+//  // 4. Включаем ВТОРОЙ датчик
+//  debug_info.stage = 4;
+//  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+//  HAL_Delay(200);
+//
+//  // Проверка: читаем состояние пина PB7
+//  if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_7) == GPIO_PIN_SET) {
+//      debug_info.last_line = 777; // Метка, что пин в HIGH
+//  } else {
+//      debug_info.last_line = 666; // Метка, что пин НЕ в HIGH
+//  }
+//
+//  // Сканируем шину (должны увидеть SENSOR1_NEW_ADDR и 0x52)
+//  uint8_t scan_res[3] = {0, 0, 0};
+//  int det_idx = 0;
+//  for(uint8_t i = 1; i < 128 && det_idx < 3; i++) {
+//      if(HAL_I2C_IsDeviceReady(&hi2c1, (i << 1), 1, 10) == HAL_OK) {
+//          scan_res[det_idx++] = (i << 1);
+//      }
+//  }
+//  debug_info.det_addr1 = scan_res[0];
+//  debug_info.det_addr2 = scan_res[1];
+//  debug_info.det_addr3 = scan_res[2];
+//
+//  // 5. Инициализируем второй датчик
+//  debug_info.stage = 5;
+//  if(initVL53L0X(&sensor2, 1, &hi2c1)) {
+//      debug_info.s2_init_ok = 1;
+//      debug_info.stage = 6;
+//  } else {
+//      // Попробуем еще раз если не вышло
+//      HAL_Delay(100);
+//      if(initVL53L0X(&sensor2, 1, &hi2c1)) {
+//          debug_info.s2_init_ok = 1;
+//          debug_info.stage = 6;
+//      } else {
+//          debug_info.s2_init_ok = 0;
+//      }
+//  }
 
   // Настройка параметров для обоих датчиков
   setSignalRateLimit(&sensor1, 0.25); // Обратите внимание на аргумент &sensor1
   setVcselPulsePeriod(&sensor1, VcselPeriodPreRange, 10);
   setVcselPulsePeriod(&sensor1, VcselPeriodFinalRange, 14);
   setMeasurementTimingBudget(&sensor1, 30000); // 30ms для скорости
-
-  setSignalRateLimit(&sensor2, 0.25);
-  setVcselPulsePeriod(&sensor2, VcselPeriodPreRange, 10);
-  setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
-  setMeasurementTimingBudget(&sensor2, 30000);
-  
+//
+//  setSignalRateLimit(&sensor2, 0.25);
+//  setVcselPulsePeriod(&sensor2, VcselPeriodPreRange, 10);
+//  setVcselPulsePeriod(&sensor2, VcselPeriodFinalRange, 14);
+//  setMeasurementTimingBudget(&sensor2, 30000);
+//
   // #region agent log
-  debug_log_uart("main.c:276", "sensor init complete", "{}");
+//  debug_log_uart("main.c:276", "sensor init complete", "{}");
   // #endregion
    //vbolbat: MPU6050 init
    MPU6050_Init(&hi2c2);
@@ -272,8 +260,8 @@ int main(void)
         Error_Handler();
   }
   /* USER CODE END 2 */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, 1);
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, 1);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, 1);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, 1);
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -384,7 +372,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 400000;
+  hi2c1.Init.ClockSpeed = 100000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -601,7 +589,7 @@ static void MX_TIM4_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse =  1500;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -681,7 +669,7 @@ static void MX_TIM6_Init(void)
   htim6.Instance = TIM6;
   htim6.Init.Prescaler = 31999;
   htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim6.Init.Period = 199;
+  htim6.Init.Period = 2999;
   htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim6) != HAL_OK)
   {
@@ -784,7 +772,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-#warning "temp for en BT"
   /*Configure GPIO pin : PA2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;

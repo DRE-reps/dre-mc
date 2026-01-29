@@ -6,6 +6,7 @@
 #include "VL53L0X.h"
 #include "logger.h"
 #include "main.h"
+#include <stdio.h>
 
 //---------------------------------------------------------
 // Локальные переменные (общие буферы)
@@ -18,18 +19,6 @@
 
 static uint8_t msgBuffer[4];
 static HAL_StatusTypeDef i2cStat;
-
-// Вспомогательная функция для отправки JSON логов через UART
-static void debug_log_uart(const char* location, const char* message, const char* data_json) {
-  extern UART_HandleTypeDef huart1;
-  char log_buf[256];
-  int len = snprintf(log_buf, sizeof(log_buf), 
-    "{\"id\":\"log_%lu\",\"timestamp\":%lu,\"location\":\"%s\",\"message\":\"%s\",\"data\":%s,\"sessionId\":\"debug-session\",\"runId\":\"run1\"}\r\n",
-    HAL_GetTick(), HAL_GetTick(), location, message, data_json ? data_json : "{}");
-  if (len > 0 && len < sizeof(log_buf)) {
-    HAL_UART_Transmit(&huart1, (uint8_t*)log_buf, len, 100);
-  }
-}
 
 //---------------------------------------------------------
 // Прототипы локальных функций (приватные)
@@ -44,83 +33,87 @@ static uint16_t encodeTimeout(uint16_t timeout_mclks);
 static uint32_t timeoutMclksToMicroseconds(uint16_t timeout_period_mclks, uint8_t vcsel_period_pclks);
 static uint32_t timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t vcsel_period_pclks);
 
+extern VL53_Debug_t debug_info;
+
 //---------------------------------------------------------
 // Функции связи I2C
 //---------------------------------------------------------
 
 // Запись 8-битного регистра
 void writeReg(VL53L0X_Dev_t *dev, uint8_t reg, uint8_t value) {
-  // #region agent log
-  char data_buf[64];
-  snprintf(data_buf, sizeof(data_buf), "{\"reg\":%u,\"value\":%u,\"addr\":%u}", reg, value, dev->i2c_addr);
-  debug_log_uart("VL53L0X.c:49", "writeReg entry", data_buf);
-  // #endregion
+  debug_info.last_reg = reg;
   msgBuffer[0] = value;
-  i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr | I2C_WRITE, reg, 1, msgBuffer, 1, I2C_TIMEOUT);
-  // #region agent log
-  snprintf(data_buf, sizeof(data_buf), "{\"i2cStat\":%d,\"reg\":%u}", i2cStat, reg);
-  debug_log_uart("VL53L0X.c:54", "writeReg exit", data_buf);
-  // #endregion
+  // HAL сам управляет битом R/W, передаем чистый адрес из структуры (0x52 или 0x30)
+  i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr, reg, 1, msgBuffer, 1, I2C_TIMEOUT);
+  debug_info.last_i2c_status = i2cStat;
+  if (i2cStat != HAL_OK) {
+      debug_info.i2c_error_cnt++;
+  }
 }
 
 // Запись 16-битного регистра
 void writeReg16Bit(VL53L0X_Dev_t *dev, uint8_t reg, uint16_t value){
-  // В STM32 HAL порядок байт для I2C Mem Write обычно ожидается little-endian,
-  // но VL53L0X big-endian. Библиотека ST делает перестановку.
-  // Здесь мы копируем как есть.
-  // В оригинале: memcpy(msgBuffer, &value, 2); (Little Endian MCU -> Little Endian buffer)
-  // Но VL53L0X ожидает Big Endian (MSB first).
-  // Если ваш код работал раньше, значит HAL или сам чип переваривали это.
-  // Обычно нужно: msgBuffer[0] = (value >> 8) & 0xFF; msgBuffer[1] = value & 0xFF;
-  // Оставим как было в вашем оригинале, чтобы не сломать логику, если она работала.
-
+  debug_info.last_reg = reg;
   msgBuffer[0] = (uint8_t)((value >> 8) & 0xFF);
   msgBuffer[1] = (uint8_t)(value & 0xFF);
-
-  i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr | I2C_WRITE, reg, 1, msgBuffer, 2, I2C_TIMEOUT);
+  i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr, reg, 1, msgBuffer, 2, I2C_TIMEOUT);
+  debug_info.last_i2c_status = i2cStat;
+  if (i2cStat != HAL_OK) {
+      debug_info.i2c_error_cnt++;
+  }
 }
 
 // Запись 32-битного регистра
 void writeReg32Bit(VL53L0X_Dev_t *dev, uint8_t reg, uint32_t value){
+  debug_info.last_reg = reg;
   msgBuffer[0] = (uint8_t)((value >> 24) & 0xFF);
   msgBuffer[1] = (uint8_t)((value >> 16) & 0xFF);
   msgBuffer[2] = (uint8_t)((value >> 8) & 0xFF);
   msgBuffer[3] = (uint8_t)(value & 0xFF);
-
-  i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr | I2C_WRITE, reg, 1, msgBuffer, 4, I2C_TIMEOUT);
+  i2cStat = HAL_I2C_Mem_Write(dev->i2c_handler, dev->i2c_addr, reg, 1, msgBuffer, 4, I2C_TIMEOUT);
+  debug_info.last_i2c_status = i2cStat;
+  if (i2cStat != HAL_OK) {
+      debug_info.i2c_error_cnt++;
+  }
 }
 
 // Чтение 8-битного регистра
 uint8_t readReg(VL53L0X_Dev_t *dev, uint8_t reg) {
-  // #region agent log
-  char data_buf[64];
-  snprintf(data_buf, sizeof(data_buf), "{\"reg\":%u,\"addr\":%u}", reg, dev->i2c_addr);
-  debug_log_uart("VL53L0X.c:87", "readReg entry", data_buf);
-  // #endregion
-  uint8_t value;
-  i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr | I2C_READ, reg, 1, msgBuffer, 1, I2C_TIMEOUT);
-  value = msgBuffer[0];
-  // #region agent log
-  snprintf(data_buf, sizeof(data_buf), "{\"i2cStat\":%d,\"reg\":%u,\"value\":%u}", i2cStat, reg, value);
-  debug_log_uart("VL53L0X.c:94", "readReg exit", data_buf);
-  // #endregion
+  debug_info.last_reg = reg;
+  uint8_t value = 0;
+  i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr, reg, 1, msgBuffer, 1, I2C_TIMEOUT);
+  debug_info.last_i2c_status = i2cStat;
+  if (i2cStat == HAL_OK) {
+      value = msgBuffer[0];
+  } else {
+      debug_info.i2c_error_cnt++;
+  }
   return value;
 }
 
 // Чтение 16-битного регистра
 uint16_t readReg16Bit(VL53L0X_Dev_t *dev, uint8_t reg) {
-  uint16_t value;
-  i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr | I2C_READ, reg, 1, msgBuffer, 2, I2C_TIMEOUT);
-  // Big Endian from sensor
-  value = (uint16_t)((msgBuffer[0] << 8) | msgBuffer[1]);
+  uint16_t value = 0;
+  i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr, reg, 1, msgBuffer, 2, I2C_TIMEOUT);
+  debug_info.last_i2c_status = i2cStat;
+  if (i2cStat == HAL_OK) {
+      value = (uint16_t)((msgBuffer[0] << 8) | msgBuffer[1]);
+  } else {
+      debug_info.i2c_error_cnt++;
+  }
   return value;
 }
 
 // Чтение 32-битного регистра
 uint32_t readReg32Bit(VL53L0X_Dev_t *dev, uint8_t reg) {
-  uint32_t value;
-  i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr | I2C_READ, reg, 1, msgBuffer, 4, I2C_TIMEOUT);
-  value = (uint32_t)((msgBuffer[0] << 24) | (msgBuffer[1] << 16) | (msgBuffer[2] << 8) | msgBuffer[3]);
+  uint32_t value = 0;
+  i2cStat = HAL_I2C_Mem_Read(dev->i2c_handler, dev->i2c_addr, reg, 1, msgBuffer, 4, I2C_TIMEOUT);
+  debug_info.last_i2c_status = i2cStat;
+  if (i2cStat == HAL_OK) {
+      value = (uint32_t)((msgBuffer[0] << 24) | (msgBuffer[1] << 16) | (msgBuffer[2] << 8) | msgBuffer[3]);
+  } else {
+      debug_info.i2c_error_cnt++;
+  }
   return value;
 }
 
@@ -143,28 +136,37 @@ void readMulti(VL53L0X_Dev_t *dev, uint8_t reg, uint8_t * dst, uint8_t count) {
 // Публичные методы //////////////////////////////////////////////////////////////
 
 void setAddress_VL53L0X(VL53L0X_Dev_t *dev, uint8_t new_addr) {
+  debug_info.stage = 3; // Смена адреса
   // Записываем новый адрес в регистр датчика (сдвиг на 1, так как регистр 7-битный + бит RW)
   writeReg(dev, I2C_SLAVE_DEVICE_ADDRESS, (new_addr>>1) & 0x7F );
-  // Обновляем адрес в структуре нашего объекта
+  
+  // Обновляем адрес в структуре объекта ПЕРЕД чтением для проверки
+  uint8_t old_stored_addr = dev->i2c_addr;
   dev->i2c_addr = new_addr;
+  
+  // Проверка: читаем адрес из регистра 0x8A (там он хранится в 7-битном виде)
+  uint8_t read_back = readReg(dev, I2C_SLAVE_DEVICE_ADDRESS);
+  debug_info.s1_readback_addr = read_back;
+  
+  if (read_back == ((new_addr>>1) & 0x7F)) {
+      debug_info.s1_addr_ok = 1;
+  } else {
+      // Если не совпало, возвращаем старый адрес в структуру, так как чип не переключился
+      dev->i2c_addr = old_stored_addr;
+      debug_info.s1_addr_ok = 0;
+  }
 }
 
 uint8_t getAddress_VL53L0X(VL53L0X_Dev_t *dev) {
   return dev->i2c_addr;
 }
 
-// Инициализация датчика
+  // Инициализация датчика
 bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
-  // #region agent log
-  char data_buf[64];
-  snprintf(data_buf, sizeof(data_buf), "{\"io_2v8\":%d}", io_2v8);
-  debug_log_uart("VL53L0X.c:160", "initVL53L0X entry", data_buf);
-  // #endregion
-
   // Инициализация структуры
   dev->i2c_handler = handler;
   dev->i2c_addr = ADDRESS_DEFAULT; // Изначально адрес всегда 0x52 (0x29 * 2)
-  dev->io_timeout = 0;
+  dev->io_timeout = 500; // Установим таймаут 500мс по умолчанию, чтобы не виснуть вечно
   dev->did_timeout = false;
 
   // VL53L0X_DataInit() begin
@@ -203,13 +205,7 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
 
   uint8_t spad_count;
   bool spad_type_is_aperture;
-  // #region agent log
-  debug_log_uart("VL53L0X.c:210", "before getSpadInfo", "{}");
-  // #endregion
   if (!getSpadInfo(dev, &spad_count, &spad_type_is_aperture)) {
-    // #region agent log
-    debug_log_uart("VL53L0X.c:213", "getSpadInfo failed", "{}");
-    // #endregion
     return false;
   }
 
@@ -283,6 +279,7 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
   writeReg(dev, 0xFF, 0x01);
   writeReg(dev, 0x22, 0x32);
   writeReg(dev, 0x47, 0x14);
+  HAL_Delay(1); // Добавим паузу перед блоком настроек
   writeReg(dev, 0x49, 0xFF);
   writeReg(dev, 0x4A, 0x00);
 
@@ -318,6 +315,7 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
   writeReg(dev, 0x47, 0x08);
   writeReg(dev, 0x48, 0x28);
   writeReg(dev, 0x67, 0x00);
+  HAL_Delay(1); // Еще одна пауза перед 0x70
   writeReg(dev, 0x70, 0x04);
   writeReg(dev, 0x71, 0x01);
   writeReg(dev, 0x72, 0xFE);
@@ -357,24 +355,12 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
   // VL53L0X_PerformRefCalibration() начало
 
   writeReg(dev, SYSTEM_SEQUENCE_CONFIG, 0x01);
-  // #region agent log
-  debug_log_uart("VL53L0X.c:372", "before calibration 1", "{}");
-  // #endregion
   if (!performSingleRefCalibration(dev, 0x40)) {
-    // #region agent log
-    debug_log_uart("VL53L0X.c:375", "calibration 1 failed", "{}");
-    // #endregion
     return false;
   }
 
   writeReg(dev, SYSTEM_SEQUENCE_CONFIG, 0x02);
-  // #region agent log
-  debug_log_uart("VL53L0X.c:382", "before calibration 2", "{}");
-  // #endregion
   if (!performSingleRefCalibration(dev, 0x00)) {
-    // #region agent log
-    debug_log_uart("VL53L0X.c:386", "calibration 2 failed", "{}");
-    // #endregion
     return false;
   }
 
@@ -383,9 +369,6 @@ bool initVL53L0X(VL53L0X_Dev_t *dev, bool io_2v8, I2C_HandleTypeDef *handler){
 
   // VL53L0X_PerformRefCalibration() конец
 
-  // #region agent log
-  debug_log_uart("VL53L0X.c:393", "initVL53L0X success", "{}");
-  // #endregion
   return true;
 }
 
@@ -810,7 +793,9 @@ bool getSpadInfo(VL53L0X_Dev_t *dev, uint8_t * count, bool * type_is_aperture)
   dev->timeout_start_ms = HAL_GetTick();
   while (readReg(dev, 0x83) == 0x00)
   {
-    if (dev->io_timeout > 0 && ((uint16_t)HAL_GetTick() - dev->timeout_start_ms) > dev->io_timeout) { return false; }
+    if (dev->io_timeout > 0 && ((uint16_t)HAL_GetTick() - dev->timeout_start_ms) > dev->io_timeout) { 
+      return false; 
+    }
   }
 
   writeReg(dev, 0x83, 0x01);
@@ -923,7 +908,9 @@ bool performSingleRefCalibration(VL53L0X_Dev_t *dev, uint8_t vhv_init_byte)
   dev->timeout_start_ms = HAL_GetTick();
   while ((readReg(dev, RESULT_INTERRUPT_STATUS) & 0x07) == 0)
   {
-    if (dev->io_timeout > 0 && ((uint16_t)HAL_GetTick() - dev->timeout_start_ms) > dev->io_timeout) { return false; }
+    if (dev->io_timeout > 0 && ((uint16_t)HAL_GetTick() - dev->timeout_start_ms) > dev->io_timeout) { 
+      return false; 
+    }
   }
 
   writeReg(dev, SYSTEM_INTERRUPT_CLEAR, 0x01);

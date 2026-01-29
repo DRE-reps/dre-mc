@@ -36,7 +36,20 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+typedef struct {
+    uint8_t stage;           // Текущий этап (1-10)
+    uint8_t s1_init_ok;      // 1 если датчик 1 инициализирован
+    uint8_t s1_addr_ok;      // 1 если адрес датчика 1 изменен и проверен
+    uint8_t s2_init_ok;      // 1 если датчик 2 инициализирован
+    uint16_t last_line;      // Последняя пройденная строка кода
+    HAL_StatusTypeDef last_i2c_status; // Статус последней операции I2C
+    uint8_t last_reg;        // Последний регистр, к которому обращались
+    uint8_t s1_readback_addr;// Что прочитали из регистра адреса датчика 1
+    uint16_t i2c_error_cnt;  // Счетчик ошибок I2C
+    uint8_t det_addr1;       // Первый найденный адрес
+    uint8_t det_addr2;       // Второй найденный адрес
+    uint8_t det_addr3;       // Третий найденный адрес
+} VL53_Debug_t;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
@@ -61,7 +74,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-#define __DISABLE_AUTOBREAK__ //deactivates tim6 callback logic
+//#define __DISABLE_AUTOBREAK__ //deactivates tim6 callback logic
 
 //#define __DEBUG__
 #ifdef __DEBUG__

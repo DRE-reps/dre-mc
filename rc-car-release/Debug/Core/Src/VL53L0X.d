@@ -27,7 +27,7 @@ Core/Src/VL53L0X.o: ../Core/Src/VL53L0X.c ../Core/Inc/VL53L0X.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h \
  ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h \
- ../Core/Inc/logger.h ../Core/Inc/main.h
+ ../Core/Inc/logger.h ../Core/Inc/main.h ../Core/Inc/main.h
 ../Core/Inc/VL53L0X.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal.h:
 ../Core/Inc/stm32l1xx_hal_conf.h:
@@ -58,4 +58,5 @@ Core/Src/VL53L0X.o: ../Core/Src/VL53L0X.c ../Core/Inc/VL53L0X.h \
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:
 ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_exti.h:
 ../Core/Inc/logger.h:
+../Core/Inc/main.h:
 ../Core/Inc/main.h:

@@ -28,8 +28,8 @@ void SteeringServo_SetAngle(uint16_t angle)
 	#ifdef __LOGGING__
 		save_log(SteeringServoSetAngle);
 	#endif
-	if (angle > 110) angle = 110;
-	if (angle < 70) angle = 70;
+	if (angle > 130) angle = 130;
+	if (angle < 50) angle = 50;
 
 	uint32_t pulse = SERVO_MIN_PULSE + ((SERVO_MAX_PULSE - SERVO_MIN_PULSE) * angle) / 180; // рассчитываем ширину активного сигнала
 

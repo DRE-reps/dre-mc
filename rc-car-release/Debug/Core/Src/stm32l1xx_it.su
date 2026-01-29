@@ -11,4 +11,4 @@
 ../Core/Src/stm32l1xx_it.c:223:6:USART1_IRQHandler	8	static
 ../Core/Src/stm32l1xx_it.c:237:6:USART2_IRQHandler	8	static
 ../Core/Src/stm32l1xx_it.c:251:6:TIM6_IRQHandler	8	static
-../Core/Src/stm32l1xx_it.c:292:6:TIM5_IRQHandler	8	static
+../Core/Src/stm32l1xx_it.c:268:6:TIM5_IRQHandler	8	static

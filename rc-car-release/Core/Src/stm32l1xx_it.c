@@ -251,33 +251,9 @@ void USART2_IRQHandler(void)
 void TIM6_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM6_IRQn 0 */
-	  //vbolbat:
-	  //При отсутствии запроса телеметрии в течении 0.8 сек:
-	  //выключаем PWM
-	  //Каллбек вызывается раз в 0.2 сек
-	  //Обновляем значения
 #ifndef __DISABLE_AUTOBREAK__
-	if (sync_count >= 4) /* checks on 5th call */
-	{
-		/* The connection is lost */
-		//Возврат к дефолтным значениям
-		sync_count = 3; /*Исключаем переполнение*/
-		speed_calibration_buffer[0] = 0;
-		speed_calibration_buffer[1] = 1;
-	}
-	else
-	{
-		esc_struct.pwm_percent = speed_calibration_buffer[0];
-		esc_struct.direction = speed_calibration_buffer[1];
-	}
-	  /*применяем измененные значения*/
-	  esc_update_pwm(&esc_struct);
-	  sync_count++;
-#else
-	  /* Всегда обновлять значения */
-	  esc_struct.pwm_percent = speed_calibration_buffer[0];
-	  esc_struct.direction = speed_calibration_buffer[1];
-	  esc_update_pwm(&esc_struct);
+  esc_struct.pwm_percent = 0;
+  esc_update_pwm(&esc_struct);
 #endif
   /* USER CODE END TIM6_IRQn 0 */
   HAL_TIM_IRQHandler(&htim6);
